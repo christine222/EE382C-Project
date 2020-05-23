@@ -70,6 +70,7 @@ void Flit::Reset()
   atime     = -1 ;
   id        = -1 ;
   pid       = -1 ;
+  flips     = 0 ; // FZ
   hops      = 0 ;
   watch     = false ;
   record    = false ;

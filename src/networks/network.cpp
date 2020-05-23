@@ -124,7 +124,7 @@ Network * Network::New(const Configuration & config, const string & name)
   return n;
 }
 
-void Network::_Alloc( )
+void Network::_Alloc(const Configuration &config )
 {
   assert( ( _size != -1 ) && 
 	  ( _nodes != -1 ) && 
@@ -144,7 +144,7 @@ void Network::_Alloc( )
   for ( int s = 0; s < _nodes; ++s ) {
     ostringstream name;
     name << Name() << "_fchan_ingress" << s;
-    _inject[s] = new FlitChannel(this, name.str(), _classes);
+    _inject[s] = new FlitChannel(this, name.str(), _classes, config);
     _inject[s]->SetSource(NULL, s);
     _timed_modules.push_back(_inject[s]);
     name.str("");
@@ -157,7 +157,7 @@ void Network::_Alloc( )
   for ( int d = 0; d < _nodes; ++d ) {
     ostringstream name;
     name << Name() << "_fchan_egress" << d;
-    _eject[d] = new FlitChannel(this, name.str(), _classes);
+    _eject[d] = new FlitChannel(this, name.str(), _classes, config);
     _eject[d]->SetSink(NULL, d);
     _timed_modules.push_back(_eject[d]);
     name.str("");
@@ -170,7 +170,7 @@ void Network::_Alloc( )
   for ( int c = 0; c < _channels; ++c ) {
     ostringstream name;
     name << Name() << "_fchan_" << c;
-    _chan[c] = new FlitChannel(this, name.str(), _classes);
+    _chan[c] = new FlitChannel(this, name.str(), _classes, config);
     _timed_modules.push_back(_chan[c]);
     name.str("");
     name << Name() << "_cchan_" << c;

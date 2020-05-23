@@ -70,7 +70,7 @@ FlatFlyOnChip::FlatFlyOnChip( const Configuration &config, const string & name )
 {
 
   _ComputeSize( config );
-  _Alloc( );
+  _Alloc( config );
   _BuildNet( config );
 }
 

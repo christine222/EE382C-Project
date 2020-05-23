@@ -56,7 +56,7 @@ Tree4::Tree4( const Configuration& config, const string & name )
 : Network ( config, name )
 {
   _ComputeSize( config );
-  _Alloc( );
+  _Alloc( config );
   _BuildNet( config );
 }
 

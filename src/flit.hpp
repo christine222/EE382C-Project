@@ -60,6 +60,8 @@ public:
   int  id;
   int  pid;
 
+  int  flips; // FZ
+
   bool record;
 
   int  src;

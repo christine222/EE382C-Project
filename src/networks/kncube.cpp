@@ -48,7 +48,7 @@ Network( config, name )
   _mesh = mesh;
 
   _ComputeSize( config );
-  _Alloc( );
+  _Alloc( config );
   _BuildNet( config );
 }
 

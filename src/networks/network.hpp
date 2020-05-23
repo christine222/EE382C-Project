@@ -69,7 +69,7 @@ protected:
   virtual void _ComputeSize( const Configuration &config ) = 0;
   virtual void _BuildNet( const Configuration &config ) = 0;
 
-  void _Alloc( );
+  void _Alloc( const Configuration&config );
 
 public:
   Network( const Configuration &config, const string & name );

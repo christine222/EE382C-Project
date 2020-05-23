@@ -45,6 +45,7 @@
 
 #include "channel.hpp"
 #include "flit.hpp"
+#include "config_utils.hpp"
 
 using namespace std;
 
@@ -52,7 +53,7 @@ class Router ;
 
 class FlitChannel : public Channel<Flit> {
 public:
-  FlitChannel(Module * parent, string const & name, int classes);
+  FlitChannel(Module * parent, string const & name, int classes, const Configuration &config);
 
   void SetSource(Router const * const router, int port) ;
   inline Router const * const GetSource() const {
@@ -75,6 +76,8 @@ public:
   // Send flit 
   virtual void Send(Flit * flit);
 
+  virtual void InjectErrors(Flit * flit); // FZ
+
   virtual void ReadInputs();
   virtual void WriteOutputs();
 
@@ -90,6 +93,9 @@ private:
   int _routerSourcePort;
   Router const * _routerSink;
   int _routerSinkPort;
+
+  double _fer;
+  double _fer_squared;
 
   // Statistics for Activity Factors
   vector<int> _active;

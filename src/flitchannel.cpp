@@ -39,16 +39,20 @@
 
 #include "router.hpp"
 #include "globals.hpp"
+#include "random_utils.hpp"
+#include <math.h>
 
 // ----------------------------------------------------------------------
 //  $Author: jbalfour $
 //  $Date: 2007/06/27 23:10:17 $
 //  $Id$
 // ----------------------------------------------------------------------
-FlitChannel::FlitChannel(Module * parent, string const & name, int classes)
+FlitChannel::FlitChannel(Module * parent, string const & name, int classes, const Configuration &config)
 : Channel<Flit>(parent, name), _routerSource(NULL), _routerSourcePort(-1), 
   _routerSink(NULL), _routerSinkPort(-1), _idle(0) {
   _active.resize(classes, 0);
+  _fer = pow(10, -config.GetInt("fer"));
+  _fer_squared = pow(10, -2*config.GetInt("fer"));
 }
 
 void FlitChannel::SetSource(Router const * const router, int port) {
@@ -62,12 +66,26 @@ void FlitChannel::SetSink(Router const * const router, int port) {
 }
 
 void FlitChannel::Send(Flit * f) {
+  InjectErrors(f);
   if(f) {
     ++_active[f->cl];
   } else {
     ++_idle;
   }
   Channel<Flit>::Send(f);
+}
+
+// FZ
+void FlitChannel::InjectErrors(Flit * f) {
+  double rng = RandomFloat();
+  if(rng < _fer_squared) {
+    f->flips += 2;
+    printf("%i\n", f->flips);
+  }
+  else if (rng < _fer) {
+    f->flips++;
+    printf("%i\n", f->flips);
+  }
 }
 
 void FlitChannel::ReadInputs() {
