@@ -137,6 +137,13 @@ protected:
   vector<list<PacketReplyInfo*> > _repliesPending;
   vector<int> _requestsOutstanding;
 
+  // FZ
+  // ============ error packets ==============
+
+  string _ecc_strategy;
+  set<int> _errored_packets;
+  set<int> _reinjected_packets;
+
   // ============ Statistics ============
 
   vector<Stats *> _plat_stats;     

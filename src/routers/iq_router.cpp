@@ -310,6 +310,13 @@ bool IQRouter::_ReceiveFlits( )
 		   << " from channel at input " << input
 		   << "." << endl;
       }
+
+      // FZ
+      //if(f->flips) {
+      //  cout << "received flipped flit" << f->id << endl;
+      //}
+
+
       _in_queue_flits.insert(make_pair(input, f));
       activity = true;
     }
@@ -323,6 +330,7 @@ bool IQRouter::_ReceiveCredits( )
   for(int output = 0; output < _outputs; ++output) {  
     Credit * const c = _output_credits[output]->Receive();
     if(c) {
+      // cout << "Received credit" << endl; // FZ test
       _proc_credits.push_back(make_pair(GetSimTime() + _credit_delay, 
 					make_pair(c, output)));
       activity = true;

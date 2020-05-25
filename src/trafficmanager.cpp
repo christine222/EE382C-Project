@@ -449,6 +449,11 @@ TrafficManager::TrafficManager( const Configuration &config, const vector<Networ
     }
 #endif
 
+    // FZ
+    // ============ Error Correction ==============
+
+    _ecc_strategy = config.GetStr( "ecc" );
+
     // ============ Statistics ============ 
 
     _plat_stats.resize(_classes);
@@ -677,6 +682,19 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
     if(_pair_stats){
         _pair_flat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - f->itime );
     }
+
+    // FZ
+    if (_ecc_strategy == "packet") {
+        if (f->flips) {
+            cout << "Packet " << f->pid << ": Flit " << f->id << " contains error" << endl;
+
+            _errored_packets.insert(f->pid);
+            /*for (const auto& item : _errored_packets) {
+              cout << item << endl;
+            }*/
+         }
+    }
+
       
     if ( f->tail ) {
         Flit * head;
@@ -700,6 +718,13 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
                        << ", src = " << head->src 
                        << ", dest = " << head->dest
                        << ")." << endl;
+        }
+
+        // FZ
+        if (_ecc_strategy == "packet") {
+            if (_errored_packets.find(f->pid) != _errored_packets.end()){
+                cout << "Received tail flit for Packet " << f-> pid << " with error. Need to reinject" << endl;
+            }
         }
 
         //code the source of request, look carefully, its tricky ;)

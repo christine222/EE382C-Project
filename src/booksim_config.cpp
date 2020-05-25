@@ -220,6 +220,12 @@ BookSimConfig::BookSimConfig( )
   _int_map["write_reply_size"]   = 1;
   AddStrField("write_reply_size", ""); // workaraound to allow for vector specification
 
+  //+=== ECC paramters ==================================
+
+  _int_map["fer"] = 0; // FZ: FER
+  AddStrField("ecc", "none");
+
+
   //==== Simulation parameters ==========================
 
   // types:
@@ -275,8 +281,6 @@ BookSimConfig::BookSimConfig( )
   _int_map["deadlock_warn_timeout"] = 256;
 
   _int_map["viewer_trace"] = 0;
-
-  _int_map["fer"] = 0; // FZ: FER
 
   AddStrField("watch_file", "");
   

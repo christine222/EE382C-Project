@@ -80,11 +80,11 @@ void FlitChannel::InjectErrors(Flit * f) {
   double rng = RandomFloat();
   if(rng < _fer_squared) {
     f->flips += 2;
-    printf("%i\n", f->flips);
+    //printf("%i\n", f->flips);
   }
   else if (rng < _fer) {
     f->flips++;
-    printf("%i\n", f->flips);
+    //printf("%i\n", f->flips);
   }
 }
 
