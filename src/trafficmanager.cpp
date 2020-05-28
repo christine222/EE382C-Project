@@ -1024,7 +1024,7 @@ void TrafficManager::_Reinject(){
         int input = ((*iter).f)->src;
         int c = ((*iter).f)->cl; 
         
-        if ( _partial_packets[input][c].empty() && ((*iter).stall_time == 0) ) {
+        //if ( _partial_packets[input][c].empty() && ((*iter).stall_time == 0) ) {
             int stype = ((*iter).f)->type;
             //int stype = _IssuePacket( input, c );
             if ( stype != 0 ){
@@ -1034,7 +1034,7 @@ void TrafficManager::_Reinject(){
                          (*iter).f );
                 _error_reinject.erase((iter+1).base());
             }
-        }
+        //}
     }
 
 }
@@ -1093,8 +1093,13 @@ void TrafficManager::_Step( )
     }
   
     if ( !_empty_network ) {
-        _Inject();
-        _Reinject();
+        // FZ TODO remove the mod if/else
+        if (_time % 2 == 0){
+            _Inject();
+        } 
+        else {
+            _Reinject();
+        }
     }
 
     // FZ decrement stall count in _error_reinject vector
