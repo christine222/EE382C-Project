@@ -31,6 +31,7 @@
 #include <limits>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 
 #include "booksim.hpp"
 #include "booksim_config.hpp"
@@ -686,7 +687,7 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
     // FZ
     if (_ecc_strategy == "packet") {
         if (f->flips) {
-            cout << "Packet " << f->pid << ": Flit " << f->id << " contains error" << endl;
+            cout << "Packet " << f->pid << ": Flit " << f->id << " contains error at time " << _time << endl;
 
             _errored_packets.insert(f->pid);
             /*for (const auto& item : _errored_packets) {
@@ -697,11 +698,17 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
             // see _plat_stats[f->cl] section below for why I chose atime - ctime (not 100% on this tho) 
             int set_stall_time = f->atime - f->ctime;
 
-            cout << "set signal latency stall time: " << set_stall_time << endl;
+            cout << "Set signal latency stall time: " << set_stall_time << endl;
 
             TrafficManager::erroredFlit new_error = {f, set_stall_time};
-            cout << "Adding " << f->pid << " to vector _error_reinject" << endl;
+            //cout << "Adding " << f->pid << " to vector _error_reinject" << endl;
             _error_reinject.push_back(new_error);
+
+            cout << _error_reinject.size() << endl;
+
+        }
+        if (_reinjected_packets.find(f->pid) != _reinjected_packets.end()){
+                cout << "Received reinjected packet " << f-> pid << " at time " << _time << endl;
         }
     }
 
@@ -731,13 +738,13 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
         }
 
         // FZ
-        if (_ecc_strategy == "packet") {
+        /*if (_ecc_strategy == "packet") {
             if (_errored_packets.find(f->pid) != _errored_packets.end()){
                 cout << "Received tail flit for Packet " << f-> pid << " with error. Need to reinject" << endl;
 
 
             }
-        }
+        }*/
 
         //code the source of request, look carefully, its tricky ;)
         if (f->type == Flit::READ_REQUEST || f->type == Flit::WRITE_REQUEST) {
@@ -909,7 +916,9 @@ void TrafficManager::_GeneratePacket( int source, int stype,
             f->src  = reinjection->src;
             f->dest = reinjection->dest;
 
-            cout << "renaming reinjected packet: " << f->pid << endl;
+            cout << "Renaming reinjected packet " << f->pid << " at time " << time << endl;
+
+            _reinjected_packets.insert(f->pid);
         }
         //
 
@@ -1009,24 +1018,25 @@ bool isStallCountZero(TrafficManager::erroredFlit x){
 }
 
 void TrafficManager::_Reinject(){
-    vector<TrafficManager::erroredFlit>::iterator iter = _error_reinject.begin();
 
-    while((iter = find_if(iter, _error_reinject.end(), isStallCountZero)) != _error_reinject.end())
+    for (std::vector<TrafficManager::erroredFlit>::reverse_iterator iter = _error_reinject.rbegin(); iter != _error_reinject.rend(); ++iter)
     {
         int input = ((*iter).f)->src;
-        int stype = ((*iter).f)->type;
         int c = ((*iter).f)->cl; 
-        _GeneratePacket( input, stype, c, 
+        
+        if ( _partial_packets[input][c].empty() && ((*iter).stall_time == 0) ) {
+            int stype = ((*iter).f)->type;
+            //int stype = _IssuePacket( input, c );
+            if ( stype != 0 ){
+                _GeneratePacket( input, stype, c, 
                          _include_queuing==1 ? 
                          _qtime[input][c] : _time,
                          (*iter).f );
-
-        // not sure about _qtime - if we can just take the time from the previous packet/flit
-        iter++;
+                _error_reinject.erase((iter+1).base());
+            }
+        }
     }
 
-    // TODO: remove packet from vector
-    _error_reinject.erase( remove_if(_error_reinject.begin(), _error_reinject.end(), isStallCountZero), _error_reinject.end());
 }
 
 void TrafficManager::_Step( )
