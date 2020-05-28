@@ -49,6 +49,15 @@ class PacketReplyInfo;
 
 class TrafficManager : public Module {
 
+public:
+  // FZ
+  // store errored packets to be reinjected in the vector
+  struct erroredFlit {
+    // can get src, dest, and packet id by accessing f->src,dest,pid
+    Flit *f;
+    int  stall_time;
+  };
+
 private:
 
   vector<vector<int> > _packet_size;
@@ -143,6 +152,8 @@ protected:
   string _ecc_strategy;
   set<int> _errored_packets;
   set<int> _reinjected_packets;
+
+  vector<erroredFlit> _error_reinject;
 
   // ============ Statistics ============
 
@@ -272,12 +283,13 @@ protected:
   virtual void _RetireFlit( Flit *f, int dest );
 
   void _Inject();
+  void _Reinject();
   void _Step( );
 
   bool _PacketsOutstanding( ) const;
   
   virtual int  _IssuePacket( int source, int cl );
-  void _GeneratePacket( int source, int size, int cl, int time );
+  void _GeneratePacket( int source, int size, int cl, int time, Flit *reinjection = NULL );
 
   virtual void _ClearStats( );
 

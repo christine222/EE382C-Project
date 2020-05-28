@@ -692,7 +692,17 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
             /*for (const auto& item : _errored_packets) {
               cout << item << endl;
             }*/
-         }
+
+            // add to _error_reinject vector of errored packets
+            // see _plat_stats[f->cl] section below for why I chose atime - ctime (not 100% on this tho) 
+            int set_stall_time = f->atime - f->ctime;
+
+            cout << "set signal latency stall time: " << set_stall_time << endl;
+
+            TrafficManager::erroredFlit new_error = {f, set_stall_time};
+            cout << "Adding " << f->pid << " to vector _error_reinject" << endl;
+            _error_reinject.push_back(new_error);
+        }
     }
 
       
@@ -724,6 +734,8 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
         if (_ecc_strategy == "packet") {
             if (_errored_packets.find(f->pid) != _errored_packets.end()){
                 cout << "Received tail flit for Packet " << f-> pid << " with error. Need to reinject" << endl;
+
+
             }
         }
 
@@ -808,7 +820,7 @@ int TrafficManager::_IssuePacket( int source, int cl )
 }
 
 void TrafficManager::_GeneratePacket( int source, int stype, 
-                                      int cl, int time )
+                                      int cl, int time, Flit *reinjection )
 {
     assert(stype!=0);
 
@@ -889,7 +901,20 @@ void TrafficManager::_GeneratePacket( int source, int stype,
         f->record = record;
         f->cl     = cl;
 
+        // FZ
+        if (reinjection){
+            // if _GeneratePacket was called to reinject a packet
+            // reassign values in new flit
+            f->pid  = reinjection->pid;
+            f->src  = reinjection->src;
+            f->dest = reinjection->dest;
+
+            cout << "renaming reinjected packet: " << f->pid << endl;
+        }
+        //
+
         _total_in_flight_flits[f->cl].insert(make_pair(f->id, f));
+        
         if(record) {
             _measured_in_flight_flits[f->cl].insert(make_pair(f->id, f));
         }
@@ -976,6 +1001,34 @@ void TrafficManager::_Inject(){
     }
 }
 
+// FZ iterate through vector _error_reinject and generate new packets and
+// queue them if stall count is 0
+
+bool isStallCountZero(TrafficManager::erroredFlit x){
+    return x.stall_time == 0;
+}
+
+void TrafficManager::_Reinject(){
+    vector<TrafficManager::erroredFlit>::iterator iter = _error_reinject.begin();
+
+    while((iter = find_if(iter, _error_reinject.end(), isStallCountZero)) != _error_reinject.end())
+    {
+        int input = ((*iter).f)->src;
+        int stype = ((*iter).f)->type;
+        int c = ((*iter).f)->cl; 
+        _GeneratePacket( input, stype, c, 
+                         _include_queuing==1 ? 
+                         _qtime[input][c] : _time,
+                         (*iter).f );
+
+        // not sure about _qtime - if we can just take the time from the previous packet/flit
+        iter++;
+    }
+
+    // TODO: remove packet from vector
+    _error_reinject.erase( remove_if(_error_reinject.begin(), _error_reinject.end(), isStallCountZero), _error_reinject.end());
+}
+
 void TrafficManager::_Step( )
 {
     bool flits_in_flight = false;
@@ -1031,6 +1084,15 @@ void TrafficManager::_Step( )
   
     if ( !_empty_network ) {
         _Inject();
+        _Reinject();
+    }
+
+    // FZ decrement stall count in _error_reinject vector
+    vector<TrafficManager::erroredFlit>::iterator iter = _error_reinject.begin();
+    while(iter != _error_reinject.end()) {
+        // decrement stall count
+        iter->stall_time -= 1; 
+        iter++;
     }
 
     for(int subnet = 0; subnet < _subnets; ++subnet) {
