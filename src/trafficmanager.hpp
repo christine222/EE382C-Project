@@ -289,7 +289,7 @@ protected:
   bool _PacketsOutstanding( ) const;
   
   virtual int  _IssuePacket( int source, int cl );
-  void _GeneratePacket( int source, int size, int cl, int time, Flit *reinjection = NULL );
+  void _GeneratePacket( int source, int size, int cl, int time );
 
   virtual void _ClearStats( );
 
