@@ -171,6 +171,11 @@ IQRouter::IQRouter( Configuration const & config, Module *parent,
   _bufferMonitor = new BufferMonitor(inputs, _classes);
   _switchMonitor = new SwitchMonitor(inputs, outputs, _classes);
 
+  // FZ 
+
+  _ecc_strategy = config.GetStr( "ecc" );
+
+
 #ifdef TRACK_FLOWS
   for(int c = 0; c < _classes; ++c) {
     _stored_flits[c].resize(_inputs, 0);
@@ -312,12 +317,20 @@ bool IQRouter::_ReceiveFlits( )
       }
 
       // FZ
-      //if(f->flips) {
-      //  cout << "received flipped flit" << f->id << endl;
-      //}
-
-
-      _in_queue_flits.insert(make_pair(input, f));
+      
+      if (_ecc_strategy == "link") {
+        if(f->flips) {
+            cout << "Received flipped flit " << f->id << endl;
+            _errored_flits.push_back(make_pair(f, input)); 
+            //cout << "Length of _errored_flits: " << _errored_flits.size() << endl;          
+        }
+        else {
+            _in_queue_flits.insert(make_pair(input, f));
+        } 
+      }
+      else {
+        _in_queue_flits.insert(make_pair(input, f));
+      }
       activity = true;
     }
   }
@@ -441,6 +454,16 @@ void IQRouter::_InputQueuing( )
 
     int const output = item.second.second;
     assert((output >= 0) && (output < _outputs));
+
+    if (_ecc_strategy == "link") {
+        if (c->ack == 0) {
+            cout << "Received nack credit for flit " << c->f->id << endl;
+            c->f->flips = 0;
+            _output_buffer[output].push(c->f);
+            cout << "Requeued flit " << c->f->id << endl;
+        }
+    }
+
     
     BufferState * const dest_buf = _next_buf[output];
     
@@ -2273,10 +2296,40 @@ void IQRouter::_SendCredits( )
 {
   for ( int input = 0; input < _inputs; ++input ) {
     if ( !_credit_buffer[input].empty( ) ) {
-      Credit * const c = _credit_buffer[input].front( );
-      assert(c);
-      _credit_buffer[input].pop( );
-      _input_credits[input]->Send( c );
+      //for (std::vector<pair<Flit *, int> >::iterator iter = _errored_flits.begin(); iter != _errored_flits_end(); ++iter) {
+      
+      if (_ecc_strategy == "link") {
+        bool sent_nacked_credit = false;
+        for (std::vector<pair<Flit *, int> >::reverse_iterator iter = _errored_flits.rbegin(); iter != _errored_flits.rend(); ++iter) {
+
+          int const input_error = (*iter).second;
+          Flit * const f = (*iter).first;
+
+          if (input == input_error) {
+            Credit * c = _credit_buffer[input].front();
+            assert(c);
+            c->ack = 0;
+            c->f = f;
+            _credit_buffer[input].pop();
+            _input_credits[input]->Send(c);
+            _errored_flits.erase((iter+1).base());
+            sent_nacked_credit = true;
+            break;
+          }
+        }
+        if (!sent_nacked_credit) {
+            //cout << "Sending normal credit" << endl;
+            Credit * const c = _credit_buffer[input].front( );
+            assert(c);
+            _credit_buffer[input].pop( );
+            _input_credits[input]->Send( c );
+        }
+       } else {
+            Credit * const c = _credit_buffer[input].front( );
+            assert(c);
+            _credit_buffer[input].pop( );
+            _input_credits[input]->Send( c );
+       }
     }
   }
 }

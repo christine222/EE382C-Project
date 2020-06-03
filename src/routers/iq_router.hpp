@@ -66,6 +66,8 @@ class IQRouter : public Router {
   int _routing_delay;
   int _vc_alloc_delay;
   int _sw_alloc_delay;
+
+  string _ecc_strategy; //FZ
   
   map<int, Flit *> _in_queue_flits;
 
@@ -79,6 +81,8 @@ class IQRouter : public Router {
   deque<pair<int, pair<Flit *, pair<int, int> > > > _crossbar_flits;
 
   map<int, Credit *> _out_queue_credits;
+
+  vector<pair<Flit *, int> > _errored_flits;
 
   vector<Buffer *> _buf;
   vector<BufferState *> _next_buf;

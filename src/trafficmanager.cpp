@@ -760,7 +760,7 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
 void TrafficManager::_ReceivedFlit( Flit *f, int dest )
 {
     bool errored = false;
-    int set_stall_time = f->atime - f->ctime;
+    int set_stall_time = f->hops * 2; // one clock to go through channel, one clock to process at router, can tune this 
     if (_ecc_strategy == "packet") {
         if (f->flips) {
             cout << "Packet " << f->pid << ": Flit " << f->id << " contains error at time " << _time << endl;
@@ -795,6 +795,9 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
         if (_reinjected_packets.find(f->pid) != _reinjected_packets.end()){
                 cout << "Received reinjected packet " << f-> pid << " at time " << _time << endl;
         }
+    }
+    else if (_ecc_strategy == "link") {
+        _RetireFlit(f, f->dest);
     }
     else if (_ecc_strategy == "none") {
         _RetireFlit(f, f->dest);
@@ -1058,6 +1061,7 @@ void TrafficManager::_Step( )
         flits_in_flight |= !_total_in_flight_flits[c].empty();
     }
     if(flits_in_flight && (_deadlock_timer++ >= _deadlock_warn_timeout)){
+        _DisplayRemaining(cout);
         _deadlock_timer = 0;
         cout << "WARNING: Possible network deadlock.\n";
     }

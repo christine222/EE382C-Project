@@ -46,6 +46,7 @@ void Credit::Reset()
   vc.clear();
   head = false;
   tail = false;
+  ack = -1;
   id   = -1;
 }
 

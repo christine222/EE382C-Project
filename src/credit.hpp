@@ -30,6 +30,8 @@
 
 #include <set>
 #include <stack>
+#include "flit.hpp"
+
 
 class Credit {
 
@@ -39,6 +41,11 @@ public:
 
   // these are only used by the event router
   bool head, tail;
+
+  // FZ for ECC
+  bool ack;
+  Flit * f;
+
   int  id;
 
   void Reset();
