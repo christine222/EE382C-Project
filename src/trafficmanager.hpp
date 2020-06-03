@@ -58,6 +58,12 @@ public:
     int  stall_time;
   };
 
+  struct ackNack {
+    Flit *f;
+    bool ack;
+    int stall_time;
+  };
+
 private:
 
   vector<vector<int> > _packet_size;
@@ -152,6 +158,8 @@ protected:
   string _ecc_strategy;
   set<int> _errored_packets;
   set<int> _reinjected_packets;
+
+  vector<ackNack> _ack_nack;
 
   vector<erroredFlit> _error_reinject;
 
@@ -281,9 +289,11 @@ protected:
 protected:
 
   virtual void _RetireFlit( Flit *f, int dest );
+  virtual void _ReceivedFlit( Flit *f, int dest );
 
   void _Inject();
   void _Reinject();
+  void _AckNackReinject();
   void _Step( );
 
   bool _PacketsOutstanding( ) const;

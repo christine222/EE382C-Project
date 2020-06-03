@@ -650,8 +650,117 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
 {
     _deadlock_timer = 0;
 
+    assert(_total_in_flight_flits[f->cl].count(f->id) > 0);
+    _total_in_flight_flits[f->cl].erase(f->id);
   
+    if(f->record) {
+        assert(_measured_in_flight_flits[f->cl].count(f->id) > 0);
+        _measured_in_flight_flits[f->cl].erase(f->id);
+    }
+
+    if ( f->watch ) { 
+        *gWatchOut << GetSimTime() << " | "
+                   << "node" << dest << " | "
+                   << "Retiring flit " << f->id 
+                   << " (packet " << f->pid
+                   << ", src = " << f->src 
+                   << ", dest = " << f->dest
+                   << ", hops = " << f->hops
+                   << ", flat = " << f->atime - f->itime
+                   << ")." << endl;
+    }
+
+    if ( f->head && ( f->dest != dest ) ) {
+        ostringstream err;
+        err << "Flit " << f->id << " arrived at incorrect output " << dest;
+        Error( err.str( ) );
+    }
+  
+    if((_slowest_flit[f->cl] < 0) ||
+       (_flat_stats[f->cl]->Max() < (f->atime - f->itime)))
+        _slowest_flit[f->cl] = f->id;
+    _flat_stats[f->cl]->AddSample( f->atime - f->itime);
+    if(_pair_stats){
+        _pair_flat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - f->itime );
+    }
+      
+    if ( f->tail ) {
+        Flit * head;
+        if(f->head) {
+            head = f;
+        } else {
+            map<int, Flit *>::iterator iter = _retired_packets[f->cl].find(f->pid);
+            assert(iter != _retired_packets[f->cl].end());
+            head = iter->second;
+            _retired_packets[f->cl].erase(iter);
+            assert(head->head);
+            assert(f->pid == head->pid);
+        }
+        if ( f->watch ) { 
+            *gWatchOut << GetSimTime() << " | "
+                       << "node" << dest << " | "
+                       << "Retiring packet " << f->pid 
+                       << " (plat = " << f->atime - head->ctime
+                       << ", nlat = " << f->atime - head->itime
+                       << ", frag = " << (f->atime - head->atime) - (f->id - head->id) // NB: In the spirit of solving problems using ugly hacks, we compute the packet length by taking advantage of the fact that the IDs of flits within a packet are contiguous.
+                       << ", src = " << head->src 
+                       << ", dest = " << head->dest
+                       << ")." << endl;
+        }
+
+        //code the source of request, look carefully, its tricky ;)
+        if (f->type == Flit::READ_REQUEST || f->type == Flit::WRITE_REQUEST) {
+            PacketReplyInfo* rinfo = PacketReplyInfo::New();
+            rinfo->source = f->src;
+            rinfo->time = f->atime;
+            rinfo->record = f->record;
+            rinfo->type = f->type;
+            _repliesPending[dest].push_back(rinfo);
+        } else {
+            if(f->type == Flit::READ_REPLY || f->type == Flit::WRITE_REPLY  ){
+                _requestsOutstanding[dest]--;
+            } else if(f->type == Flit::ANY_TYPE) {
+                _requestsOutstanding[f->src]--;
+            }
+      
+        }
+
+        // Only record statistics once per packet (at tail)
+        // and based on the simulation state
+        if ( ( _sim_state == warming_up ) || f->record ) {
+      
+            _hop_stats[f->cl]->AddSample( f->hops );
+
+            if((_slowest_packet[f->cl] < 0) ||
+               (_plat_stats[f->cl]->Max() < (f->atime - head->itime)))
+                _slowest_packet[f->cl] = f->pid;
+            _plat_stats[f->cl]->AddSample( f->atime - head->ctime);
+            _nlat_stats[f->cl]->AddSample( f->atime - head->itime);
+            _frag_stats[f->cl]->AddSample( (f->atime - head->atime) - (f->id - head->id) );
+   
+            if(_pair_stats){
+                _pair_plat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - head->ctime );
+                _pair_nlat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - head->itime );
+            }
+        }
+    
+        if(f != head) {
+            head->Free();
+        }
+    
+    }
+  
+    if(f->head && !f->tail) {
+        _retired_packets[f->cl].insert(make_pair(f->pid, f));
+    } else {
+        f->Free();
+    }
+}
+
+void TrafficManager::_ReceivedFlit( Flit *f, int dest )
+{
     bool errored = false;
+    int set_stall_time = f->atime - f->ctime;
     if (_ecc_strategy == "packet") {
         if (f->flips) {
             cout << "Packet " << f->pid << ": Flit " << f->id << " contains error at time " << _time << endl;
@@ -663,133 +772,27 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
 
             // add to _error_reinject vector of errored packets
             // see _plat_stats[f->cl] section below for why I chose atime - ctime (not 100% on this tho)
-            int set_stall_time = f->atime - f->ctime;
 
             cout << "Set signal latency stall time: " << set_stall_time << endl;
 
             // reset number of errors so we don't get the same flit always erroring
             f->flips = 0;
 
-            TrafficManager::erroredFlit new_error = {f, set_stall_time};
-            //cout << "Adding " << f->pid << " to vector _error_reinject" << endl;
-            _error_reinject.push_back(new_error);
-
-            cout << "Length of error vector to reinject " << _error_reinject.size() << endl;
+            // add flit as NACK
+            TrafficManager::ackNack new_nack = {f, false, set_stall_time};
+            _ack_nack.push_back(new_nack);
+            //cout << "Adding flit " << f->id << " as NACK" << " at time " << _time << endl;
 
             errored = true;
-
+        } else {
+            // add flit as ACK
+            TrafficManager::ackNack new_ack = {f, true, set_stall_time};
+            _ack_nack.push_back(new_ack);
+            //cout << "Adding flit " << f->id << " as ACK" << " at time " << _time << " with stall " << set_stall_time << endl;
         }
+
         if (_reinjected_packets.find(f->pid) != _reinjected_packets.end()){
                 cout << "Received reinjected packet " << f-> pid << " at time " << _time << endl;
-        }
-    }
-
-    if (!errored) {
-
-        assert(_total_in_flight_flits[f->cl].count(f->id) > 0);
-        _total_in_flight_flits[f->cl].erase(f->id);
-
-        if(f->record) {
-            assert(_measured_in_flight_flits[f->cl].count(f->id) > 0);
-            _measured_in_flight_flits[f->cl].erase(f->id);
-        }
-
-        if ( f->watch ) { 
-            *gWatchOut << GetSimTime() << " | "
-                       << "node" << dest << " | "
-                       << "Retiring flit " << f->id 
-                       << " (packet " << f->pid
-                       << ", src = " << f->src 
-                       << ", dest = " << f->dest
-                       << ", hops = " << f->hops
-                       << ", flat = " << f->atime - f->itime
-                       << ")." << endl;
-        }
-
-        if ( f->head && ( f->dest != dest ) ) {
-            ostringstream err;
-            err << "Flit " << f->id << " arrived at incorrect output " << dest;
-            Error( err.str( ) );
-        }
-      
-        if((_slowest_flit[f->cl] < 0) ||
-           (_flat_stats[f->cl]->Max() < (f->atime - f->itime)))
-            _slowest_flit[f->cl] = f->id;
-        _flat_stats[f->cl]->AddSample( f->atime - f->itime);
-        if(_pair_stats){
-            _pair_flat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - f->itime );
-        }
-
-        if ( f->tail ) {
-            Flit * head;
-            if(f->head) {
-                head = f;
-            } else {
-                map<int, Flit *>::iterator iter = _retired_packets[f->cl].find(f->pid);
-                assert(iter != _retired_packets[f->cl].end());
-                head = iter->second;
-                _retired_packets[f->cl].erase(iter);
-                assert(head->head);
-                assert(f->pid == head->pid);
-            }
-            if ( f->watch ) { 
-                *gWatchOut << GetSimTime() << " | "
-                           << "node" << dest << " | "
-                           << "Retiring packet " << f->pid 
-                           << " (plat = " << f->atime - head->ctime
-                           << ", nlat = " << f->atime - head->itime
-                           << ", frag = " << (f->atime - head->atime) - (f->id - head->id) // NB: In the spirit of solving problems using ugly hacks, we compute the packet length by taking advantage of the fact that the IDs of flits within a packet are contiguous.
-                           << ", src = " << head->src 
-                           << ", dest = " << head->dest
-                           << ")." << endl;
-            }
-
-            //code the source of request, look carefully, its tricky ;)
-            if (f->type == Flit::READ_REQUEST || f->type == Flit::WRITE_REQUEST) {
-                PacketReplyInfo* rinfo = PacketReplyInfo::New();
-                rinfo->source = f->src;
-                rinfo->time = f->atime;
-                rinfo->record = f->record;
-                rinfo->type = f->type;
-                _repliesPending[dest].push_back(rinfo);
-            } else {
-                if(f->type == Flit::READ_REPLY || f->type == Flit::WRITE_REPLY  ){
-                    _requestsOutstanding[dest]--;
-                } else if(f->type == Flit::ANY_TYPE) {
-                    _requestsOutstanding[f->src]--;
-                }
-          
-            }
-
-            // Only record statistics once per packet (at tail)
-            // and based on the simulation state
-            if ( ( _sim_state == warming_up ) || f->record ) {
-          
-                _hop_stats[f->cl]->AddSample( f->hops );
-
-                if((_slowest_packet[f->cl] < 0) ||
-                   (_plat_stats[f->cl]->Max() < (f->atime - head->itime)))
-                    _slowest_packet[f->cl] = f->pid;
-                _plat_stats[f->cl]->AddSample( f->atime - head->ctime);
-                _nlat_stats[f->cl]->AddSample( f->atime - head->itime);
-                _frag_stats[f->cl]->AddSample( (f->atime - head->atime) - (f->id - head->id) );
-       
-                if(_pair_stats){
-                    _pair_plat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - head->ctime );
-                    _pair_nlat[f->cl][f->src*_nodes+dest]->AddSample( f->atime - head->itime );
-                }
-            }
-        
-            if(f != head) {
-                head->Free();
-            }
-        
-        }
-      
-        if(f->head && !f->tail) {
-            _retired_packets[f->cl].insert(make_pair(f->pid, f));
-        } else {
-            f->Free();
         }
     }
 }
@@ -908,6 +911,7 @@ void TrafficManager::_GeneratePacket( int source, int stype,
         f->cl     = cl;
 
         _total_in_flight_flits[f->cl].insert(make_pair(f->id, f));
+        //cout << "insert _total_in_flight_flits " << _total_in_flight_flits[cl].count(f->id) << "  packet id: " << f->pid << " flit id: " << f->id << " at time " << _time << endl;
         
         if(record) {
             _measured_in_flight_flits[f->cl].insert(make_pair(f->id, f));
@@ -1015,7 +1019,33 @@ void TrafficManager::_Reinject(){
             _error_reinject.erase((iter+1).base());
         }
     }
+}
 
+void TrafficManager::_AckNackReinject(){
+    for (std::vector<TrafficManager::ackNack>::reverse_iterator iter = _ack_nack.rbegin(); iter != _ack_nack.rend(); ++iter)
+    {
+        // take each item with stall count of 0, read its ack/nack
+        // either reinject packet (if nack) or drop from total_flits (if ack)
+        Flit *f = (*iter).f;
+        int input = f->src;
+        int c = f->cl;
+        
+        if ((*iter).stall_time == 0) {
+            if((*iter).ack) {
+                // ack, drop flit
+                _ack_nack.erase((iter+1).base());
+                _RetireFlit(f, f->dest);
+            } else {
+                // nack, reinject
+                if (_partial_packets[input][c].empty()) {
+                    _partial_packets[input][c].push_back( (*iter).f );
+                    cout << "Reenqueueing errored packet " << (*iter).f->pid << " at time " << _time << endl;
+                    _ack_nack.erase((iter+1).base());
+                    _reinjected_packets.insert(f->id);
+                }
+            }
+        }
+    }
 }
 
 void TrafficManager::_Step( )
@@ -1072,17 +1102,16 @@ void TrafficManager::_Step( )
     }
   
     if ( !_empty_network ) {
-        _Reinject(); // FZ
+        _AckNackReinject(); // FZ
         _Inject();
-        
     }
 
-    // FZ decrement stall count in _error_reinject vector
-    vector<TrafficManager::erroredFlit>::iterator iter = _error_reinject.begin();
-    while(iter != _error_reinject.end()) {
+    // decrement stall count in _ack_nack
+    vector<TrafficManager::ackNack>:: iterator it = _ack_nack.begin();
+    while(it != _ack_nack.end()) {
         // decrement stall count
-        iter->stall_time -= 1; 
-        iter++;
+        it->stall_time -= 1;
+        it++;
     }
 
     for(int subnet = 0; subnet < _subnets; ++subnet) {
@@ -1334,8 +1363,7 @@ void TrafficManager::_Step( )
 #ifdef TRACK_FLOWS
                 ++_ejected_flits[f->cl][n];
 #endif
-	
-                _RetireFlit(f, n);
+                _ReceivedFlit(f,n);
             }
         }
         flits[subnet].clear();
