@@ -319,10 +319,13 @@ bool IQRouter::_ReceiveFlits( )
       // FZ
       
       if (_ecc_strategy == "link") {
-        if(f->flips) {
+        if(f->flips && f->hops > 0) { // TODO: this is a hack, if errored on first hop then need to reinject. for now, just pretend the error happened on the next hop
             cout << "Received flipped flit " << f->id << endl;
             _errored_flits.push_back(make_pair(f, input)); 
-            //cout << "Length of _errored_flits: " << _errored_flits.size() << endl;          
+            cout << "Length of _errored_flits: " << _errored_flits.size() << endl;          
+            for (auto &iter : _errored_flits) {
+                cout << iter.first->hops << endl;
+            }
         }
         else {
             _in_queue_flits.insert(make_pair(input, f));
