@@ -788,12 +788,16 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
             // add flit as ACK
             TrafficManager::ackNack new_ack = {f, true, set_stall_time};
             _ack_nack.push_back(new_ack);
+            _RetireFlit(f, f->dest);
             //cout << "Adding flit " << f->id << " as ACK" << " at time " << _time << " with stall " << set_stall_time << endl;
         }
 
         if (_reinjected_packets.find(f->pid) != _reinjected_packets.end()){
                 cout << "Received reinjected packet " << f-> pid << " at time " << _time << endl;
         }
+    }
+    else if (_ecc_strategy == "none") {
+        _RetireFlit(f, f->dest);
     }
 }
 
@@ -1034,7 +1038,6 @@ void TrafficManager::_AckNackReinject(){
             if((*iter).ack) {
                 // ack, drop flit
                 _ack_nack.erase((iter+1).base());
-                _RetireFlit(f, f->dest);
             } else {
                 // nack, reinject
                 if (_partial_packets[input][c].empty()) {
