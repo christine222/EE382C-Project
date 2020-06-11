@@ -1,0 +1,202 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_1.000_link_5
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 1.0;
+packet_size = 1;
+injection_rate_uses_flits = 1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 5;
+ecc = link;
+
+watch_out=-;
+//watch_file = watch.txt;
+
+ecc = link;
+
+stats_out = examples/ecc_mesh88_config_1_1.000_link_5.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_1.000_link_5
+2
+Received nack credit for flit 5377
+Requeued flit 5377
+7
+Received nack credit for flit 6439
+Requeued flit 6439
+1
+Received nack credit for flit 52928
+Requeued flit 52928
+1
+Received nack credit for flit 53914
+Requeued flit 53914
+3
+Received nack credit for flit 29342
+Requeued flit 29342
+2
+Received nack credit for flit 58301
+Requeued flit 58301
+2
+Received nack credit for flit 118287
+Requeued flit 118287
+5
+Received nack credit for flit 89501
+Requeued flit 89501
+2
+Received nack credit for flit 146671
+Requeued flit 146671
+1
+Received nack credit for flit 164025
+Requeued flit 164025
+6
+Received nack credit for flit 169009
+Requeued flit 169009
+5
+Received nack credit for flit 170894
+Requeued flit 170894
+5
+3
+Received nack credit for flit 176150
+Requeued flit 176150
+Received nack credit for flit 209667
+Requeued flit 209667
+8
+Received nack credit for flit 83760
+Requeued flit 83760
+11
+Received nack credit for flit 79489
+Requeued flit 79489
+2
+Received nack credit for flit 227424
+Requeued flit 227424
+1
+Received nack credit for flit 196999
+Requeued flit 196999
+5
+Received nack credit for flit 109750
+Requeued flit 109750
+1
+Received nack credit for flit 256265
+Requeued flit 256265
+5
+Received nack credit for flit 127855
+Requeued flit 127855
+5
+Received nack credit for flit 154873
+Requeued flit 154873
+1
+Received nack credit for flit 318165
+Requeued flit 318165
+3
+Received nack credit for flit 255068
+Requeued flit 255068
+1
+Received nack credit for flit 358178
+Requeued flit 358178
+9
+Received nack credit for flit 241164
+Requeued flit 241164
+Class 0:
+Packet latency average = 2019.21
+	minimum = 5
+	maximum = 7375
+Network latency average = 1618.42
+	minimum = 5
+	maximum = 7375
+Slowest packet = 158408
+Flit latency average = 1618.42
+	minimum = 5
+	maximum = 7375
+Slowest flit = 158408
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.61902
+	minimum = 0.4145 (at node 46)
+	maximum = 0.9051 (at node 43)
+Accepted packet rate average = 0.500864
+	minimum = 0.4778 (at node 21)
+	maximum = 0.5147 (at node 39)
+Injected flit rate average = 0.61902
+	minimum = 0.4145 (at node 46)
+	maximum = 0.9051 (at node 43)
+Accepted flit rate average= 0.500864
+	minimum = 0.4778 (at node 21)
+	maximum = 0.5147 (at node 39)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 75654 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 54.9069

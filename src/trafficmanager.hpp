@@ -58,6 +58,8 @@ public:
     int  stall_time;
   };
 
+  int additionalHops;
+
   struct ackNack {
     Flit *f;
     bool ack;

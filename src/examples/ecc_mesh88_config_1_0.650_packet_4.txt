@@ -1,0 +1,811 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.650_packet_4
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.65;
+packet_size = 1;
+injection_rate_uses_flits = 1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 4;
+ecc = link;
+
+watch_out=-;
+//watch_file = watch.txt;
+
+ecc = packet;
+
+stats_out = examples/ecc_mesh88_config_1_0.650_packet_4.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.650_packet_4
+Additional hops: 8
+Set signal latency stall time: 16
+Additional hops: 13
+Set signal latency stall time: 10
+Reenqueueing errored packet 1319 at time 73
+Reenqueueing errored packet 941 at time 73
+Additional hops: 23
+Set signal latency stall time: 20
+Additional hops: 31
+Set signal latency stall time: 16
+Reenqueueing errored packet 1808 at time 117
+Reenqueueing errored packet 1942 at time 126
+Additional hops: 35
+Set signal latency stall time: 8
+Reenqueueing errored packet 4493 at time 161
+Additional hops: 44
+Set signal latency stall time: 18
+Reenqueueing errored packet 4138 at time 200
+Additional hops: 47
+Set signal latency stall time: 6
+Reenqueueing errored packet 8249 at time 217
+Additional hops: 50
+Set signal latency stall time: 6
+Reenqueueing errored packet 10597 at time 273
+Additional hops: 59
+Set signal latency stall time: 18
+Reenqueueing errored packet 7796 at time 336
+Additional hops: 68
+Set signal latency stall time: 18
+Reenqueueing errored packet 11039 at time 373
+Additional hops: 74
+Set signal latency stall time: 12
+Reenqueueing errored packet 12093 at time 393
+Additional hops: 76
+Set signal latency stall time: 4
+Reenqueueing errored packet 18683 at time 463
+Additional hops: 83
+Set signal latency stall time: 14
+Additional hops: 96
+Set signal latency stall time: 26
+Reenqueueing errored packet 12753 at time 511
+Reenqueueing errored packet 9621 at time 527
+Additional hops: 99
+Set signal latency stall time: 6
+Reenqueueing errored packet 22493 at time 556
+Additional hops: 109
+Set signal latency stall time: 20
+Reenqueueing errored packet 14156 at time 617
+Additional hops: 114
+Set signal latency stall time: 10
+Reenqueueing errored packet 30856 at time 900
+Additional hops: 119
+Set signal latency stall time: 10
+Additional hops: 125
+Set signal latency stall time: 12
+Reenqueueing errored packet 33238 at time 947
+Reenqueueing errored packet 38333 at time 958
+Additional hops: 131
+Set signal latency stall time: 12
+Reenqueueing errored packet 34985 at time 973
+Additional hops: 140
+Set signal latency stall time: 18
+Reenqueueing errored packet 28892 at time 1022
+Additional hops: 145
+Set signal latency stall time: 10
+Reenqueueing errored packet 35055 at time 1099
+Additional hops: 153
+Set signal latency stall time: 16
+Additional hops: 157
+Set signal latency stall time: 8
+Reenqueueing errored packet 46693 at time 1151
+Reenqueueing errored packet 33090 at time 1151
+Additional hops: 167
+Set signal latency stall time: 20
+Additional hops: 172
+Set signal latency stall time: 10
+Reenqueueing errored packet 41602 at time 1215
+Reenqueueing errored packet 29278 at time 1221
+Additional hops: 180
+Set signal latency stall time: 16
+Reenqueueing errored packet 38271 at time 1331
+Additional hops: 186
+Set signal latency stall time: 12
+Reenqueueing errored packet 45369 at time 1423
+Additional hops: 194
+Set signal latency stall time: 16
+Reenqueueing errored packet 50500 at time 1472
+Additional hops: 201
+Set signal latency stall time: 14
+Reenqueueing errored packet 49864 at time 1586
+Additional hops: 208
+Set signal latency stall time: 14
+Reenqueueing errored packet 44653 at time 1737
+Additional hops: 215
+Set signal latency stall time: 14
+Additional hops: 218
+Set signal latency stall time: 6
+Reenqueueing errored packet 64313 at time 1773
+Reenqueueing errored packet 46207 at time 1776
+Additional hops: 229
+Set signal latency stall time: 22
+Additional hops: 234
+Set signal latency stall time: 10
+Reenqueueing errored packet 63846 at time 1798
+Reenqueueing errored packet 44670 at time 1807
+Additional hops: 245
+Set signal latency stall time: 22
+Reenqueueing errored packet 50807 at time 1835
+Additional hops: 255
+Set signal latency stall time: 20
+Additional hops: 268
+Set signal latency stall time: 26
+Reenqueueing errored packet 47908 at time 1944
+Reenqueueing errored packet 47516 at time 1960
+Additional hops: 276
+Set signal latency stall time: 16
+Reenqueueing errored packet 57521 at time 1997
+Additional hops: 285
+Set signal latency stall time: 18
+Reenqueueing errored packet 54087 at time 2034
+Additional hops: 288
+Set signal latency stall time: 6
+Reenqueueing errored packet 85003 at time 2066
+Additional hops: 292
+Set signal latency stall time: 8
+Reenqueueing errored packet 83579 at time 2150
+Additional hops: 295
+Set signal latency stall time: 6
+Reenqueueing errored packet 78079 at time 2174
+Additional hops: 300
+Set signal latency stall time: 10
+Reenqueueing errored packet 87336 at time 2264
+Additional hops: 309
+Set signal latency stall time: 18
+Additional hops: 313
+Set signal latency stall time: 8
+Reenqueueing errored packet 57307 at time 2290
+Reenqueueing errored packet 93349 at time 2293
+Additional hops: 320
+Set signal latency stall time: 14
+Additional hops: 327
+Set signal latency stall time: 14
+Reenqueueing errored packet 67772 at time 2363
+Reenqueueing errored packet 69007 at time 2364
+Additional hops: 337
+Set signal latency stall time: 20
+Reenqueueing errored packet 66829 at time 2397
+Additional hops: 342
+Set signal latency stall time: 10
+Reenqueueing errored packet 90493 at time 2438
+Additional hops: 354
+Set signal latency stall time: 24
+Additional hops: 361
+Set signal latency stall time: 14
+Additional hops: 371
+Set signal latency stall time: 20
+Reenqueueing errored packet 67579 at time 2498
+Reenqueueing errored packet 81521 at time 2509
+Reenqueueing errored packet 59233 at time 2516
+Additional hops: 379
+Set signal latency stall time: 16
+Reenqueueing errored packet 64034 at time 2605
+Additional hops: 387
+Set signal latency stall time: 16
+Additional hops: 399
+Set signal latency stall time: 24
+Reenqueueing errored packet 64019 at time 2631
+Additional hops: 408
+Set signal latency stall time: 18
+Additional hops: 416
+Set signal latency stall time: 16
+Additional hops: 429
+Set signal latency stall time: 26
+Reenqueueing errored packet 70854 at time 2652
+Reenqueueing errored packet 73255 at time 2657
+Reenqueueing errored packet 94841 at time 2662
+Additional hops: 434
+Set signal latency stall time: 10
+Additional hops: 443
+Set signal latency stall time: 18
+Reenqueueing errored packet 70759 at time 2676
+Additional hops: 450
+Set signal latency stall time: 14
+Reenqueueing errored packet 110306 at time 2681
+Reenqueueing errored packet 91391 at time 2690
+Reenqueueing errored packet 101273 at time 2693
+Additional hops: 458
+Set signal latency stall time: 16
+Reenqueueing errored packet 72247 at time 2800
+Additional hops: 466
+Set signal latency stall time: 16
+Reenqueueing errored packet 89152 at time 2918
+Additional hops: 472
+Set signal latency stall time: 12
+Reenqueueing errored packet 106797 at time 3173
+Additional hops: 476
+Set signal latency stall time: 8
+Reenqueueing errored packet 131404 at time 3187
+Additional hops: 484
+Set signal latency stall time: 16
+Reenqueueing errored packet 101442 at time 3222
+Additional hops: 494
+Set signal latency stall time: 20
+Additional hops: 499
+Set signal latency stall time: 10
+Reenqueueing errored packet 138024 at time 3346
+Reenqueueing errored packet 89659 at time 3351
+Additional hops: 507
+Set signal latency stall time: 16
+Reenqueueing errored packet 103882 at time 3371
+Additional hops: 512
+Set signal latency stall time: 10
+Additional hops: 527
+Set signal latency stall time: 30
+Reenqueueing errored packet 123044 at time 3391
+Reenqueueing errored packet 85464 at time 3412
+Additional hops: 534
+Set signal latency stall time: 14
+Additional hops: 541
+Set signal latency stall time: 14
+Reenqueueing errored packet 102452 at time 3430
+Reenqueueing errored packet 95575 at time 3434
+Additional hops: 547
+Set signal latency stall time: 12
+Reenqueueing errored packet 113776 at time 3464
+Additional hops: 551
+Set signal latency stall time: 8
+Reenqueueing errored packet 110090 at time 3557
+Additional hops: 554
+Set signal latency stall time: 6
+Reenqueueing errored packet 139335 at time 3789
+Additional hops: 559
+Set signal latency stall time: 10
+Additional hops: 563
+Set signal latency stall time: 8
+Reenqueueing errored packet 135870 at time 3815
+Reenqueueing errored packet 147925 at time 3822
+Additional hops: 569
+Set signal latency stall time: 12
+Reenqueueing errored packet 141605 at time 3872
+Additional hops: 578
+Set signal latency stall time: 18
+Additional hops: 590
+Set signal latency stall time: 24
+Reenqueueing errored packet 112994 at time 3910
+Reenqueueing errored packet 102492 at time 3933
+Additional hops: 595
+Set signal latency stall time: 10
+Reenqueueing errored packet 115080 at time 3965
+Additional hops: 604
+Set signal latency stall time: 18
+Additional hops: 610
+Set signal latency stall time: 12
+Reenqueueing errored packet 103311 at time 4025
+Reenqueueing errored packet 115776 at time 4026
+Additional hops: 615
+Set signal latency stall time: 10
+Reenqueueing errored packet 122217 at time 4078
+Additional hops: 619
+Set signal latency stall time: 8
+Reenqueueing errored packet 168737 at time 4095
+Additional hops: 627
+Set signal latency stall time: 16
+Reenqueueing errored packet 115785 at time 4138
+Additional hops: 636
+Set signal latency stall time: 18
+Reenqueueing errored packet 126490 at time 4162
+Additional hops: 644
+Set signal latency stall time: 16
+Additional hops: 650
+Set signal latency stall time: 12
+Reenqueueing errored packet 152291 at time 4226
+Reenqueueing errored packet 173720 at time 4238
+Additional hops: 658
+Set signal latency stall time: 16
+Reenqueueing errored packet 147837 at time 4316
+Additional hops: 663
+Set signal latency stall time: 10
+Reenqueueing errored packet 124421 at time 4342
+Additional hops: 670
+Set signal latency stall time: 14
+Reenqueueing errored packet 153087 at time 4362
+Additional hops: 673
+Set signal latency stall time: 6
+Reenqueueing errored packet 159978 at time 4372
+Additional hops: 679
+Set signal latency stall time: 12
+Additional hops: 681
+Set signal latency stall time: 4
+Reenqueueing errored packet 162989 at time 4439
+Reenqueueing errored packet 161978 at time 4444
+Additional hops: 687
+Set signal latency stall time: 12
+Additional hops: 696
+Set signal latency stall time: 18
+Reenqueueing errored packet 127370 at time 4478
+Additional hops: 701
+Set signal latency stall time: 10
+Reenqueueing errored packet 136046 at time 4496
+Reenqueueing errored packet 135484 at time 4499
+Additional hops: 707
+Set signal latency stall time: 12
+Reenqueueing errored packet 161980 at time 4518
+Additional hops: 717
+Set signal latency stall time: 20
+Reenqueueing errored packet 128704 at time 4556
+Additional hops: 723
+Set signal latency stall time: 12
+Additional hops: 732
+Set signal latency stall time: 18
+Reenqueueing errored packet 137034 at time 4613
+Reenqueueing errored packet 169785 at time 4631
+Additional hops: 740
+Set signal latency stall time: 16
+Reenqueueing errored packet 164699 at time 4695
+Additional hops: 745
+Set signal latency stall time: 10
+Additional hops: 758
+Set signal latency stall time: 26
+Reenqueueing errored packet 176439 at time 4732
+Reenqueueing errored packet 118418 at time 4755
+Additional hops: 763
+Set signal latency stall time: 10
+Additional hops: 772
+Set signal latency stall time: 18
+Reenqueueing errored packet 158544 at time 4990
+Additional hops: 776
+Set signal latency stall time: 8
+Additional hops: 785
+Set signal latency stall time: 18
+Reenqueueing errored packet 172208 at time 5005
+Reenqueueing errored packet 197273 at time 5006
+Reenqueueing errored packet 145810 at time 5022
+Additional hops: 790
+Set signal latency stall time: 10
+Reenqueueing errored packet 186825 at time 5120
+Additional hops: 800
+Set signal latency stall time: 20
+Reenqueueing errored packet 183965 at time 5148
+Additional hops: 804
+Set signal latency stall time: 8
+Additional hops: 815
+Set signal latency stall time: 22
+Additional hops: 821
+Set signal latency stall time: 12
+Reenqueueing errored packet 180036 at time 5184
+Reenqueueing errored packet 176114 at time 5195
+Reenqueueing errored packet 138670 at time 5201
+Additional hops: 826
+Set signal latency stall time: 10
+Reenqueueing errored packet 213847 at time 5218
+Additional hops: 828
+Set signal latency stall time: 4
+Additional hops: 836
+Set signal latency stall time: 16
+Reenqueueing errored packet 218560 at time 5279
+Additional hops: 840
+Set signal latency stall time: 8
+Reenqueueing errored packet 158557 at time 5295
+Additional hops: 855
+Set signal latency stall time: 30
+Reenqueueing errored packet 211290 at time 5302
+Additional hops: 862
+Set signal latency stall time: 14
+Reenqueueing errored packet 130843 at time 5330
+Reenqueueing errored packet 153872 at time 5331
+Additional hops: 874
+Set signal latency stall time: 24
+Additional hops: 884
+Set signal latency stall time: 20
+Additional hops: 891
+Set signal latency stall time: 14
+Reenqueueing errored packet 207943 at time 5481
+Reenqueueing errored packet 161924 at time 5485
+Reenqueueing errored packet 134371 at time 5486
+Additional hops: 902
+Set signal latency stall time: 22
+Additional hops: 913
+Set signal latency stall time: 22
+Reenqueueing errored packet 149670 at time 5559
+Reenqueueing errored packet 144873 at time 5568
+Additional hops: 919
+Set signal latency stall time: 12
+Reenqueueing errored packet 208837 at time 5588
+Additional hops: 930
+Set signal latency stall time: 22
+Additional hops: 938
+Set signal latency stall time: 16
+Reenqueueing errored packet 148409 at time 5669
+Additional hops: 943
+Set signal latency stall time: 10
+Reenqueueing errored packet 218742 at time 5679
+Reenqueueing errored packet 163957 at time 5683
+Additional hops: 950
+Set signal latency stall time: 14
+Reenqueueing errored packet 221122 at time 5822
+Additional hops: 961
+Set signal latency stall time: 22
+Additional hops: 963
+Set signal latency stall time: 4
+Reenqueueing errored packet 223615 at time 5844
+Reenqueueing errored packet 151676 at time 5846
+Additional hops: 971
+Set signal latency stall time: 16
+Additional hops: 979
+Set signal latency stall time: 16
+Reenqueueing errored packet 213266 at time 5919
+Reenqueueing errored packet 207379 at time 5932
+Additional hops: 984
+Set signal latency stall time: 10
+Reenqueueing errored packet 218204 at time 5950
+Additional hops: 987
+Set signal latency stall time: 6
+Reenqueueing errored packet 188541 at time 5960
+Additional hops: 994
+Set signal latency stall time: 14
+Reenqueueing errored packet 174640 at time 6017
+Additional hops: 998
+Set signal latency stall time: 8
+Additional hops: 1008
+Set signal latency stall time: 20
+Additional hops: 1014
+Set signal latency stall time: 12
+Reenqueueing errored packet 235128 at time 6093
+Reenqueueing errored packet 204697 at time 6103
+Additional hops: 1019
+Set signal latency stall time: 10
+Reenqueueing errored packet 202472 at time 6110
+Reenqueueing errored packet 231728 at time 6117
+Additional hops: 1022
+Set signal latency stall time: 6
+Additional hops: 1027
+Set signal latency stall time: 10
+Reenqueueing errored packet 233501 at time 6182
+Additional hops: 1029
+Set signal latency stall time: 4
+Reenqueueing errored packet 252704 at time 6220
+Additional hops: 1033
+Set signal latency stall time: 8
+Additional hops: 1046
+Set signal latency stall time: 26
+Additional hops: 1055
+Set signal latency stall time: 18
+Reenqueueing errored packet 212024 at time 6283
+Reenqueueing errored packet 154540 at time 6287
+Additional hops: 1065
+Set signal latency stall time: 20
+Reenqueueing errored packet 164812 at time 6343
+Additional hops: 1075
+Set signal latency stall time: 20
+Reenqueueing errored packet 155660 at time 6372
+Additional hops: 1080
+Set signal latency stall time: 10
+Reenqueueing errored packet 243608 at time 6407
+Additional hops: 1089
+Set signal latency stall time: 18
+Reenqueueing errored packet 185796 at time 6442
+Additional hops: 1094
+Set signal latency stall time: 10
+Reenqueueing errored packet 263821 at time 6454
+Additional hops: 1101
+Set signal latency stall time: 14
+Reenqueueing errored packet 247478 at time 6472
+Additional hops: 1112
+Set signal latency stall time: 22
+Reenqueueing errored packet 218822 at time 6519
+Additional hops: 1126
+Set signal latency stall time: 28
+Additional hops: 1137
+Set signal latency stall time: 22
+Additional hops: 1142
+Set signal latency stall time: 10
+Reenqueueing errored packet 166074 at time 6612
+Reenqueueing errored packet 168396 at time 6613
+Reenqueueing errored packet 225278 at time 6617
+Additional hops: 1148
+Set signal latency stall time: 12
+Additional hops: 1154
+Set signal latency stall time: 12
+Reenqueueing errored packet 251427 at time 6649
+Reenqueueing errored packet 251034 at time 6658
+Additional hops: 1163
+Set signal latency stall time: 18
+Reenqueueing errored packet 209376 at time 6710
+Additional hops: 1171
+Set signal latency stall time: 16
+Additional hops: 1176
+Set signal latency stall time: 10
+Reenqueueing errored packet 275953 at time 6944
+Additional hops: 1180
+Set signal latency stall time: 8
+Additional hops: 1188
+Set signal latency stall time: 16
+Reenqueueing errored packet 251646 at time 7052
+Reenqueueing errored packet 187674 at time 7067
+Additional hops: 1191
+Set signal latency stall time: 6
+Reenqueueing errored packet 280140 at time 7084
+Additional hops: 1197
+Set signal latency stall time: 12
+Reenqueueing errored packet 276012 at time 7131
+Additional hops: 1205
+Set signal latency stall time: 16
+Additional hops: 1215
+Set signal latency stall time: 20
+Reenqueueing errored packet 258219 at time 7183
+Reenqueueing errored packet 189409 at time 7189
+Additional hops: 1219
+Set signal latency stall time: 8
+Reenqueueing errored packet 208170 at time 7236
+Additional hops: 1225
+Set signal latency stall time: 12
+Additional hops: 1228
+Set signal latency stall time: 6
+Reenqueueing errored packet 267512 at time 7324
+Additional hops: 1230
+Set signal latency stall time: 4
+Reenqueueing errored packet 254688 at time 7328
+Reenqueueing errored packet 264737 at time 7329
+Additional hops: 1240
+Set signal latency stall time: 20
+Additional hops: 1245
+Set signal latency stall time: 10
+Reenqueueing errored packet 218351 at time 7364
+Reenqueueing errored packet 280340 at time 7370
+Additional hops: 1254
+Set signal latency stall time: 18
+Reenqueueing errored packet 265612 at time 7397
+Additional hops: 1261
+Set signal latency stall time: 14
+Reenqueueing errored packet 264638 at time 7431
+Additional hops: 1268
+Set signal latency stall time: 14
+Reenqueueing errored packet 282517 at time 7458
+Additional hops: 1270
+Set signal latency stall time: 4
+Reenqueueing errored packet 302405 at time 7463
+Additional hops: 1278
+Set signal latency stall time: 16
+Additional hops: 1286
+Set signal latency stall time: 16
+Reenqueueing errored packet 271862 at time 7631
+Additional hops: 1294
+Set signal latency stall time: 16
+Reenqueueing errored packet 239782 at time 7717
+Additional hops: 1302
+Set signal latency stall time: 16
+Additional hops: 1308
+Set signal latency stall time: 12
+Reenqueueing errored packet 294639 at time 7879
+Additional hops: 1313
+Set signal latency stall time: 10
+Reenqueueing errored packet 282975 at time 7902
+Additional hops: 1317
+Set signal latency stall time: 8
+Additional hops: 1319
+Set signal latency stall time: 4
+Reenqueueing errored packet 301374 at time 7939
+Reenqueueing errored packet 314025 at time 7939
+Additional hops: 1323
+Set signal latency stall time: 8
+Additional hops: 1325
+Set signal latency stall time: 4
+Reenqueueing errored packet 320333 at time 7974
+Reenqueueing errored packet 315282 at time 7974
+Additional hops: 1332
+Set signal latency stall time: 14
+Reenqueueing errored packet 260505 at time 7998
+Additional hops: 1340
+Set signal latency stall time: 16
+Additional hops: 1347
+Set signal latency stall time: 14
+Reenqueueing errored packet 284929 at time 8037
+Additional hops: 1356
+Set signal latency stall time: 18
+Reenqueueing errored packet 293306 at time 8125
+Additional hops: 1365
+Set signal latency stall time: 18
+Additional hops: 1375
+Set signal latency stall time: 20
+Additional hops: 1379
+Set signal latency stall time: 8
+Reenqueueing errored packet 328484 at time 8223
+Reenqueueing errored packet 267690 at time 8231
+Additional hops: 1382
+Set signal latency stall time: 6
+Reenqueueing errored packet 312725 at time 8261
+Additional hops: 1386
+Set signal latency stall time: 8
+Reenqueueing errored packet 303658 at time 8272
+Additional hops: 1392
+Set signal latency stall time: 12
+Reenqueueing errored packet 289334 at time 8303
+Additional hops: 1399
+Set signal latency stall time: 14
+Reenqueueing errored packet 300691 at time 8441
+Additional hops: 1404
+Set signal latency stall time: 10
+Additional hops: 1410
+Set signal latency stall time: 12
+Reenqueueing errored packet 297356 at time 8468
+Reenqueueing errored packet 228750 at time 8475
+Additional hops: 1421
+Set signal latency stall time: 22
+Reenqueueing errored packet 212989 at time 8539
+Additional hops: 1431
+Set signal latency stall time: 20
+Reenqueueing errored packet 287461 at time 8660
+Additional hops: 1440
+Set signal latency stall time: 18
+Additional hops: 1447
+Set signal latency stall time: 14
+Reenqueueing errored packet 287329 at time 8717
+Additional hops: 1459
+Set signal latency stall time: 24
+Reenqueueing errored packet 306832 at time 8723
+Additional hops: 1467
+Set signal latency stall time: 16
+Additional hops: 1474
+Set signal latency stall time: 14
+Reenqueueing errored packet 279894 at time 8743
+Reenqueueing errored packet 225296 at time 8746
+Reenqueueing errored packet 316668 at time 8750
+Additional hops: 1480
+Set signal latency stall time: 12
+Reenqueueing errored packet 329419 at time 8822
+Additional hops: 1483
+Set signal latency stall time: 6
+Reenqueueing errored packet 348055 at time 8830
+Additional hops: 1489
+Set signal latency stall time: 12
+Reenqueueing errored packet 331526 at time 8859
+Additional hops: 1503
+Set signal latency stall time: 28
+Additional hops: 1508
+Set signal latency stall time: 10
+Reenqueueing errored packet 312720 at time 8953
+Additional hops: 1515
+Set signal latency stall time: 14
+Reenqueueing errored packet 325148 at time 9006
+Additional hops: 1526
+Set signal latency stall time: 22
+Additional hops: 1532
+Set signal latency stall time: 12
+Reenqueueing errored packet 340002 at time 9098
+Reenqueueing errored packet 249673 at time 9102
+Additional hops: 1537
+Set signal latency stall time: 10
+Additional hops: 1542
+Set signal latency stall time: 10
+Reenqueueing errored packet 336400 at time 9149
+Additional hops: 1553
+Set signal latency stall time: 22
+Reenqueueing errored packet 328386 at time 9279
+Additional hops: 1559
+Set signal latency stall time: 12
+Reenqueueing errored packet 348227 at time 9360
+Additional hops: 1565
+Set signal latency stall time: 12
+Reenqueueing errored packet 359754 at time 9394
+Additional hops: 1570
+Set signal latency stall time: 10
+Reenqueueing errored packet 281390 at time 9442
+Additional hops: 1578
+Set signal latency stall time: 16
+Additional hops: 1584
+Set signal latency stall time: 12
+Reenqueueing errored packet 339702 at time 9617
+Reenqueueing errored packet 245849 at time 9628
+Additional hops: 1590
+Set signal latency stall time: 12
+Additional hops: 1602
+Set signal latency stall time: 24
+Reenqueueing errored packet 339242 at time 9670
+Additional hops: 1609
+Set signal latency stall time: 14
+Reenqueueing errored packet 345215 at time 9756
+Additional hops: 1616
+Set signal latency stall time: 14
+Reenqueueing errored packet 330558 at time 9786
+Additional hops: 1626
+Set signal latency stall time: 20
+Additional hops: 1631
+Set signal latency stall time: 10
+Reenqueueing errored packet 362132 at time 9934
+Additional hops: 1638
+Set signal latency stall time: 14
+Class 0:
+Packet latency average = 870.58
+	minimum = 5
+	maximum = 6550
+Network latency average = 862.885
+	minimum = 5
+	maximum = 4514
+Slowest packet = 10788
+Flit latency average = 862.885
+	minimum = 5
+	maximum = 4514
+Slowest flit = 226434
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.605023
+	minimum = 0.5175 (at node 46)
+	maximum = 0.6656 (at node 60)
+Accepted packet rate average = 0.512327
+	minimum = 0.4944 (at node 31)
+	maximum = 0.5289 (at node 9)
+Injected flit rate average = 0.605023
+	minimum = 0.5175 (at node 46)
+	maximum = 0.6656 (at node 60)
+Accepted flit rate average= 0.512327
+	minimum = 0.4944 (at node 31)
+	maximum = 0.5289 (at node 9)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 59360 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 55.208

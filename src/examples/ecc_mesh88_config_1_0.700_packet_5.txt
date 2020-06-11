@@ -1,0 +1,192 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.700_packet_5
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.7;
+packet_size = 1;
+injection_rate_uses_flits = 1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 5;
+ecc = link;
+
+watch_out=-;
+//watch_file = watch.txt;
+
+ecc = packet;
+
+stats_out = examples/ecc_mesh88_config_1_0.700_packet_5.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.700_packet_5
+Additional hops: 8
+Set signal latency stall time: 16
+Additional hops: 12
+Set signal latency stall time: 8
+Reenqueueing errored packet 3928 at time 194
+Reenqueueing errored packet 6024 at time 197
+Additional hops: 16
+Set signal latency stall time: 8
+Reenqueueing errored packet 18727 at time 462
+Additional hops: 19
+Set signal latency stall time: 6
+Reenqueueing errored packet 50361 at time 1431
+Additional hops: 30
+Set signal latency stall time: 22
+Reenqueueing errored packet 38159 at time 1810
+Additional hops: 34
+Set signal latency stall time: 8
+Reenqueueing errored packet 59294 at time 1933
+Additional hops: 40
+Set signal latency stall time: 12
+Reenqueueing errored packet 131359 at time 3983
+Additional hops: 43
+Set signal latency stall time: 6
+Reenqueueing errored packet 156470 at time 3997
+Additional hops: 49
+Set signal latency stall time: 12
+Reenqueueing errored packet 157408 at time 4050
+Additional hops: 56
+Set signal latency stall time: 14
+Reenqueueing errored packet 146090 at time 4186
+Additional hops: 67
+Set signal latency stall time: 22
+Reenqueueing errored packet 147884 at time 5184
+Additional hops: 76
+Set signal latency stall time: 18
+Reenqueueing errored packet 174629 at time 5528
+Additional hops: 80
+Set signal latency stall time: 8
+Reenqueueing errored packet 186198 at time 5609
+Additional hops: 85
+Set signal latency stall time: 10
+Reenqueueing errored packet 218547 at time 5790
+Additional hops: 90
+Set signal latency stall time: 10
+Reenqueueing errored packet 233023 at time 5974
+Additional hops: 99
+Set signal latency stall time: 18
+Additional hops: 108
+Set signal latency stall time: 18
+Reenqueueing errored packet 191596 at time 7752
+Additional hops: 116
+Set signal latency stall time: 16
+Reenqueueing errored packet 266989 at time 8705
+Additional hops: 124
+Set signal latency stall time: 16
+Reenqueueing errored packet 318831 at time 8818
+Additional hops: 132
+Set signal latency stall time: 16
+Reenqueueing errored packet 322536 at time 9024
+Additional hops: 136
+Set signal latency stall time: 8
+Reenqueueing errored packet 305273 at time 9111
+Additional hops: 143
+Set signal latency stall time: 14
+Reenqueueing errored packet 320805 at time 9343
+Additional hops: 148
+Set signal latency stall time: 10
+Reenqueueing errored packet 333995 at time 9540
+Class 0:
+Packet latency average = 1087.34
+	minimum = 5
+	maximum = 5262
+Network latency average = 1060.16
+	minimum = 5
+	maximum = 5243
+Slowest packet = 209746
+Flit latency average = 1060.16
+	minimum = 5
+	maximum = 5243
+Slowest flit = 210934
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.613344
+	minimum = 0.4844 (at node 22)
+	maximum = 0.7079 (at node 45)
+Accepted packet rate average = 0.509394
+	minimum = 0.4939 (at node 21)
+	maximum = 0.5272 (at node 56)
+Injected flit rate average = 0.613344
+	minimum = 0.4844 (at node 22)
+	maximum = 0.7079 (at node 45)
+Accepted flit rate average= 0.509394
+	minimum = 0.4939 (at node 21)
+	maximum = 0.5272 (at node 56)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 66557 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 55.6342

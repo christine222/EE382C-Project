@@ -1,0 +1,701 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.050_packet_4
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.05;
+packet_size = 1;
+injection_rate_uses_flits = 1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 4;
+ecc = link;
+
+watch_out=-;
+//watch_file = watch.txt;
+
+ecc = packet;
+
+stats_out = examples/ecc_mesh88_config_1_0.050_packet_4.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.050_packet_4
+Additional hops: 3
+Set signal latency stall time: 6
+Reenqueueing errored packet 576 at time 196
+Additional hops: 10
+Set signal latency stall time: 14
+Reenqueueing errored packet 1462 at time 493
+Additional hops: 13
+Set signal latency stall time: 6
+Reenqueueing errored packet 2780 at time 902
+Additional hops: 21
+Set signal latency stall time: 16
+Reenqueueing errored packet 3667 at time 1205
+Additional hops: 29
+Set signal latency stall time: 16
+Reenqueueing errored packet 8046 at time 2565
+Additional hops: 40
+Set signal latency stall time: 22
+Reenqueueing errored packet 10809 at time 3456
+Additional hops: 46
+Set signal latency stall time: 12
+Reenqueueing errored packet 12564 at time 3972
+Additional hops: 51
+Set signal latency stall time: 10
+Reenqueueing errored packet 13937 at time 4401
+Additional hops: 58
+Set signal latency stall time: 14
+Reenqueueing errored packet 15508 at time 4910
+Additional hops: 66
+Set signal latency stall time: 16
+Reenqueueing errored packet 16555 at time 5242
+Additional hops: 68
+Set signal latency stall time: 4
+Reenqueueing errored packet 17952 at time 5657
+Additional hops: 72
+Set signal latency stall time: 8
+Reenqueueing errored packet 19121 at time 6023
+Additional hops: 79
+Set signal latency stall time: 14
+Reenqueueing errored packet 20406 at time 6444
+Additional hops: 84
+Set signal latency stall time: 10
+Reenqueueing errored packet 21784 at time 6857
+Additional hops: 89
+Set signal latency stall time: 10
+Reenqueueing errored packet 23923 at time 7529
+Additional hops: 101
+Set signal latency stall time: 24
+Reenqueueing errored packet 26236 at time 8291
+Additional hops: 110
+Set signal latency stall time: 18
+Reenqueueing errored packet 26388 at time 8331
+Additional hops: 113
+Set signal latency stall time: 6
+Reenqueueing errored packet 27546 at time 8654
+Additional hops: 123
+Set signal latency stall time: 20
+Reenqueueing errored packet 27763 at time 8762
+Additional hops: 129
+Set signal latency stall time: 12
+Reenqueueing errored packet 29016 at time 9140
+Additional hops: 139
+Set signal latency stall time: 20
+Reenqueueing errored packet 30838 at time 9714
+Additional hops: 147
+Set signal latency stall time: 16
+Reenqueueing errored packet 31102 at time 9786
+Class 0:
+Packet latency average = 20.8378
+	minimum = 5
+	maximum = 101
+Network latency average = 20.8126
+	minimum = 5
+	maximum = 48
+Slowest packet = 280
+Flit latency average = 20.8126
+	minimum = 5
+	maximum = 48
+Slowest flit = 280
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0499047
+	minimum = 0.0443 (at node 1)
+	maximum = 0.0555 (at node 32)
+Accepted packet rate average = 0.0498125
+	minimum = 0.0455 (at node 18)
+	maximum = 0.0542 (at node 8)
+Injected flit rate average = 0.0499047
+	minimum = 0.0443 (at node 1)
+	maximum = 0.0555 (at node 32)
+Accepted flit rate average= 0.0498125
+	minimum = 0.0455 (at node 18)
+	maximum = 0.0542 (at node 8)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 59 (0 measured)
+latency change    = 1
+throughput change = 1
+Additional hops: 150
+Set signal latency stall time: 6
+Reenqueueing errored packet 37018 at time 11625
+Additional hops: 162
+Set signal latency stall time: 24
+Reenqueueing errored packet 37985 at time 11985
+Additional hops: 169
+Set signal latency stall time: 14
+Reenqueueing errored packet 38954 at time 12264
+Additional hops: 175
+Set signal latency stall time: 12
+Reenqueueing errored packet 39077 at time 12298
+Additional hops: 181
+Set signal latency stall time: 12
+Reenqueueing errored packet 39904 at time 12555
+Additional hops: 191
+Set signal latency stall time: 20
+Reenqueueing errored packet 42264 at time 13303
+Additional hops: 199
+Set signal latency stall time: 16
+Reenqueueing errored packet 43671 at time 13739
+Additional hops: 210
+Set signal latency stall time: 22
+Reenqueueing errored packet 46234 at time 14550
+Additional hops: 217
+Set signal latency stall time: 14
+Reenqueueing errored packet 47679 at time 14990
+Additional hops: 231
+Set signal latency stall time: 28
+Reenqueueing errored packet 48169 at time 15174
+Additional hops: 237
+Set signal latency stall time: 12
+Reenqueueing errored packet 49351 at time 15492
+Additional hops: 243
+Set signal latency stall time: 12
+Reenqueueing errored packet 50457 at time 15823
+Additional hops: 253
+Set signal latency stall time: 20
+Reenqueueing errored packet 50739 at time 15924
+Additional hops: 259
+Set signal latency stall time: 12
+Reenqueueing errored packet 52044 at time 16297
+Additional hops: 268
+Set signal latency stall time: 18
+Reenqueueing errored packet 53269 at time 16697
+Additional hops: 278
+Set signal latency stall time: 20
+Reenqueueing errored packet 55455 at time 17375
+Additional hops: 283
+Set signal latency stall time: 10
+Reenqueueing errored packet 59221 at time 18537
+Additional hops: 287
+Set signal latency stall time: 8
+Reenqueueing errored packet 59763 at time 18708
+Additional hops: 291
+Set signal latency stall time: 8
+Reenqueueing errored packet 62086 at time 19411
+Additional hops: 295
+Set signal latency stall time: 8
+Reenqueueing errored packet 63431 at time 19813
+Additional hops: 302
+Set signal latency stall time: 14
+Reenqueueing errored packet 63765 at time 19942
+Class 0:
+Packet latency average = 20.8224
+	minimum = 5
+	maximum = 119
+Network latency average = 20.7967
+	minimum = 5
+	maximum = 48
+Slowest packet = 280
+Flit latency average = 20.7967
+	minimum = 5
+	maximum = 48
+Slowest flit = 280
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0500992
+	minimum = 0.04695 (at node 49)
+	maximum = 0.05455 (at node 32)
+Accepted packet rate average = 0.0500523
+	minimum = 0.04675 (at node 36)
+	maximum = 0.05285 (at node 51)
+Injected flit rate average = 0.0500992
+	minimum = 0.04695 (at node 49)
+	maximum = 0.05455 (at node 32)
+Accepted flit rate average= 0.0500523
+	minimum = 0.04675 (at node 36)
+	maximum = 0.05285 (at node 51)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 60 (0 measured)
+latency change    = 0.000738894
+throughput change = 0.00479186
+Additional hops: 312
+Set signal latency stall time: 20
+Reenqueueing errored packet 65499 at time 20512
+Additional hops: 321
+Set signal latency stall time: 18
+Reenqueueing errored packet 67624 at time 21185
+Additional hops: 326
+Set signal latency stall time: 10
+Reenqueueing errored packet 69084 at time 21615
+Additional hops: 339
+Set signal latency stall time: 26
+Reenqueueing errored packet 69779 at time 21872
+Additional hops: 347
+Set signal latency stall time: 16
+Reenqueueing errored packet 70775 at time 22143
+Additional hops: 357
+Set signal latency stall time: 20
+Additional hops: 365
+Set signal latency stall time: 16
+Reenqueueing errored packet 71642 at time 22422
+Reenqueueing errored packet 71723 at time 22437
+Additional hops: 372
+Set signal latency stall time: 14
+Reenqueueing errored packet 72199 at time 22575
+Additional hops: 378
+Set signal latency stall time: 12
+Reenqueueing errored packet 72304 at time 22609
+Additional hops: 380
+Set signal latency stall time: 4
+Reenqueueing errored packet 75442 at time 23593
+Additional hops: 389
+Set signal latency stall time: 18
+Reenqueueing errored packet 79804 at time 25010
+Additional hops: 394
+Set signal latency stall time: 10
+Reenqueueing errored packet 81659 at time 25589
+Additional hops: 401
+Set signal latency stall time: 14
+Reenqueueing errored packet 82306 at time 25809
+Additional hops: 410
+Set signal latency stall time: 18
+Reenqueueing errored packet 82856 at time 26001
+Additional hops: 417
+Set signal latency stall time: 14
+Reenqueueing errored packet 84811 at time 26596
+Additional hops: 423
+Set signal latency stall time: 12
+Reenqueueing errored packet 85527 at time 26803
+Additional hops: 427
+Set signal latency stall time: 8
+Reenqueueing errored packet 90716 at time 28385
+Additional hops: 430
+Set signal latency stall time: 6
+Reenqueueing errored packet 92217 at time 28859
+Additional hops: 435
+Set signal latency stall time: 10
+Reenqueueing errored packet 93157 at time 29163
+Additional hops: 441
+Set signal latency stall time: 12
+Reenqueueing errored packet 93882 at time 29392
+Class 0:
+Packet latency average = 20.804
+	minimum = 5
+	maximum = 109
+Network latency average = 20.7804
+	minimum = 5
+	maximum = 49
+Slowest packet = 65574
+Flit latency average = 20.7804
+	minimum = 5
+	maximum = 49
+Slowest flit = 72970
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0499016
+	minimum = 0.0455 (at node 36)
+	maximum = 0.0554 (at node 2)
+Accepted packet rate average = 0.0498906
+	minimum = 0.043 (at node 52)
+	maximum = 0.0548 (at node 5)
+Injected flit rate average = 0.0499016
+	minimum = 0.0455 (at node 36)
+	maximum = 0.0554 (at node 2)
+Accepted flit rate average= 0.0498906
+	minimum = 0.043 (at node 52)
+	maximum = 0.0548 (at node 5)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 67 (0 measured)
+latency change    = 0.000883643
+throughput change = 0.00324147
+Warmed up ...Time used is 30000 cycles
+Additional hops: 446
+Set signal latency stall time: 10
+Reenqueueing errored packet 95943 at time 30011
+Additional hops: 456
+Set signal latency stall time: 20
+Reenqueueing errored packet 96957 at time 30346
+Additional hops: 470
+Set signal latency stall time: 28
+Reenqueueing errored packet 98038 at time 30700
+Additional hops: 473
+Set signal latency stall time: 6
+Reenqueueing errored packet 98395 at time 30758
+Additional hops: 478
+Set signal latency stall time: 10
+Reenqueueing errored packet 99695 at time 31165
+Additional hops: 482
+Set signal latency stall time: 8
+Reenqueueing errored packet 104022 at time 32512
+Additional hops: 486
+Set signal latency stall time: 8
+Reenqueueing errored packet 109816 at time 34300
+Additional hops: 496
+Set signal latency stall time: 20
+Reenqueueing errored packet 114606 at time 35848
+Additional hops: 501
+Set signal latency stall time: 10
+Reenqueueing errored packet 114970 at time 35935
+Additional hops: 508
+Set signal latency stall time: 14
+Reenqueueing errored packet 116234 at time 36329
+Additional hops: 519
+Set signal latency stall time: 22
+Reenqueueing errored packet 116687 at time 36497
+Additional hops: 523
+Set signal latency stall time: 8
+Reenqueueing errored packet 118379 at time 37008
+Additional hops: 528
+Set signal latency stall time: 10
+Reenqueueing errored packet 121807 at time 38067
+Additional hops: 536
+Set signal latency stall time: 16
+Reenqueueing errored packet 122188 at time 38206
+Additional hops: 540
+Set signal latency stall time: 8
+Reenqueueing errored packet 122882 at time 38407
+Additional hops: 547
+Set signal latency stall time: 14
+Reenqueueing errored packet 123975 at time 38756
+Additional hops: 554
+Set signal latency stall time: 14
+Reenqueueing errored packet 124975 at time 39083
+Additional hops: 561
+Set signal latency stall time: 14
+Reenqueueing errored packet 127803 at time 39958
+Class 0:
+Packet latency average = 21.0112
+	minimum = 5
+	maximum = 117
+Network latency average = 20.9915
+	minimum = 5
+	maximum = 48
+Slowest packet = 96275
+Flit latency average = 20.9993
+	minimum = 5
+	maximum = 48
+Slowest flit = 103535
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0501187
+	minimum = 0.0449 (at node 47)
+	maximum = 0.0557 (at node 51)
+Accepted packet rate average = 0.0501187
+	minimum = 0.0445 (at node 10)
+	maximum = 0.0555 (at node 4)
+Injected flit rate average = 0.0501187
+	minimum = 0.0449 (at node 47)
+	maximum = 0.0557 (at node 51)
+Accepted flit rate average= 0.0501187
+	minimum = 0.0445 (at node 10)
+	maximum = 0.0555 (at node 4)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 67 (67 measured)
+latency change    = 0.00985894
+throughput change = 0.00455169
+Additional hops: 564
+Set signal latency stall time: 6
+Reenqueueing errored packet 128324 at time 40105
+Additional hops: 573
+Set signal latency stall time: 18
+Reenqueueing errored packet 128459 at time 40176
+Additional hops: 581
+Set signal latency stall time: 16
+Reenqueueing errored packet 131115 at time 40987
+Additional hops: 589
+Set signal latency stall time: 16
+Reenqueueing errored packet 133307 at time 41673
+Additional hops: 594
+Set signal latency stall time: 10
+Reenqueueing errored packet 133977 at time 41865
+Additional hops: 608
+Set signal latency stall time: 28
+Reenqueueing errored packet 136530 at time 42680
+Additional hops: 618
+Set signal latency stall time: 20
+Reenqueueing errored packet 138569 at time 43289
+Additional hops: 624
+Set signal latency stall time: 12
+Reenqueueing errored packet 138797 at time 43342
+Additional hops: 628
+Set signal latency stall time: 8
+Reenqueueing errored packet 144250 at time 45029
+Additional hops: 633
+Set signal latency stall time: 10
+Reenqueueing errored packet 144843 at time 45228
+Additional hops: 645
+Set signal latency stall time: 24
+Reenqueueing errored packet 146057 at time 45636
+Additional hops: 647
+Set signal latency stall time: 4
+Reenqueueing errored packet 147383 at time 46013
+Additional hops: 656
+Set signal latency stall time: 18
+Additional hops: 664
+Set signal latency stall time: 16
+Reenqueueing errored packet 149562 at time 46734
+Reenqueueing errored packet 149611 at time 46743
+Additional hops: 669
+Set signal latency stall time: 10
+Reenqueueing errored packet 150023 at time 46846
+Additional hops: 678
+Set signal latency stall time: 18
+Reenqueueing errored packet 152080 at time 47517
+Additional hops: 682
+Set signal latency stall time: 8
+Reenqueueing errored packet 152495 at time 47621
+Additional hops: 691
+Set signal latency stall time: 18
+Reenqueueing errored packet 152775 at time 47733
+Additional hops: 703
+Set signal latency stall time: 24
+Reenqueueing errored packet 152966 at time 47811
+Additional hops: 711
+Set signal latency stall time: 16
+Reenqueueing errored packet 153438 at time 47938
+Additional hops: 721
+Set signal latency stall time: 20
+Reenqueueing errored packet 154031 at time 48145
+Additional hops: 727
+Set signal latency stall time: 12
+Reenqueueing errored packet 156291 at time 48834
+Additional hops: 734
+Set signal latency stall time: 14
+Reenqueueing errored packet 157714 at time 49302
+Additional hops: 739
+Set signal latency stall time: 10
+Reenqueueing errored packet 157980 at time 49373
+Additional hops: 742
+Set signal latency stall time: 6
+Reenqueueing errored packet 159694 at time 49910
+Class 0:
+Packet latency average = 20.9383
+	minimum = 5
+	maximum = 119
+Network latency average = 20.9131
+	minimum = 5
+	maximum = 48
+Slowest packet = 96275
+Flit latency average = 20.9171
+	minimum = 5
+	maximum = 48
+Slowest flit = 103535
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0500648
+	minimum = 0.04575 (at node 5)
+	maximum = 0.0545 (at node 58)
+Accepted packet rate average = 0.0500703
+	minimum = 0.04585 (at node 18)
+	maximum = 0.0537 (at node 54)
+Injected flit rate average = 0.0500648
+	minimum = 0.04575 (at node 5)
+	maximum = 0.0545 (at node 58)
+Accepted flit rate average= 0.0500703
+	minimum = 0.04585 (at node 18)
+	maximum = 0.0537 (at node 54)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 60 (60 measured)
+latency change    = 0.00348079
+throughput change = 0.00096739
+Additional hops: 750
+Set signal latency stall time: 16
+Reenqueueing errored packet 162254 at time 50748
+Additional hops: 759
+Set signal latency stall time: 18
+Reenqueueing errored packet 166690 at time 52151
+Additional hops: 763
+Set signal latency stall time: 8
+Reenqueueing errored packet 171171 at time 53538
+Additional hops: 772
+Set signal latency stall time: 18
+Reenqueueing errored packet 171384 at time 53623
+Additional hops: 781
+Set signal latency stall time: 18
+Reenqueueing errored packet 173137 at time 54164
+Additional hops: 788
+Set signal latency stall time: 14
+Reenqueueing errored packet 174464 at time 54552
+Additional hops: 797
+Set signal latency stall time: 18
+Reenqueueing errored packet 175137 at time 54792
+Additional hops: 807
+Set signal latency stall time: 20
+Reenqueueing errored packet 175634 at time 54960
+Additional hops: 817
+Set signal latency stall time: 20
+Reenqueueing errored packet 175971 at time 55065
+Additional hops: 827
+Set signal latency stall time: 20
+Reenqueueing errored packet 176481 at time 55218
+Additional hops: 830
+Set signal latency stall time: 6
+Reenqueueing errored packet 177704 at time 55564
+Additional hops: 836
+Set signal latency stall time: 12
+Reenqueueing errored packet 178152 at time 55722
+Additional hops: 838
+Set signal latency stall time: 4
+Reenqueueing errored packet 178923 at time 55943
+Additional hops: 845
+Set signal latency stall time: 14
+Reenqueueing errored packet 179050 at time 56010
+Additional hops: 858
+Set signal latency stall time: 26
+Reenqueueing errored packet 179692 at time 56245
+Additional hops: 861
+Set signal latency stall time: 6
+Reenqueueing errored packet 180015 at time 56299
+Additional hops: 869
+Set signal latency stall time: 16
+Reenqueueing errored packet 180434 at time 56446
+Additional hops: 875
+Set signal latency stall time: 12
+Reenqueueing errored packet 180598 at time 56491
+Additional hops: 880
+Set signal latency stall time: 10
+Reenqueueing errored packet 181321 at time 56716
+Additional hops: 885
+Set signal latency stall time: 10
+Reenqueueing errored packet 181688 at time 56832
+Additional hops: 892
+Set signal latency stall time: 14
+Reenqueueing errored packet 183677 at time 57454
+Additional hops: 900
+Set signal latency stall time: 16
+Reenqueueing errored packet 184468 at time 57698
+Additional hops: 904
+Set signal latency stall time: 8
+Reenqueueing errored packet 190297 at time 59527
+Class 0:
+Packet latency average = 20.9296
+	minimum = 5
+	maximum = 119
+Network latency average = 20.9035
+	minimum = 5
+	maximum = 49
+Slowest packet = 96275
+Flit latency average = 20.9062
+	minimum = 5
+	maximum = 49
+Slowest flit = 172531
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0499646
+	minimum = 0.0472 (at node 5)
+	maximum = 0.0538667 (at node 56)
+Accepted packet rate average = 0.0499661
+	minimum = 0.0471 (at node 37)
+	maximum = 0.0528667 (at node 28)
+Injected flit rate average = 0.0499646
+	minimum = 0.0472 (at node 5)
+	maximum = 0.0538667 (at node 56)
+Accepted flit rate average= 0.0499661
+	minimum = 0.0471 (at node 37)
+	maximum = 0.0528667 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 64 (64 measured)
+latency change    = 0.00041687
+throughput change = 0.00208474
+Draining all recorded packets ...
+Draining remaining packets ...
+Time taken is 60071 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 20.9306 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 119 (1 samples)
+Network latency average = 20.9045 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 49 (1 samples)
+Flit latency average = 20.9073 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 49 (1 samples)
+Fragmentation average = 0 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 0 (1 samples)
+Injected packet rate average = 0.0499646 (1 samples)
+	minimum = 0.0472 (1 samples)
+	maximum = 0.0538667 (1 samples)
+Accepted packet rate average = 0.0499661 (1 samples)
+	minimum = 0.0471 (1 samples)
+	maximum = 0.0528667 (1 samples)
+Injected flit rate average = 0.0499646 (1 samples)
+	minimum = 0.0472 (1 samples)
+	maximum = 0.0538667 (1 samples)
+Accepted flit rate average = 0.0499661 (1 samples)
+	minimum = 0.0471 (1 samples)
+	maximum = 0.0528667 (1 samples)
+Injected packet size average = 1 (1 samples)
+Accepted packet size average = 1 (1 samples)
+Hops average = 6.27103 (1 samples)
+Total run time 33.4203

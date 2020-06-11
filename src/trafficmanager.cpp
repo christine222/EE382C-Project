@@ -763,12 +763,16 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
     int set_stall_time = f->hops * 2; // one clock to go through channel, one clock to process at router, can tune this 
     if (_ecc_strategy == "packet") {
         if (f->flips) {
-            cout << "Packet " << f->pid << ": Flit " << f->id << " contains error at time " << _time << endl;
+            //cout << "Packet " << f->pid << ": Flit " << f->id << " contains error at time " << _time << endl;
 
             _errored_packets.insert(f->pid);
             /*for (const auto& item : _errored_packets) {
               cout << item << endl;
             }*/
+
+            additionalHops += f->hops;
+
+            cout << "Additional hops: " << additionalHops << endl;
 
             // add to _error_reinject vector of errored packets
             // see _plat_stats[f->cl] section below for why I chose atime - ctime (not 100% on this tho)
@@ -793,7 +797,7 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
         }
 
         if (_reinjected_packets.find(f->pid) != _reinjected_packets.end()){
-                cout << "Received reinjected packet " << f-> pid << " at time " << _time << endl;
+                //cout << "Received reinjected packet " << f-> pid << " at time " << _time << endl;
         }
     }
     else if (_ecc_strategy == "link") {
