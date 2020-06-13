@@ -68,6 +68,7 @@ class IQRouter : public Router {
   int _sw_alloc_delay;
 
   string _ecc_strategy; //FZ
+  int _correctable;
   
   map<int, Flit *> _in_queue_flits;
 

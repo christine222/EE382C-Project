@@ -1,0 +1,1115 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.700_link_2
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.7;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 2;
+ecc = link;
+correctable = 1;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = link;
+
+stats_out = examples/ecc_mesh88_config_1_0.700_link_2.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.700_link_2
+Requeued flit 288
+Requeued flit 759
+Requeued flit 348
+Requeued flit 999
+Requeued flit 1759
+Requeued flit 1014
+Requeued flit 1873
+Requeued flit 3308
+Requeued flit 4957
+Requeued flit 6701
+Requeued flit 3294
+Requeued flit 6991
+Requeued flit 5938
+Requeued flit 9147
+Requeued flit 8238
+Requeued flit 5982
+Requeued flit 7698
+Requeued flit 10071
+Requeued flit 11224
+Requeued flit 11171
+Requeued flit 7886
+Requeued flit 7959
+Requeued flit 9087
+Requeued flit 6615
+Requeued flit 12046
+Requeued flit 10545
+Requeued flit 14556
+Requeued flit 14321
+Requeued flit 11471
+Requeued flit 14689
+Requeued flit 9850
+Requeued flit 16369
+Requeued flit 11044
+Requeued flit 16313
+Requeued flit 15653
+Requeued flit 18370
+Requeued flit 19692
+Requeued flit 15406
+Requeued flit 17588
+Requeued flit 16411
+Requeued flit 12419
+Requeued flit 19943
+Requeued flit 22921
+Requeued flit 15828
+Requeued flit 22536
+Requeued flit 23269
+Requeued flit 22998
+Requeued flit 19572
+Requeued flit 21198
+Requeued flit 18535
+Requeued flit 26052
+Requeued flit 28113
+Requeued flit 21336
+Requeued flit 18325
+Requeued flit 24425
+Requeued flit 22505
+Requeued flit 24765
+Requeued flit 21175
+Requeued flit 23816
+Requeued flit 27654
+Requeued flit 19104
+Requeued flit 24185
+Requeued flit 17359
+Requeued flit 20712
+Requeued flit 18804
+Requeued flit 26221
+Requeued flit 30729
+Requeued flit 28818
+Requeued flit 33661
+Requeued flit 34038
+Requeued flit 28161
+Requeued flit 24934
+Requeued flit 34122
+Requeued flit 38345
+Requeued flit 37361
+Requeued flit 37805
+Requeued flit 37877
+Requeued flit 40403
+Requeued flit 40812
+Requeued flit 26910
+Requeued flit 36316
+Requeued flit 34785
+Requeued flit 45535
+Requeued flit 43020
+Requeued flit 39771
+Requeued flit 25541
+Requeued flit 37333
+Requeued flit 47867
+Requeued flit 47540
+Requeued flit 43432
+Requeued flit 32078
+Requeued flit 24658
+Requeued flit 32214
+Requeued flit 50845
+Requeued flit 44985
+Requeued flit 44469
+Requeued flit 32487
+Requeued flit 36802
+Requeued flit 29144
+Requeued flit 54935
+Requeued flit 54760
+Requeued flit 56187
+Requeued flit 57264
+Requeued flit 42280
+Requeued flit 38931
+Requeued flit 58129
+Requeued flit 54537
+Requeued flit 57333
+Requeued flit 40234
+Requeued flit 57646
+Requeued flit 40603
+Requeued flit 62173
+Requeued flit 39353
+Requeued flit 49504
+Requeued flit 41201
+Requeued flit 65010
+Requeued flit 66425
+Requeued flit 57392
+Requeued flit 41542
+Requeued flit 43660
+Requeued flit 68573
+Requeued flit 47554
+Requeued flit 45777
+Requeued flit 63552
+Requeued flit 49230
+Requeued flit 48045
+Requeued flit 59585
+Requeued flit 60311
+Requeued flit 71653
+Requeued flit 71528
+Requeued flit 66537
+Requeued flit 55479
+Requeued flit 43319
+Requeued flit 68338
+Requeued flit 63412
+Requeued flit 50243
+Requeued flit 70492
+Requeued flit 50741
+Requeued flit 45959
+Requeued flit 62960
+Requeued flit 48282
+Requeued flit 43832
+Requeued flit 67156
+Requeued flit 53421
+Requeued flit 80263
+Requeued flit 50478
+Requeued flit 53541
+Requeued flit 53194
+Requeued flit 52134
+Requeued flit 52517
+Requeued flit 61753
+Requeued flit 55593
+Requeued flit 54429
+Requeued flit 87535
+Requeued flit 45103
+Requeued flit 51790
+Requeued flit 88468
+Requeued flit 76745
+Requeued flit 88177
+Requeued flit 83250
+Requeued flit 90607
+Requeued flit 91297
+Requeued flit 54560
+Requeued flit 90497
+Requeued flit 67754
+Requeued flit 87509
+Requeued flit 72794
+Requeued flit 63441
+Requeued flit 54344
+Requeued flit 71104
+Requeued flit 82229
+Requeued flit 89828
+Requeued flit 71689
+Requeued flit 55556
+Requeued flit 69195
+Requeued flit 54305
+Requeued flit 90657
+Requeued flit 78644
+Requeued flit 95412
+Requeued flit 92915
+Requeued flit 60090
+Requeued flit 86102
+Requeued flit 54646
+Requeued flit 83531
+Requeued flit 82767
+Requeued flit 86375
+Requeued flit 61248
+Requeued flit 68245
+Requeued flit 102881
+Requeued flit 81189
+Requeued flit 61581
+Requeued flit 88097
+Requeued flit 82725
+Requeued flit 71295
+Requeued flit 108086
+Requeued flit 102930
+Requeued flit 66777
+Requeued flit 81695
+Requeued flit 69717
+Requeued flit 106052
+Requeued flit 56860
+Requeued flit 57751
+Requeued flit 84951
+Requeued flit 70799
+Requeued flit 105273
+Requeued flit 87110
+Requeued flit 112987
+Requeued flit 111645
+Requeued flit 74230
+Requeued flit 87684
+Requeued flit 109739
+Requeued flit 67011
+Requeued flit 63514
+Requeued flit 73121
+Requeued flit 116397
+Requeued flit 71668
+Requeued flit 62711
+Requeued flit 75772
+Requeued flit 97875
+Requeued flit 74617
+Requeued flit 81115
+Requeued flit 74127
+Requeued flit 94715
+Requeued flit 123817
+Requeued flit 106497
+Requeued flit 124322
+Requeued flit 78546
+Requeued flit 88222
+Requeued flit 91665
+Requeued flit 80929
+Requeued flit 113907
+Requeued flit 82966
+Requeued flit 114800
+Requeued flit 86970
+Requeued flit 107293
+Requeued flit 105501
+Requeued flit 86607
+Requeued flit 87712
+Requeued flit 71603
+Requeued flit 86336
+Requeued flit 117552
+Requeued flit 100316
+Requeued flit 121824
+Requeued flit 136092
+Requeued flit 88034
+Requeued flit 116352
+Requeued flit 139573
+Requeued flit 131043
+Requeued flit 127415
+Requeued flit 119425
+Requeued flit 110853
+Requeued flit 140227
+Requeued flit 100377
+Requeued flit 122851
+Requeued flit 89378
+Requeued flit 92087
+Requeued flit 135548
+Requeued flit 141632
+Requeued flit 145073
+Requeued flit 91715
+Requeued flit 138496
+Requeued flit 87523
+Requeued flit 90287
+Requeued flit 113559
+Requeued flit 105461
+Requeued flit 149533
+Requeued flit 83461
+Requeued flit 148544
+Requeued flit 143852
+Requeued flit 107312
+Requeued flit 145311
+Requeued flit 130536
+Requeued flit 110633
+Requeued flit 129978
+Requeued flit 133696
+Requeued flit 156734
+Requeued flit 105082
+Requeued flit 112054
+Requeued flit 132919
+Requeued flit 144980
+Requeued flit 143149
+Requeued flit 132734
+Requeued flit 99193
+Requeued flit 116439
+Requeued flit 115072
+Requeued flit 117184
+Requeued flit 127861
+Requeued flit 96839
+Requeued flit 122175
+Requeued flit 108195
+Requeued flit 128769
+Requeued flit 154328
+Requeued flit 122301
+Requeued flit 115560
+Requeued flit 97086
+Requeued flit 91298
+Requeued flit 170173
+Requeued flit 107242
+Requeued flit 127152
+Requeued flit 153072
+Requeued flit 170037
+Requeued flit 157464
+Requeued flit 138765
+Requeued flit 108785
+Requeued flit 160691
+Requeued flit 113837
+Requeued flit 153109
+Requeued flit 103602
+Requeued flit 135548
+Requeued flit 132280
+Requeued flit 154770
+Requeued flit 128790
+Requeued flit 134318
+Requeued flit 179073
+Requeued flit 148000
+Requeued flit 129476
+Requeued flit 144227
+Requeued flit 173856
+Requeued flit 132305
+Requeued flit 111877
+Requeued flit 128008
+Requeued flit 166625
+Requeued flit 96073
+Requeued flit 137657
+Requeued flit 113510
+Requeued flit 107310
+Requeued flit 134798
+Requeued flit 155127
+Requeued flit 155658
+Requeued flit 181840
+Requeued flit 161987
+Requeued flit 161027
+Requeued flit 160013
+Requeued flit 127888
+Requeued flit 113006
+4296 | node39 | Enqueuing flit 192022 (packet 192022) at time 4296.
+4296 | traffic_manager | Finding output VC for flit 192022:
+4296 | traffic_manager |   Selected output VC 1.
+4296 | network_0/router_4_7 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 4, destination 44).
+4296 | node39 | Generating lookahead routing info for flit 192022.
+4296 | node39 | Injecting flit 192022 into subnet 0 at time 4296 with priority 0.
+4297 | network_0/network_0_fchan_ingress39 | Beginning channel traversal for flit 192022 with delay 1.
+4297 | network_0/network_0_fchan_ingress39 | Completed channel traversal for flit 192022.
+4298 | network_0/router_4_7 | Received flit 192022 from channel at input 4.
+4298 | network_0/router_4_7 | Adding flit 192022 to VC 1 at input 4 (state: idle, empty).
+4298 | network_0/router_4_7 | Using precomputed lookahead routing information for VC 1 at input 4 (front: 192022).
+4298 | network_0/router_4_7/buf_4/vc_1 | Changing state from idle to vc_alloc.
+4298 | network_0/router_4_7 | Beginning VC allocation for VC 1 at input 4 (front: 192022).
+4298 | network_0/router_4_7 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+4298 | network_0/router_4_7 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+4298 | network_0/router_4_7/vc_allocator | Input requests = [ 2 -> [ 6@0 7@0 ]  5 -> [ 6@0 7@0 ]  7 -> [ 4@0 5@0 ]  9 -> [ 2@0 3@0 ]  ], output requests = [ 2 -> [ 9@0 ]  3 -> [ 9@0 ]  4 -> [ 7@0 ]  5 -> [ 7@0 ]  6 -> [ 2@0 5@0 ]  7 -> [ 2@0 5@0 ]  ].
+4298 | network_0/router_4_7/vc_allocator | Input grants = [ 2 -> 7  5 -> 6  7 -> 5  9 -> 2  ], output grants = [ 2 -> 9  5 -> 7  6 -> 5  7 -> 2  ].
+4298 | network_0/router_4_7 | Assigning VC 0 at output 1 to VC 1 at input 4.
+4298 | network_0/router_4_7 | Completed VC allocation for VC 1 at input 4 (front: 192022).
+4298 | network_0/router_4_7 |   Acquiring assigned VC 0 at output 1.
+4298 | network_0/router_4_7/buf_4/vc_1 | Changing state from vc_alloc to active.
+4298 | network_0/router_4_7 | Beginning switch allocation for VC 1 at input 4 (front: 192022).
+4298 | network_0/router_4_7 |   Requesting output 1.0 (non-spec, pri: 0).
+4298 | network_0/router_4_7/sw_allocator | Input requests = [ 1 -> [ 3@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 1@0 ]  ], output requests = [ 1 -> [ 4@0 ]  2 -> [ 3@0 ]  3 -> [ 1@0 2@0 ]  ].
+4298 | network_0/router_4_7/sw_allocator | Input grants = [ 1 -> 3  3 -> 2  4 -> 1  ], output grants = [ 1 -> 4  2 -> 3  3 -> 1  ].
+4298 | network_0/router_4_7 | Assigning output 1.0 to VC 1 at input 4.0.
+4298 | network_0/router_4_7 | Completed switch allocation for VC 1 at input 4 (front: 192022).
+4298 | network_0/router_4_7 |   Scheduling switch connection from input 4.0 to output 1.0.
+4298 | network_0/router_4_7 | Updating lookahead routing information for flit 192022.
+4298 | network_0/router_4_6 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+4299 | network_0/router_4_7 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+4299 | network_0/router_4_7 | Completed crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+4299 | network_0/router_4_7 | Buffering flit 192022 at output 1.
+4299 | network_0/router_4_7 | Sending flit 192022 to channel at output 1.
+4300 | network_0/network_0_fchan_157 | Beginning channel traversal for flit 192022 with delay 1.
+4300 | network_0/network_0_fchan_157 | Completed channel traversal for flit 192022.
+4301 | network_0/router_4_6 | Received flit 192022 from channel at input 0.
+4301 | network_0/router_4_6 | Adding flit 192022 to VC 0 at input 0 (state: active, front: 161498).
+Requeued flit 111275
+Requeued flit 108315
+Requeued flit 176830
+Requeued flit 106372
+Requeued flit 131476
+Requeued flit 174247
+Requeued flit 138754
+Requeued flit 184686
+Requeued flit 138766
+Requeued flit 152326
+Requeued flit 146450
+Requeued flit 127092
+Requeued flit 155665
+Requeued flit 200263
+Requeued flit 124817
+Requeued flit 165995
+Requeued flit 161934
+Requeued flit 196844
+Requeued flit 135123
+Requeued flit 172156
+Requeued flit 125239
+Requeued flit 200133
+Requeued flit 154686
+Requeued flit 129659
+Requeued flit 140049
+Requeued flit 130094
+Requeued flit 168788
+Requeued flit 208080
+Requeued flit 172185
+Requeued flit 130782
+Requeued flit 198022
+Requeued flit 180583
+Requeued flit 204153
+Requeued flit 198240
+Requeued flit 151036
+Requeued flit 210243
+Requeued flit 134827
+Requeued flit 194140
+Requeued flit 161492
+Requeued flit 178952
+Requeued flit 214829
+Requeued flit 135653
+Requeued flit 183509
+Requeued flit 127322
+Requeued flit 148092
+Requeued flit 208862
+Requeued flit 206952
+Requeued flit 165056
+Requeued flit 152532
+Requeued flit 133621
+Requeued flit 114870
+Requeued flit 209127
+Requeued flit 177415
+Requeued flit 173199
+Requeued flit 207383
+Requeued flit 161374
+Requeued flit 142816
+Requeued flit 157460
+Requeued flit 147885
+Requeued flit 133191
+Requeued flit 131652
+Requeued flit 187985
+Requeued flit 203694
+Requeued flit 128816
+Requeued flit 177907
+Requeued flit 177908
+Requeued flit 185964
+Requeued flit 175792
+Requeued flit 207767
+Requeued flit 214206
+Requeued flit 171723
+Requeued flit 189311
+Requeued flit 153112
+Requeued flit 199235
+Requeued flit 226130
+Requeued flit 222915
+Requeued flit 131653
+Requeued flit 189608
+Requeued flit 136363
+Requeued flit 221097
+Requeued flit 202862
+Requeued flit 143033
+Requeued flit 193364
+Requeued flit 216108
+Requeued flit 142978
+Requeued flit 200190
+Requeued flit 127976
+Requeued flit 168674
+Requeued flit 163898
+Requeued flit 185569
+Requeued flit 168123
+Requeued flit 168882
+Requeued flit 197722
+Requeued flit 222032
+Requeued flit 219163
+Requeued flit 232685
+Requeued flit 205350
+Requeued flit 147195
+Requeued flit 198127
+Requeued flit 195651
+Requeued flit 236448
+Requeued flit 243759
+Requeued flit 240131
+Requeued flit 148679
+Requeued flit 149770
+Requeued flit 188417
+Requeued flit 216308
+Requeued flit 154303
+Requeued flit 167377
+5803 | network_0/router_4_6 | Using precomputed lookahead routing information for VC 0 at input 0 (front: 192022).
+5803 | network_0/router_4_6/buf_0/vc_0 | Changing state from active to vc_alloc.
+5803 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5803 | network_0/router_4_6 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+5803 | network_0/router_4_6 |   VC 1 at output 1 is in use by VC 1 at input 4 (front flit: 196614).
+5803 | network_0/router_4_6/vc_allocator | Input requests = [ 0 -> [ 2@0 ]  1 -> [ 2@0 ]  8 -> [ 2@0 ]  ], output requests = [ 2 -> [ 0@0 1@0 8@0 ]  ].
+5803 | network_0/router_4_6/vc_allocator | Input grants = [ 1 -> 2  ], output grants = [ 2 -> 1  ].
+5803 | network_0/router_4_6 | VC allocation failed for VC 0 at input 0.
+5803 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5803 | network_0/router_4_6 |   No output VC allocated.
+5804 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5804 | network_0/router_4_6 |   VC 0 at output 1 is in use by VC 1 at input 0 (front flit: 201794).
+5804 | network_0/router_4_6 |   VC 1 at output 1 is in use by VC 1 at input 4 (front flit: 196614).
+5804 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5804 | network_0/router_4_6 |   No output VC allocated.
+5804 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5804 | network_0/router_4_6 |   VC 0 at output 1 is in use by VC 1 at input 0 (front flit: 201794).
+5804 | network_0/router_4_6 |   VC 1 at output 1 is in use by VC 1 at input 4 (front flit: 196614).
+5804 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5804 | network_0/router_4_6 |   No output VC allocated.
+5805 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5805 | network_0/router_4_6 |   VC 0 at output 1 is in use by VC 1 at input 0 (front flit: 201794).
+5805 | network_0/router_4_6 |   VC 1 at output 1 is in use by VC 1 at input 4 (front flit: 196614).
+5805 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5805 | network_0/router_4_6 |   No output VC allocated.
+5805 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5805 | network_0/router_4_6 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+5805 | network_0/router_4_6 |   VC 1 at output 1 is in use by VC 1 at input 4 (front flit: 196614).
+5805 | network_0/router_4_6/vc_allocator | Input requests = [ 0 -> [ 2@0 ]  1 -> [ 2@0 ]  8 -> [ 2@0 ]  ], output requests = [ 2 -> [ 0@0 1@0 8@0 ]  ].
+5805 | network_0/router_4_6/vc_allocator | Input grants = [ 8 -> 2  ], output grants = [ 2 -> 8  ].
+5805 | network_0/router_4_6 | VC allocation failed for VC 0 at input 0.
+5805 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5805 | network_0/router_4_6 |   No output VC allocated.
+5806 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5806 | network_0/router_4_6 |   VC 0 at output 1 is in use by VC 0 at input 4 (front flit: 194281).
+5806 | network_0/router_4_6 |   VC 1 at output 1 is in use by VC 1 at input 4 (front flit: 196614).
+5806 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5806 | network_0/router_4_6 |   No output VC allocated.
+5806 | network_0/router_4_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5806 | network_0/router_4_6 |   VC 0 at output 1 is in use by VC 0 at input 4 (front flit: 194281).
+5806 | network_0/router_4_6 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+5806 | network_0/router_4_6/vc_allocator | Input requests = [ 0 -> [ 3@0 ]  1 -> [ 3@0 ]  9 -> [ 3@0 ]  ], output requests = [ 3 -> [ 0@0 1@0 9@0 ]  ].
+5806 | network_0/router_4_6/vc_allocator | Input grants = [ 0 -> 3  ], output grants = [ 3 -> 0  ].
+5806 | network_0/router_4_6 | Assigning VC 1 at output 1 to VC 0 at input 0.
+5806 | network_0/router_4_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5806 | network_0/router_4_6 |   Acquiring assigned VC 1 at output 1.
+5806 | network_0/router_4_6/buf_0/vc_0 | Changing state from vc_alloc to active.
+5807 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5807 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5807 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5807 | network_0/router_4_6 |   No output port allocated.
+5807 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5807 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5807 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5807 | network_0/router_4_6 |   No output port allocated.
+5808 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5808 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5808 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5808 | network_0/router_4_6 |   No output port allocated.
+5808 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5808 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5808 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5808 | network_0/router_4_6 |   No output port allocated.
+5809 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5809 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5809 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5809 | network_0/router_4_6 |   No output port allocated.
+5809 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5809 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5809 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5809 | network_0/router_4_6 |   No output port allocated.
+5810 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5810 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5810 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5810 | network_0/router_4_6 |   No output port allocated.
+5810 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5810 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5810 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5810 | network_0/router_4_6 |   No output port allocated.
+5811 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5811 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5811 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5811 | network_0/router_4_6 |   No output port allocated.
+5811 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5811 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5811 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5811 | network_0/router_4_6 |   No output port allocated.
+5812 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5812 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5812 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5812 | network_0/router_4_6 |   No output port allocated.
+5812 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5812 | network_0/router_4_6 |   VC 1 at output 1 is full.
+5812 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5812 | network_0/router_4_6 |   No output port allocated.
+5813 | network_0/router_4_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+5813 | network_0/router_4_6 |   Requesting output 1.0 (non-spec, pri: 0).
+5813 | network_0/router_4_6/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  ], output requests = [ 1 -> [ 0@0 ]  ].
+5813 | network_0/router_4_6/sw_allocator | Input grants = [ 0 -> 1  ], output grants = [ 1 -> 0  ].
+5813 | network_0/router_4_6 | Assigning output 1.0 to VC 0 at input 0.0.
+5813 | network_0/router_4_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+5813 | network_0/router_4_6 |   Scheduling switch connection from input 0.0 to output 1.0.
+5813 | network_0/router_4_6 | Updating lookahead routing information for flit 192022.
+5813 | network_0/router_4_5 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+5813 | network_0/router_4_6 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+5813 | network_0/router_4_6 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+5813 | network_0/router_4_6 | Buffering flit 192022 at output 1.
+Requeued flit 145830
+5813 | network_0/router_4_6 | Sending flit 192022 to channel at output 1.
+5814 | network_0/network_0_fchan_153 | Beginning channel traversal for flit 192022 with delay 1.
+5814 | network_0/network_0_fchan_153 | Completed channel traversal for flit 192022.
+5815 | network_0/router_4_5 | Received flit 192022 from channel at input 0.
+5815 | network_0/router_4_5 | Adding flit 192022 to VC 1 at input 0 (state: vc_alloc, front: 177180).
+Requeued flit 150574
+Requeued flit 176804
+Requeued flit 229484
+Requeued flit 154716
+Requeued flit 245551
+Requeued flit 149530
+Requeued flit 252779
+Requeued flit 236992
+Requeued flit 177448
+Requeued flit 179076
+Requeued flit 253649
+Requeued flit 201568
+Requeued flit 235774
+Requeued flit 248020
+Requeued flit 246049
+Requeued flit 234018
+Requeued flit 234033
+Requeued flit 144016
+Requeued flit 218620
+Requeued flit 136918
+Requeued flit 252191
+Requeued flit 261169
+Requeued flit 237726
+Requeued flit 152430
+Requeued flit 199029
+Requeued flit 152686
+Requeued flit 160448
+Requeued flit 243209
+Requeued flit 255638
+Requeued flit 252166
+Requeued flit 157010
+Requeued flit 155418
+Requeued flit 245091
+Requeued flit 177044
+Requeued flit 138334
+Requeued flit 152532
+Requeued flit 267810
+Requeued flit 214394
+Requeued flit 153641
+Requeued flit 263723
+Requeued flit 259831
+Requeued flit 179459
+Requeued flit 248607
+Requeued flit 152284
+Requeued flit 231973
+Requeued flit 221278
+Requeued flit 228161
+Requeued flit 224678
+Requeued flit 262411
+Requeued flit 160325
+Requeued flit 166261
+Requeued flit 205109
+Requeued flit 219925
+Requeued flit 189263
+Requeued flit 214293
+Requeued flit 246596
+Requeued flit 203030
+Requeued flit 256173
+Requeued flit 174218
+Requeued flit 211633
+Requeued flit 209318
+Requeued flit 208657
+Requeued flit 147966
+Requeued flit 267151
+Requeued flit 251442
+Requeued flit 271329
+Requeued flit 169584
+Requeued flit 160314
+Requeued flit 270683
+Requeued flit 262391
+Requeued flit 205508
+Requeued flit 255621
+Requeued flit 212455
+Requeued flit 170744
+Requeued flit 240259
+Requeued flit 266826
+Requeued flit 227238
+Requeued flit 276328
+Requeued flit 263685
+Requeued flit 276260
+Requeued flit 171414
+Requeued flit 239070
+Requeued flit 170705
+6886 | network_0/router_4_5 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+6886 | network_0/router_4_5/buf_0/vc_1 | Changing state from active to vc_alloc.
+6886 | network_0/router_4_5 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+6886 | network_0/router_4_5 |   VC 0 at output 1 is in use by VC 0 at input 0 (front flit: 193103).
+6886 | network_0/router_4_5 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+6886 | network_0/router_4_5/vc_allocator | Input requests = [ 1 -> [ 3@0 ]  8 -> [ 3@0 ]  9 -> [ 3@0 ]  ], output requests = [ 3 -> [ 1@0 8@0 9@0 ]  ].
+6886 | network_0/router_4_5/vc_allocator | Input grants = [ 8 -> 3  ], output grants = [ 3 -> 8  ].
+6886 | network_0/router_4_5 | VC allocation failed for VC 1 at input 0.
+6886 | network_0/router_4_5 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+6886 | network_0/router_4_5 |   No output VC allocated.
+Requeued flit 176738
+6887 | network_0/router_4_5 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+6887 | network_0/router_4_5 |   VC 0 at output 1 is in use by VC 0 at input 0 (front flit: 193103).
+6887 | network_0/router_4_5 |   VC 1 at output 1 is in use by VC 0 at input 4 (front flit: 275975).
+6887 | network_0/router_4_5 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+6887 | network_0/router_4_5 |   No output VC allocated.
+6887 | network_0/router_4_5 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+6887 | network_0/router_4_5 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+6887 | network_0/router_4_5 |   VC 1 at output 1 is in use by VC 0 at input 4 (front flit: 275975).
+6887 | network_0/router_4_5/vc_allocator | Input requests = [ 1 -> [ 2@0 ]  9 -> [ 2@0 ]  ], output requests = [ 2 -> [ 1@0 9@0 ]  ].
+6887 | network_0/router_4_5/vc_allocator | Input grants = [ 1 -> 2  ], output grants = [ 2 -> 1  ].
+6887 | network_0/router_4_5 | Assigning VC 0 at output 1 to VC 1 at input 0.
+6887 | network_0/router_4_5 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+6887 | network_0/router_4_5 |   Acquiring assigned VC 0 at output 1.
+6887 | network_0/router_4_5/buf_0/vc_1 | Changing state from vc_alloc to active.
+6888 | network_0/router_4_5 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+6888 | network_0/router_4_5 |   Requesting output 1.0 (non-spec, pri: 0).
+6888 | network_0/router_4_5/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 3@0 ]  ], output requests = [ 1 -> [ 0@0 ]  3 -> [ 1@0 ]  ].
+6888 | network_0/router_4_5/sw_allocator | Input grants = [ 0 -> 1  1 -> 3  ], output grants = [ 1 -> 0  3 -> 1  ].
+6888 | network_0/router_4_5 | Assigning output 1.0 to VC 1 at input 0.0.
+6888 | network_0/router_4_5 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+6888 | network_0/router_4_5 |   Scheduling switch connection from input 0.0 to output 1.0.
+6888 | network_0/router_4_5 | Updating lookahead routing information for flit 192022.
+6888 | network_0/router_4_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 0, destination 44).
+6888 | network_0/router_4_5 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+6888 | network_0/router_4_5 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+6888 | network_0/router_4_5 | Buffering flit 192022 at output 1.
+Requeued flit 176372
+Requeued flit 229961
+6889 | network_0/router_4_5 | Sending flit 192022 to channel at output 1.
+6890 | network_0/network_0_fchan_149 | Beginning channel traversal for flit 192022 with delay 1.
+6890 | network_0/network_0_fchan_149 | Completed channel traversal for flit 192022.
+6891 | network_0/router_4_4 | Received flit 192022 from channel at input 0.
+6891 | network_0/router_4_4 | Adding flit 192022 to VC 0 at input 0 (state: active, front: 180229).
+Requeued flit 152430
+Requeued flit 218288
+Requeued flit 243141
+Requeued flit 169798
+Requeued flit 271668
+Requeued flit 258218
+Requeued flit 283397
+Requeued flit 273230
+Requeued flit 177757
+Requeued flit 291850
+Requeued flit 238017
+Requeued flit 284435
+Requeued flit 283641
+Requeued flit 227489
+Requeued flit 220673
+Requeued flit 289306
+Requeued flit 274459
+Requeued flit 241443
+Requeued flit 168682
+Requeued flit 170514
+Requeued flit 282084
+Requeued flit 242657
+Requeued flit 172470
+Requeued flit 220847
+Requeued flit 238929
+Requeued flit 183683
+Requeued flit 178297
+Requeued flit 175386
+Requeued flit 281595
+Requeued flit 291135
+Requeued flit 183104
+Requeued flit 281120
+Requeued flit 185863
+Requeued flit 249753
+Requeued flit 223599
+Requeued flit 209369
+Requeued flit 196956
+Requeued flit 294493
+Requeued flit 287743
+7479 | network_0/router_4_4 | Using precomputed lookahead routing information for VC 0 at input 0 (front: 192022).
+7479 | network_0/router_4_4/buf_0/vc_0 | Changing state from active to vc_alloc.
+7480 | network_0/router_4_4 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+7480 | network_0/router_4_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+7480 | network_0/router_4_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+7480 | network_0/router_4_4/vc_allocator | Input requests = [ 0 -> [ 4@0 5@0 ]  2 -> [ 0@0 1@0 ]  5 -> [ 8@0 9@0 ]  6 -> [ 4@0 5@0 ]  9 -> [ 3@0 ]  ], output requests = [ 0 -> [ 2@0 ]  1 -> [ 2@0 ]  3 -> [ 9@0 ]  4 -> [ 0@0 6@0 ]  5 -> [ 0@0 6@0 ]  8 -> [ 5@0 ]  9 -> [ 5@0 ]  ].
+7480 | network_0/router_4_4/vc_allocator | Input grants = [ 0 -> 4  2 -> 1  5 -> 8  9 -> 3  ], output grants = [ 1 -> 2  3 -> 9  4 -> 0  8 -> 5  ].
+7480 | network_0/router_4_4 | Assigning VC 0 at output 2 to VC 0 at input 0.
+7480 | network_0/router_4_4 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+7480 | network_0/router_4_4 |   Acquiring assigned VC 0 at output 2.
+7480 | network_0/router_4_4/buf_0/vc_0 | Changing state from vc_alloc to active.
+7480 | network_0/router_4_4 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+7480 | network_0/router_4_4 |   Requesting output 2.0 (non-spec, pri: 0).
+7480 | network_0/router_4_4/sw_allocator | Input requests = [ 0 -> [ 2@0 ]  1 -> [ 0@0 ]  2 -> [ 4@0 ]  ], output requests = [ 0 -> [ 1@0 ]  2 -> [ 0@0 ]  4 -> [ 2@0 ]  ].
+7480 | network_0/router_4_4/sw_allocator | Input grants = [ 0 -> 2  1 -> 0  2 -> 4  ], output grants = [ 0 -> 1  2 -> 0  4 -> 2  ].
+7480 | network_0/router_4_4 | Assigning output 2.0 to VC 0 at input 0.0.
+7480 | network_0/router_4_4 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+7480 | network_0/router_4_4 |   Scheduling switch connection from input 0.0 to output 2.0.
+7480 | network_0/router_4_4 | Updating lookahead routing information for flit 192022.
+7480 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 3, destination 44).
+7481 | network_0/router_4_4 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 2.0.
+7481 | network_0/router_4_4 | Completed crossbar traversal for flit 192022 from input 0.0 to output 2.0.
+7481 | network_0/router_4_4 | Buffering flit 192022 at output 2.
+7481 | network_0/router_4_4 | Sending flit 192022 to channel at output 2.
+7482 | network_0/network_0_fchan_146 | Beginning channel traversal for flit 192022 with delay 1.
+7482 | network_0/network_0_fchan_146 | Completed channel traversal for flit 192022.
+7483 | network_0/router_5_4 | Received flit 192022 from channel at input 3.
+7483 | network_0/router_5_4 | Adding flit 192022 to VC 0 at input 3 (state: idle, empty).
+7483 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 0 at input 3 (front: 192022).
+7483 | network_0/router_5_4/buf_3/vc_0 | Changing state from idle to vc_alloc.
+7483 | network_0/router_5_4 | Beginning VC allocation for VC 0 at input 3 (front: 192022).
+7483 | network_0/router_5_4 |   Requesting VC 0 at output 4 (in_pri: 0, out_pri: 0).
+7483 | network_0/router_5_4 |   Requesting VC 1 at output 4 (in_pri: 0, out_pri: 0).
+7483 | network_0/router_5_4/vc_allocator | Input requests = [ 3 -> [ 0@0 1@0 ]  5 -> [ 6@0 7@0 ]  6 -> [ 8@0 9@0 ]  ], output requests = [ 0 -> [ 3@0 ]  1 -> [ 3@0 ]  6 -> [ 5@0 ]  7 -> [ 5@0 ]  8 -> [ 6@0 ]  9 -> [ 6@0 ]  ].
+7483 | network_0/router_5_4/vc_allocator | Input grants = [ 3 -> 0  5 -> 6  6 -> 8  ], output grants = [ 0 -> 3  6 -> 5  8 -> 6  ].
+7483 | network_0/router_5_4 | Assigning VC 0 at output 4 to VC 0 at input 3.
+7483 | network_0/router_5_4 | Completed VC allocation for VC 0 at input 3 (front: 192022).
+7483 | network_0/router_5_4 |   Acquiring assigned VC 0 at output 4.
+7483 | network_0/router_5_4/buf_3/vc_0 | Changing state from vc_alloc to active.
+7483 | network_0/router_5_4 | Beginning switch allocation for VC 0 at input 3 (front: 192022).
+7483 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+7483 | network_0/router_5_4/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 4@0 ]  ], output requests = [ 0 -> [ 1@0 ]  3 -> [ 2@0 ]  4 -> [ 3@0 ]  ].
+7483 | network_0/router_5_4/sw_allocator | Input grants = [ 1 -> 0  2 -> 3  3 -> 4  ], output grants = [ 0 -> 1  3 -> 2  4 -> 3  ].
+7483 | network_0/router_5_4 | Assigning output 4.0 to VC 0 at input 3.0.
+7483 | network_0/router_5_4 | Completed switch allocation for VC 0 at input 3 (front: 192022).
+7483 | network_0/router_5_4 |   Scheduling switch connection from input 3.0 to output 4.0.
+7484 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+7484 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+7484 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+7484 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+7485 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+7485 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+7486 | node44 | Ejecting flit 192022 (packet 192022) from VC 0.
+7486 | node44 | Injecting credit for VC 0 into subnet 0.
+7486 | node44 | Retiring flit 192022 (packet 192022, src = 39, dest = 44, hops = 5, flat = 3190).
+7486 | node44 | Retiring packet 192022 (plat = 3190, nlat = 3190, frag = 0, src = 39, dest = 44).
+Requeued flit 180165
+Requeued flit 263586
+Requeued flit 187895
+Requeued flit 261734
+Requeued flit 304622
+Requeued flit 235850
+Requeued flit 187969
+Requeued flit 244371
+Requeued flit 306828
+Requeued flit 179829
+Requeued flit 299716
+Requeued flit 258339
+Requeued flit 298297
+Requeued flit 208422
+Requeued flit 268923
+Requeued flit 174584
+Requeued flit 271965
+Requeued flit 250641
+Requeued flit 296524
+Requeued flit 189084
+Requeued flit 315860
+Requeued flit 295600
+Requeued flit 297585
+Requeued flit 261912
+Requeued flit 254479
+Requeued flit 192217
+Requeued flit 246120
+Requeued flit 272160
+Requeued flit 304705
+Requeued flit 272624
+Requeued flit 305541
+Requeued flit 210469
+Requeued flit 296966
+Requeued flit 224488
+Requeued flit 186373
+Requeued flit 309642
+Requeued flit 182661
+Requeued flit 273918
+Requeued flit 194993
+Requeued flit 190617
+Requeued flit 191642
+Requeued flit 275203
+Requeued flit 247156
+Requeued flit 208014
+Requeued flit 267189
+Requeued flit 279653
+Requeued flit 290843
+Requeued flit 309572
+Requeued flit 204439
+Requeued flit 187489
+Requeued flit 314680
+Requeued flit 191969
+Requeued flit 329143
+Requeued flit 195025
+Requeued flit 330162
+Requeued flit 193009
+Requeued flit 312251
+Requeued flit 317127
+Requeued flit 324469
+Requeued flit 174541
+Requeued flit 278052
+Requeued flit 283459
+Requeued flit 282190
+Requeued flit 249118
+Requeued flit 206306
+Requeued flit 197066
+Requeued flit 308340
+Requeued flit 197066
+Requeued flit 282606
+Requeued flit 341143
+Requeued flit 278123
+Requeued flit 269935
+Requeued flit 291397
+Requeued flit 326429
+Requeued flit 184618
+Requeued flit 312160
+Requeued flit 194519
+Requeued flit 237403
+Requeued flit 339853
+Requeued flit 229585
+Requeued flit 272239
+Requeued flit 215441
+Requeued flit 207785
+Requeued flit 326237
+Requeued flit 231953
+Requeued flit 314564
+Requeued flit 281941
+Requeued flit 253547
+Requeued flit 331001
+Requeued flit 274818
+Requeued flit 320070
+Requeued flit 298452
+Requeued flit 312766
+Requeued flit 223120
+Requeued flit 213386
+Requeued flit 272830
+Requeued flit 311895
+Requeued flit 291346
+Requeued flit 213154
+Requeued flit 318865
+Requeued flit 329023
+Requeued flit 292687
+Requeued flit 294419
+Requeued flit 206381
+Requeued flit 304871
+Requeued flit 299456
+Requeued flit 211275
+Requeued flit 305643
+Requeued flit 226571
+Requeued flit 215660
+Requeued flit 337584
+Requeued flit 307726
+Requeued flit 301903
+Requeued flit 309712
+Requeued flit 219850
+Requeued flit 357435
+Requeued flit 312295
+Requeued flit 293362
+Requeued flit 240092
+Requeued flit 319018
+Requeued flit 360458
+Requeued flit 344653
+Requeued flit 204471
+Requeued flit 364654
+Requeued flit 219278
+Requeued flit 347440
+Requeued flit 319238
+Requeued flit 322685
+Requeued flit 319645
+Requeued flit 282378
+Requeued flit 355290
+Requeued flit 323339
+Requeued flit 207122
+Requeued flit 368353
+Requeued flit 253882
+Requeued flit 248185
+Requeued flit 251429
+Requeued flit 375106
+Requeued flit 320791
+Requeued flit 248676
+Requeued flit 376145
+Requeued flit 255781
+Requeued flit 375670
+Requeued flit 342951
+Requeued flit 360553
+Requeued flit 379014
+Requeued flit 361461
+Requeued flit 365390
+Requeued flit 258666
+Requeued flit 308032
+Requeued flit 378043
+Requeued flit 346444
+Requeued flit 346045
+Requeued flit 299718
+Requeued flit 344828
+Requeued flit 312989
+Requeued flit 236743
+Requeued flit 335539
+Requeued flit 371430
+Requeued flit 267620
+Requeued flit 326409
+Requeued flit 316716
+Requeued flit 333696
+Requeued flit 366444
+Requeued flit 363168
+Requeued flit 349789
+Requeued flit 388440
+Requeued flit 389012
+Requeued flit 388871
+Requeued flit 357307
+Requeued flit 373981
+Requeued flit 388619
+Requeued flit 389546
+Class 0:
+Packet latency average = 1082.8
+	minimum = 5
+	maximum = 5295
+Network latency average = 1055.14
+	minimum = 5
+	maximum = 5292
+Slowest packet = 207122
+Flit latency average = 1055.14
+	minimum = 5
+	maximum = 5292
+Slowest flit = 207122
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.614056
+	minimum = 0.4844 (at node 1)
+	maximum = 0.708 (at node 11)
+Accepted packet rate average = 0.509545
+	minimum = 0.4917 (at node 21)
+	maximum = 0.528 (at node 15)
+Injected flit rate average = 0.614056
+	minimum = 0.4844 (at node 1)
+	maximum = 0.708 (at node 11)
+Accepted flit rate average= 0.509545
+	minimum = 0.4917 (at node 21)
+	maximum = 0.528 (at node 15)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 66916 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 89.8165

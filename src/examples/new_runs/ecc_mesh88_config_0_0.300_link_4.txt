@@ -1,0 +1,1205 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_0_0.300_link_4
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.3;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 4;
+ecc = link;
+correctable = 0;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = link;
+
+stats_out = examples/ecc_mesh88_config_0_0.300_link_4.m;
+
+END Configuration File: examples/ecc_mesh88_config_0_0.300_link_4
+Requeued flit 782
+Requeued flit 1538
+Requeued flit 2132
+Requeued flit 6137
+Requeued flit 7185
+Requeued flit 7474
+Requeued flit 10612
+Requeued flit 13690
+Requeued flit 14316
+Requeued flit 15330
+Requeued flit 16150
+Requeued flit 16776
+Requeued flit 19776
+Requeued flit 22349
+Requeued flit 27861
+Requeued flit 28344
+Requeued flit 32539
+Requeued flit 32636
+Requeued flit 33838
+Requeued flit 33929
+Requeued flit 37320
+Requeued flit 42930
+Requeued flit 45006
+Requeued flit 47886
+Requeued flit 49077
+Requeued flit 50376
+Requeued flit 50483
+Requeued flit 51301
+Requeued flit 54197
+Requeued flit 59168
+Requeued flit 61730
+Requeued flit 65262
+Requeued flit 66611
+Requeued flit 70945
+Requeued flit 71945
+Requeued flit 74303
+Requeued flit 74802
+Requeued flit 79146
+Requeued flit 79691
+Requeued flit 80349
+Requeued flit 84211
+Requeued flit 88965
+Requeued flit 95236
+Requeued flit 95439
+Requeued flit 94918
+Requeued flit 95571
+Requeued flit 96598
+Requeued flit 97418
+Requeued flit 98349
+Requeued flit 98780
+Requeued flit 100647
+Requeued flit 101035
+Requeued flit 102078
+Requeued flit 102193
+Requeued flit 104990
+Requeued flit 105376
+Requeued flit 107414
+Requeued flit 114014
+Requeued flit 114141
+Requeued flit 118493
+Requeued flit 119363
+Requeued flit 119480
+Requeued flit 121771
+Requeued flit 122893
+Requeued flit 123641
+Requeued flit 124397
+Requeued flit 125779
+Requeued flit 126897
+Requeued flit 129519
+Requeued flit 131574
+Requeued flit 133431
+Requeued flit 135789
+Requeued flit 136784
+Requeued flit 138267
+Requeued flit 139929
+Requeued flit 140646
+Requeued flit 141957
+Requeued flit 142466
+Requeued flit 143989
+Requeued flit 145304
+Requeued flit 145536
+Requeued flit 145832
+Requeued flit 150221
+Requeued flit 150816
+Requeued flit 154399
+Requeued flit 155445
+Requeued flit 154998
+Requeued flit 155715
+Requeued flit 156043
+Requeued flit 158412
+Requeued flit 159817
+Requeued flit 162931
+Requeued flit 163924
+Requeued flit 167167
+Requeued flit 168343
+Requeued flit 169453
+Requeued flit 170133
+Requeued flit 173717
+Requeued flit 173983
+Requeued flit 174051
+Requeued flit 174859
+Requeued flit 175126
+Requeued flit 176738
+Requeued flit 179724
+Requeued flit 181782
+Requeued flit 182083
+Requeued flit 183274
+Requeued flit 184470
+Requeued flit 185177
+Requeued flit 185526
+Requeued flit 190425
+Class 0:
+Packet latency average = 22.1255
+	minimum = 5
+	maximum = 62
+Network latency average = 22.1255
+	minimum = 5
+	maximum = 62
+Slowest packet = 103747
+Flit latency average = 22.1255
+	minimum = 5
+	maximum = 62
+Slowest flit = 103747
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.299755
+	minimum = 0.2887 (at node 3)
+	maximum = 0.3112 (at node 13)
+Accepted packet rate average = 0.299045
+	minimum = 0.2885 (at node 33)
+	maximum = 0.3124 (at node 53)
+Injected flit rate average = 0.299755
+	minimum = 0.2887 (at node 3)
+	maximum = 0.3112 (at node 13)
+Accepted flit rate average= 0.299045
+	minimum = 0.2885 (at node 33)
+	maximum = 0.3124 (at node 53)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 454 (0 measured)
+latency change    = 1
+throughput change = 1
+10009 | node47 | Enqueuing flit 192022 (packet 192022) at time 10009.
+10009 | traffic_manager | Finding output VC for flit 192022:
+10009 | traffic_manager |   Selected output VC 0.
+10009 | network_0/router_5_7 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 4, destination 44).
+10009 | node47 | Generating lookahead routing info for flit 192022.
+10009 | node47 | Injecting flit 192022 into subnet 0 at time 10009 with priority 0.
+10010 | network_0/network_0_fchan_ingress47 | Beginning channel traversal for flit 192022 with delay 1.
+10010 | network_0/network_0_fchan_ingress47 | Completed channel traversal for flit 192022.
+10011 | network_0/router_5_7 | Received flit 192022 from channel at input 4.
+10011 | network_0/router_5_7 | Adding flit 192022 to VC 0 at input 4 (state: idle, empty).
+10011 | network_0/router_5_7 | Using precomputed lookahead routing information for VC 0 at input 4 (front: 192022).
+10011 | network_0/router_5_7/buf_4/vc_0 | Changing state from idle to vc_alloc.
+10011 | network_0/router_5_7 | Beginning VC allocation for VC 0 at input 4 (front: 192022).
+10011 | network_0/router_5_7 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+10011 | network_0/router_5_7 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+10011 | network_0/router_5_7/vc_allocator | Input requests = [ 7 -> [ 4@0 5@0 ]  8 -> [ 2@0 3@0 ]  ], output requests = [ 2 -> [ 8@0 ]  3 -> [ 8@0 ]  4 -> [ 7@0 ]  5 -> [ 7@0 ]  ].
+10011 | network_0/router_5_7/vc_allocator | Input grants = [ 7 -> 5  8 -> 2  ], output grants = [ 2 -> 8  5 -> 7  ].
+10011 | network_0/router_5_7 | Assigning VC 0 at output 1 to VC 0 at input 4.
+10011 | network_0/router_5_7 | Completed VC allocation for VC 0 at input 4 (front: 192022).
+10011 | network_0/router_5_7 |   Acquiring assigned VC 0 at output 1.
+10011 | network_0/router_5_7/buf_4/vc_0 | Changing state from vc_alloc to active.
+10011 | network_0/router_5_7 | Beginning switch allocation for VC 0 at input 4 (front: 192022).
+10011 | network_0/router_5_7 |   Requesting output 1.0 (non-spec, pri: 0).
+10011 | network_0/router_5_7/sw_allocator | Input requests = [ 3 -> [ 2@0 ]  4 -> [ 1@0 ]  ], output requests = [ 1 -> [ 4@0 ]  2 -> [ 3@0 ]  ].
+10011 | network_0/router_5_7/sw_allocator | Input grants = [ 3 -> 2  4 -> 1  ], output grants = [ 1 -> 4  2 -> 3  ].
+10011 | network_0/router_5_7 | Assigning output 1.0 to VC 0 at input 4.0.
+10011 | network_0/router_5_7 | Completed switch allocation for VC 0 at input 4 (front: 192022).
+10011 | network_0/router_5_7 |   Scheduling switch connection from input 4.0 to output 1.0.
+10011 | network_0/router_5_7 | Updating lookahead routing information for flit 192022.
+10011 | network_0/router_5_6 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+10012 | network_0/router_5_7 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+10012 | network_0/router_5_7 | Completed crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+10012 | network_0/router_5_7 | Buffering flit 192022 at output 1.
+10012 | network_0/router_5_7 | Sending flit 192022 to channel at output 1.
+10013 | network_0/network_0_fchan_189 | Beginning channel traversal for flit 192022 with delay 1.
+10013 | network_0/network_0_fchan_189 | Completed channel traversal for flit 192022.
+10014 | network_0/router_5_6 | Received flit 192022 from channel at input 0.
+10014 | network_0/router_5_6 | Adding flit 192022 to VC 0 at input 0 (state: idle, empty).
+10014 | network_0/router_5_6 | Using precomputed lookahead routing information for VC 0 at input 0 (front: 192022).
+10014 | network_0/router_5_6/buf_0/vc_0 | Changing state from idle to vc_alloc.
+10014 | network_0/router_5_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+10014 | network_0/router_5_6 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+10014 | network_0/router_5_6 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+10014 | network_0/router_5_6/vc_allocator | Input requests = [ 0 -> [ 2@0 3@0 ]  2 -> [ 0@0 1@0 ]  4 -> [ 6@0 7@0 ]  6 -> [ 4@0 5@0 ]  8 -> [ 2@0 3@0 ]  ], output requests = [ 0 -> [ 2@0 ]  1 -> [ 2@0 ]  2 -> [ 0@0 8@0 ]  3 -> [ 0@0 8@0 ]  4 -> [ 6@0 ]  5 -> [ 6@0 ]  6 -> [ 4@0 ]  7 -> [ 4@0 ]  ].
+10014 | network_0/router_5_6/vc_allocator | Input grants = [ 0 -> 3  2 -> 0  4 -> 6  6 -> 5  8 -> 2  ], output grants = [ 0 -> 2  2 -> 8  3 -> 0  5 -> 6  6 -> 4  ].
+10014 | network_0/router_5_6 | Assigning VC 1 at output 1 to VC 0 at input 0.
+10014 | network_0/router_5_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+10014 | network_0/router_5_6 |   Acquiring assigned VC 1 at output 1.
+10014 | network_0/router_5_6/buf_0/vc_0 | Changing state from vc_alloc to active.
+10014 | network_0/router_5_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+10014 | network_0/router_5_6 |   Requesting output 1.0 (non-spec, pri: 0).
+10014 | network_0/router_5_6/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 1@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 4@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ].
+10014 | network_0/router_5_6/sw_allocator | Input grants = [ 1 -> 0  2 -> 3  3 -> 2  4 -> 1  ], output grants = [ 0 -> 1  1 -> 4  2 -> 3  3 -> 2  ].
+10014 | network_0/router_5_6 | Switch allocation failed for VC 0 at input 0: No output granted.
+10014 | network_0/router_5_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+10014 | network_0/router_5_6 |   No output port allocated.
+10015 | network_0/router_5_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+10015 | network_0/router_5_6 |   Requesting output 1.0 (non-spec, pri: 0).
+10015 | network_0/router_5_6/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  ], output requests = [ 1 -> [ 0@0 ]  ].
+10015 | network_0/router_5_6/sw_allocator | Input grants = [ 0 -> 1  ], output grants = [ 1 -> 0  ].
+10015 | network_0/router_5_6 | Assigning output 1.0 to VC 0 at input 0.0.
+10015 | network_0/router_5_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+10015 | network_0/router_5_6 |   Scheduling switch connection from input 0.0 to output 1.0.
+10015 | network_0/router_5_6 | Updating lookahead routing information for flit 192022.
+10015 | network_0/router_5_5 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+10015 | network_0/router_5_6 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+10015 | network_0/router_5_6 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+10015 | network_0/router_5_6 | Buffering flit 192022 at output 1.
+10016 | network_0/router_5_6 | Sending flit 192022 to channel at output 1.
+10017 | network_0/network_0_fchan_185 | Beginning channel traversal for flit 192022 with delay 1.
+10017 | network_0/network_0_fchan_185 | Completed channel traversal for flit 192022.
+10018 | network_0/router_5_5 | Received flit 192022 from channel at input 0.
+10018 | network_0/router_5_5 | Adding flit 192022 to VC 1 at input 0 (state: idle, empty).
+10018 | network_0/router_5_5 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+10018 | network_0/router_5_5/buf_0/vc_1 | Changing state from idle to vc_alloc.
+10018 | network_0/router_5_5 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+10018 | network_0/router_5_5 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+10018 | network_0/router_5_5 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+10018 | network_0/router_5_5/vc_allocator | Input requests = [ 1 -> [ 2@0 3@0 ]  3 -> [ 6@0 7@0 ]  ], output requests = [ 2 -> [ 1@0 ]  3 -> [ 1@0 ]  6 -> [ 3@0 ]  7 -> [ 3@0 ]  ].
+10018 | network_0/router_5_5/vc_allocator | Input grants = [ 1 -> 2  3 -> 7  ], output grants = [ 2 -> 1  7 -> 3  ].
+10018 | network_0/router_5_5 | Assigning VC 0 at output 1 to VC 1 at input 0.
+10018 | network_0/router_5_5 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+10018 | network_0/router_5_5 |   Acquiring assigned VC 0 at output 1.
+10018 | network_0/router_5_5/buf_0/vc_1 | Changing state from vc_alloc to active.
+10018 | network_0/router_5_5 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+10018 | network_0/router_5_5 |   Requesting output 1.0 (non-spec, pri: 0).
+10018 | network_0/router_5_5/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 3@0 ]  ], output requests = [ 1 -> [ 0@0 ]  3 -> [ 1@0 ]  ].
+10018 | network_0/router_5_5/sw_allocator | Input grants = [ 0 -> 1  1 -> 3  ], output grants = [ 1 -> 0  3 -> 1  ].
+10018 | network_0/router_5_5 | Assigning output 1.0 to VC 1 at input 0.0.
+10018 | network_0/router_5_5 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+10018 | network_0/router_5_5 |   Scheduling switch connection from input 0.0 to output 1.0.
+10018 | network_0/router_5_5 | Updating lookahead routing information for flit 192022.
+10018 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 0, destination 44).
+10019 | network_0/router_5_5 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+10019 | network_0/router_5_5 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+10019 | network_0/router_5_5 | Buffering flit 192022 at output 1.
+10019 | network_0/router_5_5 | Sending flit 192022 to channel at output 1.
+10020 | network_0/network_0_fchan_181 | Beginning channel traversal for flit 192022 with delay 1.
+10020 | network_0/network_0_fchan_181 | Completed channel traversal for flit 192022.
+10021 | network_0/router_5_4 | Received flit 192022 from channel at input 0.
+10021 | network_0/router_5_4 | Adding flit 192022 to VC 0 at input 0 (state: idle, empty).
+10021 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 0 at input 0 (front: 192022).
+10021 | network_0/router_5_4/buf_0/vc_0 | Changing state from idle to vc_alloc.
+10021 | network_0/router_5_4 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+10021 | network_0/router_5_4 |   Requesting VC 0 at output 4 (in_pri: 0, out_pri: 0).
+10021 | network_0/router_5_4 |   Requesting VC 1 at output 4 (in_pri: 0, out_pri: 0).
+10021 | network_0/router_5_4/vc_allocator | Input requests = [ 0 -> [ 8@0 9@0 ]  ], output requests = [ 8 -> [ 0@0 ]  9 -> [ 0@0 ]  ].
+10021 | network_0/router_5_4/vc_allocator | Input grants = [ 0 -> 8  ], output grants = [ 8 -> 0  ].
+10021 | network_0/router_5_4 | Assigning VC 0 at output 4 to VC 0 at input 0.
+10021 | network_0/router_5_4 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+10021 | network_0/router_5_4 |   Acquiring assigned VC 0 at output 4.
+10021 | network_0/router_5_4/buf_0/vc_0 | Changing state from vc_alloc to active.
+10021 | network_0/router_5_4 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+10021 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+10021 | network_0/router_5_4/sw_allocator | Input requests = [ 0 -> [ 4@0 ]  ], output requests = [ 4 -> [ 0@0 ]  ].
+10021 | network_0/router_5_4/sw_allocator | Input grants = [ 0 -> 4  ], output grants = [ 4 -> 0  ].
+10021 | network_0/router_5_4 | Assigning output 4.0 to VC 0 at input 0.0.
+10021 | network_0/router_5_4 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+10021 | network_0/router_5_4 |   Scheduling switch connection from input 0.0 to output 4.0.
+10022 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 4.0.
+10022 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 0.0 to output 4.0.
+10022 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+10022 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+10023 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+10023 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+10024 | node44 | Ejecting flit 192022 (packet 192022) from VC 0.
+10024 | node44 | Injecting credit for VC 0 into subnet 0.
+10024 | node44 | Retiring flit 192022 (packet 192022, src = 47, dest = 44, hops = 4, flat = 15).
+10024 | node44 | Retiring packet 192022 (plat = 15, nlat = 15, frag = 0, src = 47, dest = 44).
+Requeued flit 192173
+Requeued flit 192199
+Requeued flit 192789
+Requeued flit 193277
+Requeued flit 195612
+Requeued flit 196375
+Requeued flit 197803
+Requeued flit 200914
+Requeued flit 201849
+Requeued flit 203127
+Requeued flit 205471
+Requeued flit 208624
+Requeued flit 210200
+Requeued flit 210081
+Requeued flit 213555
+Requeued flit 214033
+Requeued flit 214657
+Requeued flit 215650
+Requeued flit 217166
+Requeued flit 218362
+Requeued flit 219811
+Requeued flit 220343
+Requeued flit 225770
+Requeued flit 228482
+Requeued flit 229491
+Requeued flit 229156
+Requeued flit 231635
+Requeued flit 231837
+Requeued flit 232960
+Requeued flit 235730
+Requeued flit 239710
+Requeued flit 241467
+Requeued flit 241781
+Requeued flit 245071
+Requeued flit 245834
+Requeued flit 246547
+Requeued flit 246596
+Requeued flit 246861
+Requeued flit 248555
+Requeued flit 249453
+Requeued flit 250547
+Requeued flit 253237
+Requeued flit 255412
+Requeued flit 256461
+Requeued flit 256796
+Requeued flit 259357
+Requeued flit 260273
+Requeued flit 262600
+Requeued flit 262535
+Requeued flit 264226
+Requeued flit 264684
+Requeued flit 267718
+Requeued flit 267993
+Requeued flit 271557
+Requeued flit 271190
+Requeued flit 272371
+Requeued flit 276357
+Requeued flit 277802
+Requeued flit 279103
+Requeued flit 280943
+Requeued flit 281723
+Requeued flit 282289
+Requeued flit 287067
+Requeued flit 287915
+Requeued flit 288291
+Requeued flit 289948
+Requeued flit 290627
+Requeued flit 292432
+Requeued flit 292948
+Requeued flit 294852
+Requeued flit 295551
+Requeued flit 295893
+Requeued flit 298983
+Requeued flit 300130
+Requeued flit 302639
+Requeued flit 306738
+Requeued flit 307753
+Requeued flit 311599
+Requeued flit 312426
+Requeued flit 312584
+Requeued flit 312769
+Requeued flit 313357
+Requeued flit 313820
+Requeued flit 314312
+Requeued flit 314824
+Requeued flit 316050
+Requeued flit 316036
+Requeued flit 317632
+Requeued flit 318820
+Requeued flit 319499
+Requeued flit 323308
+Requeued flit 326221
+Requeued flit 330903
+Requeued flit 334234
+Requeued flit 334683
+Requeued flit 337206
+Requeued flit 337118
+Requeued flit 343239
+Requeued flit 343783
+Requeued flit 345167
+Requeued flit 345214
+Requeued flit 346419
+Requeued flit 350308
+Requeued flit 351236
+Requeued flit 352421
+Requeued flit 357292
+Requeued flit 357582
+Requeued flit 357691
+Requeued flit 359815
+Requeued flit 359922
+Requeued flit 360401
+Requeued flit 360252
+Requeued flit 373268
+Requeued flit 379042
+Requeued flit 379457
+Class 0:
+Packet latency average = 22.1373
+	minimum = 5
+	maximum = 63
+Network latency average = 22.1373
+	minimum = 5
+	maximum = 63
+Slowest packet = 196375
+Flit latency average = 22.1373
+	minimum = 5
+	maximum = 63
+Slowest flit = 196375
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.299913
+	minimum = 0.29 (at node 3)
+	maximum = 0.3082 (at node 41)
+Accepted packet rate average = 0.299581
+	minimum = 0.2903 (at node 21)
+	maximum = 0.3084 (at node 28)
+Injected flit rate average = 0.299913
+	minimum = 0.29 (at node 3)
+	maximum = 0.3082 (at node 41)
+Accepted flit rate average= 0.299581
+	minimum = 0.2903 (at node 21)
+	maximum = 0.3084 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 425 (0 measured)
+latency change    = 0.000534574
+throughput change = 0.00178896
+Requeued flit 384633
+Requeued flit 385608
+Requeued flit 387423
+Requeued flit 390567
+Requeued flit 391380
+Requeued flit 399783
+Requeued flit 406252
+Requeued flit 407996
+Requeued flit 410635
+Requeued flit 413153
+Requeued flit 413144
+Requeued flit 413744
+Requeued flit 417884
+Requeued flit 418467
+Requeued flit 421304
+Requeued flit 422957
+Requeued flit 426410
+Requeued flit 426981
+Requeued flit 429631
+Requeued flit 429695
+Requeued flit 434496
+Requeued flit 435344
+Requeued flit 435969
+Requeued flit 437702
+Requeued flit 440441
+Requeued flit 446035
+Requeued flit 448806
+Requeued flit 450875
+Requeued flit 452149
+Requeued flit 452480
+Requeued flit 454498
+Requeued flit 456116
+Requeued flit 457456
+Requeued flit 458903
+Requeued flit 459672
+Requeued flit 459911
+Requeued flit 461254
+Requeued flit 462751
+Requeued flit 463140
+Requeued flit 463282
+Requeued flit 463685
+Requeued flit 463812
+Requeued flit 464337
+Requeued flit 465060
+Requeued flit 467980
+Requeued flit 471313
+Requeued flit 473047
+Requeued flit 475046
+Requeued flit 474987
+Requeued flit 477666
+Requeued flit 479264
+Requeued flit 484766
+Requeued flit 485977
+Requeued flit 486314
+Requeued flit 487299
+Requeued flit 488426
+Requeued flit 489623
+Requeued flit 489657
+Requeued flit 489912
+Requeued flit 490848
+Requeued flit 492194
+Requeued flit 493063
+Requeued flit 493162
+Requeued flit 500748
+Requeued flit 500833
+Requeued flit 503291
+Requeued flit 504110
+Requeued flit 504498
+Requeued flit 506156
+Requeued flit 506292
+Requeued flit 508580
+Requeued flit 508837
+Requeued flit 515148
+Requeued flit 516076
+Requeued flit 516369
+Requeued flit 517444
+Requeued flit 518686
+Requeued flit 523425
+Requeued flit 524084
+Requeued flit 525321
+Requeued flit 525760
+Requeued flit 526714
+Requeued flit 526602
+Requeued flit 534020
+Requeued flit 535169
+Requeued flit 535644
+Requeued flit 536006
+Requeued flit 536211
+Requeued flit 536399
+Requeued flit 536705
+Requeued flit 537790
+Requeued flit 542950
+Requeued flit 543159
+Requeued flit 545405
+Requeued flit 545137
+Requeued flit 549131
+Requeued flit 549418
+Requeued flit 549752
+Requeued flit 550999
+Requeued flit 551218
+Requeued flit 552719
+Requeued flit 555246
+Requeued flit 557624
+Requeued flit 557841
+Requeued flit 560361
+Requeued flit 561453
+Requeued flit 561927
+Requeued flit 562439
+Requeued flit 564220
+Requeued flit 565730
+Requeued flit 565886
+Requeued flit 566337
+Requeued flit 567999
+Requeued flit 569125
+Requeued flit 570901
+Requeued flit 572406
+Requeued flit 574410
+Class 0:
+Packet latency average = 22.1571
+	minimum = 5
+	maximum = 61
+Network latency average = 22.1571
+	minimum = 5
+	maximum = 61
+Slowest packet = 489912
+Flit latency average = 22.1571
+	minimum = 5
+	maximum = 61
+Slowest flit = 489912
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.299967
+	minimum = 0.2901 (at node 43)
+	maximum = 0.3103 (at node 0)
+Accepted packet rate average = 0.299953
+	minimum = 0.287 (at node 54)
+	maximum = 0.3122 (at node 46)
+Injected flit rate average = 0.299967
+	minimum = 0.2901 (at node 43)
+	maximum = 0.3103 (at node 0)
+Accepted flit rate average= 0.299953
+	minimum = 0.287 (at node 54)
+	maximum = 0.3122 (at node 46)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 434 (0 measured)
+latency change    = 0.000895101
+throughput change = 0.00123978
+Warmed up ...Time used is 30000 cycles
+Requeued flit 581041
+Requeued flit 581934
+Requeued flit 586455
+Requeued flit 586673
+Requeued flit 586883
+Requeued flit 589810
+Requeued flit 590194
+Requeued flit 591621
+Requeued flit 591940
+Requeued flit 594100
+Requeued flit 596116
+Requeued flit 598442
+Requeued flit 598660
+Requeued flit 598769
+Requeued flit 598879
+Requeued flit 599150
+Requeued flit 599685
+Requeued flit 601169
+Requeued flit 605087
+Requeued flit 606308
+Requeued flit 606560
+Requeued flit 606726
+Requeued flit 607367
+Requeued flit 608024
+Requeued flit 607926
+Requeued flit 608491
+Requeued flit 608522
+Requeued flit 608844
+Requeued flit 609749
+Requeued flit 610345
+Requeued flit 612133
+Requeued flit 613044
+Requeued flit 615132
+Requeued flit 618233
+Requeued flit 619821
+Requeued flit 619694
+Requeued flit 620049
+Requeued flit 620600
+Requeued flit 623897
+Requeued flit 624590
+Requeued flit 627798
+Requeued flit 629830
+Requeued flit 631696
+Requeued flit 632440
+Requeued flit 632835
+Requeued flit 634986
+Requeued flit 634756
+Requeued flit 638213
+Requeued flit 639180
+Requeued flit 639495
+Requeued flit 640083
+Requeued flit 641641
+Requeued flit 643665
+Requeued flit 644252
+Requeued flit 647014
+Requeued flit 647395
+Requeued flit 652060
+Requeued flit 653189
+Requeued flit 653606
+Requeued flit 653581
+Requeued flit 653589
+Requeued flit 655304
+Requeued flit 658561
+Requeued flit 659723
+Requeued flit 660322
+Requeued flit 666580
+Requeued flit 667148
+Requeued flit 669115
+Requeued flit 670898
+Requeued flit 672375
+Requeued flit 672838
+Requeued flit 674230
+Requeued flit 676654
+Requeued flit 678469
+Requeued flit 678743
+Requeued flit 680342
+Requeued flit 684918
+Requeued flit 685094
+Requeued flit 694396
+Requeued flit 696908
+Requeued flit 697542
+Requeued flit 698233
+Requeued flit 699019
+Requeued flit 699247
+Requeued flit 701524
+Requeued flit 701874
+Requeued flit 705840
+Requeued flit 709985
+Requeued flit 712487
+Requeued flit 715807
+Requeued flit 716850
+Requeued flit 716872
+Requeued flit 718288
+Requeued flit 720241
+Requeued flit 720151
+Requeued flit 726910
+Requeued flit 731560
+Requeued flit 732536
+Requeued flit 734853
+Requeued flit 734827
+Requeued flit 735841
+Requeued flit 738102
+Requeued flit 738595
+Requeued flit 739664
+Requeued flit 741074
+Requeued flit 743283
+Requeued flit 746262
+Requeued flit 746462
+Requeued flit 752528
+Requeued flit 753361
+Requeued flit 753396
+Requeued flit 753559
+Requeued flit 756010
+Requeued flit 756898
+Requeued flit 758441
+Requeued flit 758755
+Requeued flit 763097
+Requeued flit 764087
+Requeued flit 766846
+Class 0:
+Packet latency average = 22.1176
+	minimum = 5
+	maximum = 59
+Network latency average = 22.1176
+	minimum = 5
+	maximum = 59
+Slowest packet = 706911
+Flit latency average = 22.1258
+	minimum = 5
+	maximum = 59
+Slowest flit = 706911
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.299823
+	minimum = 0.2904 (at node 45)
+	maximum = 0.3111 (at node 19)
+Accepted packet rate average = 0.299834
+	minimum = 0.2854 (at node 62)
+	maximum = 0.3088 (at node 34)
+Injected flit rate average = 0.299823
+	minimum = 0.2904 (at node 45)
+	maximum = 0.3111 (at node 19)
+Accepted flit rate average= 0.299834
+	minimum = 0.2854 (at node 62)
+	maximum = 0.3088 (at node 34)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 427 (427 measured)
+latency change    = 0.00178855
+throughput change = 0.000396052
+Requeued flit 767353
+Requeued flit 768006
+Requeued flit 772103
+Requeued flit 773757
+Requeued flit 774547
+Requeued flit 775340
+Requeued flit 775536
+Requeued flit 775474
+Requeued flit 777642
+Requeued flit 777717
+Requeued flit 780393
+Requeued flit 781841
+Requeued flit 782424
+Requeued flit 782824
+Requeued flit 783072
+Requeued flit 783282
+Requeued flit 784704
+Requeued flit 790238
+Requeued flit 790644
+Requeued flit 790734
+Requeued flit 792608
+Requeued flit 793641
+Requeued flit 795927
+Requeued flit 796159
+Requeued flit 798173
+Requeued flit 800229
+Requeued flit 800601
+Requeued flit 802592
+Requeued flit 804178
+Requeued flit 808406
+Requeued flit 811058
+Requeued flit 816517
+Requeued flit 817933
+Requeued flit 825836
+Requeued flit 826036
+Requeued flit 828627
+Requeued flit 829206
+Requeued flit 829330
+Requeued flit 830365
+Requeued flit 832339
+Requeued flit 833544
+Requeued flit 834288
+Requeued flit 835103
+Requeued flit 835370
+Requeued flit 835702
+Requeued flit 837024
+Requeued flit 840077
+Requeued flit 841942
+Requeued flit 844138
+Requeued flit 845742
+Requeued flit 847323
+Requeued flit 847749
+Requeued flit 849077
+Requeued flit 849726
+Requeued flit 850696
+Requeued flit 852306
+Requeued flit 857449
+Requeued flit 863358
+Requeued flit 864894
+Requeued flit 865580
+Requeued flit 865911
+Requeued flit 866302
+Requeued flit 870286
+Requeued flit 871211
+Requeued flit 877571
+Requeued flit 876940
+Requeued flit 877315
+Requeued flit 878508
+Requeued flit 880829
+Requeued flit 881864
+Requeued flit 882509
+Requeued flit 882718
+Requeued flit 883817
+Requeued flit 886073
+Requeued flit 886448
+Requeued flit 889282
+Requeued flit 889773
+Requeued flit 891319
+Requeued flit 892808
+Requeued flit 893974
+Requeued flit 896901
+Requeued flit 897821
+Requeued flit 899293
+Requeued flit 899394
+Requeued flit 899863
+Requeued flit 901801
+Requeued flit 902308
+Requeued flit 903912
+Requeued flit 906101
+Requeued flit 906728
+Requeued flit 906778
+Requeued flit 910903
+Requeued flit 912223
+Requeued flit 912757
+Requeued flit 914277
+Requeued flit 914782
+Requeued flit 916104
+Requeued flit 916604
+Requeued flit 918473
+Requeued flit 918865
+Requeued flit 919855
+Requeued flit 920082
+Requeued flit 920777
+Requeued flit 921202
+Requeued flit 921582
+Requeued flit 925676
+Requeued flit 926068
+Requeued flit 929006
+Requeued flit 930260
+Requeued flit 931230
+Requeued flit 932726
+Requeued flit 932886
+Requeued flit 932502
+Requeued flit 933327
+Requeued flit 933683
+Requeued flit 940743
+Requeued flit 943503
+Requeued flit 945906
+Requeued flit 946077
+Requeued flit 947169
+Requeued flit 947467
+Requeued flit 947834
+Requeued flit 949788
+Requeued flit 953824
+Requeued flit 953714
+Requeued flit 955500
+Requeued flit 958264
+Class 0:
+Packet latency average = 22.1127
+	minimum = 5
+	maximum = 59
+Network latency average = 22.1127
+	minimum = 5
+	maximum = 59
+Slowest packet = 706911
+Flit latency average = 22.1168
+	minimum = 5
+	maximum = 59
+Slowest flit = 706911
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.299758
+	minimum = 0.2924 (at node 26)
+	maximum = 0.30585 (at node 42)
+Accepted packet rate average = 0.299744
+	minimum = 0.2886 (at node 62)
+	maximum = 0.30715 (at node 15)
+Injected flit rate average = 0.299758
+	minimum = 0.2924 (at node 26)
+	maximum = 0.30585 (at node 42)
+Accepted flit rate average= 0.299744
+	minimum = 0.2886 (at node 62)
+	maximum = 0.30715 (at node 15)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 452 (452 measured)
+latency change    = 0.000219176
+throughput change = 0.000302342
+Requeued flit 960397
+Requeued flit 962725
+Requeued flit 963633
+Requeued flit 963682
+Requeued flit 967290
+Requeued flit 971472
+Requeued flit 971950
+Requeued flit 973437
+Requeued flit 975403
+Requeued flit 976444
+Requeued flit 976893
+Requeued flit 978319
+Requeued flit 978302
+Requeued flit 979688
+Requeued flit 979850
+Requeued flit 983301
+Requeued flit 986668
+Requeued flit 988854
+Requeued flit 990023
+Requeued flit 990590
+Requeued flit 992769
+Requeued flit 993366
+Requeued flit 997773
+Requeued flit 997932
+Requeued flit 998044
+Requeued flit 999770
+Requeued flit 1000589
+Requeued flit 1001937
+Requeued flit 1006564
+Requeued flit 1017018
+Requeued flit 1017061
+Requeued flit 1017048
+Requeued flit 1017261
+Requeued flit 1017639
+Requeued flit 1021357
+Requeued flit 1024183
+Requeued flit 1027132
+Requeued flit 1028808
+Requeued flit 1031144
+Requeued flit 1031313
+Requeued flit 1032229
+Requeued flit 1036613
+Requeued flit 1036688
+Requeued flit 1039700
+Requeued flit 1041666
+Requeued flit 1043938
+Requeued flit 1044213
+Requeued flit 1047310
+Requeued flit 1048573
+Requeued flit 1049514
+Requeued flit 1050780
+Requeued flit 1051038
+Requeued flit 1054453
+Requeued flit 1056539
+Requeued flit 1057149
+Requeued flit 1058047
+Requeued flit 1058621
+Requeued flit 1061110
+Requeued flit 1062342
+Requeued flit 1068967
+Requeued flit 1069347
+Requeued flit 1069213
+Requeued flit 1073461
+Requeued flit 1073549
+Requeued flit 1074454
+Requeued flit 1076333
+Requeued flit 1079044
+Requeued flit 1079713
+Requeued flit 1079817
+Requeued flit 1081684
+Requeued flit 1082729
+Requeued flit 1082919
+Requeued flit 1089111
+Requeued flit 1091500
+Requeued flit 1091961
+Requeued flit 1092979
+Requeued flit 1095372
+Requeued flit 1096783
+Requeued flit 1100394
+Requeued flit 1100410
+Requeued flit 1103186
+Requeued flit 1103332
+Requeued flit 1104602
+Requeued flit 1105604
+Requeued flit 1106453
+Requeued flit 1107165
+Requeued flit 1107166
+Requeued flit 1107154
+Requeued flit 1108561
+Requeued flit 1109317
+Requeued flit 1109164
+Requeued flit 1110115
+Requeued flit 1110408
+Requeued flit 1110881
+Requeued flit 1112797
+Requeued flit 1113950
+Requeued flit 1114482
+Requeued flit 1116935
+Requeued flit 1118992
+Requeued flit 1118673
+Requeued flit 1121533
+Requeued flit 1121552
+Requeued flit 1122075
+Requeued flit 1127343
+Requeued flit 1128393
+Requeued flit 1129028
+Requeued flit 1129423
+Requeued flit 1132014
+Requeued flit 1132444
+Requeued flit 1134145
+Requeued flit 1134223
+Requeued flit 1134832
+Requeued flit 1136670
+Requeued flit 1136452
+Requeued flit 1136790
+Requeued flit 1137834
+Requeued flit 1137799
+Requeued flit 1138860
+Requeued flit 1139729
+Requeued flit 1139778
+Requeued flit 1140366
+Requeued flit 1141458
+Requeued flit 1147633
+Requeued flit 1149570
+Requeued flit 1150048
+Class 0:
+Packet latency average = 22.1175
+	minimum = 5
+	maximum = 67
+Network latency average = 22.1175
+	minimum = 5
+	maximum = 67
+Slowest packet = 995193
+Flit latency average = 22.1203
+	minimum = 5
+	maximum = 67
+Slowest flit = 995193
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.299833
+	minimum = 0.2928 (at node 26)
+	maximum = 0.305067 (at node 63)
+Accepted packet rate average = 0.29982
+	minimum = 0.2927 (at node 14)
+	maximum = 0.307733 (at node 15)
+Injected flit rate average = 0.299833
+	minimum = 0.2928 (at node 26)
+	maximum = 0.305067 (at node 63)
+Accepted flit rate average= 0.29982
+	minimum = 0.2927 (at node 14)
+	maximum = 0.307733 (at node 15)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 459 (459 measured)
+latency change    = 0.000216081
+throughput change = 0.000253625
+Draining all recorded packets ...
+in flight = 459
+in flight = 435
+Requeued flit 1151126
+in flight = 411
+in flight = 396
+in flight = 376
+in flight = 360
+in flight = 340
+in flight = 320
+in flight = 302
+in flight = 284
+in flight = 265
+in flight = 246
+in flight = 231
+in flight = 215
+in flight = 197
+in flight = 179
+in flight = 156
+in flight = 141
+in flight = 127
+in flight = 111
+in flight = 97
+in flight = 87
+in flight = 80
+in flight = 73
+Requeued flit 1151798
+in flight = 68
+in flight = 63
+in flight = 55
+in flight = 52
+in flight = 45
+in flight = 38
+in flight = 30
+in flight = 24
+in flight = 19
+in flight = 16
+in flight = 12
+in flight = 10
+in flight = 8
+in flight = 7
+in flight = 5
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 1
+Draining remaining packets ...
+Time taken is 60093 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 22.1213 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 67 (1 samples)
+Network latency average = 22.1213 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 67 (1 samples)
+Flit latency average = 22.1245 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 67 (1 samples)
+Fragmentation average = 0 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 0 (1 samples)
+Injected packet rate average = 0.299833 (1 samples)
+	minimum = 0.2928 (1 samples)
+	maximum = 0.305067 (1 samples)
+Accepted packet rate average = 0.29982 (1 samples)
+	minimum = 0.2927 (1 samples)
+	maximum = 0.307733 (1 samples)
+Injected flit rate average = 0.299833 (1 samples)
+	minimum = 0.2928 (1 samples)
+	maximum = 0.305067 (1 samples)
+Accepted flit rate average = 0.29982 (1 samples)
+	minimum = 0.2927 (1 samples)
+	maximum = 0.307733 (1 samples)
+Injected packet size average = 1 (1 samples)
+Accepted packet size average = 1 (1 samples)
+Hops average = 6.25076 (1 samples)
+Total run time 160.417

@@ -454,6 +454,7 @@ TrafficManager::TrafficManager( const Configuration &config, const vector<Networ
     // ============ Error Correction ==============
 
     _ecc_strategy = config.GetStr( "ecc" );
+    _correctable = config.GetInt("correctable");
 
     // ============ Statistics ============ 
 
@@ -762,13 +763,17 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
     bool errored = false;
     int set_stall_time = f->hops * 2; // one clock to go through channel, one clock to process at router, can tune this 
     if (_ecc_strategy == "packet") {
-        if (f->flips) {
+        if (f->flips > _correctable && _sim_state != draining) {
             //cout << "Packet " << f->pid << ": Flit " << f->id << " contains error at time " << _time << endl;
 
             _errored_packets.insert(f->pid);
             /*for (const auto& item : _errored_packets) {
               cout << item << endl;
             }*/
+
+            if (f->flips > 2) {
+                cout << "Uncorrectable " << f->flips << "\n";
+            }
 
             additionalHops += f->hops;
 
@@ -777,7 +782,7 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
             // add to _error_reinject vector of errored packets
             // see _plat_stats[f->cl] section below for why I chose atime - ctime (not 100% on this tho)
 
-            cout << "Set signal latency stall time: " << set_stall_time << endl;
+            //cout << "Set signal latency stall time: " << set_stall_time << endl;
 
             // reset number of errors so we don't get the same flit always erroring
             f->flips = 0;
@@ -785,7 +790,7 @@ void TrafficManager::_ReceivedFlit( Flit *f, int dest )
             // add flit as NACK
             TrafficManager::ackNack new_nack = {f, false, set_stall_time};
             _ack_nack.push_back(new_nack);
-            //cout << "Adding flit " << f->id << " as NACK" << " at time " << _time << endl;
+            cout << "Adding flit " << f->id << " as NACK" << " at time " << _time << endl;
 
             errored = true;
         } else {
@@ -1026,7 +1031,7 @@ void TrafficManager::_Reinject(){
         
         if ( _partial_packets[input][c].empty() && ((*iter).stall_time == 0) ) {
             _partial_packets[input][c].push_back( (*iter).f);
-            cout << "Reenqueueing errored packet " << (*iter).f->pid << " at time " << _time << endl;
+            //cout << "Reenqueueing errored packet " << (*iter).f->pid << " at time " << _time << endl;
             _error_reinject.erase((iter+1).base());
         }
     }
@@ -1665,6 +1670,8 @@ bool TrafficManager::_SingleSim( )
         _sim_state  = draining;
         _drain_time = _time;
 
+        int num_empty_steps = 0;
+
         if ( _measure_latency ) {
             cout << "Draining all recorded packets ..." << endl;
             int empty_steps = 0;
@@ -1672,7 +1679,7 @@ bool TrafficManager::_SingleSim( )
                 _Step( ); 
 	
                 ++empty_steps;
-	
+
                 if ( empty_steps % 1000 == 0 ) {
 	  
                     int lat_exc_class = -1;
@@ -1713,7 +1720,11 @@ bool TrafficManager::_SingleSim( )
                     }
 	  
                     _DisplayRemaining( ); 
-	  
+	                 
+                    // FZ
+                    if (num_empty_steps++ > 5){
+                        break;
+                    }
                 }
             }
         }
@@ -1779,7 +1790,9 @@ bool TrafficManager::Run( )
             ++empty_steps;
 
             if ( empty_steps % 1000 == 0 ) {
-                _DisplayRemaining( ); 
+                _DisplayRemaining( );
+                // FZ
+                break; 
             }
       
             packets_left = false;

@@ -1,0 +1,472 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.950_link_3
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.95;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 3;
+ecc = link;
+correctable = 1;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = link;
+
+stats_out = examples/ecc_mesh88_config_1_0.950_link_3.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.950_link_3
+Requeued flit 42951
+Requeued flit 57429
+3652 | node56 | Enqueuing flit 192022 (packet 192022) at time 3112.
+3652 | traffic_manager | Finding output VC for flit 192022:
+3652 | traffic_manager |   Output VC 0 is full.
+3652 | traffic_manager |   Output VC 1 is full.
+3652 | traffic_manager | No output VC found for flit 192022.
+3653 | traffic_manager | Finding output VC for flit 192022:
+3653 | traffic_manager |   Output VC 0 is full.
+3653 | traffic_manager |   Output VC 1 is full.
+3653 | traffic_manager | No output VC found for flit 192022.
+3654 | traffic_manager | Finding output VC for flit 192022:
+3654 | traffic_manager |   Selected output VC 0.
+3654 | network_0/router_7_0 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 4, destination 44).
+3654 | node56 | Generating lookahead routing info for flit 192022.
+3654 | node56 | Injecting flit 192022 into subnet 0 at time 3654 with priority 0.
+3655 | network_0/network_0_fchan_ingress56 | Beginning channel traversal for flit 192022 with delay 1.
+3655 | network_0/network_0_fchan_ingress56 | Completed channel traversal for flit 192022.
+3656 | network_0/router_7_0 | Received flit 192022 from channel at input 4.
+3656 | network_0/router_7_0 | Adding flit 192022 to VC 0 at input 4 (state: active, front: 149271).
+Requeued flit 70704
+Requeued flit 213308
+Requeued flit 213666
+5338 | network_0/router_7_0 | Using precomputed lookahead routing information for VC 0 at input 4 (front: 192022).
+5338 | network_0/router_7_0/buf_4/vc_0 | Changing state from active to vc_alloc.
+5338 | network_0/router_7_0 | Beginning VC allocation for VC 0 at input 4 (front: 192022).
+5338 | network_0/router_7_0 |   VC 0 at output 0 is in use by VC 1 at input 4 (front flit: 187103).
+5338 | network_0/router_7_0 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+5338 | network_0/router_7_0/vc_allocator | Input requests = [ 8 -> [ 1@0 ]  ], output requests = [ 1 -> [ 8@0 ]  ].
+5338 | network_0/router_7_0/vc_allocator | Input grants = [ 8 -> 1  ], output grants = [ 1 -> 8  ].
+5338 | network_0/router_7_0 | Assigning VC 1 at output 0 to VC 0 at input 4.
+5338 | network_0/router_7_0 | Completed VC allocation for VC 0 at input 4 (front: 192022).
+5338 | network_0/router_7_0 |   Acquiring assigned VC 1 at output 0.
+5338 | network_0/router_7_0/buf_4/vc_0 | Changing state from vc_alloc to active.
+5339 | network_0/router_7_0 | Beginning switch allocation for VC 0 at input 4 (front: 192022).
+5339 | network_0/router_7_0 |   VC 1 at output 0 is full.
+5339 | network_0/router_7_0 | Completed switch allocation for VC 0 at input 4 (front: 192022).
+5339 | network_0/router_7_0 |   No output port allocated.
+5339 | network_0/router_7_0 | Beginning switch allocation for VC 0 at input 4 (front: 192022).
+5339 | network_0/router_7_0 |   VC 1 at output 0 is full.
+5339 | network_0/router_7_0 | Completed switch allocation for VC 0 at input 4 (front: 192022).
+5339 | network_0/router_7_0 |   No output port allocated.
+5340 | network_0/router_7_0 | Beginning switch allocation for VC 0 at input 4 (front: 192022).
+5340 | network_0/router_7_0 |   Requesting output 0.0 (non-spec, pri: 0).
+5340 | network_0/router_7_0/sw_allocator | Input requests = [ 4 -> [ 0@0 ]  ], output requests = [ 0 -> [ 4@0 ]  ].
+5340 | network_0/router_7_0/sw_allocator | Input grants = [ 4 -> 0  ], output grants = [ 0 -> 4  ].
+5340 | network_0/router_7_0 | Assigning output 0.0 to VC 0 at input 4.0.
+5340 | network_0/router_7_0 | Completed switch allocation for VC 0 at input 4 (front: 192022).
+5340 | network_0/router_7_0 |   Scheduling switch connection from input 4.0 to output 0.0.
+5340 | network_0/router_7_0 | Updating lookahead routing information for flit 192022.
+5340 | network_0/router_7_1 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 1, destination 44).
+5340 | network_0/router_7_0 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 0.0.
+5340 | network_0/router_7_0 | Completed crossbar traversal for flit 192022 from input 4.0 to output 0.0.
+5340 | network_0/router_7_0 | Buffering flit 192022 at output 0.
+5341 | network_0/router_7_0 | Sending flit 192022 to channel at output 0.
+5342 | network_0/network_0_fchan_224 | Beginning channel traversal for flit 192022 with delay 1.
+5342 | network_0/network_0_fchan_224 | Completed channel traversal for flit 192022.
+5343 | network_0/router_7_1 | Received flit 192022 from channel at input 1.
+5343 | network_0/router_7_1 | Adding flit 192022 to VC 1 at input 1 (state: vc_alloc, front: 144453).
+Requeued flit 236023
+Requeued flit 254794
+7228 | network_0/router_7_1 | Using precomputed lookahead routing information for VC 1 at input 1 (front: 192022).
+7228 | network_0/router_7_1/buf_1/vc_1 | Changing state from active to vc_alloc.
+7228 | network_0/router_7_1 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+7228 | network_0/router_7_1 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 186150).
+7228 | network_0/router_7_1 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+7228 | network_0/router_7_1/vc_allocator | Input requests = [ 3 -> [ 1@0 ]  8 -> [ 1@0 ]  9 -> [ 1@0 ]  ], output requests = [ 1 -> [ 3@0 8@0 9@0 ]  ].
+7228 | network_0/router_7_1/vc_allocator | Input grants = [ 8 -> 1  ], output grants = [ 1 -> 8  ].
+7228 | network_0/router_7_1 | VC allocation failed for VC 1 at input 1.
+7228 | network_0/router_7_1 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+7228 | network_0/router_7_1 |   No output VC allocated.
+7229 | network_0/router_7_1 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+7229 | network_0/router_7_1 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 186150).
+7229 | network_0/router_7_1 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 252985).
+7229 | network_0/router_7_1 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+7229 | network_0/router_7_1 |   No output VC allocated.
+7229 | network_0/router_7_1 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+7229 | network_0/router_7_1 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 186150).
+7229 | network_0/router_7_1 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+7229 | network_0/router_7_1/vc_allocator | Input requests = [ 3 -> [ 1@0 ]  8 -> [ 7@0 ]  9 -> [ 1@0 ]  ], output requests = [ 1 -> [ 3@0 9@0 ]  7 -> [ 8@0 ]  ].
+7229 | network_0/router_7_1/vc_allocator | Input grants = [ 8 -> 7  9 -> 1  ], output grants = [ 1 -> 9  7 -> 8  ].
+7229 | network_0/router_7_1 | VC allocation failed for VC 1 at input 1.
+7229 | network_0/router_7_1 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+7229 | network_0/router_7_1 |   No output VC allocated.
+7230 | network_0/router_7_1 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+7230 | network_0/router_7_1 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 186150).
+7230 | network_0/router_7_1 |   VC 1 at output 0 is in use by VC 1 at input 4 (front flit: 252821).
+7230 | network_0/router_7_1 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+7230 | network_0/router_7_1 |   No output VC allocated.
+7230 | network_0/router_7_1 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+7230 | network_0/router_7_1 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+7230 | network_0/router_7_1 |   VC 1 at output 0 is in use by VC 1 at input 4 (front flit: 252821).
+7230 | network_0/router_7_1/vc_allocator | Input requests = [ 2 -> [ 0@0 ]  3 -> [ 0@0 ]  8 -> [ 0@0 ]  ], output requests = [ 0 -> [ 2@0 3@0 8@0 ]  ].
+7230 | network_0/router_7_1/vc_allocator | Input grants = [ 3 -> 0  ], output grants = [ 0 -> 3  ].
+7230 | network_0/router_7_1 | Assigning VC 0 at output 0 to VC 1 at input 1.
+7230 | network_0/router_7_1 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+7230 | network_0/router_7_1 |   Acquiring assigned VC 0 at output 0.
+7230 | network_0/router_7_1/buf_1/vc_1 | Changing state from vc_alloc to active.
+7231 | network_0/router_7_1 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+7231 | network_0/router_7_1 |   Requesting output 0.0 (non-spec, pri: 0).
+7231 | network_0/router_7_1/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  ], output requests = [ 0 -> [ 1@0 ]  ].
+7231 | network_0/router_7_1/sw_allocator | Input grants = [ 1 -> 0  ], output grants = [ 0 -> 1  ].
+7231 | network_0/router_7_1 | Assigning output 0.0 to VC 1 at input 1.0.
+7231 | network_0/router_7_1 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+7231 | network_0/router_7_1 |   Scheduling switch connection from input 1.0 to output 0.0.
+7231 | network_0/router_7_1 | Updating lookahead routing information for flit 192022.
+7231 | network_0/router_7_2 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 1, destination 44).
+7231 | network_0/router_7_1 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+7231 | network_0/router_7_1 | Completed crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+7231 | network_0/router_7_1 | Buffering flit 192022 at output 0.
+7231 | network_0/router_7_1 | Sending flit 192022 to channel at output 0.
+7232 | network_0/network_0_fchan_228 | Beginning channel traversal for flit 192022 with delay 1.
+7232 | network_0/network_0_fchan_228 | Completed channel traversal for flit 192022.
+7233 | network_0/router_7_2 | Received flit 192022 from channel at input 1.
+7233 | network_0/router_7_2 | Adding flit 192022 to VC 0 at input 1 (state: active, front: 160028).
+Requeued flit 293535
+8409 | network_0/router_7_2 | Using precomputed lookahead routing information for VC 0 at input 1 (front: 192022).
+8409 | network_0/router_7_2/buf_1/vc_0 | Changing state from active to vc_alloc.
+8409 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8409 | network_0/router_7_2 |   VC 0 at output 0 is in use by VC 1 at input 1 (front flit: 189040).
+8409 | network_0/router_7_2 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+8409 | network_0/router_7_2/vc_allocator | Input requests = [ 2 -> [ 1@0 ]  8 -> [ 1@0 ]  9 -> [ 1@0 ]  ], output requests = [ 1 -> [ 2@0 8@0 9@0 ]  ].
+8409 | network_0/router_7_2/vc_allocator | Input grants = [ 8 -> 1  ], output grants = [ 1 -> 8  ].
+8409 | network_0/router_7_2 | VC allocation failed for VC 0 at input 1.
+8409 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8409 | network_0/router_7_2 |   No output VC allocated.
+8410 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8410 | network_0/router_7_2 |   VC 0 at output 0 is in use by VC 1 at input 1 (front flit: 189040).
+8410 | network_0/router_7_2 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 320585).
+8410 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8410 | network_0/router_7_2 |   No output VC allocated.
+8410 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8410 | network_0/router_7_2 |   VC 0 at output 0 is in use by VC 1 at input 1 (front flit: 189040).
+8410 | network_0/router_7_2 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 320585).
+8410 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8410 | network_0/router_7_2 |   No output VC allocated.
+8411 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8411 | network_0/router_7_2 |   VC 0 at output 0 is in use by VC 1 at input 1 (front flit: 189040).
+8411 | network_0/router_7_2 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 320585).
+8411 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8411 | network_0/router_7_2 |   No output VC allocated.
+8411 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8411 | network_0/router_7_2 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+8411 | network_0/router_7_2 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 320585).
+8411 | network_0/router_7_2/vc_allocator | Input requests = [ 2 -> [ 0@0 ]  3 -> [ 7@0 ]  9 -> [ 0@0 ]  ], output requests = [ 0 -> [ 2@0 9@0 ]  7 -> [ 3@0 ]  ].
+8411 | network_0/router_7_2/vc_allocator | Input grants = [ 3 -> 7  9 -> 0  ], output grants = [ 0 -> 9  7 -> 3  ].
+8411 | network_0/router_7_2 | VC allocation failed for VC 0 at input 1.
+8411 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8411 | network_0/router_7_2 |   No output VC allocated.
+8412 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8412 | network_0/router_7_2 |   VC 0 at output 0 is in use by VC 1 at input 4 (front flit: 319549).
+8412 | network_0/router_7_2 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 320585).
+8412 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8412 | network_0/router_7_2 |   No output VC allocated.
+8412 | network_0/router_7_2 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+8412 | network_0/router_7_2 |   VC 0 at output 0 is in use by VC 1 at input 4 (front flit: 319549).
+8412 | network_0/router_7_2 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+8412 | network_0/router_7_2/vc_allocator | Input requests = [ 2 -> [ 1@0 ]  3 -> [ 1@0 ]  8 -> [ 1@0 ]  ], output requests = [ 1 -> [ 2@0 3@0 8@0 ]  ].
+8412 | network_0/router_7_2/vc_allocator | Input grants = [ 2 -> 1  ], output grants = [ 1 -> 2  ].
+8412 | network_0/router_7_2 | Assigning VC 1 at output 0 to VC 0 at input 1.
+8412 | network_0/router_7_2 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+8412 | network_0/router_7_2 |   Acquiring assigned VC 1 at output 0.
+8412 | network_0/router_7_2/buf_1/vc_0 | Changing state from vc_alloc to active.
+8413 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8413 | network_0/router_7_2 |   VC 1 at output 0 is full.
+8413 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8413 | network_0/router_7_2 |   No output port allocated.
+8413 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8413 | network_0/router_7_2 |   VC 1 at output 0 is full.
+8413 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8413 | network_0/router_7_2 |   No output port allocated.
+8414 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8414 | network_0/router_7_2 |   VC 1 at output 0 is full.
+8414 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8414 | network_0/router_7_2 |   No output port allocated.
+8414 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8414 | network_0/router_7_2 |   VC 1 at output 0 is full.
+8414 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8414 | network_0/router_7_2 |   No output port allocated.
+8415 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8415 | network_0/router_7_2 |   VC 1 at output 0 is full.
+8415 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8415 | network_0/router_7_2 |   No output port allocated.
+8415 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8415 | network_0/router_7_2 |   VC 1 at output 0 is full.
+8415 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8415 | network_0/router_7_2 |   No output port allocated.
+8416 | network_0/router_7_2 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+8416 | network_0/router_7_2 |   Requesting output 0.0 (non-spec, pri: 0).
+8416 | network_0/router_7_2/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  ], output requests = [ 0 -> [ 1@0 ]  ].
+8416 | network_0/router_7_2/sw_allocator | Input grants = [ 1 -> 0  ], output grants = [ 0 -> 1  ].
+8416 | network_0/router_7_2 | Assigning output 0.0 to VC 0 at input 1.0.
+8416 | network_0/router_7_2 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+8416 | network_0/router_7_2 |   Scheduling switch connection from input 1.0 to output 0.0.
+8416 | network_0/router_7_2 | Updating lookahead routing information for flit 192022.
+8416 | network_0/router_7_3 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 1, destination 44).
+8416 | network_0/router_7_2 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+8416 | network_0/router_7_2 | Completed crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+8416 | network_0/router_7_2 | Buffering flit 192022 at output 0.
+8416 | network_0/router_7_2 | Sending flit 192022 to channel at output 0.
+8417 | network_0/network_0_fchan_232 | Beginning channel traversal for flit 192022 with delay 1.
+8417 | network_0/network_0_fchan_232 | Completed channel traversal for flit 192022.
+8418 | network_0/router_7_3 | Received flit 192022 from channel at input 1.
+8418 | network_0/router_7_3 | Adding flit 192022 to VC 1 at input 1 (state: vc_alloc, front: 297197).
+9076 | network_0/router_7_3 | Using precomputed lookahead routing information for VC 1 at input 1 (front: 192022).
+9076 | network_0/router_7_3/buf_1/vc_1 | Changing state from active to vc_alloc.
+9076 | network_0/router_7_3 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+9076 | network_0/router_7_3 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 185650).
+9076 | network_0/router_7_3 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+9076 | network_0/router_7_3/vc_allocator | Input requests = [ 0 -> [ 3@0 ]  3 -> [ 1@0 ]  8 -> [ 1@0 ]  9 -> [ 1@0 ]  ], output requests = [ 1 -> [ 3@0 8@0 9@0 ]  3 -> [ 0@0 ]  ].
+9076 | network_0/router_7_3/vc_allocator | Input grants = [ 0 -> 3  8 -> 1  ], output grants = [ 1 -> 8  3 -> 0  ].
+9076 | network_0/router_7_3 | VC allocation failed for VC 1 at input 1.
+9076 | network_0/router_7_3 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+9076 | network_0/router_7_3 |   No output VC allocated.
+9077 | network_0/router_7_3 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+9077 | network_0/router_7_3 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 185650).
+9077 | network_0/router_7_3 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 347729).
+9077 | network_0/router_7_3 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+9077 | network_0/router_7_3 |   No output VC allocated.
+9077 | network_0/router_7_3 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+9077 | network_0/router_7_3 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+9077 | network_0/router_7_3 |   VC 1 at output 0 is in use by VC 0 at input 4 (front flit: 347729).
+9077 | network_0/router_7_3/vc_allocator | Input requests = [ 1 -> [ 6@0 7@0 ]  2 -> [ 0@0 ]  3 -> [ 0@0 ]  9 -> [ 0@0 ]  ], output requests = [ 0 -> [ 2@0 3@0 9@0 ]  6 -> [ 1@0 ]  7 -> [ 1@0 ]  ].
+9077 | network_0/router_7_3/vc_allocator | Input grants = [ 1 -> 6  3 -> 0  ], output grants = [ 0 -> 3  6 -> 1  ].
+9077 | network_0/router_7_3 | Assigning VC 0 at output 0 to VC 1 at input 1.
+9077 | network_0/router_7_3 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+9077 | network_0/router_7_3 |   Acquiring assigned VC 0 at output 0.
+9077 | network_0/router_7_3/buf_1/vc_1 | Changing state from vc_alloc to active.
+9078 | network_0/router_7_3 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+9078 | network_0/router_7_3 |   Requesting output 0.0 (non-spec, pri: 0).
+9078 | network_0/router_7_3/sw_allocator | Input requests = [ 0 -> [ 1@0 3@0 ]  1 -> [ 0@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  3 -> [ 0@0 ]  ].
+9078 | network_0/router_7_3/sw_allocator | Input grants = [ 0 -> 3  1 -> 0  ], output grants = [ 0 -> 1  3 -> 0  ].
+9078 | network_0/router_7_3 | Assigning output 0.0 to VC 1 at input 1.0.
+9078 | network_0/router_7_3 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+9078 | network_0/router_7_3 |   Scheduling switch connection from input 1.0 to output 0.0.
+9078 | network_0/router_7_3 | Updating lookahead routing information for flit 192022.
+9078 | network_0/router_7_4 | Adding VC range [0,1] at output port 3 for flit 192022 (input port 1, destination 44).
+9078 | network_0/router_7_3 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+9078 | network_0/router_7_3 | Completed crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+9078 | network_0/router_7_3 | Buffering flit 192022 at output 0.
+9465 | network_0/router_7_3 | Sending flit 192022 to channel at output 0.
+9466 | network_0/network_0_fchan_236 | Beginning channel traversal for flit 192022 with delay 1.
+9466 | network_0/network_0_fchan_236 | Completed channel traversal for flit 192022.
+9467 | network_0/router_7_4 | Received flit 192022 from channel at input 1.
+9467 | network_0/router_7_4 | Adding flit 192022 to VC 0 at input 1 (state: active, front: 314354).
+Requeued flit 196022
+9595 | network_0/router_7_4 | Using precomputed lookahead routing information for VC 0 at input 1 (front: 192022).
+9595 | network_0/router_7_4/buf_1/vc_0 | Changing state from active to vc_alloc.
+9595 | network_0/router_7_4 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+9595 | network_0/router_7_4 |   Requesting VC 0 at output 3 (in_pri: 0, out_pri: 0).
+9595 | network_0/router_7_4 |   Requesting VC 1 at output 3 (in_pri: 0, out_pri: 0).
+9595 | network_0/router_7_4/vc_allocator | Input requests = [ 0 -> [ 3@0 ]  2 -> [ 6@0 7@0 ]  8 -> [ 3@0 ]  9 -> [ 3@0 ]  ], output requests = [ 3 -> [ 0@0 8@0 9@0 ]  6 -> [ 2@0 ]  7 -> [ 2@0 ]  ].
+9595 | network_0/router_7_4/vc_allocator | Input grants = [ 2 -> 7  8 -> 3  ], output grants = [ 3 -> 8  7 -> 2  ].
+9595 | network_0/router_7_4 | Assigning VC 1 at output 3 to VC 0 at input 1.
+9595 | network_0/router_7_4 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+9595 | network_0/router_7_4 |   Acquiring assigned VC 1 at output 3.
+9595 | network_0/router_7_4/buf_1/vc_0 | Changing state from vc_alloc to active.
+9596 | network_0/router_7_4 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+9596 | network_0/router_7_4 |   Requesting output 3.0 (non-spec, pri: 0).
+9596 | network_0/router_7_4/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 3@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  3 -> [ 1@0 ]  ].
+9596 | network_0/router_7_4/sw_allocator | Input grants = [ 0 -> 1  1 -> 0  ], output grants = [ 0 -> 1  1 -> 0  ].
+9596 | network_0/router_7_4 | Switch allocation failed for VC 0 at input 1: Granted to VC 1.
+9596 | network_0/router_7_4 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+9596 | network_0/router_7_4 |   No output port allocated.
+9596 | network_0/router_7_4 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+9596 | network_0/router_7_4 |   Requesting output 3.0 (non-spec, pri: 0).
+9596 | network_0/router_7_4/sw_allocator | Input requests = [ 1 -> [ 3@0 ]  3 -> [ 4@0 ]  ], output requests = [ 3 -> [ 1@0 ]  4 -> [ 3@0 ]  ].
+9596 | network_0/router_7_4/sw_allocator | Input grants = [ 1 -> 3  3 -> 4  ], output grants = [ 3 -> 1  4 -> 3  ].
+9596 | network_0/router_7_4 | Assigning output 3.0 to VC 0 at input 1.0.
+9596 | network_0/router_7_4 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+9596 | network_0/router_7_4 |   Scheduling switch connection from input 1.0 to output 3.0.
+9596 | network_0/router_7_4 | Updating lookahead routing information for flit 192022.
+9596 | network_0/router_6_4 | Adding VC range [0,1] at output port 3 for flit 192022 (input port 2, destination 44).
+9597 | network_0/router_7_4 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 3.0.
+9597 | network_0/router_7_4 | Completed crossbar traversal for flit 192022 from input 1.0 to output 3.0.
+9597 | network_0/router_7_4 | Buffering flit 192022 at output 3.
+9597 | network_0/router_7_4 | Sending flit 192022 to channel at output 3.
+9598 | network_0/network_0_fchan_243 | Beginning channel traversal for flit 192022 with delay 1.
+9598 | network_0/network_0_fchan_243 | Completed channel traversal for flit 192022.
+9599 | network_0/router_6_4 | Received flit 192022 from channel at input 2.
+9599 | network_0/router_6_4 | Adding flit 192022 to VC 1 at input 2 (state: idle, empty).
+9599 | network_0/router_6_4 | Using precomputed lookahead routing information for VC 1 at input 2 (front: 192022).
+9599 | network_0/router_6_4/buf_2/vc_1 | Changing state from idle to vc_alloc.
+9599 | network_0/router_6_4 | Beginning VC allocation for VC 1 at input 2 (front: 192022).
+9599 | network_0/router_6_4 |   Requesting VC 0 at output 3 (in_pri: 0, out_pri: 0).
+9599 | network_0/router_6_4 |   Requesting VC 1 at output 3 (in_pri: 0, out_pri: 0).
+9599 | network_0/router_6_4/vc_allocator | Input requests = [ 3 -> [ 6@0 7@0 ]  5 -> [ 6@0 7@0 ]  7 -> [ 4@0 5@0 ]  ], output requests = [ 4 -> [ 7@0 ]  5 -> [ 7@0 ]  6 -> [ 3@0 5@0 ]  7 -> [ 3@0 5@0 ]  ].
+9599 | network_0/router_6_4/vc_allocator | Input grants = [ 3 -> 6  7 -> 5  ], output grants = [ 5 -> 7  6 -> 3  ].
+9599 | network_0/router_6_4 | VC allocation failed for VC 1 at input 2.
+9599 | network_0/router_6_4 | Completed VC allocation for VC 1 at input 2 (front: 192022).
+9599 | network_0/router_6_4 |   No output VC allocated.
+9599 | network_0/router_6_4 | Beginning VC allocation for VC 1 at input 2 (front: 192022).
+9599 | network_0/router_6_4 |   VC 0 at output 3 is in use by VC 1 at input 1 (front flit: 318889).
+9599 | network_0/router_6_4 |   Requesting VC 1 at output 3 (in_pri: 0, out_pri: 0).
+9599 | network_0/router_6_4/vc_allocator | Input requests = [ 2 -> [ 0@0 1@0 ]  5 -> [ 7@0 ]  ], output requests = [ 0 -> [ 2@0 ]  1 -> [ 2@0 ]  7 -> [ 5@0 ]  ].
+9599 | network_0/router_6_4/vc_allocator | Input grants = [ 2 -> 0  5 -> 7  ], output grants = [ 0 -> 2  7 -> 5  ].
+9599 | network_0/router_6_4 | Assigning VC 1 at output 3 to VC 1 at input 2.
+9599 | network_0/router_6_4 | Completed VC allocation for VC 1 at input 2 (front: 192022).
+9599 | network_0/router_6_4 |   Acquiring assigned VC 1 at output 3.
+9599 | network_0/router_6_4/buf_2/vc_1 | Changing state from vc_alloc to active.
+9600 | network_0/router_6_4 | Beginning switch allocation for VC 1 at input 2 (front: 192022).
+9600 | network_0/router_6_4 |   Requesting output 3.0 (non-spec, pri: 0).
+9600 | network_0/router_6_4/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 3@0 ]  4 -> [ 1@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 4@0 ]  3 -> [ 2@0 ]  ].
+9600 | network_0/router_6_4/sw_allocator | Input grants = [ 1 -> 0  2 -> 3  4 -> 1  ], output grants = [ 0 -> 1  1 -> 4  3 -> 2  ].
+9600 | network_0/router_6_4 | Assigning output 3.0 to VC 1 at input 2.0.
+9600 | network_0/router_6_4 | Completed switch allocation for VC 1 at input 2 (front: 192022).
+9600 | network_0/router_6_4 |   Scheduling switch connection from input 2.0 to output 3.0.
+9600 | network_0/router_6_4 | Updating lookahead routing information for flit 192022.
+9600 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 2, destination 44).
+9600 | network_0/router_6_4 | Beginning crossbar traversal for flit 192022 from input 2.0 to output 3.0.
+9600 | network_0/router_6_4 | Completed crossbar traversal for flit 192022 from input 2.0 to output 3.0.
+9600 | network_0/router_6_4 | Buffering flit 192022 at output 3.
+9601 | network_0/router_6_4 | Sending flit 192022 to channel at output 3.
+9602 | network_0/network_0_fchan_211 | Beginning channel traversal for flit 192022 with delay 1.
+9602 | network_0/network_0_fchan_211 | Completed channel traversal for flit 192022.
+9603 | network_0/router_5_4 | Received flit 192022 from channel at input 2.
+9603 | network_0/router_5_4 | Adding flit 192022 to VC 1 at input 2 (state: idle, empty).
+9603 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 1 at input 2 (front: 192022).
+9603 | network_0/router_5_4/buf_2/vc_1 | Changing state from idle to vc_alloc.
+9603 | network_0/router_5_4 | Beginning VC allocation for VC 1 at input 2 (front: 192022).
+9603 | network_0/router_5_4 |   VC 0 at output 4 is in use by VC 1 at input 1 (front flit: 259777).
+9603 | network_0/router_5_4 |   Requesting VC 1 at output 4 (in_pri: 0, out_pri: 0).
+9603 | network_0/router_5_4/vc_allocator | Input requests = [ 5 -> [ 9@0 ]  7 -> [ 4@0 5@0 ]  ], output requests = [ 4 -> [ 7@0 ]  5 -> [ 7@0 ]  9 -> [ 5@0 ]  ].
+9603 | network_0/router_5_4/vc_allocator | Input grants = [ 5 -> 9  7 -> 5  ], output grants = [ 5 -> 7  9 -> 5  ].
+9603 | network_0/router_5_4 | Assigning VC 1 at output 4 to VC 1 at input 2.
+9603 | network_0/router_5_4 | Completed VC allocation for VC 1 at input 2 (front: 192022).
+9603 | network_0/router_5_4 |   Acquiring assigned VC 1 at output 4.
+9603 | network_0/router_5_4/buf_2/vc_1 | Changing state from vc_alloc to active.
+9603 | network_0/router_5_4 | Beginning switch allocation for VC 1 at input 2 (front: 192022).
+9603 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+9603 | network_0/router_5_4/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 4@0 ]  3 -> [ 2@0 ]  ], output requests = [ 0 -> [ 1@0 ]  2 -> [ 3@0 ]  4 -> [ 2@0 ]  ].
+9603 | network_0/router_5_4/sw_allocator | Input grants = [ 1 -> 0  2 -> 4  3 -> 2  ], output grants = [ 0 -> 1  2 -> 3  4 -> 2  ].
+9603 | network_0/router_5_4 | Assigning output 4.0 to VC 1 at input 2.0.
+9603 | network_0/router_5_4 | Completed switch allocation for VC 1 at input 2 (front: 192022).
+9603 | network_0/router_5_4 |   Scheduling switch connection from input 2.0 to output 4.0.
+9604 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 2.0 to output 4.0.
+9604 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 2.0 to output 4.0.
+9604 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+9604 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+9605 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+9605 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+9606 | node44 | Ejecting flit 192022 (packet 192022) from VC 1.
+9606 | node44 | Injecting credit for VC 1 into subnet 0.
+9606 | node44 | Retiring flit 192022 (packet 192022, src = 56, dest = 44, hops = 7, flat = 5952).
+9606 | node44 | Retiring packet 192022 (plat = 6494, nlat = 5952, frag = 0, src = 56, dest = 44).
+Requeued flit 226604
+Requeued flit 361088
+Class 0:
+Packet latency average = 1887.37
+	minimum = 5
+	maximum = 7139
+Network latency average = 1560.52
+	minimum = 5
+	maximum = 7139
+Slowest packet = 163745
+Flit latency average = 1560.52
+	minimum = 5
+	maximum = 7139
+Slowest flit = 163745
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.618973
+	minimum = 0.4213 (at node 62)
+	maximum = 0.9057 (at node 60)
+Accepted packet rate average = 0.500609
+	minimum = 0.4805 (at node 21)
+	maximum = 0.5148 (at node 14)
+Injected flit rate average = 0.618973
+	minimum = 0.4213 (at node 62)
+	maximum = 0.9057 (at node 60)
+Accepted flit rate average= 0.500609
+	minimum = 0.4805 (at node 21)
+	maximum = 0.5148 (at node 14)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 75786 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 101.128

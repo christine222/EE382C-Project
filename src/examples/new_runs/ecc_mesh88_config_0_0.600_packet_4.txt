@@ -1,0 +1,1163 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_0_0.600_packet_4
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.6;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 4;
+ecc = link;
+correctable = 0;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = packet;
+
+stats_out = examples/ecc_mesh88_config_0_0.600_packet_4.m;
+
+END Configuration File: examples/ecc_mesh88_config_0_0.600_packet_4
+Additional hops: 6
+Adding flit 1183 as NACK at time 58
+Additional hops: 14
+Adding flit 916 as NACK at time 66
+Reenqueueing errored packet 1183 at time 71
+Reenqueueing errored packet 916 at time 83
+Additional hops: 23
+Adding flit 3094 as NACK at time 120
+Reenqueueing errored packet 3094 at time 139
+Additional hops: 32
+Adding flit 4889 as NACK at time 179
+Additional hops: 45
+Adding flit 3796 as NACK at time 197
+Reenqueueing errored packet 4889 at time 198
+Additional hops: 49
+Adding flit 6981 as NACK at time 216
+Reenqueueing errored packet 3796 at time 224
+Reenqueueing errored packet 6981 at time 225
+Additional hops: 52
+Adding flit 9861 as NACK at time 270
+Reenqueueing errored packet 9861 at time 277
+Additional hops: 61
+Adding flit 6026 as NACK at time 288
+Additional hops: 67
+Adding flit 8570 as NACK at time 301
+Reenqueueing errored packet 6026 at time 307
+Reenqueueing errored packet 8570 at time 314
+Additional hops: 71
+Adding flit 13199 as NACK at time 372
+Reenqueueing errored packet 13199 at time 381
+Additional hops: 73
+Adding flit 14430 as NACK at time 388
+Reenqueueing errored packet 14430 at time 393
+Additional hops: 79
+Adding flit 13068 as NACK at time 482
+Reenqueueing errored packet 13068 at time 495
+Additional hops: 86
+Adding flit 19362 as NACK at time 561
+Reenqueueing errored packet 19362 at time 576
+Additional hops: 91
+Adding flit 20402 as NACK at time 587
+Reenqueueing errored packet 20402 at time 598
+Additional hops: 99
+Adding flit 20435 as NACK at time 605
+Reenqueueing errored packet 20435 at time 622
+Additional hops: 105
+Adding flit 18433 as NACK at time 628
+Reenqueueing errored packet 18433 at time 641
+Additional hops: 112
+Adding flit 19381 as NACK at time 682
+Additional hops: 120
+Adding flit 19668 as NACK at time 695
+Reenqueueing errored packet 19381 at time 697
+Reenqueueing errored packet 19668 at time 712
+Additional hops: 124
+Adding flit 30994 as NACK at time 892
+Reenqueueing errored packet 30994 at time 901
+Additional hops: 127
+Adding flit 36435 as NACK at time 963
+Additional hops: 136
+Adding flit 33721 as NACK at time 966
+Reenqueueing errored packet 36435 at time 970
+Reenqueueing errored packet 33721 at time 985
+Additional hops: 143
+Adding flit 27437 as NACK at time 1018
+Reenqueueing errored packet 27437 at time 1033
+Additional hops: 152
+Adding flit 36516 as NACK at time 1065
+Reenqueueing errored packet 36516 at time 1084
+Additional hops: 158
+Adding flit 41797 as NACK at time 1115
+Additional hops: 162
+Adding flit 40699 as NACK at time 1118
+Additional hops: 171
+Adding flit 38051 as NACK at time 1119
+Reenqueueing errored packet 40699 at time 1127
+Reenqueueing errored packet 41797 at time 1128
+Reenqueueing errored packet 38051 at time 1138
+Additional hops: 176
+Adding flit 42092 as NACK at time 1243
+Reenqueueing errored packet 42092 at time 1254
+Additional hops: 182
+Adding flit 43418 as NACK at time 1289
+Reenqueueing errored packet 43418 at time 1302
+Additional hops: 190
+Adding flit 36828 as NACK at time 1377
+Additional hops: 197
+Adding flit 47122 as NACK at time 1381
+Reenqueueing errored packet 36828 at time 1394
+Reenqueueing errored packet 47122 at time 1396
+Additional hops: 207
+Adding flit 39295 as NACK at time 1441
+Reenqueueing errored packet 39295 at time 1462
+Additional hops: 210
+Adding flit 58411 as NACK at time 1537
+Additional hops: 219
+Adding flit 49127 as NACK at time 1543
+Reenqueueing errored packet 58411 at time 1544
+Reenqueueing errored packet 49127 at time 1562
+Additional hops: 225
+Adding flit 54299 as NACK at time 1590
+Reenqueueing errored packet 54299 at time 1603
+Additional hops: 231
+Adding flit 54802 as NACK at time 1617
+Additional hops: 244
+Adding flit 44076 as NACK at time 1622
+Reenqueueing errored packet 54802 at time 1630
+Reenqueueing errored packet 44076 at time 1649
+Additional hops: 248
+Adding flit 60550 as NACK at time 1650
+Reenqueueing errored packet 60550 at time 1659
+Additional hops: 257
+Adding flit 46019 as NACK at time 1681
+Reenqueueing errored packet 46019 at time 1700
+Additional hops: 265
+Adding flit 57108 as NACK at time 1712
+Additional hops: 269
+Adding flit 65348 as NACK at time 1724
+Reenqueueing errored packet 57108 at time 1729
+Reenqueueing errored packet 65348 at time 1733
+Additional hops: 274
+Adding flit 55714 as NACK at time 1768
+Reenqueueing errored packet 55714 at time 1779
+Additional hops: 282
+Adding flit 52913 as NACK at time 1794
+Reenqueueing errored packet 52913 at time 1811
+Additional hops: 288
+Adding flit 59245 as NACK at time 1924
+Reenqueueing errored packet 59245 at time 1937
+Additional hops: 294
+Adding flit 58164 as NACK at time 1944
+Reenqueueing errored packet 58164 at time 1957
+Additional hops: 304
+Adding flit 53009 as NACK at time 1976
+Additional hops: 309
+Adding flit 70794 as NACK at time 1991
+Reenqueueing errored packet 53009 at time 1997
+Reenqueueing errored packet 70794 at time 2002
+Additional hops: 316
+Adding flit 66881 as NACK at time 2147
+Reenqueueing errored packet 66881 at time 2162
+Additional hops: 322
+Adding flit 78776 as NACK at time 2205
+Reenqueueing errored packet 78776 at time 2218
+Additional hops: 327
+Adding flit 84166 as NACK at time 2222
+Reenqueueing errored packet 84166 at time 2233
+Additional hops: 334
+Adding flit 77054 as NACK at time 2242
+Reenqueueing errored packet 77054 at time 2257
+Additional hops: 341
+Adding flit 76008 as NACK at time 2270
+Reenqueueing errored packet 76008 at time 2285
+Additional hops: 347
+Adding flit 70482 as NACK at time 2304
+Reenqueueing errored packet 70482 at time 2317
+Additional hops: 355
+Adding flit 69966 as NACK at time 2342
+Reenqueueing errored packet 69966 at time 2359
+Additional hops: 356
+Adding flit 92022 as NACK at time 2410
+Reenqueueing errored packet 92022 at time 2413
+Additional hops: 366
+Adding flit 68678 as NACK at time 2441
+Reenqueueing errored packet 68678 at time 2462
+Additional hops: 380
+Adding flit 66888 as NACK at time 2492
+Reenqueueing errored packet 66888 at time 2521
+Additional hops: 386
+Adding flit 84789 as NACK at time 2533
+Reenqueueing errored packet 84789 at time 2546
+Additional hops: 396
+Adding flit 70040 as NACK at time 2567
+Additional hops: 406
+Adding flit 74376 as NACK at time 2571
+Additional hops: 418
+Adding flit 71329 as NACK at time 2576
+Reenqueueing errored packet 70040 at time 2588
+Reenqueueing errored packet 74376 at time 2592
+Reenqueueing errored packet 71329 at time 2601
+Additional hops: 423
+Adding flit 89223 as NACK at time 2615
+Reenqueueing errored packet 89223 at time 2626
+Additional hops: 433
+Adding flit 78364 as NACK at time 2703
+Additional hops: 438
+Adding flit 86819 as NACK at time 2712
+Reenqueueing errored packet 86819 at time 2723
+Reenqueueing errored packet 78364 at time 2724
+Additional hops: 441
+Adding flit 103518 as NACK at time 2730
+Reenqueueing errored packet 103518 at time 2737
+Additional hops: 449
+Adding flit 88713 as NACK at time 2835
+Reenqueueing errored packet 88713 at time 2852
+Additional hops: 455
+Adding flit 96778 as NACK at time 2956
+Reenqueueing errored packet 96778 at time 2969
+Additional hops: 464
+Adding flit 95885 as NACK at time 3016
+Reenqueueing errored packet 95885 at time 3035
+Additional hops: 473
+Adding flit 99164 as NACK at time 3077
+Reenqueueing errored packet 99164 at time 3096
+Additional hops: 479
+Adding flit 106973 as NACK at time 3127
+Reenqueueing errored packet 106973 at time 3140
+Additional hops: 487
+Adding flit 100018 as NACK at time 3232
+Additional hops: 492
+Adding flit 110361 as NACK at time 3242
+Reenqueueing errored packet 100018 at time 3249
+Reenqueueing errored packet 110361 at time 3253
+Additional hops: 500
+Adding flit 100328 as NACK at time 3322
+Additional hops: 505
+Adding flit 103214 as NACK at time 3328
+Additional hops: 513
+Adding flit 97192 as NACK at time 3333
+Reenqueueing errored packet 103214 at time 3339
+Reenqueueing errored packet 100328 at time 3339
+Reenqueueing errored packet 97192 at time 3350
+Additional hops: 515
+Adding flit 123711 as NACK at time 3424
+Reenqueueing errored packet 123711 at time 3429
+Additional hops: 524
+Adding flit 95656 as NACK at time 3450
+Additional hops: 530
+Adding flit 108640 as NACK at time 3468
+Reenqueueing errored packet 95656 at time 3469
+Reenqueueing errored packet 108640 at time 3481
+Additional hops: 536
+Adding flit 119674 as NACK at time 3481
+Reenqueueing errored packet 119674 at time 3494
+Additional hops: 543
+Adding flit 121907 as NACK at time 3504
+Reenqueueing errored packet 121907 at time 3519
+Additional hops: 550
+Adding flit 106670 as NACK at time 3599
+Reenqueueing errored packet 106670 at time 3614
+Additional hops: 560
+Adding flit 104110 as NACK at time 3625
+Reenqueueing errored packet 104110 at time 3646
+Additional hops: 568
+Adding flit 98370 as NACK at time 3659
+Additional hops: 580
+Adding flit 102877 as NACK at time 3667
+Reenqueueing errored packet 98370 at time 3676
+Additional hops: 590
+Adding flit 103162 as NACK at time 3677
+Reenqueueing errored packet 102877 at time 3692
+Additional hops: 596
+Adding flit 118242 as NACK at time 3693
+Reenqueueing errored packet 103162 at time 3698
+Reenqueueing errored packet 118242 at time 3706
+Additional hops: 602
+Adding flit 138967 as NACK at time 3716
+Reenqueueing errored packet 138967 at time 3729
+Additional hops: 609
+Adding flit 125652 as NACK at time 3763
+Reenqueueing errored packet 125652 at time 3778
+Additional hops: 613
+Adding flit 145058 as NACK at time 3819
+Reenqueueing errored packet 145058 at time 3828
+Additional hops: 621
+Adding flit 112289 as NACK at time 3834
+Reenqueueing errored packet 112289 at time 3851
+Additional hops: 628
+Adding flit 117118 as NACK at time 3860
+Additional hops: 639
+Adding flit 106214 as NACK at time 3874
+Additional hops: 645
+Adding flit 133214 as NACK at time 3874
+Reenqueueing errored packet 117118 at time 3875
+Reenqueueing errored packet 133214 at time 3887
+Reenqueueing errored packet 106214 at time 3897
+Additional hops: 653
+Adding flit 119122 as NACK at time 3992
+Reenqueueing errored packet 119122 at time 4009
+Additional hops: 659
+Adding flit 128844 as NACK at time 4079
+Reenqueueing errored packet 128844 at time 4092
+Additional hops: 665
+Adding flit 130274 as NACK at time 4201
+Additional hops: 667
+Adding flit 160810 as NACK at time 4210
+Reenqueueing errored packet 130274 at time 4214
+Reenqueueing errored packet 160810 at time 4215
+Additional hops: 675
+Adding flit 133034 as NACK at time 4215
+Additional hops: 679
+Adding flit 150328 as NACK at time 4223
+Additional hops: 686
+Adding flit 129733 as NACK at time 4224
+Reenqueueing errored packet 150328 at time 4232
+Reenqueueing errored packet 133034 at time 4232
+Reenqueueing errored packet 129733 at time 4239
+Additional hops: 695
+Adding flit 128336 as NACK at time 4255
+Additional hops: 701
+Adding flit 141515 as NACK at time 4268
+Reenqueueing errored packet 128336 at time 4274
+Reenqueueing errored packet 141515 at time 4281
+Additional hops: 710
+Adding flit 119430 as NACK at time 4315
+Reenqueueing errored packet 119430 at time 4334
+Additional hops: 717
+Adding flit 132738 as NACK at time 4353
+Reenqueueing errored packet 132738 at time 4368
+Additional hops: 725
+Adding flit 123222 as NACK at time 4423
+Reenqueueing errored packet 123222 at time 4440
+Additional hops: 730
+Adding flit 133829 as NACK at time 4475
+Reenqueueing errored packet 133829 at time 4486
+Additional hops: 736
+Adding flit 151218 as NACK at time 4534
+Reenqueueing errored packet 151218 at time 4547
+Additional hops: 745
+Adding flit 154695 as NACK at time 4560
+Reenqueueing errored packet 154695 at time 4579
+Additional hops: 753
+Adding flit 134999 as NACK at time 4597
+Reenqueueing errored packet 134999 at time 4614
+Additional hops: 755
+Adding flit 179804 as NACK at time 4734
+Reenqueueing errored packet 179804 at time 4739
+Additional hops: 758
+Adding flit 182579 as NACK at time 4788
+Additional hops: 767
+Adding flit 155375 as NACK at time 4791
+Reenqueueing errored packet 182579 at time 4795
+Reenqueueing errored packet 155375 at time 4810
+Additional hops: 772
+Adding flit 168618 as NACK at time 4871
+Reenqueueing errored packet 168618 at time 4882
+Additional hops: 781
+Adding flit 146772 as NACK at time 4912
+Reenqueueing errored packet 146772 at time 4931
+Additional hops: 784
+Adding flit 188329 as NACK at time 4944
+Reenqueueing errored packet 188329 at time 4951
+Additional hops: 788
+Adding flit 188070 as NACK at time 5000
+Reenqueueing errored packet 188070 at time 5009
+5016 | node16 | Enqueuing flit 192022 (packet 192022) at time 5016.
+5016 | traffic_manager | Finding output VC for flit 192022:
+5016 | traffic_manager |   Selected output VC 1.
+5016 | network_0/router_2_0 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 4, destination 44).
+5016 | node16 | Generating lookahead routing info for flit 192022.
+5016 | node16 | Injecting flit 192022 into subnet 0 at time 5016 with priority 0.
+5017 | network_0/network_0_fchan_ingress16 | Beginning channel traversal for flit 192022 with delay 1.
+5017 | network_0/network_0_fchan_ingress16 | Completed channel traversal for flit 192022.
+5018 | network_0/router_2_0 | Received flit 192022 from channel at input 4.
+5018 | network_0/router_2_0 | Adding flit 192022 to VC 1 at input 4 (state: idle, empty).
+5018 | network_0/router_2_0 | Using precomputed lookahead routing information for VC 1 at input 4 (front: 192022).
+5018 | network_0/router_2_0/buf_4/vc_1 | Changing state from idle to vc_alloc.
+5018 | network_0/router_2_0 | Beginning VC allocation for VC 1 at input 4 (front: 192022).
+5018 | network_0/router_2_0 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+5018 | network_0/router_2_0 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+5018 | network_0/router_2_0/vc_allocator | Input requests = [ 4 -> [ 6@0 7@0 ]  6 -> [ 4@0 5@0 ]  9 -> [ 0@0 1@0 ]  ], output requests = [ 0 -> [ 9@0 ]  1 -> [ 9@0 ]  4 -> [ 6@0 ]  5 -> [ 6@0 ]  6 -> [ 4@0 ]  7 -> [ 4@0 ]  ].
+5018 | network_0/router_2_0/vc_allocator | Input grants = [ 4 -> 6  6 -> 5  9 -> 1  ], output grants = [ 1 -> 9  5 -> 6  6 -> 4  ].
+5018 | network_0/router_2_0 | Assigning VC 1 at output 0 to VC 1 at input 4.
+5018 | network_0/router_2_0 | Completed VC allocation for VC 1 at input 4 (front: 192022).
+5018 | network_0/router_2_0 |   Acquiring assigned VC 1 at output 0.
+5018 | network_0/router_2_0/buf_4/vc_1 | Changing state from vc_alloc to active.
+5018 | network_0/router_2_0 | Beginning switch allocation for VC 1 at input 4 (front: 192022).
+5018 | network_0/router_2_0 |   Requesting output 0.0 (non-spec, pri: 0).
+5018 | network_0/router_2_0/sw_allocator | Input requests = [ 2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 0@0 ]  ], output requests = [ 0 -> [ 4@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ].
+5018 | network_0/router_2_0/sw_allocator | Input grants = [ 2 -> 3  3 -> 2  4 -> 0  ], output grants = [ 0 -> 4  2 -> 3  3 -> 2  ].
+5018 | network_0/router_2_0 | Assigning output 0.0 to VC 1 at input 4.0.
+5018 | network_0/router_2_0 | Completed switch allocation for VC 1 at input 4 (front: 192022).
+5018 | network_0/router_2_0 |   Scheduling switch connection from input 4.0 to output 0.0.
+5018 | network_0/router_2_0 | Updating lookahead routing information for flit 192022.
+5018 | network_0/router_2_1 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 1, destination 44).
+5019 | network_0/router_2_0 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 0.0.
+5019 | network_0/router_2_0 | Completed crossbar traversal for flit 192022 from input 4.0 to output 0.0.
+5019 | network_0/router_2_0 | Buffering flit 192022 at output 0.
+5019 | network_0/router_2_0 | Sending flit 192022 to channel at output 0.
+5020 | network_0/network_0_fchan_64 | Beginning channel traversal for flit 192022 with delay 1.
+5020 | network_0/network_0_fchan_64 | Completed channel traversal for flit 192022.
+5021 | network_0/router_2_1 | Received flit 192022 from channel at input 1.
+5021 | network_0/router_2_1 | Adding flit 192022 to VC 1 at input 1 (state: idle, empty).
+5021 | network_0/router_2_1 | Using precomputed lookahead routing information for VC 1 at input 1 (front: 192022).
+5021 | network_0/router_2_1/buf_1/vc_1 | Changing state from idle to vc_alloc.
+5021 | network_0/router_2_1 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5021 | network_0/router_2_1 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+5021 | network_0/router_2_1 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+5021 | network_0/router_2_1/vc_allocator | Input requests = [ 0 -> [ 6@0 7@0 ]  3 -> [ 0@0 1@0 ]  5 -> [ 6@0 7@0 ]  7 -> [ 4@0 5@0 ]  9 -> [ 0@0 1@0 ]  ], output requests = [ 0 -> [ 3@0 9@0 ]  1 -> [ 3@0 9@0 ]  4 -> [ 7@0 ]  5 -> [ 7@0 ]  6 -> [ 0@0 5@0 ]  7 -> [ 0@0 5@0 ]  ].
+5021 | network_0/router_2_1/vc_allocator | Input grants = [ 3 -> 1  5 -> 6  7 -> 5  9 -> 0  ], output grants = [ 0 -> 9  1 -> 3  5 -> 7  6 -> 5  ].
+5021 | network_0/router_2_1 | Assigning VC 1 at output 0 to VC 1 at input 1.
+5021 | network_0/router_2_1 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5021 | network_0/router_2_1 |   Acquiring assigned VC 1 at output 0.
+5021 | network_0/router_2_1/buf_1/vc_1 | Changing state from vc_alloc to active.
+5021 | network_0/router_2_1 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5021 | network_0/router_2_1 |   Requesting output 0.0 (non-spec, pri: 0).
+5021 | network_0/router_2_1/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 0@0 ]  ], output requests = [ 0 -> [ 1@0 4@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ].
+5021 | network_0/router_2_1/sw_allocator | Input grants = [ 2 -> 3  3 -> 2  4 -> 0  ], output grants = [ 0 -> 4  2 -> 3  3 -> 2  ].
+5021 | network_0/router_2_1 | Switch allocation failed for VC 1 at input 1: No output granted.
+5021 | network_0/router_2_1 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5021 | network_0/router_2_1 |   No output port allocated.
+5022 | network_0/router_2_1 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5022 | network_0/router_2_1 |   Requesting output 0.0 (non-spec, pri: 0).
+5022 | network_0/router_2_1/sw_allocator | Input requests = [ 0 -> [ 3@0 ]  1 -> [ 0@0 ]  ], output requests = [ 0 -> [ 1@0 ]  3 -> [ 0@0 ]  ].
+5022 | network_0/router_2_1/sw_allocator | Input grants = [ 0 -> 3  1 -> 0  ], output grants = [ 0 -> 1  3 -> 0  ].
+5022 | network_0/router_2_1 | Assigning output 0.0 to VC 1 at input 1.0.
+5022 | network_0/router_2_1 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5022 | network_0/router_2_1 |   Scheduling switch connection from input 1.0 to output 0.0.
+5022 | network_0/router_2_1 | Updating lookahead routing information for flit 192022.
+5022 | network_0/router_2_2 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 1, destination 44).
+5022 | network_0/router_2_1 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+5022 | network_0/router_2_1 | Completed crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+5022 | network_0/router_2_1 | Buffering flit 192022 at output 0.
+5027 | network_0/router_2_1 | Sending flit 192022 to channel at output 0.
+5028 | network_0/network_0_fchan_68 | Beginning channel traversal for flit 192022 with delay 1.
+5028 | network_0/network_0_fchan_68 | Completed channel traversal for flit 192022.
+5029 | network_0/router_2_2 | Received flit 192022 from channel at input 1.
+5029 | network_0/router_2_2 | Adding flit 192022 to VC 1 at input 1 (state: active, front: 187965).
+Additional hops: 795
+Adding flit 159114 as NACK at time 5061
+Reenqueueing errored packet 159114 at time 5076
+Additional hops: 799
+Adding flit 160258 as NACK at time 5101
+Reenqueueing errored packet 160258 at time 5110
+5150 | network_0/router_2_2 | Using precomputed lookahead routing information for VC 1 at input 1 (front: 192022).
+5150 | network_0/router_2_2/buf_1/vc_1 | Changing state from active to vc_alloc.
+5151 | network_0/router_2_2 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5151 | network_0/router_2_2 |   VC 0 at output 0 is in use by VC 0 at input 4 (front flit: 197024).
+5151 | network_0/router_2_2 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+5151 | network_0/router_2_2/vc_allocator | Input requests = [ 2 -> [ 1@0 ]  3 -> [ 1@0 ]  5 -> [ 6@0 7@0 ]  7 -> [ 4@0 5@0 ]  9 -> [ 1@0 ]  ], output requests = [ 1 -> [ 2@0 3@0 9@0 ]  4 -> [ 7@0 ]  5 -> [ 7@0 ]  6 -> [ 5@0 ]  7 -> [ 5@0 ]  ].
+5151 | network_0/router_2_2/vc_allocator | Input grants = [ 5 -> 6  7 -> 5  9 -> 1  ], output grants = [ 1 -> 9  5 -> 7  6 -> 5  ].
+5151 | network_0/router_2_2 | VC allocation failed for VC 1 at input 1.
+5151 | network_0/router_2_2 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5151 | network_0/router_2_2 |   No output VC allocated.
+5151 | network_0/router_2_2 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5151 | network_0/router_2_2 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+5151 | network_0/router_2_2 |   VC 1 at output 0 is in use by VC 1 at input 4 (front flit: 196949).
+5151 | network_0/router_2_2/vc_allocator | Input requests = [ 2 -> [ 0@0 ]  3 -> [ 0@0 ]  ], output requests = [ 0 -> [ 2@0 3@0 ]  ].
+5151 | network_0/router_2_2/vc_allocator | Input grants = [ 2 -> 0  ], output grants = [ 0 -> 2  ].
+5151 | network_0/router_2_2 | VC allocation failed for VC 1 at input 1.
+5151 | network_0/router_2_2 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5151 | network_0/router_2_2 |   No output VC allocated.
+5152 | network_0/router_2_2 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5152 | network_0/router_2_2 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 185257).
+5152 | network_0/router_2_2 |   VC 1 at output 0 is in use by VC 1 at input 4 (front flit: 196949).
+5152 | network_0/router_2_2 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5152 | network_0/router_2_2 |   No output VC allocated.
+5152 | network_0/router_2_2 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5152 | network_0/router_2_2 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 185257).
+5152 | network_0/router_2_2 |   VC 1 at output 0 is in use by VC 1 at input 4 (front flit: 196949).
+5152 | network_0/router_2_2 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5152 | network_0/router_2_2 |   No output VC allocated.
+5153 | network_0/router_2_2 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5153 | network_0/router_2_2 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 185257).
+5153 | network_0/router_2_2 |   VC 1 at output 0 is in use by VC 1 at input 4 (front flit: 196949).
+5153 | network_0/router_2_2 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5153 | network_0/router_2_2 |   No output VC allocated.
+5153 | network_0/router_2_2 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5153 | network_0/router_2_2 |   VC 0 at output 0 is in use by VC 0 at input 1 (front flit: 185257).
+5153 | network_0/router_2_2 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+5153 | network_0/router_2_2/vc_allocator | Input requests = [ 3 -> [ 1@0 ]  8 -> [ 1@0 ]  9 -> [ 1@0 ]  ], output requests = [ 1 -> [ 3@0 8@0 9@0 ]  ].
+5153 | network_0/router_2_2/vc_allocator | Input grants = [ 3 -> 1  ], output grants = [ 1 -> 3  ].
+5153 | network_0/router_2_2 | Assigning VC 1 at output 0 to VC 1 at input 1.
+5153 | network_0/router_2_2 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5153 | network_0/router_2_2 |   Acquiring assigned VC 1 at output 0.
+5153 | network_0/router_2_2/buf_1/vc_1 | Changing state from vc_alloc to active.
+5154 | network_0/router_2_2 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5154 | network_0/router_2_2 |   VC 1 at output 0 is full.
+5154 | network_0/router_2_2 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5154 | network_0/router_2_2 |   No output port allocated.
+5154 | network_0/router_2_2 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5154 | network_0/router_2_2 |   VC 1 at output 0 is full.
+5154 | network_0/router_2_2 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5154 | network_0/router_2_2 |   No output port allocated.
+5155 | network_0/router_2_2 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5155 | network_0/router_2_2 |   Requesting output 0.0 (non-spec, pri: 0).
+5155 | network_0/router_2_2/sw_allocator | Input requests = [ 1 -> [ 0@0 3@0 ]  ], output requests = [ 0 -> [ 1@0 ]  3 -> [ 1@0 ]  ].
+5155 | network_0/router_2_2/sw_allocator | Input grants = [ 1 -> 3  ], output grants = [ 3 -> 1  ].
+5155 | network_0/router_2_2 | Switch allocation failed for VC 1 at input 1: Granted to VC 0.
+5155 | network_0/router_2_2 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5155 | network_0/router_2_2 |   No output port allocated.
+5155 | network_0/router_2_2 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5155 | network_0/router_2_2 |   Requesting output 0.0 (non-spec, pri: 0).
+5155 | network_0/router_2_2/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ].
+5155 | network_0/router_2_2/sw_allocator | Input grants = [ 0 -> 1  1 -> 0  2 -> 3  3 -> 2  ], output grants = [ 0 -> 1  1 -> 0  2 -> 3  3 -> 2  ].
+5155 | network_0/router_2_2 | Assigning output 0.0 to VC 1 at input 1.0.
+5155 | network_0/router_2_2 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5155 | network_0/router_2_2 |   Scheduling switch connection from input 1.0 to output 0.0.
+5155 | network_0/router_2_2 | Updating lookahead routing information for flit 192022.
+5155 | network_0/router_2_3 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 1, destination 44).
+5156 | network_0/router_2_2 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+5156 | network_0/router_2_2 | Completed crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+5156 | network_0/router_2_2 | Buffering flit 192022 at output 0.
+Additional hops: 811
+Adding flit 146300 as NACK at time 5159
+Additional hops: 817
+Adding flit 158419 as NACK at time 5163
+Reenqueueing errored packet 158419 at time 5176
+Reenqueueing errored packet 146300 at time 5184
+Additional hops: 824
+Adding flit 159047 as NACK at time 5207
+Reenqueueing errored packet 159047 at time 5222
+Additional hops: 827
+Adding flit 193551 as NACK at time 5225
+Reenqueueing errored packet 193551 at time 5232
+Additional hops: 831
+Adding flit 166920 as NACK at time 5251
+Reenqueueing errored packet 166920 at time 5260
+Additional hops: 842
+Adding flit 147717 as NACK at time 5262
+Additional hops: 850
+Adding flit 166820 as NACK at time 5270
+Additional hops: 855
+Adding flit 184768 as NACK at time 5271
+Reenqueueing errored packet 184768 at time 5282
+Reenqueueing errored packet 147717 at time 5285
+Reenqueueing errored packet 166820 at time 5287
+Additional hops: 860
+Adding flit 166932 as NACK at time 5291
+Additional hops: 870
+Adding flit 151636 as NACK at time 5295
+Reenqueueing errored packet 166932 at time 5302
+Reenqueueing errored packet 151636 at time 5316
+Additional hops: 874
+Adding flit 198273 as NACK at time 5355
+Reenqueueing errored packet 198273 at time 5364
+Additional hops: 880
+Adding flit 159717 as NACK at time 5365
+Reenqueueing errored packet 159717 at time 5378
+Additional hops: 886
+Adding flit 170574 as NACK at time 5394
+Reenqueueing errored packet 170574 at time 5407
+Additional hops: 890
+Adding flit 171093 as NACK at time 5439
+Reenqueueing errored packet 171093 at time 5448
+Additional hops: 895
+Adding flit 174613 as NACK at time 5461
+Additional hops: 903
+Adding flit 172457 as NACK at time 5469
+Reenqueueing errored packet 174613 at time 5472
+Reenqueueing errored packet 172457 at time 5486
+Additional hops: 913
+Adding flit 188628 as NACK at time 5564
+Reenqueueing errored packet 188628 at time 5585
+Additional hops: 920
+Adding flit 180922 as NACK at time 5595
+Reenqueueing errored packet 180922 at time 5610
+Additional hops: 925
+Adding flit 202021 as NACK at time 5627
+Reenqueueing errored packet 202021 at time 5638
+5645 | network_0/router_2_2 | Sending flit 192022 to channel at output 0.
+5646 | network_0/network_0_fchan_72 | Beginning channel traversal for flit 192022 with delay 1.
+5646 | network_0/network_0_fchan_72 | Completed channel traversal for flit 192022.
+5647 | network_0/router_2_3 | Received flit 192022 from channel at input 1.
+5647 | network_0/router_2_3 | Adding flit 192022 to VC 1 at input 1 (state: active, front: 189438).
+Additional hops: 935
+Adding flit 192929 as NACK at time 5658
+Reenqueueing errored packet 192929 at time 5679
+Additional hops: 948
+Adding flit 159540 as NACK at time 5705
+Reenqueueing errored packet 159540 at time 5732
+5736 | network_0/router_2_3 | Using precomputed lookahead routing information for VC 1 at input 1 (front: 192022).
+5736 | network_0/router_2_3/buf_1/vc_1 | Changing state from active to vc_alloc.
+5736 | network_0/router_2_3 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5736 | network_0/router_2_3 |   VC 0 at output 0 is in use by VC 1 at input 4 (front flit: 219304).
+5736 | network_0/router_2_3 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+5736 | network_0/router_2_3/vc_allocator | Input requests = [ 2 -> [ 1@0 ]  3 -> [ 1@0 ]  ], output requests = [ 1 -> [ 2@0 3@0 ]  ].
+5736 | network_0/router_2_3/vc_allocator | Input grants = [ 2 -> 1  ], output grants = [ 1 -> 2  ].
+5736 | network_0/router_2_3 | VC allocation failed for VC 1 at input 1.
+5736 | network_0/router_2_3 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5736 | network_0/router_2_3 |   No output VC allocated.
+5737 | network_0/router_2_3 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5737 | network_0/router_2_3 |   VC 0 at output 0 is in use by VC 1 at input 4 (front flit: 219304).
+5737 | network_0/router_2_3 |   VC 1 at output 0 is in use by VC 0 at input 1 (front flit: 186285).
+5737 | network_0/router_2_3 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5737 | network_0/router_2_3 |   No output VC allocated.
+5737 | network_0/router_2_3 | Beginning VC allocation for VC 1 at input 1 (front: 192022).
+5737 | network_0/router_2_3 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+5737 | network_0/router_2_3 |   VC 1 at output 0 is in use by VC 0 at input 1 (front flit: 186285).
+5737 | network_0/router_2_3/vc_allocator | Input requests = [ 3 -> [ 0@0 ]  5 -> [ 7@0 ]  9 -> [ 4@0 ]  ], output requests = [ 0 -> [ 3@0 ]  4 -> [ 9@0 ]  7 -> [ 5@0 ]  ].
+5737 | network_0/router_2_3/vc_allocator | Input grants = [ 3 -> 0  5 -> 7  9 -> 4  ], output grants = [ 0 -> 3  4 -> 9  7 -> 5  ].
+5737 | network_0/router_2_3 | Assigning VC 0 at output 0 to VC 1 at input 1.
+5737 | network_0/router_2_3 | Completed VC allocation for VC 1 at input 1 (front: 192022).
+5737 | network_0/router_2_3 |   Acquiring assigned VC 0 at output 0.
+5737 | network_0/router_2_3/buf_1/vc_1 | Changing state from vc_alloc to active.
+5738 | network_0/router_2_3 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5738 | network_0/router_2_3 |   VC 0 at output 0 is full.
+5738 | network_0/router_2_3 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5738 | network_0/router_2_3 |   No output port allocated.
+5738 | network_0/router_2_3 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5738 | network_0/router_2_3 |   VC 0 at output 0 is full.
+5738 | network_0/router_2_3 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5738 | network_0/router_2_3 |   No output port allocated.
+5739 | network_0/router_2_3 | Beginning switch allocation for VC 1 at input 1 (front: 192022).
+5739 | network_0/router_2_3 |   Requesting output 0.0 (non-spec, pri: 0).
+5739 | network_0/router_2_3/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 4@0 ]  4 -> [ 1@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 4@0 ]  4 -> [ 2@0 ]  ].
+5739 | network_0/router_2_3/sw_allocator | Input grants = [ 1 -> 0  2 -> 4  4 -> 1  ], output grants = [ 0 -> 1  1 -> 4  4 -> 2  ].
+5739 | network_0/router_2_3 | Assigning output 0.0 to VC 1 at input 1.0.
+5739 | network_0/router_2_3 | Completed switch allocation for VC 1 at input 1 (front: 192022).
+5739 | network_0/router_2_3 |   Scheduling switch connection from input 1.0 to output 0.0.
+5739 | network_0/router_2_3 | Updating lookahead routing information for flit 192022.
+5739 | network_0/router_2_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 1, destination 44).
+5739 | network_0/router_2_3 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+5739 | network_0/router_2_3 | Completed crossbar traversal for flit 192022 from input 1.0 to output 0.0.
+5739 | network_0/router_2_3 | Buffering flit 192022 at output 0.
+Additional hops: 953
+Adding flit 199521 as NACK at time 5742
+Reenqueueing errored packet 199521 at time 5753
+Additional hops: 958
+Adding flit 199104 as NACK at time 5775
+Reenqueueing errored packet 199104 at time 5786
+Additional hops: 962
+Adding flit 203480 as NACK at time 5873
+Additional hops: 969
+Adding flit 202368 as NACK at time 5875
+Additional hops: 981
+Adding flit 156873 as NACK at time 5879
+Reenqueueing errored packet 203480 at time 5882
+Additional hops: 990
+Adding flit 190808 as NACK at time 5888
+Reenqueueing errored packet 202368 at time 5890
+Additional hops: 999
+Adding flit 205126 as NACK at time 5900
+Reenqueueing errored packet 156873 at time 5904
+Reenqueueing errored packet 190808 at time 5907
+Reenqueueing errored packet 205126 at time 5919
+Additional hops: 1008
+Adding flit 187236 as NACK at time 5949
+Reenqueueing errored packet 187236 at time 5968
+Additional hops: 1015
+Adding flit 189808 as NACK at time 5975
+Reenqueueing errored packet 189808 at time 5990
+Additional hops: 1025
+Adding flit 179089 as NACK at time 6024
+Reenqueueing errored packet 179089 at time 6045
+Additional hops: 1032
+Adding flit 188435 as NACK at time 6066
+Reenqueueing errored packet 188435 at time 6081
+Additional hops: 1038
+Adding flit 197740 as NACK at time 6144
+Reenqueueing errored packet 197740 at time 6157
+Additional hops: 1042
+Adding flit 222709 as NACK at time 6166
+Reenqueueing errored packet 222709 at time 6175
+Additional hops: 1048
+Adding flit 198682 as NACK at time 6179
+Reenqueueing errored packet 198682 at time 6192
+Additional hops: 1054
+Adding flit 222097 as NACK at time 6231
+6243 | network_0/router_2_3 | Sending flit 192022 to channel at output 0.
+6244 | network_0/network_0_fchan_76 | Beginning channel traversal for flit 192022 with delay 1.
+Reenqueueing errored packet 222097 at time 6244
+6244 | network_0/network_0_fchan_76 | Completed channel traversal for flit 192022.
+6245 | network_0/router_2_4 | Received flit 192022 from channel at input 1.
+6245 | network_0/router_2_4 | Adding flit 192022 to VC 0 at input 1 (state: idle, empty).
+6245 | network_0/router_2_4 | Using precomputed lookahead routing information for VC 0 at input 1 (front: 192022).
+6245 | network_0/router_2_4/buf_1/vc_0 | Changing state from idle to vc_alloc.
+6245 | network_0/router_2_4 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+6245 | network_0/router_2_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+6245 | network_0/router_2_4 |   VC 1 at output 2 is in use by VC 1 at input 0 (front flit: 205944).
+6245 | network_0/router_2_4/vc_allocator | Input requests = [ 0 -> [ 2@0 3@0 ]  2 -> [ 4@0 ]  5 -> [ 8@0 9@0 ]  7 -> [ 4@0 ]  ], output requests = [ 2 -> [ 0@0 ]  3 -> [ 0@0 ]  4 -> [ 2@0 7@0 ]  8 -> [ 5@0 ]  9 -> [ 5@0 ]  ].
+6245 | network_0/router_2_4/vc_allocator | Input grants = [ 0 -> 3  5 -> 9  7 -> 4  ], output grants = [ 3 -> 0  4 -> 7  9 -> 5  ].
+6245 | network_0/router_2_4 | VC allocation failed for VC 0 at input 1.
+6245 | network_0/router_2_4 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+6245 | network_0/router_2_4 |   No output VC allocated.
+6245 | network_0/router_2_4 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+6245 | network_0/router_2_4 |   VC 0 at output 2 is in use by VC 1 at input 3 (front flit: 216208).
+6245 | network_0/router_2_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+6245 | network_0/router_2_4/vc_allocator | Input requests = [ 1 -> [ 5@0 ]  2 -> [ 5@0 ]  ], output requests = [ 5 -> [ 1@0 2@0 ]  ].
+6245 | network_0/router_2_4/vc_allocator | Input grants = [ 2 -> 5  ], output grants = [ 5 -> 2  ].
+6245 | network_0/router_2_4 | Assigning VC 1 at output 2 to VC 0 at input 1.
+6245 | network_0/router_2_4 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+6245 | network_0/router_2_4 |   Acquiring assigned VC 1 at output 2.
+6245 | network_0/router_2_4/buf_1/vc_0 | Changing state from vc_alloc to active.
+6246 | network_0/router_2_4 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+6246 | network_0/router_2_4 |   Requesting output 2.0 (non-spec, pri: 0).
+6246 | network_0/router_2_4/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 2@0 ]  ], output requests = [ 1 -> [ 0@0 ]  2 -> [ 1@0 ]  ].
+6246 | network_0/router_2_4/sw_allocator | Input grants = [ 0 -> 1  1 -> 2  ], output grants = [ 1 -> 0  2 -> 1  ].
+6246 | network_0/router_2_4 | Assigning output 2.0 to VC 0 at input 1.0.
+6246 | network_0/router_2_4 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+6246 | network_0/router_2_4 |   Scheduling switch connection from input 1.0 to output 2.0.
+6246 | network_0/router_2_4 | Updating lookahead routing information for flit 192022.
+6246 | network_0/router_3_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 3, destination 44).
+6246 | network_0/router_2_4 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 2.0.
+6246 | network_0/router_2_4 | Completed crossbar traversal for flit 192022 from input 1.0 to output 2.0.
+6246 | network_0/router_2_4 | Buffering flit 192022 at output 2.
+6252 | network_0/router_2_4 | Sending flit 192022 to channel at output 2.
+6253 | network_0/network_0_fchan_82 | Beginning channel traversal for flit 192022 with delay 1.
+6253 | network_0/network_0_fchan_82 | Completed channel traversal for flit 192022.
+6254 | network_0/router_3_4 | Received flit 192022 from channel at input 3.
+6254 | network_0/router_3_4 | Adding flit 192022 to VC 1 at input 3 (state: idle, empty).
+6254 | network_0/router_3_4 | Using precomputed lookahead routing information for VC 1 at input 3 (front: 192022).
+6254 | network_0/router_3_4/buf_3/vc_1 | Changing state from idle to vc_alloc.
+6254 | network_0/router_3_4 | Beginning VC allocation for VC 1 at input 3 (front: 192022).
+6254 | network_0/router_3_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+6254 | network_0/router_3_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+6254 | network_0/router_3_4/vc_allocator | Input requests = [ 2 -> [ 0@0 1@0 ]  5 -> [ 6@0 7@0 ]  7 -> [ 4@0 5@0 ]  8 -> [ 6@0 7@0 ]  ], output requests = [ 0 -> [ 2@0 ]  1 -> [ 2@0 ]  4 -> [ 7@0 ]  5 -> [ 7@0 ]  6 -> [ 5@0 8@0 ]  7 -> [ 5@0 8@0 ]  ].
+6254 | network_0/router_3_4/vc_allocator | Input grants = [ 2 -> 0  5 -> 7  7 -> 5  8 -> 6  ], output grants = [ 0 -> 2  5 -> 7  6 -> 8  7 -> 5  ].
+6254 | network_0/router_3_4 | Assigning VC 1 at output 2 to VC 1 at input 3.
+6254 | network_0/router_3_4 | Completed VC allocation for VC 1 at input 3 (front: 192022).
+6254 | network_0/router_3_4 |   Acquiring assigned VC 1 at output 2.
+6254 | network_0/router_3_4/buf_3/vc_1 | Changing state from vc_alloc to active.
+6254 | network_0/router_3_4 | Beginning switch allocation for VC 1 at input 3 (front: 192022).
+6254 | network_0/router_3_4 |   Requesting output 2.0 (non-spec, pri: 0).
+6254 | network_0/router_3_4/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 3@0 ]  ], output requests = [ 0 -> [ 1@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 4@0 ]  ].
+6254 | network_0/router_3_4/sw_allocator | Input grants = [ 1 -> 0  3 -> 2  4 -> 3  ], output grants = [ 0 -> 1  2 -> 3  3 -> 4  ].
+6254 | network_0/router_3_4 | Assigning output 2.0 to VC 1 at input 3.0.
+6254 | network_0/router_3_4 | Completed switch allocation for VC 1 at input 3 (front: 192022).
+6254 | network_0/router_3_4 |   Scheduling switch connection from input 3.0 to output 2.0.
+6254 | network_0/router_3_4 | Updating lookahead routing information for flit 192022.
+6254 | network_0/router_4_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 3, destination 44).
+6255 | network_0/router_3_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+6255 | network_0/router_3_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+6255 | network_0/router_3_4 | Buffering flit 192022 at output 2.
+Additional hops: 1062
+Adding flit 212224 as NACK at time 6294
+Reenqueueing errored packet 212224 at time 6311
+Additional hops: 1067
+Adding flit 212326 as NACK at time 6401
+Reenqueueing errored packet 212326 at time 6412
+Additional hops: 1076
+Adding flit 186961 as NACK at time 6425
+Reenqueueing errored packet 186961 at time 6444
+Additional hops: 1084
+Adding flit 201061 as NACK at time 6449
+Reenqueueing errored packet 201061 at time 6466
+6481 | network_0/router_3_4 | Sending flit 192022 to channel at output 2.
+6482 | network_0/network_0_fchan_114 | Beginning channel traversal for flit 192022 with delay 1.
+6482 | network_0/network_0_fchan_114 | Completed channel traversal for flit 192022.
+6483 | network_0/router_4_4 | Received flit 192022 from channel at input 3.
+6483 | network_0/router_4_4 | Adding flit 192022 to VC 1 at input 3 (state: idle, empty).
+6483 | network_0/router_4_4 | Using precomputed lookahead routing information for VC 1 at input 3 (front: 192022).
+6483 | network_0/router_4_4/buf_3/vc_1 | Changing state from idle to vc_alloc.
+6483 | network_0/router_4_4 | Beginning VC allocation for VC 1 at input 3 (front: 192022).
+6483 | network_0/router_4_4 |   VC 0 at output 2 is in use by VC 0 at input 3 (front flit: 205944).
+6483 | network_0/router_4_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+6483 | network_0/router_4_4/vc_allocator | Input requests = [ 3 -> [ 0@0 1@0 ]  4 -> [ 6@0 7@0 ]  7 -> [ 5@0 ]  ], output requests = [ 0 -> [ 3@0 ]  1 -> [ 3@0 ]  5 -> [ 7@0 ]  6 -> [ 4@0 ]  7 -> [ 4@0 ]  ].
+6483 | network_0/router_4_4/vc_allocator | Input grants = [ 3 -> 1  4 -> 7  7 -> 5  ], output grants = [ 1 -> 3  5 -> 7  7 -> 4  ].
+6483 | network_0/router_4_4 | Assigning VC 1 at output 2 to VC 1 at input 3.
+6483 | network_0/router_4_4 | Completed VC allocation for VC 1 at input 3 (front: 192022).
+6483 | network_0/router_4_4 |   Acquiring assigned VC 1 at output 2.
+6483 | network_0/router_4_4/buf_3/vc_1 | Changing state from vc_alloc to active.
+6483 | network_0/router_4_4 | Beginning switch allocation for VC 1 at input 3 (front: 192022).
+6483 | network_0/router_4_4 |   Requesting output 2.0 (non-spec, pri: 0).
+6483 | network_0/router_4_4/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ], output requests = [ 0 -> [ 1@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ].
+6483 | network_0/router_4_4/sw_allocator | Input grants = [ 1 -> 0  2 -> 3  3 -> 2  ], output grants = [ 0 -> 1  2 -> 3  3 -> 2  ].
+6483 | network_0/router_4_4 | Assigning output 2.0 to VC 1 at input 3.0.
+6483 | network_0/router_4_4 | Completed switch allocation for VC 1 at input 3 (front: 192022).
+6483 | network_0/router_4_4 |   Scheduling switch connection from input 3.0 to output 2.0.
+6483 | network_0/router_4_4 | Updating lookahead routing information for flit 192022.
+6483 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 3, destination 44).
+6484 | network_0/router_4_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+6484 | network_0/router_4_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+6484 | network_0/router_4_4 | Buffering flit 192022 at output 2.
+6486 | network_0/router_4_4 | Sending flit 192022 to channel at output 2.
+6487 | network_0/network_0_fchan_146 | Beginning channel traversal for flit 192022 with delay 1.
+6487 | network_0/network_0_fchan_146 | Completed channel traversal for flit 192022.
+6488 | network_0/router_5_4 | Received flit 192022 from channel at input 3.
+6488 | network_0/router_5_4 | Adding flit 192022 to VC 1 at input 3 (state: idle, empty).
+6488 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 1 at input 3 (front: 192022).
+6488 | network_0/router_5_4/buf_3/vc_1 | Changing state from idle to vc_alloc.
+6488 | network_0/router_5_4 | Beginning VC allocation for VC 1 at input 3 (front: 192022).
+6488 | network_0/router_5_4 |   Requesting VC 0 at output 4 (in_pri: 0, out_pri: 0).
+6488 | network_0/router_5_4 |   Requesting VC 1 at output 4 (in_pri: 0, out_pri: 0).
+6488 | network_0/router_5_4/vc_allocator | Input requests = [ 2 -> [ 4@0 5@0 ]  5 -> [ 6@0 7@0 ]  7 -> [ 8@0 9@0 ]  ], output requests = [ 4 -> [ 2@0 ]  5 -> [ 2@0 ]  6 -> [ 5@0 ]  7 -> [ 5@0 ]  8 -> [ 7@0 ]  9 -> [ 7@0 ]  ].
+6488 | network_0/router_5_4/vc_allocator | Input grants = [ 2 -> 4  5 -> 6  7 -> 8  ], output grants = [ 4 -> 2  6 -> 5  8 -> 7  ].
+6488 | network_0/router_5_4 | Assigning VC 0 at output 4 to VC 1 at input 3.
+6488 | network_0/router_5_4 | Completed VC allocation for VC 1 at input 3 (front: 192022).
+6488 | network_0/router_5_4 |   Acquiring assigned VC 0 at output 4.
+6488 | network_0/router_5_4/buf_3/vc_1 | Changing state from vc_alloc to active.
+6488 | network_0/router_5_4 | Beginning switch allocation for VC 1 at input 3 (front: 192022).
+6488 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+6488 | network_0/router_5_4/sw_allocator | Input requests = [ 1 -> [ 2@0 ]  2 -> [ 3@0 ]  3 -> [ 4@0 ]  ], output requests = [ 2 -> [ 1@0 ]  3 -> [ 2@0 ]  4 -> [ 3@0 ]  ].
+6488 | network_0/router_5_4/sw_allocator | Input grants = [ 1 -> 2  2 -> 3  3 -> 4  ], output grants = [ 2 -> 1  3 -> 2  4 -> 3  ].
+6488 | network_0/router_5_4 | Assigning output 4.0 to VC 1 at input 3.0.
+6488 | network_0/router_5_4 | Completed switch allocation for VC 1 at input 3 (front: 192022).
+6488 | network_0/router_5_4 |   Scheduling switch connection from input 3.0 to output 4.0.
+6489 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+6489 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+6489 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+6489 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+6490 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+6490 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+6491 | node44 | Ejecting flit 192022 (packet 192022) from VC 0.
+6491 | node44 | Injecting credit for VC 0 into subnet 0.
+6491 | node44 | Retiring flit 192022 (packet 192022, src = 16, dest = 44, hops = 8, flat = 1475).
+6491 | node44 | Retiring packet 192022 (plat = 1475, nlat = 1475, frag = 0, src = 16, dest = 44).
+Additional hops: 1088
+Adding flit 228690 as NACK at time 6500
+Reenqueueing errored packet 228690 at time 6509
+Additional hops: 1092
+Adding flit 236749 as NACK at time 6539
+Reenqueueing errored packet 236749 at time 6548
+Additional hops: 1095
+Adding flit 251599 as NACK at time 6593
+Reenqueueing errored packet 251599 at time 6600
+Additional hops: 1103
+Adding flit 227023 as NACK at time 6631
+Reenqueueing errored packet 227023 at time 6648
+Additional hops: 1108
+Adding flit 240553 as NACK at time 6681
+Additional hops: 1117
+Adding flit 207375 as NACK at time 6683
+Reenqueueing errored packet 240553 at time 6692
+Additional hops: 1127
+Adding flit 199952 as NACK at time 6693
+Reenqueueing errored packet 207375 at time 6702
+Reenqueueing errored packet 199952 at time 6714
+Additional hops: 1134
+Adding flit 259789 as NACK at time 6823
+Reenqueueing errored packet 259789 at time 6838
+Additional hops: 1143
+Adding flit 207293 as NACK at time 6885
+Additional hops: 1151
+Adding flit 228229 as NACK at time 6891
+Reenqueueing errored packet 207293 at time 6904
+Reenqueueing errored packet 228229 at time 6908
+Additional hops: 1158
+Adding flit 239768 as NACK at time 6924
+Reenqueueing errored packet 239768 at time 6939
+Additional hops: 1164
+Adding flit 249969 as NACK at time 6966
+Reenqueueing errored packet 249969 at time 6979
+Additional hops: 1172
+Adding flit 227516 as NACK at time 6994
+Reenqueueing errored packet 227516 at time 7011
+Additional hops: 1177
+Adding flit 253838 as NACK at time 7167
+Additional hops: 1186
+Adding flit 221680 as NACK at time 7174
+Reenqueueing errored packet 253838 at time 7178
+Additional hops: 1194
+Adding flit 211141 as NACK at time 7190
+Reenqueueing errored packet 221680 at time 7193
+Additional hops: 1202
+Adding flit 225233 as NACK at time 7206
+Reenqueueing errored packet 211141 at time 7207
+Reenqueueing errored packet 225233 at time 7223
+Additional hops: 1207
+Adding flit 220763 as NACK at time 7243
+Additional hops: 1215
+Adding flit 212139 as NACK at time 7246
+Reenqueueing errored packet 220763 at time 7254
+Reenqueueing errored packet 212139 at time 7263
+Additional hops: 1223
+Adding flit 250361 as NACK at time 7286
+Reenqueueing errored packet 250361 at time 7303
+Additional hops: 1230
+Adding flit 235615 as NACK at time 7317
+Additional hops: 1237
+Adding flit 237235 as NACK at time 7330
+Reenqueueing errored packet 235615 at time 7332
+Additional hops: 1239
+Adding flit 253510 as NACK at time 7335
+Reenqueueing errored packet 253510 at time 7340
+Reenqueueing errored packet 237235 at time 7345
+Additional hops: 1242
+Adding flit 252368 as NACK at time 7382
+Additional hops: 1249
+Adding flit 224299 as NACK at time 7383
+Reenqueueing errored packet 252368 at time 7389
+Reenqueueing errored packet 224299 at time 7398
+Additional hops: 1257
+Adding flit 239612 as NACK at time 7400
+Reenqueueing errored packet 239612 at time 7417
+Additional hops: 1260
+Adding flit 285017 as NACK at time 7454
+Reenqueueing errored packet 285017 at time 7461
+Additional hops: 1268
+Adding flit 238468 as NACK at time 7552
+Reenqueueing errored packet 238468 at time 7569
+Additional hops: 1274
+Adding flit 220479 as NACK at time 7635
+Reenqueueing errored packet 220479 at time 7648
+Additional hops: 1287
+Adding flit 213515 as NACK at time 7772
+Additional hops: 1293
+Adding flit 235349 as NACK at time 7777
+Reenqueueing errored packet 235349 at time 7790
+Additional hops: 1295
+Adding flit 297694 as NACK at time 7790
+Reenqueueing errored packet 297694 at time 7795
+Reenqueueing errored packet 213515 at time 7799
+Additional hops: 1302
+Adding flit 264120 as NACK at time 7831
+Reenqueueing errored packet 264120 at time 7846
+Additional hops: 1313
+Adding flit 222856 as NACK at time 7847
+Reenqueueing errored packet 222856 at time 7870
+Additional hops: 1326
+Adding flit 228619 as NACK at time 7874
+Reenqueueing errored packet 228619 at time 7901
+Additional hops: 1331
+Adding flit 245731 as NACK at time 7924
+Reenqueueing errored packet 245731 at time 7935
+Additional hops: 1337
+Adding flit 281492 as NACK at time 8003
+Additional hops: 1342
+Adding flit 279518 as NACK at time 8014
+Reenqueueing errored packet 281492 at time 8016
+Reenqueueing errored packet 279518 at time 8025
+Additional hops: 1353
+Adding flit 227951 as NACK at time 8141
+Additional hops: 1360
+Adding flit 311160 as NACK at time 8150
+Reenqueueing errored packet 227951 at time 8164
+Reenqueueing errored packet 311160 at time 8165
+Additional hops: 1365
+Adding flit 293912 as NACK at time 8201
+Reenqueueing errored packet 293912 at time 8212
+Additional hops: 1372
+Adding flit 259705 as NACK at time 8215
+Reenqueueing errored packet 259705 at time 8230
+Additional hops: 1385
+Adding flit 222776 as NACK at time 8269
+Additional hops: 1393
+Adding flit 303678 as NACK at time 8276
+Reenqueueing errored packet 303678 at time 8293
+Additional hops: 1401
+Adding flit 241829 as NACK at time 8294
+Reenqueueing errored packet 222776 at time 8296
+Reenqueueing errored packet 241829 at time 8311
+Additional hops: 1409
+Adding flit 240350 as NACK at time 8325
+Reenqueueing errored packet 240350 at time 8342
+Additional hops: 1415
+Adding flit 291238 as NACK at time 8362
+Reenqueueing errored packet 291238 at time 8375
+Additional hops: 1425
+Adding flit 256815 as NACK at time 8414
+Reenqueueing errored packet 256815 at time 8435
+Additional hops: 1430
+Adding flit 246721 as NACK at time 8447
+Reenqueueing errored packet 246721 at time 8458
+Additional hops: 1434
+Adding flit 302923 as NACK at time 8463
+Additional hops: 1438
+Adding flit 302248 as NACK at time 8470
+Reenqueueing errored packet 302923 at time 8472
+Reenqueueing errored packet 302248 at time 8479
+Additional hops: 1447
+Adding flit 263486 as NACK at time 8527
+Reenqueueing errored packet 263486 at time 8546
+Additional hops: 1456
+Adding flit 265752 as NACK at time 8551
+Additional hops: 1462
+Adding flit 249329 as NACK at time 8568
+Reenqueueing errored packet 265752 at time 8570
+Additional hops: 1466
+Adding flit 284937 as NACK at time 8578
+Reenqueueing errored packet 284937 at time 8587
+Additional hops: 1469
+Adding flit 289684 as NACK at time 8613
+Additional hops: 1471
+Adding flit 310316 as NACK at time 8617
+Reenqueueing errored packet 289684 at time 8620
+Reenqueueing errored packet 310316 at time 8622
+Additional hops: 1480
+Adding flit 245631 as NACK at time 8635
+Reenqueueing errored packet 245631 at time 8654
+Additional hops: 1487
+Adding flit 234377 as NACK at time 8655
+Reenqueueing errored packet 234377 at time 8670
+Additional hops: 1492
+Adding flit 256169 as NACK at time 8712
+Reenqueueing errored packet 256169 at time 8723
+Additional hops: 1495
+Adding flit 314744 as NACK at time 8736
+Reenqueueing errored packet 314744 at time 8743
+Additional hops: 1504
+Adding flit 280668 as NACK at time 8759
+Additional hops: 1514
+Adding flit 319144 as NACK at time 8922
+Reenqueueing errored packet 319144 at time 8943
+Additional hops: 1525
+Adding flit 233462 as NACK at time 8965
+Additional hops: 1532
+Adding flit 258538 as NACK at time 9010
+Reenqueueing errored packet 258538 at time 9025
+Additional hops: 1536
+Adding flit 334188 as NACK at time 9125
+Reenqueueing errored packet 334188 at time 9134
+Additional hops: 1544
+Adding flit 273578 as NACK at time 9141
+Reenqueueing errored packet 273578 at time 9158
+Additional hops: 1554
+Adding flit 291303 as NACK at time 9248
+Reenqueueing errored packet 291303 at time 9269
+Additional hops: 1559
+Adding flit 353690 as NACK at time 9276
+Reenqueueing errored packet 353690 at time 9287
+Additional hops: 1565
+Adding flit 265685 as NACK at time 9429
+Reenqueueing errored packet 265685 at time 9442
+Additional hops: 1568
+Adding flit 338770 as NACK at time 9454
+Reenqueueing errored packet 338770 at time 9461
+Additional hops: 1574
+Adding flit 360006 as NACK at time 9463
+Additional hops: 1582
+Adding flit 283643 as NACK at time 9471
+Reenqueueing errored packet 360006 at time 9476
+Reenqueueing errored packet 283643 at time 9488
+Additional hops: 1590
+Adding flit 265717 as NACK at time 9499
+Reenqueueing errored packet 265717 at time 9516
+Additional hops: 1594
+Adding flit 322719 as NACK at time 9545
+Reenqueueing errored packet 322719 at time 9554
+Additional hops: 1599
+Adding flit 347475 as NACK at time 9612
+Additional hops: 1608
+Adding flit 321578 as NACK at time 9620
+Reenqueueing errored packet 347475 at time 9623
+Reenqueueing errored packet 321578 at time 9639
+Additional hops: 1618
+Adding flit 288787 as NACK at time 9655
+Reenqueueing errored packet 288787 at time 9676
+Additional hops: 1631
+Adding flit 258614 as NACK at time 9679
+Reenqueueing errored packet 258614 at time 9706
+Additional hops: 1638
+Adding flit 344483 as NACK at time 9709
+Reenqueueing errored packet 344483 at time 9724
+Additional hops: 1648
+Adding flit 272676 as NACK at time 9729
+Additional hops: 1654
+Adding flit 297322 as NACK at time 9824
+Additional hops: 1660
+Adding flit 334664 as NACK at time 9832
+Reenqueueing errored packet 297322 at time 9837
+Reenqueueing errored packet 334664 at time 9845
+Additional hops: 1665
+Adding flit 350187 as NACK at time 9869
+Reenqueueing errored packet 350187 at time 9880
+Additional hops: 1670
+Adding flit 335347 as NACK at time 9933
+Reenqueueing errored packet 335347 at time 9944
+Class 0:
+Packet latency average = 643.533
+	minimum = 5
+	maximum = 4445
+Network latency average = 643.149
+	minimum = 5
+	maximum = 3425
+Slowest packet = 37364
+Flit latency average = 643.149
+	minimum = 5
+	maximum = 3425
+Slowest flit = 247504
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.594173
+	minimum = 0.5586 (at node 25)
+	maximum = 0.6096 (at node 44)
+Accepted packet rate average = 0.511919
+	minimum = 0.4926 (at node 21)
+	maximum = 0.5294 (at node 14)
+Injected flit rate average = 0.594173
+	minimum = 0.5586 (at node 25)
+	maximum = 0.6096 (at node 44)
+Accepted flit rate average= 0.511919
+	minimum = 0.4926 (at node 21)
+	maximum = 0.5294 (at node 14)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 52656 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 98.7186

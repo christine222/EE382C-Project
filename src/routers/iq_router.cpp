@@ -174,7 +174,7 @@ IQRouter::IQRouter( Configuration const & config, Module *parent,
   // FZ 
 
   _ecc_strategy = config.GetStr( "ecc" );
-
+  _correctable = config.GetInt("correctable");
 
 #ifdef TRACK_FLOWS
   for(int c = 0; c < _classes; ++c) {
@@ -319,13 +319,13 @@ bool IQRouter::_ReceiveFlits( )
       // FZ
       
       if (_ecc_strategy == "link") {
-        if(f->flips && f->hops > 0) { // TODO: this is a hack, if errored on first hop then need to reinject. for now, just pretend the error happened on the next hop
+        if(f->flips > _correctable && f->hops > 0) { // TODO: this is a hack, if errored on first hop then need to reinject. for now, just pretend the error happened on the next hop
             //cout << "Received flipped flit " << f->id << endl;
             _errored_flits.push_back(make_pair(f, input)); 
             //cout << "Length of _errored_flits: " << _errored_flits.size() << endl;          
-            for (auto &iter : _errored_flits) {
-                cout << iter.first->hops << endl;
-            }
+            //for (auto &iter : _errored_flits) {
+            //    cout << iter.first->hops << endl;
+            //}
         }
         else {
             _in_queue_flits.insert(make_pair(input, f));
@@ -460,7 +460,7 @@ void IQRouter::_InputQueuing( )
 
     if (_ecc_strategy == "link") {
         if (c->ack == 0) {
-            cout << "Received nack credit for flit " << c->f->id << endl;
+            //cout << "Received nack credit for flit " << c->f->id << endl;
             c->f->flips = 0;
             _output_buffer[output].push(c->f);
             cout << "Requeued flit " << c->f->id << endl;

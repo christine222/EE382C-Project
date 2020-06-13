@@ -1,0 +1,1448 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.500_link_3
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.5;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 3;
+ecc = link;
+correctable = 1;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = link;
+
+stats_out = examples/ecc_mesh88_config_1_0.500_link_3.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.500_link_3
+Requeued flit 21874
+Requeued flit 58560
+Requeued flit 68397
+Requeued flit 70638
+Requeued flit 94192
+Requeued flit 178086
+5994 | node47 | Enqueuing flit 192022 (packet 192022) at time 5994.
+5994 | traffic_manager | Finding output VC for flit 192022:
+5994 | traffic_manager |   Selected output VC 0.
+5994 | network_0/router_5_7 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 4, destination 44).
+5994 | node47 | Generating lookahead routing info for flit 192022.
+5994 | node47 | Injecting flit 192022 into subnet 0 at time 5994 with priority 0.
+5995 | network_0/network_0_fchan_ingress47 | Beginning channel traversal for flit 192022 with delay 1.
+5995 | network_0/network_0_fchan_ingress47 | Completed channel traversal for flit 192022.
+5996 | network_0/router_5_7 | Received flit 192022 from channel at input 4.
+5996 | network_0/router_5_7 | Adding flit 192022 to VC 0 at input 4 (state: idle, empty).
+5996 | network_0/router_5_7 | Using precomputed lookahead routing information for VC 0 at input 4 (front: 192022).
+5996 | network_0/router_5_7/buf_4/vc_0 | Changing state from idle to vc_alloc.
+5996 | network_0/router_5_7 | Beginning VC allocation for VC 0 at input 4 (front: 192022).
+5996 | network_0/router_5_7 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+5996 | network_0/router_5_7 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+5996 | network_0/router_5_7/vc_allocator | Input requests = [ 4 -> [ 6@0 7@0 ]  6 -> [ 8@0 9@0 ]  8 -> [ 2@0 3@0 ]  ], output requests = [ 2 -> [ 8@0 ]  3 -> [ 8@0 ]  6 -> [ 4@0 ]  7 -> [ 4@0 ]  8 -> [ 6@0 ]  9 -> [ 6@0 ]  ].
+5996 | network_0/router_5_7/vc_allocator | Input grants = [ 4 -> 6  6 -> 8  8 -> 2  ], output grants = [ 2 -> 8  6 -> 4  8 -> 6  ].
+5996 | network_0/router_5_7 | Assigning VC 0 at output 1 to VC 0 at input 4.
+5996 | network_0/router_5_7 | Completed VC allocation for VC 0 at input 4 (front: 192022).
+5996 | network_0/router_5_7 |   Acquiring assigned VC 0 at output 1.
+5996 | network_0/router_5_7/buf_4/vc_0 | Changing state from vc_alloc to active.
+5996 | network_0/router_5_7 | Beginning switch allocation for VC 0 at input 4 (front: 192022).
+5996 | network_0/router_5_7 |   Requesting output 1.0 (non-spec, pri: 0).
+5996 | network_0/router_5_7/sw_allocator | Input requests = [ 2 -> [ 3@0 ]  3 -> [ 4@0 ]  4 -> [ 1@0 ]  ], output requests = [ 1 -> [ 4@0 ]  3 -> [ 2@0 ]  4 -> [ 3@0 ]  ].
+5996 | network_0/router_5_7/sw_allocator | Input grants = [ 2 -> 3  3 -> 4  4 -> 1  ], output grants = [ 1 -> 4  3 -> 2  4 -> 3  ].
+5996 | network_0/router_5_7 | Assigning output 1.0 to VC 0 at input 4.0.
+5996 | network_0/router_5_7 | Completed switch allocation for VC 0 at input 4 (front: 192022).
+5996 | network_0/router_5_7 |   Scheduling switch connection from input 4.0 to output 1.0.
+5996 | network_0/router_5_7 | Updating lookahead routing information for flit 192022.
+5996 | network_0/router_5_6 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+5997 | network_0/router_5_7 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+5997 | network_0/router_5_7 | Completed crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+5997 | network_0/router_5_7 | Buffering flit 192022 at output 1.
+5997 | network_0/router_5_7 | Sending flit 192022 to channel at output 1.
+5998 | network_0/network_0_fchan_189 | Beginning channel traversal for flit 192022 with delay 1.
+5998 | network_0/network_0_fchan_189 | Completed channel traversal for flit 192022.
+5999 | network_0/router_5_6 | Received flit 192022 from channel at input 0.
+5999 | network_0/router_5_6 | Adding flit 192022 to VC 0 at input 0 (state: idle, empty).
+5999 | network_0/router_5_6 | Using precomputed lookahead routing information for VC 0 at input 0 (front: 192022).
+5999 | network_0/router_5_6/buf_0/vc_0 | Changing state from idle to vc_alloc.
+5999 | network_0/router_5_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5999 | network_0/router_5_6 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+5999 | network_0/router_5_6 |   VC 1 at output 1 is in use by VC 1 at input 0 (front flit: 191987).
+5999 | network_0/router_5_6/vc_allocator | Input requests = [ 0 -> [ 2@0 ]  6 -> [ 8@0 9@0 ]  9 -> [ 2@0 ]  ], output requests = [ 2 -> [ 0@0 9@0 ]  8 -> [ 6@0 ]  9 -> [ 6@0 ]  ].
+5999 | network_0/router_5_6/vc_allocator | Input grants = [ 6 -> 8  9 -> 2  ], output grants = [ 2 -> 9  8 -> 6  ].
+5999 | network_0/router_5_6 | VC allocation failed for VC 0 at input 0.
+5999 | network_0/router_5_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5999 | network_0/router_5_6 |   No output VC allocated.
+5999 | network_0/router_5_6 | Beginning VC allocation for VC 0 at input 0 (front: 192022).
+5999 | network_0/router_5_6 |   VC 0 at output 1 is in use by VC 1 at input 4 (front flit: 192120).
+5999 | network_0/router_5_6 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+5999 | network_0/router_5_6/vc_allocator | Input requests = [ 0 -> [ 3@0 ]  ], output requests = [ 3 -> [ 0@0 ]  ].
+5999 | network_0/router_5_6/vc_allocator | Input grants = [ 0 -> 3  ], output grants = [ 3 -> 0  ].
+5999 | network_0/router_5_6 | Assigning VC 1 at output 1 to VC 0 at input 0.
+5999 | network_0/router_5_6 | Completed VC allocation for VC 0 at input 0 (front: 192022).
+5999 | network_0/router_5_6 |   Acquiring assigned VC 1 at output 1.
+5999 | network_0/router_5_6/buf_0/vc_0 | Changing state from vc_alloc to active.
+6000 | network_0/router_5_6 | Beginning switch allocation for VC 0 at input 0 (front: 192022).
+6000 | network_0/router_5_6 |   Requesting output 1.0 (non-spec, pri: 0).
+6000 | network_0/router_5_6/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  ], output requests = [ 1 -> [ 0@0 ]  ].
+6000 | network_0/router_5_6/sw_allocator | Input grants = [ 0 -> 1  ], output grants = [ 1 -> 0  ].
+6000 | network_0/router_5_6 | Assigning output 1.0 to VC 0 at input 0.0.
+6000 | network_0/router_5_6 | Completed switch allocation for VC 0 at input 0 (front: 192022).
+6000 | network_0/router_5_6 |   Scheduling switch connection from input 0.0 to output 1.0.
+6000 | network_0/router_5_6 | Updating lookahead routing information for flit 192022.
+6000 | network_0/router_5_5 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+6000 | network_0/router_5_6 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+6000 | network_0/router_5_6 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+6000 | network_0/router_5_6 | Buffering flit 192022 at output 1.
+6002 | network_0/router_5_6 | Sending flit 192022 to channel at output 1.
+6003 | network_0/network_0_fchan_185 | Beginning channel traversal for flit 192022 with delay 1.
+6003 | network_0/network_0_fchan_185 | Completed channel traversal for flit 192022.
+6004 | network_0/router_5_5 | Received flit 192022 from channel at input 0.
+6004 | network_0/router_5_5 | Adding flit 192022 to VC 1 at input 0 (state: idle, empty).
+6004 | network_0/router_5_5 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+6004 | network_0/router_5_5/buf_0/vc_1 | Changing state from idle to vc_alloc.
+6004 | network_0/router_5_5 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+6004 | network_0/router_5_5 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+6004 | network_0/router_5_5 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+6004 | network_0/router_5_5/vc_allocator | Input requests = [ 1 -> [ 2@0 3@0 ]  3 -> [ 0@0 1@0 ]  5 -> [ 7@0 ]  7 -> [ 4@0 5@0 ]  ], output requests = [ 0 -> [ 3@0 ]  1 -> [ 3@0 ]  2 -> [ 1@0 ]  3 -> [ 1@0 ]  4 -> [ 7@0 ]  5 -> [ 7@0 ]  7 -> [ 5@0 ]  ].
+6004 | network_0/router_5_5/vc_allocator | Input grants = [ 1 -> 3  3 -> 0  5 -> 7  7 -> 4  ], output grants = [ 0 -> 3  3 -> 1  4 -> 7  7 -> 5  ].
+6004 | network_0/router_5_5 | Assigning VC 1 at output 1 to VC 1 at input 0.
+6004 | network_0/router_5_5 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+6004 | network_0/router_5_5 |   Acquiring assigned VC 1 at output 1.
+6004 | network_0/router_5_5/buf_0/vc_1 | Changing state from vc_alloc to active.
+6004 | network_0/router_5_5 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+6004 | network_0/router_5_5 |   Requesting output 1.0 (non-spec, pri: 0).
+6004 | network_0/router_5_5/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ], output requests = [ 0 -> [ 1@0 ]  1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  ].
+6004 | network_0/router_5_5/sw_allocator | Input grants = [ 0 -> 1  1 -> 0  2 -> 3  3 -> 2  ], output grants = [ 0 -> 1  1 -> 0  2 -> 3  3 -> 2  ].
+6004 | network_0/router_5_5 | Assigning output 1.0 to VC 1 at input 0.0.
+6004 | network_0/router_5_5 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+6004 | network_0/router_5_5 |   Scheduling switch connection from input 0.0 to output 1.0.
+6004 | network_0/router_5_5 | Updating lookahead routing information for flit 192022.
+6004 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 0, destination 44).
+6005 | network_0/router_5_5 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+6005 | network_0/router_5_5 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+6005 | network_0/router_5_5 | Buffering flit 192022 at output 1.
+6009 | network_0/router_5_5 | Sending flit 192022 to channel at output 1.
+6010 | network_0/network_0_fchan_181 | Beginning channel traversal for flit 192022 with delay 1.
+6010 | network_0/network_0_fchan_181 | Completed channel traversal for flit 192022.
+6011 | network_0/router_5_4 | Received flit 192022 from channel at input 0.
+6011 | network_0/router_5_4 | Adding flit 192022 to VC 1 at input 0 (state: idle, empty).
+6011 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+6011 | network_0/router_5_4/buf_0/vc_1 | Changing state from idle to vc_alloc.
+6011 | network_0/router_5_4 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+6011 | network_0/router_5_4 |   Requesting VC 0 at output 4 (in_pri: 0, out_pri: 0).
+6011 | network_0/router_5_4 |   VC 1 at output 4 is in use by VC 1 at input 3 (front flit: 190472).
+6011 | network_0/router_5_4/vc_allocator | Input requests = [ 1 -> [ 8@0 ]  3 -> [ 0@0 1@0 ]  5 -> [ 8@0 ]  6 -> [ 4@0 5@0 ]  ], output requests = [ 0 -> [ 3@0 ]  1 -> [ 3@0 ]  4 -> [ 6@0 ]  5 -> [ 6@0 ]  8 -> [ 1@0 5@0 ]  ].
+6011 | network_0/router_5_4/vc_allocator | Input grants = [ 1 -> 8  3 -> 1  6 -> 4  ], output grants = [ 1 -> 3  4 -> 6  8 -> 1  ].
+6011 | network_0/router_5_4 | Assigning VC 0 at output 4 to VC 1 at input 0.
+6011 | network_0/router_5_4 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+6011 | network_0/router_5_4 |   Acquiring assigned VC 0 at output 4.
+6011 | network_0/router_5_4/buf_0/vc_1 | Changing state from vc_alloc to active.
+6011 | network_0/router_5_4 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+6011 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+6011 | network_0/router_5_4/sw_allocator | Input requests = [ 0 -> [ 4@0 ]  1 -> [ 0@0 ]  3 -> [ 2@0 ]  ], output requests = [ 0 -> [ 1@0 ]  2 -> [ 3@0 ]  4 -> [ 0@0 ]  ].
+6011 | network_0/router_5_4/sw_allocator | Input grants = [ 0 -> 4  1 -> 0  3 -> 2  ], output grants = [ 0 -> 1  2 -> 3  4 -> 0  ].
+6011 | network_0/router_5_4 | Assigning output 4.0 to VC 1 at input 0.0.
+6011 | network_0/router_5_4 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+6011 | network_0/router_5_4 |   Scheduling switch connection from input 0.0 to output 4.0.
+6012 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 4.0.
+6012 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 0.0 to output 4.0.
+6012 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+6013 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+6014 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+6014 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+6015 | node44 | Ejecting flit 192022 (packet 192022) from VC 0.
+6015 | node44 | Injecting credit for VC 0 into subnet 0.
+6015 | node44 | Retiring flit 192022 (packet 192022, src = 47, dest = 44, hops = 4, flat = 21).
+6015 | node44 | Retiring packet 192022 (plat = 21, nlat = 21, frag = 0, src = 47, dest = 44).
+Requeued flit 200627
+Class 0:
+Packet latency average = 69.204
+	minimum = 5
+	maximum = 401
+Network latency average = 69.204
+	minimum = 5
+	maximum = 401
+Slowest packet = 268590
+Flit latency average = 69.204
+	minimum = 5
+	maximum = 401
+Slowest flit = 268590
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.49947
+	minimum = 0.4891 (at node 21)
+	maximum = 0.5109 (at node 32)
+Accepted packet rate average = 0.495416
+	minimum = 0.4789 (at node 21)
+	maximum = 0.5082 (at node 14)
+Injected flit rate average = 0.49947
+	minimum = 0.4891 (at node 21)
+	maximum = 0.5109 (at node 32)
+Accepted flit rate average= 0.495416
+	minimum = 0.4789 (at node 21)
+	maximum = 0.5082 (at node 14)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 2595 (0 measured)
+latency change    = 1
+throughput change = 1
+Requeued flit 320880
+Requeued flit 352397
+Requeued flit 362989
+Requeued flit 396419
+Requeued flit 412519
+Requeued flit 493900
+Requeued flit 495944
+Requeued flit 568652
+Requeued flit 608059
+Requeued flit 623264
+Class 0:
+Packet latency average = 85.0343
+	minimum = 5
+	maximum = 568
+Network latency average = 85.0343
+	minimum = 5
+	maximum = 568
+Slowest packet = 552116
+Flit latency average = 85.0343
+	minimum = 5
+	maximum = 568
+Slowest flit = 552116
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.499814
+	minimum = 0.49095 (at node 48)
+	maximum = 0.50765 (at node 51)
+Accepted packet rate average = 0.496762
+	minimum = 0.48675 (at node 21)
+	maximum = 0.50885 (at node 39)
+Injected flit rate average = 0.499814
+	minimum = 0.49095 (at node 48)
+	maximum = 0.50765 (at node 51)
+Accepted flit rate average= 0.496762
+	minimum = 0.48675 (at node 21)
+	maximum = 0.50885 (at node 39)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 3907 (0 measured)
+latency change    = 0.186164
+throughput change = 0.00270974
+Requeued flit 637382
+Requeued flit 681714
+Requeued flit 721292
+Requeued flit 718857
+Requeued flit 727194
+Requeued flit 793521
+Requeued flit 798800
+Requeued flit 808162
+Requeued flit 828762
+Requeued flit 865727
+Requeued flit 921081
+Class 0:
+Packet latency average = 143.374
+	minimum = 5
+	maximum = 783
+Network latency average = 143.374
+	minimum = 5
+	maximum = 783
+Slowest packet = 933630
+Flit latency average = 143.374
+	minimum = 5
+	maximum = 783
+Slowest flit = 933630
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.501112
+	minimum = 0.4899 (at node 15)
+	maximum = 0.5115 (at node 10)
+Accepted packet rate average = 0.499358
+	minimum = 0.4843 (at node 62)
+	maximum = 0.5129 (at node 28)
+Injected flit rate average = 0.501112
+	minimum = 0.4899 (at node 15)
+	maximum = 0.5115 (at node 10)
+Accepted flit rate average= 0.499358
+	minimum = 0.4843 (at node 62)
+	maximum = 0.5129 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 5030 (0 measured)
+latency change    = 0.406906
+throughput change = 0.00519886
+Warmed up ...Time used is 30000 cycles
+Requeued flit 999224
+Requeued flit 1003141
+Requeued flit 1019082
+Requeued flit 1021882
+Requeued flit 1041919
+Requeued flit 1118543
+Requeued flit 1144254
+Requeued flit 1185743
+Requeued flit 1189087
+Requeued flit 1221527
+Requeued flit 1234679
+Requeued flit 1244056
+Class 0:
+Packet latency average = 164.708
+	minimum = 5
+	maximum = 1056
+Network latency average = 164.708
+	minimum = 5
+	maximum = 1056
+Slowest packet = 1189087
+Flit latency average = 166.841
+	minimum = 5
+	maximum = 1056
+Slowest flit = 1189087
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.499564
+	minimum = 0.4893 (at node 55)
+	maximum = 0.508 (at node 20)
+Accepted packet rate average = 0.498961
+	minimum = 0.4859 (at node 18)
+	maximum = 0.5146 (at node 31)
+Injected flit rate average = 0.499564
+	minimum = 0.4893 (at node 55)
+	maximum = 0.508 (at node 20)
+Accepted flit rate average= 0.498961
+	minimum = 0.4859 (at node 18)
+	maximum = 0.5146 (at node 31)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 5416 (5416 measured)
+latency change    = 0.129528
+throughput change = 0.000795403
+Requeued flit 1282218
+Requeued flit 1290156
+Requeued flit 1298383
+Requeued flit 1299915
+Requeued flit 1358805
+Requeued flit 1378572
+Requeued flit 1383336
+Requeued flit 1396151
+Requeued flit 1471736
+Requeued flit 1485091
+Requeued flit 1497471
+Requeued flit 1513991
+Requeued flit 1523091
+Requeued flit 1539859
+Requeued flit 1579373
+Class 0:
+Packet latency average = 164.42
+	minimum = 5
+	maximum = 1056
+Network latency average = 164.42
+	minimum = 5
+	maximum = 1056
+Slowest packet = 1189087
+Flit latency average = 165.488
+	minimum = 5
+	maximum = 1056
+Slowest flit = 1189087
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.49983
+	minimum = 0.4915 (at node 21)
+	maximum = 0.5067 (at node 52)
+Accepted packet rate average = 0.499406
+	minimum = 0.4878 (at node 40)
+	maximum = 0.5101 (at node 38)
+Injected flit rate average = 0.49983
+	minimum = 0.4915 (at node 21)
+	maximum = 0.5067 (at node 52)
+Accepted flit rate average= 0.499406
+	minimum = 0.4878 (at node 40)
+	maximum = 0.5101 (at node 38)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 5573 (5573 measured)
+latency change    = 0.00175147
+throughput change = 0.000891684
+Requeued flit 1611873
+Requeued flit 1628631
+Requeued flit 1631872
+Requeued flit 1773454
+Requeued flit 1783245
+Requeued flit 1791528
+Requeued flit 1836035
+Requeued flit 1835554
+Requeued flit 1861511
+Requeued flit 1906671
+Class 0:
+Packet latency average = 172.642
+	minimum = 5
+	maximum = 1219
+Network latency average = 172.642
+	minimum = 5
+	maximum = 1219
+Slowest packet = 1807353
+Flit latency average = 173.311
+	minimum = 5
+	maximum = 1219
+Slowest flit = 1807353
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.499835
+	minimum = 0.492567 (at node 21)
+	maximum = 0.508767 (at node 52)
+Accepted packet rate average = 0.499038
+	minimum = 0.486733 (at node 40)
+	maximum = 0.506167 (at node 57)
+Injected flit rate average = 0.499835
+	minimum = 0.492567 (at node 21)
+	maximum = 0.508767 (at node 52)
+Accepted flit rate average= 0.499038
+	minimum = 0.486733 (at node 40)
+	maximum = 0.506167 (at node 57)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 6562 (6562 measured)
+latency change    = 0.0476234
+throughput change = 0.000738922
+Requeued flit 1947165
+Requeued flit 1971614
+Requeued flit 1992205
+Requeued flit 1979394
+Requeued flit 2046279
+Requeued flit 2053497
+Requeued flit 2146012
+Requeued flit 2157324
+Class 0:
+Packet latency average = 183.291
+	minimum = 5
+	maximum = 1249
+Network latency average = 183.291
+	minimum = 5
+	maximum = 1249
+Slowest packet = 2003340
+Flit latency average = 183.751
+	minimum = 5
+	maximum = 1249
+Slowest flit = 2003340
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.499952
+	minimum = 0.494525 (at node 10)
+	maximum = 0.50635 (at node 52)
+Accepted packet rate average = 0.49919
+	minimum = 0.4893 (at node 40)
+	maximum = 0.50545 (at node 10)
+Injected flit rate average = 0.499952
+	minimum = 0.494525 (at node 10)
+	maximum = 0.50635 (at node 52)
+Accepted flit rate average= 0.49919
+	minimum = 0.4893 (at node 40)
+	maximum = 0.50545 (at node 10)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 6981 (6981 measured)
+latency change    = 0.0580968
+throughput change = 0.000305182
+Requeued flit 2264575
+Requeued flit 2253323
+Requeued flit 2277742
+Requeued flit 2468678
+Requeued flit 2474160
+Requeued flit 2504696
+Requeued flit 2512446
+Class 0:
+Packet latency average = 191.468
+	minimum = 5
+	maximum = 1249
+Network latency average = 191.468
+	minimum = 5
+	maximum = 1249
+Slowest packet = 2003340
+Flit latency average = 191.81
+	minimum = 5
+	maximum = 1249
+Slowest flit = 2003340
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.500009
+	minimum = 0.49482 (at node 21)
+	maximum = 0.50582 (at node 50)
+Accepted packet rate average = 0.499288
+	minimum = 0.48952 (at node 14)
+	maximum = 0.50598 (at node 57)
+Injected flit rate average = 0.500009
+	minimum = 0.49482 (at node 21)
+	maximum = 0.50582 (at node 50)
+Accepted flit rate average= 0.499288
+	minimum = 0.48952 (at node 14)
+	maximum = 0.50598 (at node 57)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 7338 (7338 measured)
+latency change    = 0.0427081
+throughput change = 0.000196217
+Requeued flit 2563789
+Requeued flit 2553602
+Requeued flit 2576808
+Requeued flit 2594509
+Requeued flit 2601304
+Requeued flit 2650019
+Requeued flit 2668266
+Requeued flit 2691513
+Requeued flit 2703483
+Requeued flit 2733862
+Requeued flit 2730708
+Requeued flit 2802751
+Requeued flit 2818474
+Requeued flit 2849637
+Class 0:
+Packet latency average = 198.112
+	minimum = 5
+	maximum = 1249
+Network latency average = 198.112
+	minimum = 5
+	maximum = 1249
+Slowest packet = 2003340
+Flit latency average = 198.379
+	minimum = 5
+	maximum = 1249
+Slowest flit = 2003340
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.499861
+	minimum = 0.495017 (at node 62)
+	maximum = 0.505083 (at node 51)
+Accepted packet rate average = 0.499332
+	minimum = 0.4919 (at node 14)
+	maximum = 0.505 (at node 45)
+Injected flit rate average = 0.499861
+	minimum = 0.495017 (at node 62)
+	maximum = 0.505083 (at node 51)
+Accepted flit rate average= 0.499332
+	minimum = 0.4919 (at node 14)
+	maximum = 0.505 (at node 45)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 7062 (7062 measured)
+latency change    = 0.033536
+throughput change = 8.75128e-05
+Requeued flit 2954649
+Requeued flit 3001208
+Requeued flit 3003219
+Requeued flit 3042672
+Requeued flit 3070424
+Requeued flit 3150671
+Requeued flit 3153376
+Requeued flit 3159578
+Requeued flit 3152120
+Requeued flit 3177909
+Class 0:
+Packet latency average = 200.331
+	minimum = 5
+	maximum = 1249
+Network latency average = 200.331
+	minimum = 5
+	maximum = 1249
+Slowest packet = 2003340
+Flit latency average = 200.555
+	minimum = 5
+	maximum = 1249
+Slowest flit = 2003340
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.499718
+	minimum = 0.495143 (at node 62)
+	maximum = 0.504757 (at node 51)
+Accepted packet rate average = 0.4993
+	minimum = 0.493614 (at node 14)
+	maximum = 0.504857 (at node 53)
+Injected flit rate average = 0.499718
+	minimum = 0.495143 (at node 62)
+	maximum = 0.504757 (at node 51)
+Accepted flit rate average= 0.4993
+	minimum = 0.493614 (at node 14)
+	maximum = 0.504857 (at node 53)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 6900 (6900 measured)
+latency change    = 0.011075
+throughput change = 6.26621e-05
+Draining all recorded packets ...
+in flight = 6900
+in flight = 6864
+in flight = 6833
+in flight = 6805
+in flight = 6782
+in flight = 6751
+in flight = 6714
+in flight = 6675
+in flight = 6646
+in flight = 6618
+in flight = 6587
+in flight = 6557
+in flight = 6523
+in flight = 6486
+in flight = 6455
+in flight = 6428
+in flight = 6404
+in flight = 6375
+in flight = 6357
+in flight = 6337
+in flight = 6310
+in flight = 6289
+in flight = 6266
+in flight = 6244
+in flight = 6221
+in flight = 6199
+in flight = 6172
+in flight = 6147
+in flight = 6116
+in flight = 6093
+in flight = 6069
+in flight = 6048
+in flight = 6027
+in flight = 6004
+in flight = 5981
+in flight = 5958
+in flight = 5942
+in flight = 5925
+in flight = 5907
+in flight = 5883
+in flight = 5858
+in flight = 5828
+in flight = 5806
+in flight = 5779
+in flight = 5754
+in flight = 5724
+in flight = 5710
+in flight = 5693
+in flight = 5673
+in flight = 5651
+in flight = 5627
+in flight = 5601
+in flight = 5583
+in flight = 5565
+in flight = 5541
+in flight = 5522
+in flight = 5500
+in flight = 5479
+in flight = 5459
+in flight = 5433
+in flight = 5413
+in flight = 5395
+in flight = 5378
+in flight = 5360
+in flight = 5338
+in flight = 5318
+in flight = 5293
+in flight = 5279
+in flight = 5258
+in flight = 5241
+in flight = 5220
+in flight = 5208
+in flight = 5185
+in flight = 5169
+in flight = 5151
+in flight = 5129
+in flight = 5107
+in flight = 5087
+in flight = 5073
+in flight = 5053
+in flight = 5027
+in flight = 5005
+in flight = 4983
+in flight = 4969
+in flight = 4949
+in flight = 4930
+in flight = 4908
+in flight = 4888
+in flight = 4871
+in flight = 4849
+in flight = 4829
+in flight = 4808
+in flight = 4785
+in flight = 4766
+in flight = 4745
+in flight = 4721
+in flight = 4706
+in flight = 4686
+in flight = 4663
+in flight = 4640
+in flight = 4617
+in flight = 4601
+in flight = 4579
+in flight = 4566
+in flight = 4546
+in flight = 4532
+in flight = 4513
+in flight = 4497
+in flight = 4476
+in flight = 4457
+in flight = 4443
+in flight = 4423
+in flight = 4402
+in flight = 4382
+in flight = 4365
+in flight = 4346
+in flight = 4327
+in flight = 4308
+in flight = 4288
+in flight = 4273
+in flight = 4253
+in flight = 4230
+in flight = 4218
+in flight = 4201
+in flight = 4178
+in flight = 4162
+in flight = 4143
+in flight = 4121
+in flight = 4105
+in flight = 4088
+in flight = 4077
+in flight = 4059
+in flight = 4038
+in flight = 4029
+in flight = 4011
+in flight = 3999
+in flight = 3978
+in flight = 3954
+in flight = 3932
+in flight = 3914
+in flight = 3892
+in flight = 3879
+in flight = 3862
+in flight = 3849
+in flight = 3835
+in flight = 3818
+in flight = 3807
+in flight = 3788
+in flight = 3771
+in flight = 3751
+in flight = 3738
+in flight = 3721
+in flight = 3704
+in flight = 3690
+in flight = 3679
+in flight = 3664
+in flight = 3643
+in flight = 3625
+in flight = 3607
+in flight = 3591
+in flight = 3577
+in flight = 3559
+in flight = 3542
+in flight = 3525
+in flight = 3501
+in flight = 3485
+in flight = 3464
+in flight = 3448
+in flight = 3434
+in flight = 3416
+in flight = 3397
+in flight = 3380
+in flight = 3360
+in flight = 3345
+in flight = 3332
+in flight = 3319
+in flight = 3306
+in flight = 3293
+in flight = 3279
+in flight = 3268
+in flight = 3253
+in flight = 3234
+in flight = 3215
+in flight = 3199
+in flight = 3185
+in flight = 3173
+in flight = 3160
+in flight = 3145
+in flight = 3134
+in flight = 3118
+in flight = 3107
+in flight = 3091
+in flight = 3077
+in flight = 3066
+in flight = 3049
+in flight = 3040
+in flight = 3025
+in flight = 3010
+in flight = 2994
+in flight = 2977
+in flight = 2964
+in flight = 2951
+in flight = 2937
+in flight = 2922
+in flight = 2901
+in flight = 2886
+in flight = 2868
+in flight = 2852
+in flight = 2846
+in flight = 2837
+in flight = 2819
+in flight = 2803
+in flight = 2787
+in flight = 2772
+in flight = 2765
+in flight = 2752
+in flight = 2739
+in flight = 2723
+in flight = 2712
+in flight = 2699
+in flight = 2685
+in flight = 2674
+in flight = 2659
+in flight = 2648
+in flight = 2630
+in flight = 2614
+in flight = 2597
+in flight = 2578
+in flight = 2559
+in flight = 2548
+in flight = 2537
+in flight = 2525
+in flight = 2511
+in flight = 2500
+in flight = 2492
+in flight = 2486
+in flight = 2471
+in flight = 2456
+in flight = 2447
+in flight = 2435
+in flight = 2422
+in flight = 2407
+in flight = 2399
+in flight = 2385
+in flight = 2366
+in flight = 2352
+in flight = 2334
+in flight = 2319
+in flight = 2307
+in flight = 2300
+in flight = 2292
+in flight = 2282
+in flight = 2270
+in flight = 2254
+in flight = 2247
+in flight = 2232
+in flight = 2226
+in flight = 2216
+in flight = 2206
+in flight = 2189
+in flight = 2175
+in flight = 2163
+in flight = 2153
+in flight = 2144
+in flight = 2135
+in flight = 2122
+in flight = 2113
+in flight = 2100
+in flight = 2086
+in flight = 2077
+in flight = 2067
+in flight = 2053
+in flight = 2040
+in flight = 2036
+in flight = 2031
+in flight = 2020
+in flight = 2010
+in flight = 1997
+in flight = 1988
+in flight = 1975
+in flight = 1962
+in flight = 1954
+in flight = 1945
+in flight = 1934
+in flight = 1926
+in flight = 1913
+in flight = 1901
+in flight = 1892
+in flight = 1884
+in flight = 1873
+in flight = 1864
+in flight = 1857
+in flight = 1847
+in flight = 1838
+in flight = 1828
+in flight = 1815
+in flight = 1809
+in flight = 1796
+in flight = 1788
+in flight = 1778
+in flight = 1767
+in flight = 1757
+in flight = 1743
+in flight = 1735
+in flight = 1727
+in flight = 1712
+in flight = 1700
+in flight = 1695
+in flight = 1693
+in flight = 1681
+in flight = 1670
+in flight = 1661
+in flight = 1655
+in flight = 1649
+in flight = 1643
+in flight = 1631
+in flight = 1623
+in flight = 1618
+in flight = 1609
+in flight = 1595
+in flight = 1580
+in flight = 1563
+in flight = 1549
+in flight = 1541
+in flight = 1537
+in flight = 1525
+in flight = 1516
+in flight = 1504
+in flight = 1491
+in flight = 1483
+in flight = 1475
+in flight = 1469
+in flight = 1459
+in flight = 1451
+in flight = 1440
+in flight = 1427
+in flight = 1416
+in flight = 1408
+in flight = 1396
+in flight = 1387
+in flight = 1374
+in flight = 1368
+in flight = 1361
+in flight = 1350
+in flight = 1341
+in flight = 1334
+in flight = 1326
+in flight = 1313
+in flight = 1306
+in flight = 1297
+in flight = 1292
+in flight = 1287
+in flight = 1282
+in flight = 1274
+in flight = 1263
+in flight = 1258
+in flight = 1250
+in flight = 1244
+in flight = 1236
+in flight = 1228
+in flight = 1222
+in flight = 1213
+in flight = 1207
+in flight = 1203
+in flight = 1197
+in flight = 1190
+in flight = 1181
+in flight = 1173
+in flight = 1161
+in flight = 1157
+in flight = 1153
+in flight = 1148
+in flight = 1138
+in flight = 1131
+in flight = 1125
+in flight = 1118
+in flight = 1115
+in flight = 1104
+in flight = 1100
+in flight = 1093
+in flight = 1088
+in flight = 1081
+in flight = 1073
+in flight = 1068
+in flight = 1059
+in flight = 1052
+in flight = 1048
+in flight = 1044
+in flight = 1034
+in flight = 1024
+in flight = 1020
+in flight = 1018
+in flight = 1016
+in flight = 1009
+in flight = 1000
+in flight = 994
+in flight = 987
+in flight = 979
+in flight = 971
+in flight = 964
+in flight = 959
+in flight = 952
+in flight = 943
+in flight = 936
+in flight = 928
+in flight = 926
+in flight = 921
+in flight = 912
+in flight = 901
+in flight = 893
+in flight = 884
+in flight = 877
+in flight = 868
+in flight = 860
+in flight = 855
+in flight = 846
+in flight = 838
+in flight = 832
+in flight = 825
+in flight = 822
+in flight = 815
+in flight = 811
+in flight = 804
+in flight = 800
+in flight = 793
+in flight = 781
+in flight = 777
+in flight = 769
+in flight = 767
+in flight = 762
+in flight = 757
+in flight = 751
+in flight = 745
+in flight = 742
+in flight = 737
+in flight = 734
+in flight = 724
+in flight = 714
+in flight = 712
+in flight = 702
+in flight = 698
+in flight = 692
+in flight = 687
+in flight = 674
+in flight = 671
+in flight = 666
+in flight = 658
+in flight = 648
+in flight = 644
+in flight = 639
+in flight = 634
+in flight = 632
+in flight = 626
+in flight = 619
+in flight = 611
+in flight = 606
+in flight = 597
+in flight = 587
+in flight = 582
+in flight = 578
+in flight = 571
+in flight = 568
+in flight = 562
+in flight = 560
+in flight = 555
+in flight = 552
+in flight = 548
+in flight = 544
+in flight = 540
+in flight = 535
+in flight = 528
+in flight = 518
+in flight = 513
+in flight = 507
+in flight = 500
+in flight = 494
+in flight = 488
+in flight = 484
+in flight = 481
+in flight = 478
+in flight = 478
+in flight = 476
+in flight = 473
+in flight = 467
+in flight = 464
+in flight = 460
+in flight = 457
+in flight = 453
+in flight = 452
+in flight = 447
+in flight = 443
+in flight = 436
+in flight = 433
+in flight = 426
+in flight = 420
+in flight = 413
+in flight = 409
+in flight = 407
+in flight = 404
+in flight = 402
+in flight = 395
+in flight = 391
+in flight = 388
+in flight = 382
+in flight = 378
+in flight = 376
+in flight = 374
+in flight = 365
+in flight = 360
+in flight = 356
+in flight = 354
+in flight = 348
+in flight = 342
+in flight = 333
+in flight = 329
+in flight = 322
+in flight = 321
+in flight = 319
+in flight = 319
+in flight = 313
+in flight = 312
+in flight = 310
+in flight = 308
+in flight = 307
+in flight = 307
+in flight = 306
+in flight = 301
+in flight = 299
+in flight = 297
+in flight = 293
+in flight = 292
+in flight = 289
+in flight = 288
+in flight = 286
+in flight = 280
+in flight = 277
+in flight = 276
+in flight = 274
+in flight = 272
+in flight = 268
+in flight = 266
+in flight = 265
+in flight = 259
+in flight = 257
+in flight = 257
+in flight = 257
+in flight = 255
+in flight = 252
+in flight = 251
+in flight = 250
+in flight = 242
+in flight = 239
+in flight = 233
+in flight = 232
+in flight = 227
+in flight = 226
+in flight = 226
+in flight = 224
+in flight = 224
+in flight = 221
+in flight = 220
+in flight = 219
+in flight = 219
+in flight = 218
+in flight = 218
+in flight = 218
+in flight = 217
+in flight = 215
+in flight = 213
+in flight = 213
+in flight = 211
+in flight = 209
+in flight = 208
+in flight = 204
+in flight = 201
+in flight = 200
+in flight = 200
+in flight = 199
+in flight = 197
+in flight = 196
+in flight = 194
+in flight = 194
+in flight = 192
+in flight = 189
+in flight = 187
+in flight = 185
+in flight = 182
+in flight = 178
+in flight = 177
+in flight = 177
+in flight = 176
+in flight = 174
+in flight = 172
+in flight = 168
+in flight = 167
+in flight = 166
+in flight = 165
+in flight = 162
+in flight = 162
+in flight = 160
+in flight = 157
+in flight = 157
+in flight = 156
+in flight = 156
+in flight = 155
+in flight = 155
+in flight = 155
+in flight = 155
+in flight = 153
+in flight = 150
+in flight = 149
+in flight = 146
+in flight = 145
+in flight = 144
+in flight = 143
+in flight = 142
+in flight = 141
+in flight = 139
+in flight = 136
+in flight = 136
+in flight = 135
+in flight = 134
+in flight = 132
+in flight = 132
+in flight = 130
+in flight = 129
+in flight = 128
+in flight = 127
+in flight = 123
+in flight = 123
+in flight = 123
+in flight = 119
+in flight = 119
+in flight = 116
+in flight = 115
+in flight = 112
+in flight = 111
+in flight = 108
+in flight = 107
+in flight = 106
+in flight = 106
+in flight = 105
+in flight = 105
+in flight = 105
+in flight = 103
+in flight = 103
+in flight = 103
+in flight = 101
+in flight = 101
+in flight = 100
+in flight = 99
+in flight = 99
+in flight = 98
+in flight = 98
+in flight = 96
+in flight = 94
+in flight = 94
+in flight = 94
+in flight = 92
+in flight = 90
+in flight = 89
+in flight = 88
+in flight = 84
+in flight = 84
+in flight = 84
+in flight = 84
+in flight = 84
+in flight = 84
+in flight = 83
+in flight = 82
+in flight = 80
+in flight = 79
+in flight = 77
+in flight = 74
+in flight = 72
+in flight = 71
+in flight = 71
+in flight = 70
+in flight = 69
+in flight = 67
+in flight = 65
+in flight = 62
+in flight = 62
+in flight = 62
+in flight = 58
+in flight = 56
+in flight = 54
+in flight = 53
+in flight = 50
+in flight = 49
+in flight = 49
+in flight = 49
+in flight = 48
+in flight = 47
+in flight = 46
+in flight = 44
+in flight = 44
+in flight = 42
+in flight = 39
+in flight = 38
+in flight = 37
+in flight = 37
+in flight = 36
+in flight = 34
+in flight = 34
+in flight = 31
+in flight = 30
+in flight = 29
+in flight = 28
+in flight = 27
+in flight = 27
+in flight = 27
+in flight = 27
+in flight = 26
+in flight = 25
+in flight = 24
+in flight = 24
+in flight = 24
+in flight = 24
+in flight = 20
+in flight = 20
+in flight = 19
+in flight = 18
+in flight = 17
+in flight = 15
+in flight = 15
+in flight = 14
+in flight = 14
+in flight = 12
+in flight = 12
+in flight = 12
+in flight = 12
+in flight = 12
+in flight = 12
+in flight = 10
+in flight = 10
+in flight = 8
+in flight = 8
+in flight = 8
+in flight = 7
+in flight = 7
+in flight = 7
+in flight = 5
+in flight = 5
+in flight = 5
+in flight = 5
+in flight = 5
+in flight = 4
+in flight = 4
+in flight = 4
+in flight = 4
+in flight = 3
+in flight = 3
+in flight = 3
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 2
+in flight = 1
+in flight = 1
+in flight = 1
+in flight = 1
+in flight = 1
+in flight = 1
+in flight = 1
+Draining remaining packets ...
+Time taken is 101328 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 200.961 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 1249 (1 samples)
+Network latency average = 200.961 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 1249 (1 samples)
+Flit latency average = 201.228 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 1249 (1 samples)
+Fragmentation average = 0 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 0 (1 samples)
+Injected packet rate average = 0.499718 (1 samples)
+	minimum = 0.495143 (1 samples)
+	maximum = 0.504757 (1 samples)
+Accepted packet rate average = 0.4993 (1 samples)
+	minimum = 0.493614 (1 samples)
+	maximum = 0.504857 (1 samples)
+Injected flit rate average = 0.499718 (1 samples)
+	minimum = 0.495143 (1 samples)
+	maximum = 0.504757 (1 samples)
+Accepted flit rate average = 0.4993 (1 samples)
+	minimum = 0.493614 (1 samples)
+	maximum = 0.504857 (1 samples)
+Injected packet size average = 1 (1 samples)
+Accepted packet size average = 1 (1 samples)
+Hops average = 6.24869 (1 samples)
+Total run time 215.424

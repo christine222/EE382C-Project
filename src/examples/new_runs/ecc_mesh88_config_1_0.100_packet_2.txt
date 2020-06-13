@@ -1,0 +1,4111 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.100_packet_2
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.1;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 2;
+ecc = link;
+correctable = 1;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = packet;
+
+stats_out = examples/ecc_mesh88_config_1_0.100_packet_2.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.100_packet_2
+Additional hops: 6
+Adding flit 2012 as NACK at time 345
+Reenqueueing errored packet 2012 at time 358
+Additional hops: 13
+Adding flit 2156 as NACK at time 369
+Reenqueueing errored packet 2156 at time 384
+Additional hops: 23
+Adding flit 2323 as NACK at time 403
+Reenqueueing errored packet 2323 at time 424
+Additional hops: 33
+Adding flit 2608 as NACK at time 450
+Reenqueueing errored packet 2608 at time 471
+Additional hops: 41
+Adding flit 2844 as NACK at time 480
+Additional hops: 46
+Adding flit 2989 as NACK at time 496
+Reenqueueing errored packet 2844 at time 497
+Reenqueueing errored packet 2989 at time 507
+Additional hops: 57
+Adding flit 3111 as NACK at time 531
+Reenqueueing errored packet 3111 at time 554
+Additional hops: 66
+Adding flit 4641 as NACK at time 770
+Additional hops: 70
+Adding flit 4782 as NACK at time 777
+Reenqueueing errored packet 4782 at time 786
+Reenqueueing errored packet 4641 at time 789
+Additional hops: 76
+Adding flit 4876 as NACK at time 798
+Reenqueueing errored packet 4876 at time 811
+Additional hops: 85
+Adding flit 5363 as NACK at time 884
+Additional hops: 91
+Adding flit 5514 as NACK at time 896
+Additional hops: 98
+Adding flit 5531 as NACK at time 902
+Reenqueueing errored packet 5363 at time 903
+Reenqueueing errored packet 5514 at time 909
+Reenqueueing errored packet 5531 at time 917
+Additional hops: 103
+Adding flit 5974 as NACK at time 962
+Reenqueueing errored packet 5974 at time 973
+Additional hops: 114
+Adding flit 5912 as NACK at time 973
+Additional hops: 121
+Adding flit 6120 as NACK at time 991
+Reenqueueing errored packet 5912 at time 996
+Reenqueueing errored packet 6120 at time 1006
+Additional hops: 125
+Adding flit 6917 as NACK at time 1106
+Reenqueueing errored packet 6917 at time 1115
+Additional hops: 134
+Adding flit 7337 as NACK at time 1185
+Additional hops: 142
+Adding flit 7458 as NACK at time 1203
+Reenqueueing errored packet 7337 at time 1204
+Reenqueueing errored packet 7458 at time 1220
+Additional hops: 148
+Adding flit 7636 as NACK at time 1226
+Reenqueueing errored packet 7636 at time 1239
+Additional hops: 158
+Adding flit 7974 as NACK at time 1292
+Reenqueueing errored packet 7974 at time 1313
+Additional hops: 165
+Adding flit 8480 as NACK at time 1363
+Reenqueueing errored packet 8480 at time 1378
+Additional hops: 174
+Adding flit 8726 as NACK at time 1407
+Additional hops: 181
+Adding flit 8851 as NACK at time 1419
+Reenqueueing errored packet 8726 at time 1426
+Reenqueueing errored packet 8851 at time 1434
+Additional hops: 187
+Adding flit 9235 as NACK at time 1478
+Reenqueueing errored packet 9235 at time 1491
+Additional hops: 192
+Adding flit 9567 as NACK at time 1527
+Reenqueueing errored packet 9567 at time 1538
+Additional hops: 198
+Adding flit 9825 as NACK at time 1573
+Reenqueueing errored packet 9825 at time 1586
+Additional hops: 207
+Adding flit 9851 as NACK at time 1587
+Reenqueueing errored packet 9851 at time 1606
+Additional hops: 216
+Adding flit 10092 as NACK at time 1628
+Reenqueueing errored packet 10092 at time 1647
+Additional hops: 222
+Adding flit 10288 as NACK at time 1649
+Reenqueueing errored packet 10288 at time 1662
+Additional hops: 229
+Adding flit 10508 as NACK at time 1682
+Additional hops: 238
+Adding flit 10480 as NACK at time 1683
+Reenqueueing errored packet 10508 at time 1697
+Reenqueueing errored packet 10480 at time 1702
+Additional hops: 240
+Adding flit 12174 as NACK at time 1926
+Additional hops: 248
+Adding flit 12065 as NACK at time 1929
+Reenqueueing errored packet 12174 at time 1931
+Reenqueueing errored packet 12065 at time 1946
+Additional hops: 257
+Adding flit 12508 as NACK at time 2000
+Reenqueueing errored packet 12508 at time 2019
+Additional hops: 268
+Adding flit 13374 as NACK at time 2140
+Additional hops: 273
+Adding flit 13547 as NACK at time 2149
+Reenqueueing errored packet 13547 at time 2160
+Reenqueueing errored packet 13374 at time 2163
+Additional hops: 276
+Adding flit 14154 as NACK at time 2240
+Additional hops: 282
+Adding flit 14113 as NACK at time 2242
+Reenqueueing errored packet 14154 at time 2247
+Reenqueueing errored packet 14113 at time 2255
+Additional hops: 287
+Adding flit 14456 as NACK at time 2291
+Additional hops: 293
+Adding flit 14457 as NACK at time 2296
+Reenqueueing errored packet 14456 at time 2302
+Reenqueueing errored packet 14457 at time 2309
+Additional hops: 297
+Adding flit 14625 as NACK at time 2313
+Reenqueueing errored packet 14625 at time 2322
+Additional hops: 301
+Adding flit 15802 as NACK at time 2495
+Reenqueueing errored packet 15802 at time 2504
+Additional hops: 308
+Adding flit 16016 as NACK at time 2541
+Reenqueueing errored packet 16016 at time 2556
+Additional hops: 313
+Adding flit 17105 as NACK at time 2701
+Reenqueueing errored packet 17105 at time 2712
+Additional hops: 317
+Adding flit 17552 as NACK at time 2765
+Reenqueueing errored packet 17552 at time 2774
+Additional hops: 327
+Adding flit 17737 as NACK at time 2810
+Reenqueueing errored packet 17737 at time 2831
+Additional hops: 337
+Adding flit 18702 as NACK at time 2962
+Reenqueueing errored packet 18702 at time 2983
+Additional hops: 347
+Adding flit 19732 as NACK at time 3121
+Reenqueueing errored packet 19732 at time 3142
+Additional hops: 351
+Adding flit 20030 as NACK at time 3150
+Reenqueueing errored packet 20030 at time 3159
+Additional hops: 358
+Adding flit 20121 as NACK at time 3170
+Reenqueueing errored packet 20121 at time 3185
+Additional hops: 369
+Adding flit 20174 as NACK at time 3190
+Reenqueueing errored packet 20174 at time 3213
+Additional hops: 377
+Adding flit 20514 as NACK at time 3236
+Reenqueueing errored packet 20514 at time 3253
+Additional hops: 384
+Adding flit 20665 as NACK at time 3257
+Reenqueueing errored packet 20665 at time 3272
+Additional hops: 389
+Adding flit 20825 as NACK at time 3278
+Reenqueueing errored packet 20825 at time 3289
+Additional hops: 399
+Adding flit 21011 as NACK at time 3321
+Reenqueueing errored packet 21011 at time 3342
+Additional hops: 408
+Adding flit 21275 as NACK at time 3360
+Additional hops: 418
+Adding flit 21310 as NACK at time 3369
+Reenqueueing errored packet 21275 at time 3379
+Reenqueueing errored packet 21310 at time 3390
+Additional hops: 432
+Adding flit 21553 as NACK at time 3419
+Reenqueueing errored packet 21553 at time 3448
+Additional hops: 444
+Adding flit 21859 as NACK at time 3464
+Additional hops: 451
+Adding flit 22035 as NACK at time 3480
+Reenqueueing errored packet 21859 at time 3489
+Reenqueueing errored packet 22035 at time 3495
+Additional hops: 464
+Adding flit 22079 as NACK at time 3505
+Reenqueueing errored packet 22079 at time 3532
+Additional hops: 471
+Adding flit 22455 as NACK at time 3545
+Reenqueueing errored packet 22455 at time 3560
+Additional hops: 477
+Adding flit 22706 as NACK at time 3579
+Reenqueueing errored packet 22706 at time 3592
+Additional hops: 480
+Adding flit 22960 as NACK at time 3611
+Reenqueueing errored packet 22960 at time 3618
+Additional hops: 483
+Adding flit 23435 as NACK at time 3685
+Reenqueueing errored packet 23435 at time 3692
+Additional hops: 494
+Adding flit 23322 as NACK at time 3692
+Additional hops: 500
+Adding flit 23537 as NACK at time 3712
+Reenqueueing errored packet 23322 at time 3715
+Reenqueueing errored packet 23537 at time 3725
+Additional hops: 514
+Adding flit 23627 as NACK at time 3754
+Additional hops: 525
+Adding flit 23778 as NACK at time 3766
+Additional hops: 529
+Adding flit 23929 as NACK at time 3772
+Additional hops: 540
+Adding flit 23834 as NACK at time 3775
+Reenqueueing errored packet 23929 at time 3781
+Reenqueueing errored packet 23627 at time 3783
+Reenqueueing errored packet 23778 at time 3789
+Additional hops: 544
+Adding flit 24047 as NACK at time 3791
+Reenqueueing errored packet 23834 at time 3798
+Reenqueueing errored packet 24047 at time 3800
+Additional hops: 554
+Adding flit 23998 as NACK at time 3801
+Reenqueueing errored packet 23998 at time 3822
+Additional hops: 564
+Adding flit 25449 as NACK at time 4032
+Additional hops: 578
+Adding flit 25500 as NACK at time 4052
+Reenqueueing errored packet 25449 at time 4053
+Uncorrectable 3
+Additional hops: 591
+Adding flit 25609 as NACK at time 4066
+Reenqueueing errored packet 25500 at time 4081
+Reenqueueing errored packet 25609 at time 4093
+Additional hops: 598
+Adding flit 25897 as NACK at time 4093
+Reenqueueing errored packet 25897 at time 4108
+Additional hops: 606
+Adding flit 26127 as NACK at time 4131
+Reenqueueing errored packet 26127 at time 4148
+Additional hops: 615
+Adding flit 26596 as NACK at time 4208
+Reenqueueing errored packet 26596 at time 4227
+Additional hops: 627
+Adding flit 26744 as NACK at time 4241
+Additional hops: 635
+Adding flit 26911 as NACK at time 4259
+Additional hops: 642
+Adding flit 26951 as NACK at time 4263
+Reenqueueing errored packet 26744 at time 4266
+Reenqueueing errored packet 26911 at time 4276
+Reenqueueing errored packet 26951 at time 4278
+Additional hops: 652
+Adding flit 28077 as NACK at time 4452
+Additional hops: 661
+Adding flit 28153 as NACK at time 4461
+Reenqueueing errored packet 28077 at time 4473
+Reenqueueing errored packet 28153 at time 4480
+Additional hops: 671
+Adding flit 28269 as NACK at time 4482
+Reenqueueing errored packet 28269 at time 4503
+Additional hops: 685
+Adding flit 28780 as NACK at time 4567
+Reenqueueing errored packet 28780 at time 4596
+Additional hops: 696
+Adding flit 29325 as NACK at time 4642
+Reenqueueing errored packet 29325 at time 4665
+Additional hops: 705
+Adding flit 29545 as NACK at time 4669
+Additional hops: 712
+Adding flit 29646 as NACK at time 4681
+Reenqueueing errored packet 29545 at time 4688
+Reenqueueing errored packet 29646 at time 4696
+Additional hops: 718
+Adding flit 30067 as NACK at time 4744
+Reenqueueing errored packet 30067 at time 4757
+Additional hops: 728
+Adding flit 30530 as NACK at time 4829
+Uncorrectable 3
+Additional hops: 737
+Adding flit 30670 as NACK at time 4848
+Reenqueueing errored packet 30530 at time 4850
+Reenqueueing errored packet 30670 at time 4867
+Additional hops: 749
+Adding flit 30798 as NACK at time 4874
+Reenqueueing errored packet 30798 at time 4899
+Additional hops: 758
+Adding flit 31201 as NACK at time 4928
+Reenqueueing errored packet 31201 at time 4947
+Additional hops: 768
+Adding flit 31538 as NACK at time 4986
+Additional hops: 773
+Adding flit 31706 as NACK at time 4996
+Reenqueueing errored packet 31706 at time 5007
+Reenqueueing errored packet 31538 at time 5007
+Additional hops: 779
+Adding flit 32128 as NACK at time 5066
+Additional hops: 786
+Adding flit 32172 as NACK at time 5074
+Reenqueueing errored packet 32128 at time 5079
+Reenqueueing errored packet 32172 at time 5089
+Additional hops: 794
+Adding flit 32678 as NACK at time 5147
+Reenqueueing errored packet 32678 at time 5164
+Additional hops: 798
+Adding flit 33407 as NACK at time 5252
+Reenqueueing errored packet 33407 at time 5261
+Additional hops: 802
+Adding flit 34025 as NACK at time 5351
+Reenqueueing errored packet 34025 at time 5360
+Additional hops: 810
+Adding flit 34130 as NACK at time 5376
+Reenqueueing errored packet 34130 at time 5393
+Additional hops: 814
+Adding flit 35024 as NACK at time 5506
+Reenqueueing errored packet 35024 at time 5515
+Additional hops: 823
+Adding flit 35142 as NACK at time 5541
+Additional hops: 830
+Adding flit 35207 as NACK at time 5547
+Reenqueueing errored packet 35142 at time 5560
+Reenqueueing errored packet 35207 at time 5562
+Additional hops: 833
+Adding flit 35398 as NACK at time 5565
+Reenqueueing errored packet 35398 at time 5572
+Additional hops: 840
+Adding flit 35452 as NACK at time 5586
+Additional hops: 848
+Adding flit 35531 as NACK at time 5600
+Reenqueueing errored packet 35452 at time 5601
+Reenqueueing errored packet 35531 at time 5617
+Additional hops: 856
+Adding flit 35946 as NACK at time 5665
+Reenqueueing errored packet 35946 at time 5682
+Additional hops: 867
+Adding flit 36524 as NACK at time 5767
+Reenqueueing errored packet 36524 at time 5790
+Additional hops: 875
+Adding flit 37235 as NACK at time 5870
+Additional hops: 887
+Adding flit 37163 as NACK at time 5871
+Reenqueueing errored packet 37235 at time 5887
+Additional hops: 900
+Adding flit 37266 as NACK at time 5890
+Reenqueueing errored packet 37163 at time 5896
+Additional hops: 908
+Adding flit 37447 as NACK at time 5903
+Additional hops: 915
+Adding flit 37463 as NACK at time 5904
+Reenqueueing errored packet 37266 at time 5917
+Reenqueueing errored packet 37463 at time 5919
+Reenqueueing errored packet 37447 at time 5920
+Additional hops: 918
+Adding flit 37676 as NACK at time 5925
+Reenqueueing errored packet 37676 at time 5932
+Additional hops: 925
+Adding flit 37664 as NACK at time 5938
+Reenqueueing errored packet 37664 at time 5953
+Additional hops: 933
+Adding flit 39281 as NACK at time 6195
+Reenqueueing errored packet 39281 at time 6212
+Additional hops: 941
+Adding flit 39429 as NACK at time 6214
+Reenqueueing errored packet 39429 at time 6231
+Additional hops: 945
+Adding flit 39831 as NACK at time 6262
+Reenqueueing errored packet 39831 at time 6271
+Additional hops: 956
+Adding flit 39806 as NACK at time 6281
+Additional hops: 964
+Adding flit 39988 as NACK at time 6295
+Reenqueueing errored packet 39806 at time 6304
+Reenqueueing errored packet 39988 at time 6312
+Additional hops: 973
+Adding flit 40278 as NACK at time 6342
+Reenqueueing errored packet 40278 at time 6361
+Additional hops: 982
+Adding flit 40657 as NACK at time 6407
+Reenqueueing errored packet 40657 at time 6426
+Additional hops: 991
+Adding flit 40986 as NACK at time 6462
+Reenqueueing errored packet 40986 at time 6481
+Additional hops: 999
+Adding flit 41299 as NACK at time 6510
+Additional hops: 1006
+Adding flit 41353 as NACK at time 6514
+Reenqueueing errored packet 41299 at time 6527
+Reenqueueing errored packet 41353 at time 6529
+Additional hops: 1012
+Adding flit 41683 as NACK at time 6566
+Reenqueueing errored packet 41683 at time 6579
+Uncorrectable 3
+Additional hops: 1025
+Adding flit 42063 as NACK at time 6644
+Reenqueueing errored packet 42063 at time 6671
+Additional hops: 1035
+Adding flit 42473 as NACK at time 6694
+Reenqueueing errored packet 42473 at time 6715
+Additional hops: 1043
+Adding flit 42749 as NACK at time 6731
+Reenqueueing errored packet 42749 at time 6748
+Additional hops: 1048
+Adding flit 42923 as NACK at time 6748
+Reenqueueing errored packet 42923 at time 6759
+Additional hops: 1053
+Adding flit 43337 as NACK at time 6815
+Reenqueueing errored packet 43337 at time 6826
+Additional hops: 1062
+Adding flit 43491 as NACK at time 6855
+Reenqueueing errored packet 43491 at time 6874
+Additional hops: 1068
+Adding flit 43765 as NACK at time 6888
+Additional hops: 1078
+Adding flit 43747 as NACK at time 6898
+Reenqueueing errored packet 43765 at time 6901
+Additional hops: 1085
+Adding flit 43857 as NACK at time 6905
+Additional hops: 1090
+Adding flit 43902 as NACK at time 6907
+Reenqueueing errored packet 43902 at time 6918
+Reenqueueing errored packet 43747 at time 6919
+Reenqueueing errored packet 43857 at time 6920
+Uncorrectable 3
+Additional hops: 1099
+Adding flit 44148 as NACK at time 6955
+Additional hops: 1107
+Adding flit 44206 as NACK at time 6957
+Reenqueueing errored packet 44206 at time 6974
+Reenqueueing errored packet 44148 at time 6974
+Additional hops: 1115
+Adding flit 45342 as NACK at time 7138
+Reenqueueing errored packet 45342 at time 7155
+Additional hops: 1118
+Adding flit 45670 as NACK at time 7175
+Reenqueueing errored packet 45670 at time 7182
+Additional hops: 1122
+Adding flit 45715 as NACK at time 7186
+Reenqueueing errored packet 45715 at time 7195
+Additional hops: 1127
+Adding flit 46304 as NACK at time 7280
+Reenqueueing errored packet 46304 at time 7291
+Additional hops: 1130
+Adding flit 46675 as NACK at time 7335
+Reenqueueing errored packet 46675 at time 7342
+Additional hops: 1135
+Adding flit 46706 as NACK at time 7345
+Reenqueueing errored packet 46706 at time 7356
+Additional hops: 1142
+Adding flit 47024 as NACK at time 7403
+Reenqueueing errored packet 47024 at time 7418
+Additional hops: 1152
+Adding flit 47329 as NACK at time 7462
+Reenqueueing errored packet 47329 at time 7483
+Additional hops: 1157
+Adding flit 47735 as NACK at time 7507
+Reenqueueing errored packet 47735 at time 7518
+Additional hops: 1161
+Adding flit 48071 as NACK at time 7558
+Additional hops: 1168
+Adding flit 48042 as NACK at time 7562
+Reenqueueing errored packet 48071 at time 7567
+Reenqueueing errored packet 48042 at time 7577
+Additional hops: 1182
+Adding flit 48592 as NACK at time 7672
+Reenqueueing errored packet 48592 at time 7701
+Additional hops: 1190
+Adding flit 48980 as NACK at time 7714
+Additional hops: 1194
+Adding flit 49090 as NACK at time 7717
+Reenqueueing errored packet 49090 at time 7726
+Reenqueueing errored packet 48980 at time 7731
+Additional hops: 1200
+Adding flit 50323 as NACK at time 7911
+Reenqueueing errored packet 50323 at time 7924
+Additional hops: 1211
+Adding flit 50467 as NACK at time 7948
+Additional hops: 1216
+Adding flit 50589 as NACK at time 7949
+Reenqueueing errored packet 50589 at time 7960
+Reenqueueing errored packet 50467 at time 7971
+Additional hops: 1221
+Adding flit 50949 as NACK at time 8007
+Reenqueueing errored packet 50949 at time 8018
+Additional hops: 1229
+Adding flit 51009 as NACK at time 8027
+Reenqueueing errored packet 51009 at time 8044
+Additional hops: 1235
+Adding flit 51638 as NACK at time 8114
+Reenqueueing errored packet 51638 at time 8127
+Additional hops: 1244
+Adding flit 51700 as NACK at time 8134
+Reenqueueing errored packet 51700 at time 8153
+Additional hops: 1252
+Adding flit 52173 as NACK at time 8206
+Reenqueueing errored packet 52173 at time 8223
+Additional hops: 1262
+Adding flit 52312 as NACK at time 8233
+Additional hops: 1273
+Adding flit 52380 as NACK at time 8246
+Reenqueueing errored packet 52312 at time 8254
+Reenqueueing errored packet 52380 at time 8269
+Additional hops: 1280
+Adding flit 52642 as NACK at time 8275
+Reenqueueing errored packet 52642 at time 8290
+Additional hops: 1287
+Adding flit 53006 as NACK at time 8335
+Reenqueueing errored packet 53006 at time 8350
+Additional hops: 1299
+Adding flit 53200 as NACK at time 8384
+Reenqueueing errored packet 53200 at time 8409
+Additional hops: 1309
+Adding flit 54388 as NACK at time 8561
+Reenqueueing errored packet 54388 at time 8582
+Additional hops: 1318
+Adding flit 54901 as NACK at time 8639
+Reenqueueing errored packet 54901 at time 8658
+Additional hops: 1328
+Adding flit 55906 as NACK at time 8802
+Reenqueueing errored packet 55906 at time 8823
+Additional hops: 1332
+Adding flit 56253 as NACK at time 8840
+Reenqueueing errored packet 56253 at time 8849
+Additional hops: 1343
+Adding flit 56186 as NACK at time 8852
+Reenqueueing errored packet 56186 at time 8875
+Additional hops: 1350
+Adding flit 56757 as NACK at time 8928
+Additional hops: 1360
+Adding flit 56719 as NACK at time 8932
+Reenqueueing errored packet 56757 at time 8943
+Reenqueueing errored packet 56719 at time 8953
+Additional hops: 1366
+Adding flit 56980 as NACK at time 8962
+Additional hops: 1375
+Adding flit 56945 as NACK at time 8965
+Reenqueueing errored packet 56980 at time 8975
+Reenqueueing errored packet 56945 at time 8984
+Additional hops: 1388
+Adding flit 57224 as NACK at time 9024
+Additional hops: 1399
+Adding flit 57375 as NACK at time 9040
+Reenqueueing errored packet 57224 at time 9051
+Reenqueueing errored packet 57375 at time 9063
+Additional hops: 1411
+Adding flit 58386 as NACK at time 9193
+Additional hops: 1423
+Adding flit 58419 as NACK at time 9197
+Reenqueueing errored packet 58386 at time 9218
+Reenqueueing errored packet 58419 at time 9222
+Additional hops: 1436
+Adding flit 58765 as NACK at time 9257
+Reenqueueing errored packet 58765 at time 9284
+Additional hops: 1443
+Adding flit 59211 as NACK at time 9303
+Reenqueueing errored packet 59211 at time 9318
+Uncorrectable 3
+Additional hops: 1453
+Adding flit 59467 as NACK at time 9354
+Reenqueueing errored packet 59467 at time 9375
+Additional hops: 1457
+Adding flit 60151 as NACK at time 9445
+Additional hops: 1466
+Adding flit 60051 as NACK at time 9445
+Reenqueueing errored packet 60151 at time 9454
+Reenqueueing errored packet 60051 at time 9464
+Additional hops: 1471
+Adding flit 60514 as NACK at time 9505
+Reenqueueing errored packet 60514 at time 9516
+Additional hops: 1478
+Adding flit 60617 as NACK at time 9528
+Reenqueueing errored packet 60617 at time 9543
+Additional hops: 1483
+Adding flit 61456 as NACK at time 9656
+Reenqueueing errored packet 61456 at time 9667
+Additional hops: 1493
+Adding flit 61739 as NACK at time 9714
+Reenqueueing errored packet 61739 at time 9735
+Additional hops: 1502
+Adding flit 61967 as NACK at time 9746
+Reenqueueing errored packet 61967 at time 9765
+Additional hops: 1509
+Adding flit 62553 as NACK at time 9828
+Additional hops: 1514
+Adding flit 62586 as NACK at time 9829
+Reenqueueing errored packet 62586 at time 9840
+Reenqueueing errored packet 62553 at time 9843
+Uncorrectable 3
+Additional hops: 1520
+Adding flit 63033 as NACK at time 9905
+Reenqueueing errored packet 63033 at time 9918
+Additional hops: 1525
+Adding flit 63242 as NACK at time 9935
+Reenqueueing errored packet 63242 at time 9946
+Additional hops: 1534
+Adding flit 63549 as NACK at time 9994
+Class 0:
+Packet latency average = 21.1177
+	minimum = 5
+	maximum = 120
+Network latency average = 20.9874
+	minimum = 5
+	maximum = 52
+Slowest packet = 654
+Flit latency average = 20.9874
+	minimum = 5
+	maximum = 52
+Slowest flit = 55401
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0999281
+	minimum = 0.0946 (at node 7)
+	maximum = 0.1068 (at node 59)
+Accepted packet rate average = 0.0997359
+	minimum = 0.093 (at node 17)
+	maximum = 0.1054 (at node 51)
+Injected flit rate average = 0.0999281
+	minimum = 0.0946 (at node 7)
+	maximum = 0.1068 (at node 59)
+Accepted flit rate average= 0.0997359
+	minimum = 0.093 (at node 17)
+	maximum = 0.1054 (at node 51)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 124 (0 measured)
+latency change    = 1
+throughput change = 1
+Reenqueueing errored packet 63549 at time 10013
+Additional hops: 1539
+Adding flit 63886 as NACK at time 10038
+Reenqueueing errored packet 63886 at time 10049
+Additional hops: 1545
+Adding flit 64182 as NACK at time 10085
+Reenqueueing errored packet 64182 at time 10098
+Additional hops: 1551
+Adding flit 64326 as NACK at time 10106
+Reenqueueing errored packet 64326 at time 10119
+Additional hops: 1560
+Adding flit 64581 as NACK at time 10152
+Reenqueueing errored packet 64581 at time 10171
+Additional hops: 1565
+Adding flit 65144 as NACK at time 10228
+Reenqueueing errored packet 65144 at time 10239
+Additional hops: 1574
+Adding flit 65225 as NACK at time 10255
+Additional hops: 1579
+Adding flit 65411 as NACK at time 10272
+Reenqueueing errored packet 65225 at time 10274
+Reenqueueing errored packet 65411 at time 10283
+Additional hops: 1589
+Adding flit 65410 as NACK at time 10287
+Reenqueueing errored packet 65410 at time 10308
+Additional hops: 1598
+Adding flit 65819 as NACK at time 10343
+Reenqueueing errored packet 65819 at time 10362
+Additional hops: 1607
+Adding flit 66136 as NACK at time 10396
+Reenqueueing errored packet 66136 at time 10415
+Additional hops: 1613
+Adding flit 66654 as NACK at time 10472
+Uncorrectable 3
+Additional hops: 1621
+Adding flit 66631 as NACK at time 10475
+Reenqueueing errored packet 66654 at time 10485
+Reenqueueing errored packet 66631 at time 10492
+Additional hops: 1628
+Adding flit 67186 as NACK at time 10559
+Reenqueueing errored packet 67186 at time 10574
+Additional hops: 1635
+Adding flit 68148 as NACK at time 10708
+Reenqueueing errored packet 68148 at time 10723
+Additional hops: 1647
+Adding flit 68483 as NACK at time 10777
+Reenqueueing errored packet 68483 at time 10802
+Additional hops: 1654
+Adding flit 69047 as NACK at time 10851
+Reenqueueing errored packet 69047 at time 10866
+Additional hops: 1661
+Adding flit 69416 as NACK at time 10905
+Reenqueueing errored packet 69416 at time 10920
+Additional hops: 1669
+Adding flit 69919 as NACK at time 10990
+Reenqueueing errored packet 69919 at time 11007
+Additional hops: 1680
+Adding flit 70155 as NACK at time 11036
+Reenqueueing errored packet 70155 at time 11059
+Additional hops: 1686
+Adding flit 70615 as NACK at time 11086
+Reenqueueing errored packet 70615 at time 11099
+Additional hops: 1694
+Adding flit 70730 as NACK at time 11114
+Reenqueueing errored packet 70730 at time 11131
+Additional hops: 1705
+Adding flit 71097 as NACK at time 11190
+Additional hops: 1717
+Adding flit 71143 as NACK at time 11202
+Reenqueueing errored packet 71097 at time 11213
+Reenqueueing errored packet 71143 at time 11227
+Additional hops: 1728
+Adding flit 71616 as NACK at time 11273
+Reenqueueing errored packet 71616 at time 11296
+Additional hops: 1734
+Adding flit 71946 as NACK at time 11310
+Reenqueueing errored packet 71946 at time 11323
+Additional hops: 1743
+Adding flit 72135 as NACK at time 11348
+Reenqueueing errored packet 72135 at time 11367
+Additional hops: 1745
+Adding flit 73001 as NACK at time 11464
+Reenqueueing errored packet 73001 at time 11469
+Additional hops: 1750
+Adding flit 72990 as NACK at time 11471
+Reenqueueing errored packet 72990 at time 11482
+Additional hops: 1755
+Adding flit 73252 as NACK at time 11509
+Reenqueueing errored packet 73252 at time 11520
+Additional hops: 1764
+Adding flit 73406 as NACK at time 11548
+Additional hops: 1769
+Adding flit 73581 as NACK at time 11566
+Reenqueueing errored packet 73406 at time 11567
+Additional hops: 1775
+Adding flit 73594 as NACK at time 11571
+Reenqueueing errored packet 73581 at time 11577
+Reenqueueing errored packet 73594 at time 11584
+Additional hops: 1784
+Adding flit 73836 as NACK at time 11619
+Reenqueueing errored packet 73836 at time 11638
+Additional hops: 1788
+Adding flit 74155 as NACK at time 11655
+Reenqueueing errored packet 74155 at time 11664
+Additional hops: 1792
+Adding flit 74225 as NACK at time 11667
+Reenqueueing errored packet 74225 at time 11676
+Additional hops: 1800
+Adding flit 74393 as NACK at time 11705
+Reenqueueing errored packet 74393 at time 11722
+Additional hops: 1809
+Adding flit 74640 as NACK at time 11745
+Reenqueueing errored packet 74640 at time 11764
+Additional hops: 1816
+Adding flit 75243 as NACK at time 11830
+Reenqueueing errored packet 75243 at time 11845
+Additional hops: 1823
+Adding flit 75917 as NACK at time 11931
+Reenqueueing errored packet 75917 at time 11946
+Additional hops: 1831
+Adding flit 76147 as NACK at time 11973
+Additional hops: 1842
+Adding flit 76122 as NACK at time 11980
+Reenqueueing errored packet 76147 at time 11990
+Additional hops: 1848
+Adding flit 76389 as NACK at time 12002
+Reenqueueing errored packet 76122 at time 12003
+Reenqueueing errored packet 76389 at time 12015
+Additional hops: 1857
+Adding flit 77050 as NACK at time 12110
+Additional hops: 1861
+Adding flit 77198 as NACK at time 12119
+Reenqueueing errored packet 77198 at time 12128
+Reenqueueing errored packet 77050 at time 12129
+Additional hops: 1868
+Adding flit 77424 as NACK at time 12163
+Reenqueueing errored packet 77424 at time 12178
+Additional hops: 1874
+Adding flit 77964 as NACK at time 12248
+Reenqueueing errored packet 77964 at time 12261
+Additional hops: 1878
+Adding flit 78208 as NACK at time 12280
+Reenqueueing errored packet 78208 at time 12289
+Additional hops: 1884
+Adding flit 78551 as NACK at time 12341
+Additional hops: 1893
+Adding flit 78508 as NACK at time 12344
+Reenqueueing errored packet 78551 at time 12354
+Reenqueueing errored packet 78508 at time 12363
+Additional hops: 1898
+Adding flit 78779 as NACK at time 12371
+Uncorrectable 3
+Additional hops: 1911
+Adding flit 78644 as NACK at time 12377
+Reenqueueing errored packet 78779 at time 12382
+Reenqueueing errored packet 78644 at time 12404
+Additional hops: 1916
+Adding flit 79246 as NACK at time 12438
+Reenqueueing errored packet 79246 at time 12449
+Additional hops: 1928
+Adding flit 79293 as NACK at time 12467
+Reenqueueing errored packet 79293 at time 12492
+Additional hops: 1940
+Adding flit 80324 as NACK at time 12622
+Reenqueueing errored packet 80324 at time 12647
+Additional hops: 1946
+Adding flit 80749 as NACK at time 12667
+Reenqueueing errored packet 80749 at time 12680
+Additional hops: 1952
+Adding flit 81552 as NACK at time 12790
+Reenqueueing errored packet 81552 at time 12803
+Additional hops: 1958
+Adding flit 81849 as NACK at time 12838
+Reenqueueing errored packet 81849 at time 12851
+Additional hops: 1970
+Adding flit 81840 as NACK at time 12854
+Additional hops: 1976
+Adding flit 81989 as NACK at time 12862
+Reenqueueing errored packet 81989 at time 12875
+Reenqueueing errored packet 81840 at time 12879
+Additional hops: 1980
+Adding flit 82296 as NACK at time 12905
+Reenqueueing errored packet 82296 at time 12914
+Additional hops: 1984
+Adding flit 82408 as NACK at time 12924
+Reenqueueing errored packet 82408 at time 12933
+Additional hops: 1993
+Adding flit 82433 as NACK at time 12942
+Reenqueueing errored packet 82433 at time 12961
+Additional hops: 2001
+Adding flit 82646 as NACK at time 12970
+Additional hops: 2006
+Adding flit 82757 as NACK at time 12979
+Reenqueueing errored packet 82646 at time 12987
+Reenqueueing errored packet 82757 at time 12990
+Additional hops: 2013
+Adding flit 83084 as NACK at time 13033
+Additional hops: 2018
+Adding flit 83212 as NACK at time 13045
+Reenqueueing errored packet 83084 at time 13048
+Reenqueueing errored packet 83212 at time 13056
+Additional hops: 2025
+Adding flit 83335 as NACK at time 13070
+Additional hops: 2034
+Adding flit 83370 as NACK at time 13081
+Reenqueueing errored packet 83335 at time 13085
+Reenqueueing errored packet 83370 at time 13100
+Additional hops: 2039
+Adding flit 84732 as NACK at time 13283
+Reenqueueing errored packet 84732 at time 13294
+Additional hops: 2048
+Adding flit 84760 as NACK at time 13299
+Reenqueueing errored packet 84760 at time 13318
+Additional hops: 2057
+Adding flit 84901 as NACK at time 13322
+Reenqueueing errored packet 84901 at time 13341
+Additional hops: 2065
+Adding flit 85202 as NACK at time 13363
+Additional hops: 2074
+Adding flit 85263 as NACK at time 13376
+Reenqueueing errored packet 85202 at time 13380
+Reenqueueing errored packet 85263 at time 13395
+Additional hops: 2085
+Adding flit 85630 as NACK at time 13437
+Additional hops: 2093
+Adding flit 85772 as NACK at time 13453
+Reenqueueing errored packet 85630 at time 13460
+Reenqueueing errored packet 85772 at time 13470
+Additional hops: 2107
+Adding flit 85869 as NACK at time 13487
+Additional hops: 2114
+Adding flit 86018 as NACK at time 13489
+Reenqueueing errored packet 86018 at time 13504
+Reenqueueing errored packet 85869 at time 13516
+Additional hops: 2125
+Adding flit 86131 as NACK at time 13517
+Additional hops: 2135
+Adding flit 86329 as NACK at time 13539
+Reenqueueing errored packet 86131 at time 13540
+Reenqueueing errored packet 86329 at time 13560
+Additional hops: 2143
+Adding flit 86610 as NACK at time 13579
+Reenqueueing errored packet 86610 at time 13596
+Additional hops: 2147
+Adding flit 87180 as NACK at time 13659
+Reenqueueing errored packet 87180 at time 13668
+Additional hops: 2157
+Adding flit 87216 as NACK at time 13684
+Additional hops: 2164
+Adding flit 87311 as NACK at time 13689
+Reenqueueing errored packet 87311 at time 13704
+Reenqueueing errored packet 87216 at time 13705
+Additional hops: 2171
+Adding flit 87921 as NACK at time 13783
+Reenqueueing errored packet 87921 at time 13798
+Additional hops: 2181
+Adding flit 88532 as NACK at time 13886
+Reenqueueing errored packet 88532 at time 13907
+Additional hops: 2189
+Adding flit 89718 as NACK at time 14065
+Reenqueueing errored packet 89718 at time 14082
+Additional hops: 2197
+Adding flit 89881 as NACK at time 14090
+Reenqueueing errored packet 89881 at time 14107
+Additional hops: 2204
+Adding flit 90633 as NACK at time 14203
+Additional hops: 2212
+Adding flit 90680 as NACK at time 14214
+Reenqueueing errored packet 90633 at time 14218
+Reenqueueing errored packet 90680 at time 14231
+Additional hops: 2219
+Adding flit 90829 as NACK at time 14236
+Reenqueueing errored packet 90829 at time 14251
+Additional hops: 2231
+Adding flit 90865 as NACK at time 14259
+Reenqueueing errored packet 90865 at time 14284
+Additional hops: 2243
+Adding flit 91448 as NACK at time 14350
+Additional hops: 2250
+Adding flit 91609 as NACK at time 14360
+Reenqueueing errored packet 91609 at time 14375
+Reenqueueing errored packet 91448 at time 14375
+Additional hops: 2257
+Adding flit 92177 as NACK at time 14452
+Reenqueueing errored packet 92177 at time 14467
+Additional hops: 2265
+Adding flit 92841 as NACK at time 14560
+Reenqueueing errored packet 92841 at time 14577
+Additional hops: 2274
+Adding flit 93191 as NACK at time 14617
+Reenqueueing errored packet 93191 at time 14636
+Additional hops: 2282
+Adding flit 94491 as NACK at time 14813
+Reenqueueing errored packet 94491 at time 14830
+Additional hops: 2289
+Adding flit 94672 as NACK at time 14838
+Reenqueueing errored packet 94672 at time 14853
+Additional hops: 2296
+Adding flit 94906 as NACK at time 14870
+Reenqueueing errored packet 94906 at time 14885
+Additional hops: 2302
+Adding flit 95153 as NACK at time 14908
+Additional hops: 2310
+Adding flit 95130 as NACK at time 14911
+Reenqueueing errored packet 95153 at time 14921
+Uncorrectable 3
+Additional hops: 2318
+Adding flit 95203 as NACK at time 14922
+Reenqueueing errored packet 95130 at time 14928
+Reenqueueing errored packet 95203 at time 14939
+Additional hops: 2324
+Adding flit 95742 as NACK at time 15000
+Reenqueueing errored packet 95742 at time 15013
+Additional hops: 2333
+Adding flit 96028 as NACK at time 15054
+Additional hops: 2339
+Adding flit 96193 as NACK at time 15070
+Reenqueueing errored packet 96028 at time 15073
+Reenqueueing errored packet 96193 at time 15083
+Additional hops: 2347
+Adding flit 96397 as NACK at time 15110
+Reenqueueing errored packet 96397 at time 15127
+Additional hops: 2351
+Adding flit 96674 as NACK at time 15138
+Reenqueueing errored packet 96674 at time 15147
+Additional hops: 2357
+Adding flit 96810 as NACK at time 15166
+Reenqueueing errored packet 96810 at time 15179
+Additional hops: 2362
+Adding flit 97013 as NACK at time 15195
+Reenqueueing errored packet 97013 at time 15206
+Additional hops: 2371
+Adding flit 97954 as NACK at time 15349
+Reenqueueing errored packet 97954 at time 15368
+Additional hops: 2385
+Adding flit 98077 as NACK at time 15382
+Additional hops: 2393
+Adding flit 98294 as NACK at time 15396
+Reenqueueing errored packet 98077 at time 15411
+Reenqueueing errored packet 98294 at time 15413
+Additional hops: 2401
+Adding flit 98565 as NACK at time 15436
+Reenqueueing errored packet 98565 at time 15453
+Additional hops: 2410
+Adding flit 99160 as NACK at time 15531
+Reenqueueing errored packet 99160 at time 15550
+Additional hops: 2425
+Adding flit 99184 as NACK at time 15553
+Additional hops: 2437
+Adding flit 99276 as NACK at time 15559
+Reenqueueing errored packet 99276 at time 15584
+Reenqueueing errored packet 99184 at time 15584
+Additional hops: 2441
+Adding flit 99775 as NACK at time 15610
+Reenqueueing errored packet 99775 at time 15619
+Additional hops: 2446
+Adding flit 100456 as NACK at time 15717
+Additional hops: 2455
+Adding flit 100423 as NACK at time 15726
+Reenqueueing errored packet 100456 at time 15728
+Reenqueueing errored packet 100423 at time 15745
+Additional hops: 2466
+Adding flit 101320 as NACK at time 15871
+Reenqueueing errored packet 101320 at time 15894
+Additional hops: 2476
+Adding flit 101658 as NACK at time 15926
+Additional hops: 2498
+Adding flit 101320 as NACK at time 15929
+Additional hops: 2504
+Adding flit 101853 as NACK at time 15943
+Reenqueueing errored packet 101658 at time 15947
+Reenqueueing errored packet 101853 at time 15956
+Reenqueueing errored packet 101320 at time 15974
+Additional hops: 2510
+Adding flit 103147 as NACK at time 16151
+Additional hops: 2521
+Adding flit 103050 as NACK at time 16152
+Reenqueueing errored packet 103147 at time 16164
+Reenqueueing errored packet 103050 at time 16175
+Additional hops: 2534
+Adding flit 103257 as NACK at time 16187
+Additional hops: 2541
+Adding flit 103485 as NACK at time 16205
+Additional hops: 2547
+Adding flit 103550 as NACK at time 16211
+Reenqueueing errored packet 103257 at time 16214
+Reenqueueing errored packet 103485 at time 16220
+Reenqueueing errored packet 103550 at time 16224
+Additional hops: 2552
+Adding flit 103758 as NACK at time 16241
+Reenqueueing errored packet 103758 at time 16252
+Additional hops: 2560
+Adding flit 104270 as NACK at time 16330
+Additional hops: 2570
+Adding flit 104268 as NACK at time 16336
+Reenqueueing errored packet 104270 at time 16347
+Additional hops: 2578
+Adding flit 104399 as NACK at time 16352
+Additional hops: 2585
+Adding flit 104424 as NACK at time 16354
+Reenqueueing errored packet 104268 at time 16357
+Reenqueueing errored packet 104424 at time 16369
+Reenqueueing errored packet 104399 at time 16369
+Additional hops: 2591
+Adding flit 104879 as NACK at time 16423
+Additional hops: 2596
+Adding flit 104963 as NACK at time 16432
+Additional hops: 2601
+Adding flit 104973 as NACK at time 16433
+Reenqueueing errored packet 104879 at time 16436
+Reenqueueing errored packet 104963 at time 16443
+Reenqueueing errored packet 104973 at time 16444
+Additional hops: 2606
+Adding flit 105730 as NACK at time 16553
+Reenqueueing errored packet 105730 at time 16564
+Additional hops: 2613
+Adding flit 105838 as NACK at time 16576
+Reenqueueing errored packet 105838 at time 16591
+Additional hops: 2623
+Adding flit 106202 as NACK at time 16643
+Reenqueueing errored packet 106202 at time 16664
+Additional hops: 2633
+Adding flit 106312 as NACK at time 16669
+Additional hops: 2639
+Adding flit 106503 as NACK at time 16686
+Reenqueueing errored packet 106312 at time 16690
+Additional hops: 2659
+Adding flit 106202 as NACK at time 16696
+Reenqueueing errored packet 106503 at time 16699
+Additional hops: 2667
+Adding flit 106571 as NACK at time 16700
+Reenqueueing errored packet 106571 at time 16717
+Reenqueueing errored packet 106202 at time 16737
+Additional hops: 2668
+Adding flit 107102 as NACK at time 16760
+Reenqueueing errored packet 107102 at time 16763
+Additional hops: 2677
+Adding flit 107617 as NACK at time 16857
+Reenqueueing errored packet 107617 at time 16876
+Additional hops: 2681
+Adding flit 107884 as NACK at time 16884
+Reenqueueing errored packet 107884 at time 16893
+Additional hops: 2689
+Adding flit 108808 as NACK at time 17038
+Reenqueueing errored packet 108808 at time 17055
+Additional hops: 2699
+Adding flit 109571 as NACK at time 17167
+Reenqueueing errored packet 109571 at time 17188
+Additional hops: 2706
+Adding flit 109950 as NACK at time 17213
+Reenqueueing errored packet 109950 at time 17228
+Additional hops: 2715
+Adding flit 110386 as NACK at time 17290
+Reenqueueing errored packet 110386 at time 17309
+Additional hops: 2723
+Adding flit 110962 as NACK at time 17376
+Reenqueueing errored packet 110962 at time 17393
+Additional hops: 2731
+Adding flit 111345 as NACK at time 17435
+Additional hops: 2739
+Adding flit 111362 as NACK at time 17438
+Additional hops: 2753
+Adding flit 111286 as NACK at time 17446
+Reenqueueing errored packet 111345 at time 17452
+Additional hops: 2757
+Adding flit 111527 as NACK at time 17452
+Reenqueueing errored packet 111362 at time 17455
+Reenqueueing errored packet 111527 at time 17461
+Additional hops: 2761
+Adding flit 111646 as NACK at time 17469
+Reenqueueing errored packet 111286 at time 17475
+Reenqueueing errored packet 111646 at time 17478
+Uncorrectable 3
+Additional hops: 2765
+Adding flit 112192 as NACK at time 17556
+Reenqueueing errored packet 112192 at time 17565
+Additional hops: 2778
+Adding flit 112583 as NACK at time 17645
+Reenqueueing errored packet 112583 at time 17672
+Additional hops: 2786
+Adding flit 112928 as NACK at time 17681
+Additional hops: 2790
+Adding flit 113008 as NACK at time 17684
+Additional hops: 2797
+Adding flit 112970 as NACK at time 17686
+Reenqueueing errored packet 113008 at time 17693
+Reenqueueing errored packet 112928 at time 17698
+Reenqueueing errored packet 112970 at time 17701
+Additional hops: 2802
+Adding flit 114257 as NACK at time 17887
+Reenqueueing errored packet 114257 at time 17898
+Additional hops: 2813
+Adding flit 115048 as NACK at time 18034
+Reenqueueing errored packet 115048 at time 18057
+Additional hops: 2824
+Adding flit 115262 as NACK at time 18070
+Reenqueueing errored packet 115262 at time 18093
+Additional hops: 2829
+Adding flit 115566 as NACK at time 18100
+Reenqueueing errored packet 115566 at time 18111
+Additional hops: 2837
+Adding flit 116034 as NACK at time 18186
+Additional hops: 2842
+Adding flit 116166 as NACK at time 18200
+Reenqueueing errored packet 116034 at time 18203
+Reenqueueing errored packet 116166 at time 18211
+Additional hops: 2851
+Adding flit 116156 as NACK at time 18211
+Reenqueueing errored packet 116156 at time 18230
+Uncorrectable 3
+Additional hops: 2859
+Adding flit 116497 as NACK at time 18262
+Additional hops: 2867
+Adding flit 116496 as NACK at time 18262
+Additional hops: 2873
+Adding flit 116603 as NACK at time 18276
+Reenqueueing errored packet 116496 at time 18279
+Reenqueueing errored packet 116497 at time 18279
+Additional hops: 2881
+Adding flit 116643 as NACK at time 18286
+Reenqueueing errored packet 116603 at time 18289
+Reenqueueing errored packet 116643 at time 18303
+Additional hops: 2888
+Adding flit 117415 as NACK at time 18406
+Additional hops: 2897
+Adding flit 117459 as NACK at time 18419
+Reenqueueing errored packet 117415 at time 18421
+Reenqueueing errored packet 117459 at time 18438
+Additional hops: 2904
+Adding flit 118001 as NACK at time 18490
+Reenqueueing errored packet 118001 at time 18505
+Additional hops: 2906
+Adding flit 118294 as NACK at time 18518
+Reenqueueing errored packet 118294 at time 18523
+Additional hops: 2914
+Adding flit 118313 as NACK at time 18540
+Reenqueueing errored packet 118313 at time 18557
+Additional hops: 2922
+Adding flit 119405 as NACK at time 18713
+Additional hops: 2930
+Adding flit 119406 as NACK at time 18714
+Additional hops: 2937
+Adding flit 119454 as NACK at time 18717
+Reenqueueing errored packet 119405 at time 18730
+Reenqueueing errored packet 119406 at time 18731
+Reenqueueing errored packet 119454 at time 18732
+Uncorrectable 3
+Additional hops: 2945
+Adding flit 119895 as NACK at time 18792
+Additional hops: 2954
+Adding flit 119933 as NACK at time 18801
+Reenqueueing errored packet 119895 at time 18809
+Reenqueueing errored packet 119933 at time 18820
+Additional hops: 2958
+Adding flit 120219 as NACK at time 18832
+Reenqueueing errored packet 120219 at time 18841
+Uncorrectable 3
+Additional hops: 2968
+Adding flit 120389 as NACK at time 18876
+Uncorrectable 3
+Additional hops: 2973
+Adding flit 120549 as NACK at time 18885
+Reenqueueing errored packet 120549 at time 18896
+Reenqueueing errored packet 120389 at time 18897
+Additional hops: 2977
+Adding flit 120973 as NACK at time 18948
+Reenqueueing errored packet 120973 at time 18957
+Additional hops: 2982
+Adding flit 121195 as NACK at time 18984
+Reenqueueing errored packet 121195 at time 18995
+Additional hops: 2997
+Adding flit 121246 as NACK at time 19024
+Reenqueueing errored packet 121246 at time 19055
+Additional hops: 3004
+Adding flit 121869 as NACK at time 19099
+Reenqueueing errored packet 121869 at time 19114
+Additional hops: 3008
+Adding flit 122170 as NACK at time 19135
+Additional hops: 3019
+Adding flit 122078 as NACK at time 19142
+Reenqueueing errored packet 122170 at time 19144
+Additional hops: 3024
+Adding flit 122291 as NACK at time 19156
+Reenqueueing errored packet 122078 at time 19165
+Reenqueueing errored packet 122291 at time 19167
+Additional hops: 3036
+Adding flit 122289 as NACK at time 19176
+Reenqueueing errored packet 122289 at time 19201
+Additional hops: 3046
+Adding flit 122548 as NACK at time 19215
+Additional hops: 3055
+Adding flit 122571 as NACK at time 19216
+Reenqueueing errored packet 122571 at time 19235
+Reenqueueing errored packet 122548 at time 19236
+Additional hops: 3062
+Adding flit 122969 as NACK at time 19271
+Reenqueueing errored packet 122969 at time 19286
+Additional hops: 3072
+Adding flit 123247 as NACK at time 19324
+Reenqueueing errored packet 123247 at time 19345
+Additional hops: 3082
+Adding flit 123420 as NACK at time 19353
+Additional hops: 3087
+Adding flit 123586 as NACK at time 19364
+Reenqueueing errored packet 123420 at time 19374
+Reenqueueing errored packet 123586 at time 19375
+Additional hops: 3094
+Adding flit 124420 as NACK at time 19500
+Additional hops: 3102
+Adding flit 124434 as NACK at time 19505
+Reenqueueing errored packet 124420 at time 19515
+Additional hops: 3111
+Adding flit 124486 as NACK at time 19516
+Reenqueueing errored packet 124434 at time 19522
+Reenqueueing errored packet 124486 at time 19535
+Additional hops: 3113
+Adding flit 124756 as NACK at time 19538
+Reenqueueing errored packet 124756 at time 19543
+Additional hops: 3122
+Adding flit 124812 as NACK at time 19568
+Reenqueueing errored packet 124812 at time 19587
+Additional hops: 3132
+Adding flit 124971 as NACK at time 19599
+Reenqueueing errored packet 124971 at time 19620
+Additional hops: 3142
+Adding flit 125199 as NACK at time 19637
+Reenqueueing errored packet 125199 at time 19658
+Additional hops: 3151
+Adding flit 125445 as NACK at time 19672
+Reenqueueing errored packet 125445 at time 19691
+Additional hops: 3156
+Adding flit 125680 as NACK at time 19695
+Reenqueueing errored packet 125680 at time 19706
+Additional hops: 3163
+Adding flit 125977 as NACK at time 19750
+Additional hops: 3168
+Adding flit 126077 as NACK at time 19758
+Reenqueueing errored packet 125977 at time 19765
+Reenqueueing errored packet 126077 at time 19769
+Additional hops: 3176
+Adding flit 126472 as NACK at time 19833
+Additional hops: 3184
+Adding flit 126477 as NACK at time 19834
+Reenqueueing errored packet 126472 at time 19850
+Reenqueueing errored packet 126477 at time 19851
+Additional hops: 3190
+Adding flit 127208 as NACK at time 19944
+Reenqueueing errored packet 127208 at time 19957
+Class 0:
+Packet latency average = 21.1205
+	minimum = 5
+	maximum = 173
+Network latency average = 20.9852
+	minimum = 5
+	maximum = 52
+Slowest packet = 654
+Flit latency average = 20.9852
+	minimum = 5
+	maximum = 52
+Slowest flit = 55401
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.100086
+	minimum = 0.0937 (at node 8)
+	maximum = 0.1051 (at node 15)
+Accepted packet rate average = 0.099982
+	minimum = 0.0957 (at node 46)
+	maximum = 0.10415 (at node 1)
+Injected flit rate average = 0.100086
+	minimum = 0.0937 (at node 8)
+	maximum = 0.1051 (at node 15)
+Accepted flit rate average= 0.099982
+	minimum = 0.0957 (at node 46)
+	maximum = 0.10415 (at node 1)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 133 (0 measured)
+latency change    = 0.000133587
+throughput change = 0.00246138
+Additional hops: 3199
+Adding flit 128200 as NACK at time 20109
+Reenqueueing errored packet 128200 at time 20128
+Additional hops: 3206
+Adding flit 129149 as NACK at time 20260
+Reenqueueing errored packet 129149 at time 20275
+Additional hops: 3212
+Adding flit 129300 as NACK at time 20279
+Reenqueueing errored packet 129300 at time 20292
+Additional hops: 3219
+Adding flit 129644 as NACK at time 20340
+Reenqueueing errored packet 129644 at time 20355
+Additional hops: 3224
+Adding flit 130361 as NACK at time 20448
+Reenqueueing errored packet 130361 at time 20459
+Additional hops: 3231
+Adding flit 130688 as NACK at time 20502
+Reenqueueing errored packet 130688 at time 20517
+Additional hops: 3238
+Adding flit 131164 as NACK at time 20577
+Additional hops: 3247
+Adding flit 131158 as NACK at time 20581
+Reenqueueing errored packet 131164 at time 20592
+Reenqueueing errored packet 131158 at time 20600
+Additional hops: 3253
+Adding flit 131358 as NACK at time 20603
+Additional hops: 3260
+Adding flit 131371 as NACK at time 20607
+Reenqueueing errored packet 131358 at time 20616
+Reenqueueing errored packet 131371 at time 20622
+Additional hops: 3270
+Adding flit 131547 as NACK at time 20644
+Reenqueueing errored packet 131547 at time 20665
+Additional hops: 3284
+Adding flit 131996 as NACK at time 20727
+Additional hops: 3289
+Adding flit 132232 as NACK at time 20736
+Reenqueueing errored packet 132232 at time 20747
+Reenqueueing errored packet 131996 at time 20756
+Additional hops: 3294
+Adding flit 132401 as NACK at time 20759
+Reenqueueing errored packet 132401 at time 20770
+Additional hops: 3299
+Adding flit 133061 as NACK at time 20864
+Reenqueueing errored packet 133061 at time 20875
+Additional hops: 3307
+Adding flit 133100 as NACK at time 20879
+Reenqueueing errored packet 133100 at time 20896
+Additional hops: 3313
+Adding flit 133336 as NACK at time 20907
+Reenqueueing errored packet 133336 at time 20920
+Uncorrectable 3
+Additional hops: 3317
+Adding flit 133727 as NACK at time 20962
+Reenqueueing errored packet 133727 at time 20971
+Additional hops: 3320
+Adding flit 134348 as NACK at time 21055
+Uncorrectable 3
+Additional hops: 3330
+Adding flit 134237 as NACK at time 21057
+Reenqueueing errored packet 134348 at time 21062
+Reenqueueing errored packet 134237 at time 21078
+Additional hops: 3338
+Adding flit 134703 as NACK at time 21129
+Reenqueueing errored packet 134703 at time 21146
+Additional hops: 3343
+Adding flit 134923 as NACK at time 21147
+Additional hops: 3351
+Adding flit 134909 as NACK at time 21153
+Reenqueueing errored packet 134923 at time 21158
+Reenqueueing errored packet 134909 at time 21170
+Additional hops: 3364
+Adding flit 135155 as NACK at time 21207
+Reenqueueing errored packet 135155 at time 21234
+Additional hops: 3371
+Adding flit 135574 as NACK at time 21258
+Additional hops: 3379
+Adding flit 135620 as NACK at time 21269
+Reenqueueing errored packet 135574 at time 21273
+Reenqueueing errored packet 135620 at time 21286
+Additional hops: 3387
+Adding flit 135961 as NACK at time 21325
+Reenqueueing errored packet 135961 at time 21342
+Additional hops: 3396
+Adding flit 136061 as NACK at time 21346
+Reenqueueing errored packet 136061 at time 21365
+Additional hops: 3400
+Adding flit 136898 as NACK at time 21453
+Reenqueueing errored packet 136898 at time 21462
+Additional hops: 3408
+Adding flit 137030 as NACK at time 21486
+Additional hops: 3415
+Adding flit 137065 as NACK at time 21488
+Reenqueueing errored packet 137065 at time 21503
+Reenqueueing errored packet 137030 at time 21503
+Additional hops: 3422
+Adding flit 137716 as NACK at time 21586
+Reenqueueing errored packet 137716 at time 21601
+Additional hops: 3431
+Adding flit 138580 as NACK at time 21726
+Reenqueueing errored packet 138580 at time 21745
+Additional hops: 3436
+Adding flit 138935 as NACK at time 21773
+Reenqueueing errored packet 138935 at time 21784
+Additional hops: 3449
+Adding flit 139151 as NACK at time 21832
+Reenqueueing errored packet 139151 at time 21859
+Additional hops: 3462
+Adding flit 139348 as NACK at time 21866
+Reenqueueing errored packet 139348 at time 21893
+Additional hops: 3469
+Adding flit 139828 as NACK at time 21912
+Reenqueueing errored packet 139828 at time 21927
+Additional hops: 3495
+Adding flit 139348 as NACK at time 21935
+Additional hops: 3501
+Adding flit 140080 as NACK at time 21945
+Reenqueueing errored packet 140080 at time 21958
+Reenqueueing errored packet 139348 at time 21988
+Additional hops: 3505
+Adding flit 140423 as NACK at time 21990
+Reenqueueing errored packet 140423 at time 21999
+Additional hops: 3510
+Adding flit 140497 as NACK at time 22004
+Reenqueueing errored packet 140497 at time 22015
+Additional hops: 3515
+Adding flit 140875 as NACK at time 22064
+Additional hops: 3524
+Adding flit 140797 as NACK at time 22065
+Reenqueueing errored packet 140875 at time 22075
+Additional hops: 3536
+Adding flit 140825 as NACK at time 22077
+Reenqueueing errored packet 140797 at time 22084
+Additional hops: 3543
+Adding flit 140969 as NACK at time 22086
+Additional hops: 3557
+Adding flit 140881 as NACK at time 22092
+Additional hops: 3566
+Adding flit 141015 as NACK at time 22099
+Reenqueueing errored packet 140969 at time 22101
+Reenqueueing errored packet 140825 at time 22102
+Reenqueueing errored packet 141015 at time 22118
+Reenqueueing errored packet 140881 at time 22121
+Additional hops: 3574
+Adding flit 141614 as NACK at time 22192
+Reenqueueing errored packet 141614 at time 22209
+Additional hops: 3579
+Adding flit 141820 as NACK at time 22214
+Reenqueueing errored packet 141820 at time 22225
+Additional hops: 3587
+Adding flit 141888 as NACK at time 22233
+Reenqueueing errored packet 141888 at time 22250
+Additional hops: 3596
+Adding flit 142193 as NACK at time 22279
+Additional hops: 3607
+Adding flit 142184 as NACK at time 22284
+Reenqueueing errored packet 142193 at time 22298
+Reenqueueing errored packet 142184 at time 22307
+Additional hops: 3619
+Adding flit 142622 as NACK at time 22357
+Reenqueueing errored packet 142622 at time 22382
+Additional hops: 3628
+Adding flit 144207 as NACK at time 22603
+Reenqueueing errored packet 144207 at time 22622
+Additional hops: 3634
+Adding flit 144398 as NACK at time 22622
+Additional hops: 3641
+Adding flit 144404 as NACK at time 22626
+Reenqueueing errored packet 144398 at time 22635
+Reenqueueing errored packet 144404 at time 22641
+Additional hops: 3646
+Adding flit 144786 as NACK at time 22679
+Reenqueueing errored packet 144786 at time 22690
+Uncorrectable 3
+Additional hops: 3658
+Adding flit 145077 as NACK at time 22748
+Additional hops: 3665
+Adding flit 145231 as NACK at time 22755
+Additional hops: 3673
+Adding flit 145280 as NACK at time 22766
+Reenqueueing errored packet 145231 at time 22770
+Additional hops: 3680
+Adding flit 145327 as NACK at time 22771
+Reenqueueing errored packet 145077 at time 22773
+Uncorrectable 3
+Additional hops: 3687
+Adding flit 145373 as NACK at time 22776
+Reenqueueing errored packet 145280 at time 22783
+Reenqueueing errored packet 145327 at time 22786
+Reenqueueing errored packet 145373 at time 22791
+Additional hops: 3695
+Adding flit 145480 as NACK at time 22797
+Reenqueueing errored packet 145480 at time 22814
+Additional hops: 3706
+Adding flit 145645 as NACK at time 22830
+Reenqueueing errored packet 145645 at time 22853
+Additional hops: 3719
+Adding flit 145853 as NACK at time 22866
+Reenqueueing errored packet 145853 at time 22893
+Additional hops: 3728
+Adding flit 146318 as NACK at time 22930
+Reenqueueing errored packet 146318 at time 22949
+Additional hops: 3736
+Adding flit 146838 as NACK at time 23007
+Additional hops: 3744
+Adding flit 146913 as NACK at time 23021
+Reenqueueing errored packet 146838 at time 23024
+Reenqueueing errored packet 146913 at time 23038
+Additional hops: 3750
+Adding flit 147673 as NACK at time 23141
+Additional hops: 3753
+Adding flit 147811 as NACK at time 23153
+Reenqueueing errored packet 147673 at time 23154
+Reenqueueing errored packet 147811 at time 23160
+Additional hops: 3759
+Adding flit 147908 as NACK at time 23178
+Additional hops: 3769
+Adding flit 147870 as NACK at time 23185
+Reenqueueing errored packet 147908 at time 23191
+Additional hops: 3780
+Adding flit 147966 as NACK at time 23201
+Reenqueueing errored packet 147870 at time 23206
+Reenqueueing errored packet 147966 at time 23224
+Additional hops: 3790
+Adding flit 148859 as NACK at time 23340
+Reenqueueing errored packet 148859 at time 23361
+Additional hops: 3798
+Adding flit 149104 as NACK at time 23373
+Reenqueueing errored packet 149104 at time 23390
+Additional hops: 3799
+Adding flit 150104 as NACK at time 23507
+Reenqueueing errored packet 150104 at time 23510
+Additional hops: 3805
+Adding flit 150609 as NACK at time 23604
+Reenqueueing errored packet 150609 at time 23617
+Additional hops: 3814
+Adding flit 150802 as NACK at time 23638
+Additional hops: 3822
+Adding flit 150883 as NACK at time 23646
+Reenqueueing errored packet 150802 at time 23657
+Reenqueueing errored packet 150883 at time 23663
+Additional hops: 3830
+Adding flit 151052 as NACK at time 23672
+Reenqueueing errored packet 151052 at time 23689
+Additional hops: 3840
+Adding flit 151953 as NACK at time 23823
+Reenqueueing errored packet 151953 at time 23844
+Additional hops: 3846
+Adding flit 152319 as NACK at time 23872
+Reenqueueing errored packet 152319 at time 23885
+Additional hops: 3853
+Adding flit 152406 as NACK at time 23891
+Reenqueueing errored packet 152406 at time 23906
+Additional hops: 3861
+Adding flit 152708 as NACK at time 23944
+Reenqueueing errored packet 152708 at time 23961
+Additional hops: 3869
+Adding flit 153006 as NACK at time 23989
+Additional hops: 3873
+Adding flit 153091 as NACK at time 23992
+Reenqueueing errored packet 153091 at time 24001
+Reenqueueing errored packet 153006 at time 24006
+Additional hops: 3875
+Adding flit 153752 as NACK at time 24088
+Reenqueueing errored packet 153752 at time 24093
+Additional hops: 3881
+Adding flit 153721 as NACK at time 24096
+Reenqueueing errored packet 153721 at time 24109
+Additional hops: 3891
+Adding flit 153976 as NACK at time 24152
+Reenqueueing errored packet 153976 at time 24173
+Additional hops: 3899
+Adding flit 154189 as NACK at time 24181
+Additional hops: 3907
+Adding flit 154218 as NACK at time 24186
+Additional hops: 3918
+Adding flit 154223 as NACK at time 24194
+Reenqueueing errored packet 154189 at time 24198
+Additional hops: 3930
+Adding flit 154238 as NACK at time 24199
+Reenqueueing errored packet 154218 at time 24203
+Reenqueueing errored packet 154223 at time 24217
+Reenqueueing errored packet 154238 at time 24224
+Additional hops: 3936
+Adding flit 154834 as NACK at time 24279
+Reenqueueing errored packet 154834 at time 24292
+Additional hops: 3948
+Adding flit 156255 as NACK at time 24528
+Additional hops: 3952
+Adding flit 156532 as NACK at time 24547
+Reenqueueing errored packet 156255 at time 24553
+Reenqueueing errored packet 156532 at time 24556
+Additional hops: 3963
+Adding flit 156744 as NACK at time 24597
+Additional hops: 3970
+Adding flit 156865 as NACK at time 24606
+Reenqueueing errored packet 156744 at time 24620
+Reenqueueing errored packet 156865 at time 24621
+Additional hops: 3979
+Adding flit 157096 as NACK at time 24647
+Reenqueueing errored packet 157096 at time 24666
+Additional hops: 3985
+Adding flit 157338 as NACK at time 24674
+Reenqueueing errored packet 157338 at time 24687
+Additional hops: 3993
+Adding flit 157817 as NACK at time 24762
+Reenqueueing errored packet 157817 at time 24779
+Additional hops: 4003
+Adding flit 158719 as NACK at time 24911
+Additional hops: 4013
+Adding flit 158771 as NACK at time 24916
+Additional hops: 4021
+Adding flit 158854 as NACK at time 24926
+Reenqueueing errored packet 158719 at time 24932
+Reenqueueing errored packet 158771 at time 24937
+Reenqueueing errored packet 158854 at time 24943
+Additional hops: 4026
+Adding flit 159305 as NACK at time 24988
+Additional hops: 4031
+Adding flit 159339 as NACK at time 24993
+Reenqueueing errored packet 159305 at time 24999
+Reenqueueing errored packet 159339 at time 25004
+Additional hops: 4033
+Adding flit 159495 as NACK at time 25008
+Reenqueueing errored packet 159495 at time 25013
+Additional hops: 4038
+Adding flit 159809 as NACK at time 25064
+Reenqueueing errored packet 159809 at time 25075
+Additional hops: 4044
+Adding flit 159900 as NACK at time 25084
+Reenqueueing errored packet 159900 at time 25097
+Additional hops: 4051
+Adding flit 159975 as NACK at time 25099
+Additional hops: 4059
+Adding flit 160030 as NACK at time 25109
+Additional hops: 4067
+Adding flit 160052 as NACK at time 25112
+Reenqueueing errored packet 159975 at time 25114
+Reenqueueing errored packet 160030 at time 25126
+Reenqueueing errored packet 160052 at time 25129
+Additional hops: 4077
+Adding flit 160547 as NACK at time 25201
+Reenqueueing errored packet 160547 at time 25222
+Additional hops: 4081
+Adding flit 160994 as NACK at time 25249
+Reenqueueing errored packet 160994 at time 25258
+Additional hops: 4090
+Adding flit 161489 as NACK at time 25337
+Reenqueueing errored packet 161489 at time 25356
+Additional hops: 4101
+Adding flit 161699 as NACK at time 25377
+Reenqueueing errored packet 161699 at time 25400
+Additional hops: 4108
+Adding flit 164591 as NACK at time 25833
+Reenqueueing errored packet 164591 at time 25848
+Additional hops: 4121
+Adding flit 164918 as NACK at time 25899
+Reenqueueing errored packet 164918 at time 25926
+Additional hops: 4131
+Adding flit 165679 as NACK at time 26010
+Reenqueueing errored packet 165679 at time 26031
+Additional hops: 4143
+Adding flit 165834 as NACK at time 26041
+Reenqueueing errored packet 165834 at time 26066
+Additional hops: 4150
+Adding flit 166348 as NACK at time 26105
+Reenqueueing errored packet 166348 at time 26120
+Additional hops: 4155
+Adding flit 167604 as NACK at time 26292
+Reenqueueing errored packet 167604 at time 26303
+Additional hops: 4162
+Adding flit 168165 as NACK at time 26390
+Additional hops: 4174
+Adding flit 168144 as NACK at time 26400
+Reenqueueing errored packet 168165 at time 26405
+Additional hops: 4183
+Adding flit 168337 as NACK at time 26422
+Reenqueueing errored packet 168144 at time 26425
+Reenqueueing errored packet 168337 at time 26441
+Additional hops: 4192
+Adding flit 168697 as NACK at time 26480
+Reenqueueing errored packet 168697 at time 26499
+Additional hops: 4203
+Adding flit 169216 as NACK at time 26567
+Reenqueueing errored packet 169216 at time 26590
+Additional hops: 4207
+Adding flit 169969 as NACK at time 26666
+Reenqueueing errored packet 169969 at time 26675
+Additional hops: 4215
+Adding flit 170421 as NACK at time 26750
+Reenqueueing errored packet 170421 at time 26767
+Additional hops: 4225
+Adding flit 170684 as NACK at time 26797
+Additional hops: 4231
+Adding flit 170783 as NACK at time 26799
+Reenqueueing errored packet 170783 at time 26812
+Reenqueueing errored packet 170684 at time 26818
+Additional hops: 4237
+Adding flit 171422 as NACK at time 26897
+Reenqueueing errored packet 171422 at time 26910
+Additional hops: 4246
+Adding flit 171778 as NACK at time 26959
+Additional hops: 4252
+Adding flit 171905 as NACK at time 26970
+Reenqueueing errored packet 171778 at time 26978
+Reenqueueing errored packet 171905 at time 26983
+Additional hops: 4260
+Adding flit 172036 as NACK at time 26995
+Reenqueueing errored packet 172036 at time 27012
+Additional hops: 4264
+Adding flit 172540 as NACK at time 27056
+Reenqueueing errored packet 172540 at time 27065
+Additional hops: 4266
+Adding flit 173826 as NACK at time 27252
+Reenqueueing errored packet 173826 at time 27257
+Additional hops: 4280
+Adding flit 173817 as NACK at time 27285
+Reenqueueing errored packet 173817 at time 27314
+Additional hops: 4289
+Adding flit 174931 as NACK at time 27447
+Additional hops: 4300
+Adding flit 174927 as NACK at time 27454
+Reenqueueing errored packet 174931 at time 27466
+Additional hops: 4311
+Adding flit 175028 as NACK at time 27467
+Reenqueueing errored packet 174927 at time 27477
+Additional hops: 4318
+Adding flit 175172 as NACK at time 27480
+Reenqueueing errored packet 175028 at time 27490
+Reenqueueing errored packet 175172 at time 27495
+Additional hops: 4328
+Adding flit 175396 as NACK at time 27524
+Reenqueueing errored packet 175396 at time 27545
+Additional hops: 4337
+Adding flit 175675 as NACK at time 27566
+Reenqueueing errored packet 175675 at time 27585
+Additional hops: 4347
+Adding flit 176180 as NACK at time 27651
+Additional hops: 4353
+Adding flit 176311 as NACK at time 27658
+Reenqueueing errored packet 176311 at time 27671
+Reenqueueing errored packet 176180 at time 27672
+Additional hops: 4358
+Adding flit 176544 as NACK at time 27693
+Reenqueueing errored packet 176544 at time 27704
+Additional hops: 4369
+Adding flit 177038 as NACK at time 27788
+Reenqueueing errored packet 177038 at time 27811
+Additional hops: 4376
+Adding flit 177417 as NACK at time 27837
+Reenqueueing errored packet 177417 at time 27852
+Additional hops: 4382
+Adding flit 177871 as NACK at time 27909
+Reenqueueing errored packet 177871 at time 27922
+Additional hops: 4390
+Adding flit 178264 as NACK at time 27977
+Reenqueueing errored packet 178264 at time 27994
+Additional hops: 4397
+Adding flit 178486 as NACK at time 28007
+Reenqueueing errored packet 178486 at time 28022
+Additional hops: 4401
+Adding flit 178702 as NACK at time 28029
+Reenqueueing errored packet 178702 at time 28038
+Additional hops: 4409
+Adding flit 179033 as NACK at time 28093
+Reenqueueing errored packet 179033 at time 28110
+Additional hops: 4418
+Adding flit 179263 as NACK at time 28136
+Additional hops: 4429
+Adding flit 179321 as NACK at time 28149
+Reenqueueing errored packet 179263 at time 28155
+Additional hops: 4437
+Adding flit 179455 as NACK at time 28163
+Reenqueueing errored packet 179321 at time 28172
+Reenqueueing errored packet 179455 at time 28180
+Additional hops: 4447
+Adding flit 179888 as NACK at time 28236
+Reenqueueing errored packet 179888 at time 28257
+Additional hops: 4453
+Adding flit 180116 as NACK at time 28259
+Reenqueueing errored packet 180116 at time 28272
+Additional hops: 4457
+Adding flit 180319 as NACK at time 28284
+Reenqueueing errored packet 180319 at time 28293
+Additional hops: 4463
+Adding flit 180695 as NACK at time 28353
+Reenqueueing errored packet 180695 at time 28366
+Additional hops: 4466
+Adding flit 180872 as NACK at time 28372
+Additional hops: 4471
+Adding flit 180858 as NACK at time 28375
+Reenqueueing errored packet 180872 at time 28379
+Reenqueueing errored packet 180858 at time 28386
+Uncorrectable 3
+Additional hops: 4482
+Adding flit 181342 as NACK at time 28474
+Additional hops: 4489
+Adding flit 181446 as NACK at time 28477
+Reenqueueing errored packet 181446 at time 28492
+Reenqueueing errored packet 181342 at time 28497
+Additional hops: 4498
+Adding flit 181635 as NACK at time 28511
+Reenqueueing errored packet 181635 at time 28530
+Additional hops: 4506
+Adding flit 181945 as NACK at time 28558
+Reenqueueing errored packet 181945 at time 28575
+Additional hops: 4519
+Adding flit 182434 as NACK at time 28648
+Reenqueueing errored packet 182434 at time 28675
+Additional hops: 4526
+Adding flit 183116 as NACK at time 28735
+Reenqueueing errored packet 183116 at time 28750
+Additional hops: 4531
+Adding flit 183602 as NACK at time 28807
+Reenqueueing errored packet 183602 at time 28818
+Additional hops: 4536
+Adding flit 183776 as NACK at time 28837
+Reenqueueing errored packet 183776 at time 28848
+Additional hops: 4545
+Adding flit 183901 as NACK at time 28873
+Reenqueueing errored packet 183901 at time 28892
+Additional hops: 4550
+Adding flit 184953 as NACK at time 29023
+Reenqueueing errored packet 184953 at time 29034
+Additional hops: 4556
+Adding flit 185627 as NACK at time 29130
+Reenqueueing errored packet 185627 at time 29143
+Additional hops: 4564
+Adding flit 185768 as NACK at time 29154
+Additional hops: 4570
+Adding flit 185879 as NACK at time 29170
+Reenqueueing errored packet 185768 at time 29171
+Additional hops: 4578
+Adding flit 185870 as NACK at time 29174
+Reenqueueing errored packet 185879 at time 29183
+Reenqueueing errored packet 185870 at time 29191
+Additional hops: 4589
+Adding flit 186029 as NACK at time 29206
+Additional hops: 4599
+Adding flit 186176 as NACK at time 29221
+Reenqueueing errored packet 186029 at time 29229
+Additional hops: 4606
+Adding flit 186293 as NACK at time 29232
+Reenqueueing errored packet 186176 at time 29242
+Reenqueueing errored packet 186293 at time 29247
+Additional hops: 4620
+Adding flit 186942 as NACK at time 29354
+Reenqueueing errored packet 186942 at time 29383
+Additional hops: 4624
+Adding flit 187548 as NACK at time 29424
+Reenqueueing errored packet 187548 at time 29433
+Additional hops: 4635
+Adding flit 187527 as NACK at time 29440
+Reenqueueing errored packet 187527 at time 29463
+Additional hops: 4643
+Adding flit 187733 as NACK at time 29463
+Reenqueueing errored packet 187733 at time 29480
+Additional hops: 4654
+Adding flit 189008 as NACK at time 29667
+Reenqueueing errored packet 189008 at time 29690
+Additional hops: 4661
+Adding flit 189796 as NACK at time 29779
+Reenqueueing errored packet 189796 at time 29794
+Additional hops: 4671
+Adding flit 189846 as NACK at time 29796
+Additional hops: 4677
+Adding flit 189940 as NACK at time 29797
+Reenqueueing errored packet 189940 at time 29810
+Reenqueueing errored packet 189846 at time 29817
+Additional hops: 4686
+Adding flit 190272 as NACK at time 29856
+Reenqueueing errored packet 190272 at time 29875
+Additional hops: 4691
+Adding flit 190532 as NACK at time 29882
+Reenqueueing errored packet 190532 at time 29893
+Additional hops: 4699
+Adding flit 191001 as NACK at time 29971
+Additional hops: 4705
+Adding flit 191072 as NACK at time 29978
+Reenqueueing errored packet 191001 at time 29988
+Reenqueueing errored packet 191072 at time 29991
+Class 0:
+Packet latency average = 21.1263
+	minimum = 5
+	maximum = 208
+Network latency average = 20.9989
+	minimum = 5
+	maximum = 49
+Slowest packet = 127426
+Flit latency average = 20.9989
+	minimum = 5
+	maximum = 49
+Slowest flit = 139192
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0997469
+	minimum = 0.0944 (at node 18)
+	maximum = 0.1055 (at node 53)
+Accepted packet rate average = 0.0997422
+	minimum = 0.0927 (at node 57)
+	maximum = 0.1067 (at node 8)
+Injected flit rate average = 0.0997469
+	minimum = 0.0944 (at node 18)
+	maximum = 0.1055 (at node 53)
+Accepted flit rate average= 0.0997422
+	minimum = 0.0927 (at node 57)
+	maximum = 0.1067 (at node 8)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 136 (0 measured)
+latency change    = 0.000271836
+throughput change = 0.00240464
+Warmed up ...Time used is 30000 cycles
+Additional hops: 4714
+Adding flit 191289 as NACK at time 30020
+Reenqueueing errored packet 191289 at time 30039
+Additional hops: 4718
+Adding flit 191654 as NACK at time 30061
+Reenqueueing errored packet 191654 at time 30070
+Additional hops: 4729
+Adding flit 191787 as NACK at time 30104
+30111 | node15 | Enqueuing flit 192022 (packet 192022) at time 30111.
+30111 | traffic_manager | Finding output VC for flit 192022:
+30111 | traffic_manager |   Selected output VC 0.
+30111 | network_0/router_1_7 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 4, destination 44).
+30111 | node15 | Generating lookahead routing info for flit 192022.
+30111 | node15 | Injecting flit 192022 into subnet 0 at time 30111 with priority 0.
+30112 | network_0/network_0_fchan_ingress15 | Beginning channel traversal for flit 192022 with delay 1.
+30112 | network_0/network_0_fchan_ingress15 | Completed channel traversal for flit 192022.
+30113 | network_0/router_1_7 | Received flit 192022 from channel at input 4.
+30113 | network_0/router_1_7 | Adding flit 192022 to VC 0 at input 4 (state: idle, empty).
+30113 | network_0/router_1_7 | Using precomputed lookahead routing information for VC 0 at input 4 (front: 192022).
+30113 | network_0/router_1_7/buf_4/vc_0 | Changing state from idle to vc_alloc.
+30113 | network_0/router_1_7 | Beginning VC allocation for VC 0 at input 4 (front: 192022).
+30113 | network_0/router_1_7 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+30113 | network_0/router_1_7 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+30113 | network_0/router_1_7/vc_allocator | Input requests = [ 8 -> [ 2@0 3@0 ]  ], output requests = [ 2 -> [ 8@0 ]  3 -> [ 8@0 ]  ].
+30113 | network_0/router_1_7/vc_allocator | Input grants = [ 8 -> 3  ], output grants = [ 3 -> 8  ].
+30113 | network_0/router_1_7 | Assigning VC 1 at output 1 to VC 0 at input 4.
+30113 | network_0/router_1_7 | Completed VC allocation for VC 0 at input 4 (front: 192022).
+30113 | network_0/router_1_7 |   Acquiring assigned VC 1 at output 1.
+30113 | network_0/router_1_7/buf_4/vc_0 | Changing state from vc_alloc to active.
+30113 | network_0/router_1_7 | Beginning switch allocation for VC 0 at input 4 (front: 192022).
+30113 | network_0/router_1_7 |   Requesting output 1.0 (non-spec, pri: 0).
+30113 | network_0/router_1_7/sw_allocator | Input requests = [ 4 -> [ 1@0 ]  ], output requests = [ 1 -> [ 4@0 ]  ].
+30113 | network_0/router_1_7/sw_allocator | Input grants = [ 4 -> 1  ], output grants = [ 1 -> 4  ].
+30113 | network_0/router_1_7 | Assigning output 1.0 to VC 0 at input 4.0.
+30113 | network_0/router_1_7 | Completed switch allocation for VC 0 at input 4 (front: 192022).
+30113 | network_0/router_1_7 |   Scheduling switch connection from input 4.0 to output 1.0.
+30113 | network_0/router_1_7 | Updating lookahead routing information for flit 192022.
+30113 | network_0/router_1_6 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+30114 | network_0/router_1_7 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+30114 | network_0/router_1_7 | Completed crossbar traversal for flit 192022 from input 4.0 to output 1.0.
+30114 | network_0/router_1_7 | Buffering flit 192022 at output 1.
+30114 | network_0/router_1_7 | Sending flit 192022 to channel at output 1.
+30115 | network_0/network_0_fchan_61 | Beginning channel traversal for flit 192022 with delay 1.
+30115 | network_0/network_0_fchan_61 | Completed channel traversal for flit 192022.
+30116 | network_0/router_1_6 | Received flit 192022 from channel at input 0.
+30116 | network_0/router_1_6 | Adding flit 192022 to VC 1 at input 0 (state: idle, empty).
+30116 | network_0/router_1_6 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+30116 | network_0/router_1_6/buf_0/vc_1 | Changing state from idle to vc_alloc.
+30116 | network_0/router_1_6 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+30116 | network_0/router_1_6 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+30116 | network_0/router_1_6 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+30116 | network_0/router_1_6/vc_allocator | Input requests = [ 1 -> [ 2@0 3@0 ]  ], output requests = [ 2 -> [ 1@0 ]  3 -> [ 1@0 ]  ].
+30116 | network_0/router_1_6/vc_allocator | Input grants = [ 1 -> 3  ], output grants = [ 3 -> 1  ].
+30116 | network_0/router_1_6 | Assigning VC 1 at output 1 to VC 1 at input 0.
+30116 | network_0/router_1_6 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+30116 | network_0/router_1_6 |   Acquiring assigned VC 1 at output 1.
+30116 | network_0/router_1_6/buf_0/vc_1 | Changing state from vc_alloc to active.
+30116 | network_0/router_1_6 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+30116 | network_0/router_1_6 |   Requesting output 1.0 (non-spec, pri: 0).
+30116 | network_0/router_1_6/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  ], output requests = [ 1 -> [ 0@0 ]  ].
+30116 | network_0/router_1_6/sw_allocator | Input grants = [ 0 -> 1  ], output grants = [ 1 -> 0  ].
+30116 | network_0/router_1_6 | Assigning output 1.0 to VC 1 at input 0.0.
+30116 | network_0/router_1_6 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+30116 | network_0/router_1_6 |   Scheduling switch connection from input 0.0 to output 1.0.
+30116 | network_0/router_1_6 | Updating lookahead routing information for flit 192022.
+30116 | network_0/router_1_5 | Adding VC range [0,1] at output port 1 for flit 192022 (input port 0, destination 44).
+30117 | network_0/router_1_6 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+30117 | network_0/router_1_6 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+30117 | network_0/router_1_6 | Buffering flit 192022 at output 1.
+30117 | network_0/router_1_6 | Sending flit 192022 to channel at output 1.
+30118 | network_0/network_0_fchan_57 | Beginning channel traversal for flit 192022 with delay 1.
+30118 | network_0/network_0_fchan_57 | Completed channel traversal for flit 192022.
+30119 | network_0/router_1_5 | Received flit 192022 from channel at input 0.
+30119 | network_0/router_1_5 | Adding flit 192022 to VC 1 at input 0 (state: idle, empty).
+30119 | network_0/router_1_5 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+30119 | network_0/router_1_5/buf_0/vc_1 | Changing state from idle to vc_alloc.
+30119 | network_0/router_1_5 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+30119 | network_0/router_1_5 |   Requesting VC 0 at output 1 (in_pri: 0, out_pri: 0).
+30119 | network_0/router_1_5 |   Requesting VC 1 at output 1 (in_pri: 0, out_pri: 0).
+30119 | network_0/router_1_5/vc_allocator | Input requests = [ 1 -> [ 2@0 3@0 ]  4 -> [ 6@0 7@0 ]  ], output requests = [ 2 -> [ 1@0 ]  3 -> [ 1@0 ]  6 -> [ 4@0 ]  7 -> [ 4@0 ]  ].
+30119 | network_0/router_1_5/vc_allocator | Input grants = [ 1 -> 3  4 -> 6  ], output grants = [ 3 -> 1  6 -> 4  ].
+30119 | network_0/router_1_5 | Assigning VC 1 at output 1 to VC 1 at input 0.
+30119 | network_0/router_1_5 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+30119 | network_0/router_1_5 |   Acquiring assigned VC 1 at output 1.
+30119 | network_0/router_1_5/buf_0/vc_1 | Changing state from vc_alloc to active.
+30119 | network_0/router_1_5 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+30119 | network_0/router_1_5 |   Requesting output 1.0 (non-spec, pri: 0).
+30119 | network_0/router_1_5/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  2 -> [ 3@0 ]  ], output requests = [ 1 -> [ 0@0 ]  3 -> [ 2@0 ]  ].
+30119 | network_0/router_1_5/sw_allocator | Input grants = [ 0 -> 1  2 -> 3  ], output grants = [ 1 -> 0  3 -> 2  ].
+30119 | network_0/router_1_5 | Assigning output 1.0 to VC 1 at input 0.0.
+30119 | network_0/router_1_5 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+30119 | network_0/router_1_5 |   Scheduling switch connection from input 0.0 to output 1.0.
+30119 | network_0/router_1_5 | Updating lookahead routing information for flit 192022.
+30119 | network_0/router_1_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 0, destination 44).
+30120 | network_0/router_1_5 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+30120 | network_0/router_1_5 | Completed crossbar traversal for flit 192022 from input 0.0 to output 1.0.
+30120 | network_0/router_1_5 | Buffering flit 192022 at output 1.
+30120 | network_0/router_1_5 | Sending flit 192022 to channel at output 1.
+30121 | network_0/network_0_fchan_53 | Beginning channel traversal for flit 192022 with delay 1.
+30121 | network_0/network_0_fchan_53 | Completed channel traversal for flit 192022.
+30122 | network_0/router_1_4 | Received flit 192022 from channel at input 0.
+30122 | network_0/router_1_4 | Adding flit 192022 to VC 1 at input 0 (state: idle, empty).
+30122 | network_0/router_1_4 | Using precomputed lookahead routing information for VC 1 at input 0 (front: 192022).
+30122 | network_0/router_1_4/buf_0/vc_1 | Changing state from idle to vc_alloc.
+30122 | network_0/router_1_4 | Beginning VC allocation for VC 1 at input 0 (front: 192022).
+30122 | network_0/router_1_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+30122 | network_0/router_1_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+30122 | network_0/router_1_4/vc_allocator | Input requests = [ 1 -> [ 4@0 5@0 ]  ], output requests = [ 4 -> [ 1@0 ]  5 -> [ 1@0 ]  ].
+30122 | network_0/router_1_4/vc_allocator | Input grants = [ 1 -> 4  ], output grants = [ 4 -> 1  ].
+30122 | network_0/router_1_4 | Assigning VC 0 at output 2 to VC 1 at input 0.
+30122 | network_0/router_1_4 | Completed VC allocation for VC 1 at input 0 (front: 192022).
+30122 | network_0/router_1_4 |   Acquiring assigned VC 0 at output 2.
+30122 | network_0/router_1_4/buf_0/vc_1 | Changing state from vc_alloc to active.
+30122 | network_0/router_1_4 | Beginning switch allocation for VC 1 at input 0 (front: 192022).
+30122 | network_0/router_1_4 |   Requesting output 2.0 (non-spec, pri: 0).
+30122 | network_0/router_1_4/sw_allocator | Input requests = [ 0 -> [ 2@0 ]  ], output requests = [ 2 -> [ 0@0 ]  ].
+30122 | network_0/router_1_4/sw_allocator | Input grants = [ 0 -> 2  ], output grants = [ 2 -> 0  ].
+30122 | network_0/router_1_4 | Assigning output 2.0 to VC 1 at input 0.0.
+30122 | network_0/router_1_4 | Completed switch allocation for VC 1 at input 0 (front: 192022).
+30122 | network_0/router_1_4 |   Scheduling switch connection from input 0.0 to output 2.0.
+30122 | network_0/router_1_4 | Updating lookahead routing information for flit 192022.
+30122 | network_0/router_2_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 3, destination 44).
+30123 | network_0/router_1_4 | Beginning crossbar traversal for flit 192022 from input 0.0 to output 2.0.
+30123 | network_0/router_1_4 | Completed crossbar traversal for flit 192022 from input 0.0 to output 2.0.
+30123 | network_0/router_1_4 | Buffering flit 192022 at output 2.
+30123 | network_0/router_1_4 | Sending flit 192022 to channel at output 2.
+30124 | network_0/network_0_fchan_50 | Beginning channel traversal for flit 192022 with delay 1.
+30124 | network_0/network_0_fchan_50 | Completed channel traversal for flit 192022.
+30125 | network_0/router_2_4 | Received flit 192022 from channel at input 3.
+30125 | network_0/router_2_4 | Adding flit 192022 to VC 0 at input 3 (state: idle, empty).
+30125 | network_0/router_2_4 | Using precomputed lookahead routing information for VC 0 at input 3 (front: 192022).
+30125 | network_0/router_2_4/buf_3/vc_0 | Changing state from idle to vc_alloc.
+30125 | network_0/router_2_4 | Beginning VC allocation for VC 0 at input 3 (front: 192022).
+30125 | network_0/router_2_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+30125 | network_0/router_2_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+30125 | network_0/router_2_4/vc_allocator | Input requests = [ 3 -> [ 0@0 1@0 ]  6 -> [ 4@0 5@0 ]  ], output requests = [ 0 -> [ 3@0 ]  1 -> [ 3@0 ]  4 -> [ 6@0 ]  5 -> [ 6@0 ]  ].
+30125 | network_0/router_2_4/vc_allocator | Input grants = [ 3 -> 1  6 -> 4  ], output grants = [ 1 -> 3  4 -> 6  ].
+30125 | network_0/router_2_4 | Assigning VC 0 at output 2 to VC 0 at input 3.
+30125 | network_0/router_2_4 | Completed VC allocation for VC 0 at input 3 (front: 192022).
+30125 | network_0/router_2_4 |   Acquiring assigned VC 0 at output 2.
+30125 | network_0/router_2_4/buf_3/vc_0 | Changing state from vc_alloc to active.
+30125 | network_0/router_2_4 | Beginning switch allocation for VC 0 at input 3 (front: 192022).
+30125 | network_0/router_2_4 |   Requesting output 2.0 (non-spec, pri: 0).
+30125 | network_0/router_2_4/sw_allocator | Input requests = [ 1 -> [ 0@0 ]  3 -> [ 2@0 ]  ], output requests = [ 0 -> [ 1@0 ]  2 -> [ 3@0 ]  ].
+30125 | network_0/router_2_4/sw_allocator | Input grants = [ 1 -> 0  3 -> 2  ], output grants = [ 0 -> 1  2 -> 3  ].
+30125 | network_0/router_2_4 | Assigning output 2.0 to VC 0 at input 3.0.
+30125 | network_0/router_2_4 | Completed switch allocation for VC 0 at input 3 (front: 192022).
+30125 | network_0/router_2_4 |   Scheduling switch connection from input 3.0 to output 2.0.
+30125 | network_0/router_2_4 | Updating lookahead routing information for flit 192022.
+30125 | network_0/router_3_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 3, destination 44).
+30126 | network_0/router_2_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+30126 | network_0/router_2_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+30126 | network_0/router_2_4 | Buffering flit 192022 at output 2.
+30126 | network_0/router_2_4 | Sending flit 192022 to channel at output 2.
+30127 | network_0/network_0_fchan_82 | Beginning channel traversal for flit 192022 with delay 1.
+Reenqueueing errored packet 191787 at time 30127
+30127 | network_0/network_0_fchan_82 | Completed channel traversal for flit 192022.
+30128 | network_0/router_3_4 | Received flit 192022 from channel at input 3.
+30128 | network_0/router_3_4 | Adding flit 192022 to VC 0 at input 3 (state: idle, empty).
+30128 | network_0/router_3_4 | Using precomputed lookahead routing information for VC 0 at input 3 (front: 192022).
+30128 | network_0/router_3_4/buf_3/vc_0 | Changing state from idle to vc_alloc.
+30128 | network_0/router_3_4 | Beginning VC allocation for VC 0 at input 3 (front: 192022).
+30128 | network_0/router_3_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+30128 | network_0/router_3_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+30128 | network_0/router_3_4/vc_allocator | Input requests = [ 2 -> [ 6@0 7@0 ]  6 -> [ 4@0 5@0 ]  ], output requests = [ 4 -> [ 6@0 ]  5 -> [ 6@0 ]  6 -> [ 2@0 ]  7 -> [ 2@0 ]  ].
+30128 | network_0/router_3_4/vc_allocator | Input grants = [ 2 -> 6  6 -> 4  ], output grants = [ 4 -> 6  6 -> 2  ].
+30128 | network_0/router_3_4 | Assigning VC 0 at output 2 to VC 0 at input 3.
+30128 | network_0/router_3_4 | Completed VC allocation for VC 0 at input 3 (front: 192022).
+30128 | network_0/router_3_4 |   Acquiring assigned VC 0 at output 2.
+30128 | network_0/router_3_4/buf_3/vc_0 | Changing state from vc_alloc to active.
+30128 | network_0/router_3_4 | Beginning switch allocation for VC 0 at input 3 (front: 192022).
+30128 | network_0/router_3_4 |   Requesting output 2.0 (non-spec, pri: 0).
+30128 | network_0/router_3_4/sw_allocator | Input requests = [ 1 -> [ 3@0 ]  3 -> [ 2@0 ]  ], output requests = [ 2 -> [ 3@0 ]  3 -> [ 1@0 ]  ].
+30128 | network_0/router_3_4/sw_allocator | Input grants = [ 1 -> 3  3 -> 2  ], output grants = [ 2 -> 3  3 -> 1  ].
+30128 | network_0/router_3_4 | Assigning output 2.0 to VC 0 at input 3.0.
+30128 | network_0/router_3_4 | Completed switch allocation for VC 0 at input 3 (front: 192022).
+30128 | network_0/router_3_4 |   Scheduling switch connection from input 3.0 to output 2.0.
+30128 | network_0/router_3_4 | Updating lookahead routing information for flit 192022.
+30128 | network_0/router_4_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 3, destination 44).
+30129 | network_0/router_3_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+30129 | network_0/router_3_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+30129 | network_0/router_3_4 | Buffering flit 192022 at output 2.
+30129 | network_0/router_3_4 | Sending flit 192022 to channel at output 2.
+30130 | network_0/network_0_fchan_114 | Beginning channel traversal for flit 192022 with delay 1.
+Additional hops: 4737
+Adding flit 191978 as NACK at time 30130
+30130 | network_0/network_0_fchan_114 | Completed channel traversal for flit 192022.
+30131 | network_0/router_4_4 | Received flit 192022 from channel at input 3.
+30131 | network_0/router_4_4 | Adding flit 192022 to VC 0 at input 3 (state: idle, empty).
+30131 | network_0/router_4_4 | Using precomputed lookahead routing information for VC 0 at input 3 (front: 192022).
+30131 | network_0/router_4_4/buf_3/vc_0 | Changing state from idle to vc_alloc.
+30131 | network_0/router_4_4 | Beginning VC allocation for VC 0 at input 3 (front: 192022).
+30131 | network_0/router_4_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+30131 | network_0/router_4_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+30131 | network_0/router_4_4/vc_allocator | Input requests = [ 6 -> [ 4@0 5@0 ]  ], output requests = [ 4 -> [ 6@0 ]  5 -> [ 6@0 ]  ].
+30131 | network_0/router_4_4/vc_allocator | Input grants = [ 6 -> 4  ], output grants = [ 4 -> 6  ].
+30131 | network_0/router_4_4 | Assigning VC 0 at output 2 to VC 0 at input 3.
+30131 | network_0/router_4_4 | Completed VC allocation for VC 0 at input 3 (front: 192022).
+30131 | network_0/router_4_4 |   Acquiring assigned VC 0 at output 2.
+30131 | network_0/router_4_4/buf_3/vc_0 | Changing state from vc_alloc to active.
+30131 | network_0/router_4_4 | Beginning switch allocation for VC 0 at input 3 (front: 192022).
+30131 | network_0/router_4_4 |   Requesting output 2.0 (non-spec, pri: 0).
+30131 | network_0/router_4_4/sw_allocator | Input requests = [ 3 -> [ 2@0 ]  ], output requests = [ 2 -> [ 3@0 ]  ].
+30131 | network_0/router_4_4/sw_allocator | Input grants = [ 3 -> 2  ], output grants = [ 2 -> 3  ].
+30131 | network_0/router_4_4 | Assigning output 2.0 to VC 0 at input 3.0.
+30131 | network_0/router_4_4 | Completed switch allocation for VC 0 at input 3 (front: 192022).
+30131 | network_0/router_4_4 |   Scheduling switch connection from input 3.0 to output 2.0.
+30131 | network_0/router_4_4 | Updating lookahead routing information for flit 192022.
+30131 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 3, destination 44).
+30132 | network_0/router_4_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+30132 | network_0/router_4_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 2.0.
+30132 | network_0/router_4_4 | Buffering flit 192022 at output 2.
+30132 | network_0/router_4_4 | Sending flit 192022 to channel at output 2.
+30133 | network_0/network_0_fchan_146 | Beginning channel traversal for flit 192022 with delay 1.
+30133 | network_0/network_0_fchan_146 | Completed channel traversal for flit 192022.
+30134 | network_0/router_5_4 | Received flit 192022 from channel at input 3.
+30134 | network_0/router_5_4 | Adding flit 192022 to VC 0 at input 3 (state: idle, empty).
+30134 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 0 at input 3 (front: 192022).
+30134 | network_0/router_5_4/buf_3/vc_0 | Changing state from idle to vc_alloc.
+30134 | network_0/router_5_4 | Beginning VC allocation for VC 0 at input 3 (front: 192022).
+30134 | network_0/router_5_4 |   Requesting VC 0 at output 4 (in_pri: 0, out_pri: 0).
+30134 | network_0/router_5_4 |   Requesting VC 1 at output 4 (in_pri: 0, out_pri: 0).
+30134 | network_0/router_5_4/vc_allocator | Input requests = [ 0 -> [ 2@0 3@0 ]  6 -> [ 8@0 9@0 ]  ], output requests = [ 2 -> [ 0@0 ]  3 -> [ 0@0 ]  8 -> [ 6@0 ]  9 -> [ 6@0 ]  ].
+30134 | network_0/router_5_4/vc_allocator | Input grants = [ 0 -> 3  6 -> 8  ], output grants = [ 3 -> 0  8 -> 6  ].
+30134 | network_0/router_5_4 | Assigning VC 0 at output 4 to VC 0 at input 3.
+30134 | network_0/router_5_4 | Completed VC allocation for VC 0 at input 3 (front: 192022).
+30134 | network_0/router_5_4 |   Acquiring assigned VC 0 at output 4.
+30134 | network_0/router_5_4/buf_3/vc_0 | Changing state from vc_alloc to active.
+30134 | network_0/router_5_4 | Beginning switch allocation for VC 0 at input 3 (front: 192022).
+30134 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+30134 | network_0/router_5_4/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  3 -> [ 4@0 ]  ], output requests = [ 1 -> [ 0@0 ]  4 -> [ 3@0 ]  ].
+30134 | network_0/router_5_4/sw_allocator | Input grants = [ 0 -> 1  3 -> 4  ], output grants = [ 1 -> 0  4 -> 3  ].
+30134 | network_0/router_5_4 | Assigning output 4.0 to VC 0 at input 3.0.
+30134 | network_0/router_5_4 | Completed switch allocation for VC 0 at input 3 (front: 192022).
+30134 | network_0/router_5_4 |   Scheduling switch connection from input 3.0 to output 4.0.
+30135 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+30135 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+30135 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+30135 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+30136 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+30136 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+30137 | node44 | Ejecting flit 192022 (packet 192022) from VC 0.
+30137 | node44 | Injecting credit for VC 0 into subnet 0.
+30137 | node44 | Retiring flit 192022 (packet 192022, src = 15, dest = 44, hops = 8, flat = 26).
+30137 | node44 | Retiring packet 192022 (plat = 26, nlat = 26, frag = 0, src = 15, dest = 44).
+Additional hops: 4740
+Adding flit 192119 as NACK at time 30139
+Reenqueueing errored packet 192119 at time 30146
+Reenqueueing errored packet 191978 at time 30147
+Additional hops: 4747
+Adding flit 192321 as NACK at time 30188
+Reenqueueing errored packet 192321 at time 30203
+Additional hops: 4760
+Adding flit 192852 as NACK at time 30286
+Additional hops: 4768
+Adding flit 192980 as NACK at time 30290
+Reenqueueing errored packet 192980 at time 30307
+Reenqueueing errored packet 192852 at time 30313
+Additional hops: 4774
+Adding flit 194056 as NACK at time 30451
+Reenqueueing errored packet 194056 at time 30464
+Additional hops: 4780
+Adding flit 194287 as NACK at time 30487
+Reenqueueing errored packet 194287 at time 30500
+Additional hops: 4792
+Adding flit 194441 as NACK at time 30530
+Reenqueueing errored packet 194441 at time 30555
+Uncorrectable 3
+Additional hops: 4803
+Adding flit 194799 as NACK at time 30577
+Reenqueueing errored packet 194799 at time 30600
+Additional hops: 4811
+Adding flit 195065 as NACK at time 30608
+Additional hops: 4826
+Adding flit 195016 as NACK at time 30622
+Reenqueueing errored packet 195065 at time 30625
+Reenqueueing errored packet 195016 at time 30653
+Additional hops: 4831
+Adding flit 196654 as NACK at time 30853
+Reenqueueing errored packet 196654 at time 30864
+Additional hops: 4841
+Adding flit 196832 as NACK at time 30897
+Reenqueueing errored packet 196832 at time 30918
+Additional hops: 4847
+Adding flit 197180 as NACK at time 30941
+Additional hops: 4858
+Adding flit 197114 as NACK at time 30947
+Reenqueueing errored packet 197180 at time 30954
+Reenqueueing errored packet 197114 at time 30970
+Additional hops: 4865
+Adding flit 197547 as NACK at time 31005
+Reenqueueing errored packet 197547 at time 31020
+Additional hops: 4872
+Adding flit 197881 as NACK at time 31060
+Reenqueueing errored packet 197881 at time 31075
+Additional hops: 4884
+Adding flit 198632 as NACK at time 31203
+Additional hops: 4895
+Adding flit 198707 as NACK at time 31214
+Reenqueueing errored packet 198632 at time 31228
+Reenqueueing errored packet 198707 at time 31237
+Additional hops: 4900
+Adding flit 199054 as NACK at time 31250
+Reenqueueing errored packet 199054 at time 31261
+Additional hops: 4906
+Adding flit 199294 as NACK at time 31289
+Reenqueueing errored packet 199294 at time 31302
+Additional hops: 4912
+Adding flit 200022 as NACK at time 31403
+Reenqueueing errored packet 200022 at time 31416
+Additional hops: 4919
+Adding flit 200305 as NACK at time 31452
+Additional hops: 4926
+Adding flit 200374 as NACK at time 31461
+Reenqueueing errored packet 200305 at time 31467
+Reenqueueing errored packet 200374 at time 31476
+Additional hops: 4938
+Adding flit 200865 as NACK at time 31553
+Additional hops: 4945
+Adding flit 200968 as NACK at time 31556
+Reenqueueing errored packet 200968 at time 31571
+Reenqueueing errored packet 200865 at time 31578
+Additional hops: 4958
+Adding flit 201059 as NACK at time 31587
+Additional hops: 4963
+Adding flit 201330 as NACK at time 31607
+Additional hops: 4968
+Adding flit 201354 as NACK at time 31610
+Reenqueueing errored packet 201059 at time 31614
+Reenqueueing errored packet 201330 at time 31618
+Reenqueueing errored packet 201354 at time 31621
+Additional hops: 4977
+Adding flit 201493 as NACK at time 31647
+Reenqueueing errored packet 201493 at time 31666
+Additional hops: 4985
+Adding flit 201744 as NACK at time 31683
+Reenqueueing errored packet 201744 at time 31700
+Additional hops: 4995
+Adding flit 201871 as NACK at time 31709
+Reenqueueing errored packet 201871 at time 31730
+Additional hops: 5006
+Adding flit 202094 as NACK at time 31751
+Additional hops: 5015
+Adding flit 202205 as NACK at time 31765
+Reenqueueing errored packet 202094 at time 31774
+Reenqueueing errored packet 202205 at time 31784
+Additional hops: 5024
+Adding flit 202374 as NACK at time 31794
+Additional hops: 5030
+Adding flit 202457 as NACK at time 31796
+Reenqueueing errored packet 202457 at time 31809
+Reenqueueing errored packet 202374 at time 31813
+Additional hops: 5040
+Adding flit 202540 as NACK at time 31820
+Reenqueueing errored packet 202540 at time 31841
+Additional hops: 5049
+Adding flit 203113 as NACK at time 31902
+Uncorrectable 3
+Additional hops: 5057
+Adding flit 203171 as NACK at time 31909
+Reenqueueing errored packet 203113 at time 31921
+Reenqueueing errored packet 203171 at time 31926
+Additional hops: 5064
+Adding flit 203429 as NACK at time 31942
+Reenqueueing errored packet 203429 at time 31957
+Additional hops: 5070
+Adding flit 203610 as NACK at time 31966
+Reenqueueing errored packet 203610 at time 31979
+Additional hops: 5076
+Adding flit 203895 as NACK at time 32018
+Reenqueueing errored packet 203895 at time 32031
+Additional hops: 5081
+Adding flit 204256 as NACK at time 32071
+Reenqueueing errored packet 204256 at time 32082
+Additional hops: 5091
+Adding flit 204620 as NACK at time 32146
+Additional hops: 5096
+Adding flit 204790 as NACK at time 32155
+Additional hops: 5105
+Adding flit 204724 as NACK at time 32159
+Reenqueueing errored packet 204790 at time 32166
+Reenqueueing errored packet 204620 at time 32167
+Reenqueueing errored packet 204724 at time 32178
+Additional hops: 5111
+Adding flit 205206 as NACK at time 32228
+Reenqueueing errored packet 205206 at time 32241
+Additional hops: 5120
+Adding flit 205862 as NACK at time 32335
+Additional hops: 5127
+Adding flit 205924 as NACK at time 32340
+Additional hops: 5136
+Adding flit 205906 as NACK at time 32342
+Reenqueueing errored packet 205862 at time 32354
+Reenqueueing errored packet 205924 at time 32355
+Additional hops: 5139
+Adding flit 206107 as NACK at time 32359
+Reenqueueing errored packet 205906 at time 32361
+Reenqueueing errored packet 206107 at time 32366
+Additional hops: 5149
+Adding flit 206083 as NACK at time 32376
+Reenqueueing errored packet 206083 at time 32397
+Additional hops: 5156
+Adding flit 206515 as NACK at time 32436
+Additional hops: 5163
+Adding flit 206501 as NACK at time 32436
+Reenqueueing errored packet 206501 at time 32451
+Reenqueueing errored packet 206515 at time 32451
+Additional hops: 5171
+Adding flit 206665 as NACK at time 32462
+Additional hops: 5182
+Adding flit 206675 as NACK at time 32472
+Reenqueueing errored packet 206665 at time 32479
+Reenqueueing errored packet 206675 at time 32495
+Additional hops: 5188
+Adding flit 207450 as NACK at time 32578
+Reenqueueing errored packet 207450 at time 32591
+Additional hops: 5193
+Adding flit 207958 as NACK at time 32654
+Reenqueueing errored packet 207958 at time 32665
+Additional hops: 5205
+Adding flit 208035 as NACK at time 32685
+Reenqueueing errored packet 208035 at time 32710
+Additional hops: 5215
+Adding flit 208647 as NACK at time 32777
+Additional hops: 5225
+Adding flit 208664 as NACK at time 32778
+Reenqueueing errored packet 208647 at time 32798
+Reenqueueing errored packet 208664 at time 32799
+Additional hops: 5235
+Adding flit 209341 as NACK at time 32885
+Reenqueueing errored packet 209341 at time 32906
+Additional hops: 5245
+Adding flit 209536 as NACK at time 32914
+Additional hops: 5255
+Adding flit 209653 as NACK at time 32929
+Reenqueueing errored packet 209536 at time 32935
+Reenqueueing errored packet 209653 at time 32950
+Additional hops: 5259
+Adding flit 210022 as NACK at time 32967
+Reenqueueing errored packet 210022 at time 32976
+Additional hops: 5263
+Adding flit 210149 as NACK at time 32985
+Reenqueueing errored packet 210149 at time 32994
+Additional hops: 5270
+Adding flit 210193 as NACK at time 33002
+Reenqueueing errored packet 210193 at time 33017
+Additional hops: 5280
+Adding flit 210713 as NACK at time 33088
+Reenqueueing errored packet 210713 at time 33109
+Additional hops: 5287
+Adding flit 210940 as NACK at time 33115
+Reenqueueing errored packet 210940 at time 33130
+Additional hops: 5295
+Adding flit 211125 as NACK at time 33147
+Reenqueueing errored packet 211125 at time 33164
+Additional hops: 5304
+Adding flit 211279 as NACK at time 33174
+Additional hops: 5311
+Adding flit 211420 as NACK at time 33189
+Reenqueueing errored packet 211279 at time 33193
+Reenqueueing errored packet 211420 at time 33204
+Additional hops: 5321
+Adding flit 211538 as NACK at time 33217
+Reenqueueing errored packet 211538 at time 33238
+Additional hops: 5329
+Adding flit 211826 as NACK at time 33259
+Reenqueueing errored packet 211826 at time 33276
+Additional hops: 5335
+Adding flit 212056 as NACK at time 33288
+Reenqueueing errored packet 212056 at time 33301
+Additional hops: 5344
+Adding flit 212226 as NACK at time 33321
+Uncorrectable 3
+Additional hops: 5353
+Adding flit 212340 as NACK at time 33339
+Reenqueueing errored packet 212226 at time 33340
+Reenqueueing errored packet 212340 at time 33358
+Additional hops: 5357
+Adding flit 212612 as NACK at time 33363
+Reenqueueing errored packet 212612 at time 33372
+Additional hops: 5361
+Adding flit 212804 as NACK at time 33389
+Reenqueueing errored packet 212804 at time 33398
+Additional hops: 5373
+Adding flit 213407 as NACK at time 33511
+Reenqueueing errored packet 213407 at time 33536
+Additional hops: 5384
+Adding flit 213649 as NACK at time 33542
+Additional hops: 5392
+Adding flit 213814 as NACK at time 33560
+Reenqueueing errored packet 213649 at time 33565
+Reenqueueing errored packet 213814 at time 33577
+Additional hops: 5399
+Adding flit 214206 as NACK at time 33616
+Reenqueueing errored packet 214206 at time 33631
+Additional hops: 5410
+Adding flit 214253 as NACK at time 33635
+Additional hops: 5418
+Adding flit 214380 as NACK at time 33645
+Reenqueueing errored packet 214253 at time 33658
+Reenqueueing errored packet 214380 at time 33662
+Uncorrectable 3
+Additional hops: 5426
+Adding flit 214532 as NACK at time 33666
+Additional hops: 5434
+Adding flit 214590 as NACK at time 33678
+Reenqueueing errored packet 214532 at time 33683
+Uncorrectable 3
+Additional hops: 5443
+Adding flit 214625 as NACK at time 33688
+Reenqueueing errored packet 214590 at time 33695
+Reenqueueing errored packet 214625 at time 33707
+Additional hops: 5449
+Adding flit 215155 as NACK at time 33756
+Reenqueueing errored packet 215155 at time 33769
+Additional hops: 5453
+Adding flit 216814 as NACK at time 34012
+Reenqueueing errored packet 216814 at time 34021
+Additional hops: 5461
+Adding flit 217122 as NACK at time 34071
+Reenqueueing errored packet 217122 at time 34088
+Additional hops: 5468
+Adding flit 218103 as NACK at time 34221
+Reenqueueing errored packet 218103 at time 34236
+Additional hops: 5473
+Adding flit 218426 as NACK at time 34265
+Reenqueueing errored packet 218426 at time 34276
+Additional hops: 5483
+Adding flit 218520 as NACK at time 34294
+Reenqueueing errored packet 218520 at time 34315
+Additional hops: 5490
+Adding flit 218778 as NACK at time 34332
+Reenqueueing errored packet 218778 at time 34347
+Additional hops: 5493
+Adding flit 219673 as NACK at time 34458
+Reenqueueing errored packet 219673 at time 34465
+Additional hops: 5503
+Adding flit 219809 as NACK at time 34499
+Reenqueueing errored packet 219809 at time 34520
+Additional hops: 5507
+Adding flit 220118 as NACK at time 34531
+Reenqueueing errored packet 220118 at time 34540
+Additional hops: 5515
+Adding flit 220110 as NACK at time 34543
+Reenqueueing errored packet 220110 at time 34560
+Additional hops: 5521
+Adding flit 220425 as NACK at time 34586
+Reenqueueing errored packet 220425 at time 34599
+Additional hops: 5530
+Adding flit 221434 as NACK at time 34761
+Additional hops: 5535
+Adding flit 221645 as NACK at time 34778
+Reenqueueing errored packet 221434 at time 34780
+Reenqueueing errored packet 221645 at time 34789
+Additional hops: 5541
+Adding flit 222448 as NACK at time 34906
+Reenqueueing errored packet 222448 at time 34919
+Additional hops: 5547
+Adding flit 222761 as NACK at time 34951
+Additional hops: 5552
+Adding flit 222841 as NACK at time 34960
+Reenqueueing errored packet 222761 at time 34964
+Reenqueueing errored packet 222841 at time 34971
+Additional hops: 5567
+Adding flit 224802 as NACK at time 35287
+Additional hops: 5574
+Adding flit 225105 as NACK at time 35311
+Reenqueueing errored packet 224802 at time 35318
+Reenqueueing errored packet 225105 at time 35326
+Additional hops: 5581
+Adding flit 225404 as NACK at time 35354
+Reenqueueing errored packet 225404 at time 35369
+Additional hops: 5589
+Adding flit 225973 as NACK at time 35446
+Reenqueueing errored packet 225973 at time 35463
+Additional hops: 5596
+Adding flit 226146 as NACK at time 35472
+Reenqueueing errored packet 226146 at time 35487
+Additional hops: 5605
+Adding flit 226338 as NACK at time 35507
+Reenqueueing errored packet 226338 at time 35526
+Additional hops: 5614
+Adding flit 227036 as NACK at time 35614
+Reenqueueing errored packet 227036 at time 35633
+Additional hops: 5617
+Adding flit 227304 as NACK at time 35640
+Reenqueueing errored packet 227304 at time 35647
+Additional hops: 5627
+Adding flit 227827 as NACK at time 35739
+Uncorrectable 3
+Additional hops: 5639
+Adding flit 227812 as NACK at time 35743
+Additional hops: 5644
+Adding flit 228003 as NACK at time 35751
+Reenqueueing errored packet 227827 at time 35760
+Reenqueueing errored packet 228003 at time 35762
+Reenqueueing errored packet 227812 at time 35768
+Additional hops: 5655
+Adding flit 229062 as NACK at time 35932
+Additional hops: 5663
+Adding flit 229218 as NACK at time 35948
+Reenqueueing errored packet 229062 at time 35955
+Reenqueueing errored packet 229218 at time 35965
+Additional hops: 5670
+Adding flit 229399 as NACK at time 35975
+Additional hops: 5680
+Adding flit 229405 as NACK at time 35985
+Reenqueueing errored packet 229399 at time 35990
+Reenqueueing errored packet 229405 at time 36006
+Additional hops: 5687
+Adding flit 229933 as NACK at time 36057
+Reenqueueing errored packet 229933 at time 36072
+Additional hops: 5698
+Adding flit 230168 as NACK at time 36106
+Additional hops: 5706
+Adding flit 230324 as NACK at time 36119
+Reenqueueing errored packet 230168 at time 36129
+Reenqueueing errored packet 230324 at time 36136
+Additional hops: 5711
+Adding flit 230476 as NACK at time 36136
+Reenqueueing errored packet 230476 at time 36147
+Additional hops: 5722
+Adding flit 230645 as NACK at time 36178
+Reenqueueing errored packet 230645 at time 36201
+Additional hops: 5731
+Adding flit 231281 as NACK at time 36275
+Reenqueueing errored packet 231281 at time 36294
+Additional hops: 5744
+Adding flit 231860 as NACK at time 36374
+Additional hops: 5752
+Adding flit 232007 as NACK at time 36382
+Reenqueueing errored packet 232007 at time 36399
+Reenqueueing errored packet 231860 at time 36401
+Additional hops: 5761
+Adding flit 232553 as NACK at time 36472
+Additional hops: 5773
+Adding flit 232510 as NACK at time 36474
+Additional hops: 5778
+Adding flit 232712 as NACK at time 36482
+Reenqueueing errored packet 232553 at time 36491
+Reenqueueing errored packet 232712 at time 36493
+Additional hops: 5788
+Adding flit 232696 as NACK at time 36496
+Reenqueueing errored packet 232510 at time 36499
+Additional hops: 5791
+Adding flit 232891 as NACK at time 36505
+Reenqueueing errored packet 232891 at time 36512
+Reenqueueing errored packet 232696 at time 36517
+Additional hops: 5799
+Adding flit 233371 as NACK at time 36594
+Additional hops: 5804
+Adding flit 233428 as NACK at time 36594
+Reenqueueing errored packet 233428 at time 36605
+Reenqueueing errored packet 233371 at time 36611
+Additional hops: 5811
+Adding flit 233723 as NACK at time 36647
+Additional hops: 5821
+Adding flit 233738 as NACK at time 36658
+Reenqueueing errored packet 233723 at time 36662
+Reenqueueing errored packet 233738 at time 36679
+Additional hops: 5826
+Adding flit 233984 as NACK at time 36682
+Reenqueueing errored packet 233984 at time 36693
+Additional hops: 5832
+Adding flit 234150 as NACK at time 36712
+Reenqueueing errored packet 234150 at time 36725
+Additional hops: 5838
+Adding flit 234468 as NACK at time 36764
+Reenqueueing errored packet 234468 at time 36777
+Additional hops: 5844
+Adding flit 235122 as NACK at time 36865
+Reenqueueing errored packet 235122 at time 36878
+Additional hops: 5852
+Adding flit 235171 as NACK at time 36879
+Reenqueueing errored packet 235171 at time 36896
+Additional hops: 5865
+Adding flit 235305 as NACK at time 36918
+Reenqueueing errored packet 235305 at time 36945
+Additional hops: 5875
+Adding flit 235925 as NACK at time 37002
+Additional hops: 5887
+Adding flit 235992 as NACK at time 37019
+Reenqueueing errored packet 235925 at time 37023
+Reenqueueing errored packet 235992 at time 37044
+Additional hops: 5894
+Adding flit 236427 as NACK at time 37072
+Reenqueueing errored packet 236427 at time 37087
+Additional hops: 5906
+Adding flit 236507 as NACK at time 37099
+Additional hops: 5914
+Adding flit 236653 as NACK at time 37112
+Reenqueueing errored packet 236507 at time 37124
+Reenqueueing errored packet 236653 at time 37129
+Additional hops: 5922
+Adding flit 237534 as NACK at time 37248
+Reenqueueing errored packet 237534 at time 37265
+Additional hops: 5927
+Adding flit 237982 as NACK at time 37309
+Reenqueueing errored packet 237982 at time 37320
+Additional hops: 5934
+Adding flit 239280 as NACK at time 37516
+Reenqueueing errored packet 239280 at time 37531
+Additional hops: 5941
+Adding flit 239540 as NACK at time 37559
+Reenqueueing errored packet 239540 at time 37574
+Additional hops: 5948
+Adding flit 239893 as NACK at time 37615
+Reenqueueing errored packet 239893 at time 37630
+Additional hops: 5955
+Adding flit 240049 as NACK at time 37640
+Reenqueueing errored packet 240049 at time 37655
+Uncorrectable 3
+Additional hops: 5964
+Adding flit 240211 as NACK at time 37669
+Reenqueueing errored packet 240211 at time 37688
+Additional hops: 5971
+Adding flit 241232 as NACK at time 37833
+Reenqueueing errored packet 241232 at time 37848
+Additional hops: 5982
+Adding flit 241420 as NACK at time 37873
+Reenqueueing errored packet 241420 at time 37896
+Additional hops: 5995
+Adding flit 241636 as NACK at time 37915
+Reenqueueing errored packet 241636 at time 37942
+Additional hops: 5998
+Adding flit 242194 as NACK at time 37971
+Reenqueueing errored packet 242194 at time 37978
+Additional hops: 6009
+Adding flit 242245 as NACK at time 38003
+Reenqueueing errored packet 242245 at time 38026
+Additional hops: 6014
+Adding flit 243143 as NACK at time 38123
+Reenqueueing errored packet 243143 at time 38134
+Additional hops: 6020
+Adding flit 243589 as NACK at time 38198
+Reenqueueing errored packet 243589 at time 38211
+Additional hops: 6029
+Adding flit 243806 as NACK at time 38243
+Reenqueueing errored packet 243806 at time 38262
+Additional hops: 6038
+Adding flit 244284 as NACK at time 38314
+Additional hops: 6046
+Adding flit 244375 as NACK at time 38323
+Reenqueueing errored packet 244284 at time 38333
+Additional hops: 6057
+Adding flit 244388 as NACK at time 38335
+Reenqueueing errored packet 244375 at time 38340
+Reenqueueing errored packet 244388 at time 38358
+Additional hops: 6068
+Adding flit 244660 as NACK at time 38380
+Additional hops: 6071
+Adding flit 244915 as NACK at time 38394
+Reenqueueing errored packet 244915 at time 38401
+Reenqueueing errored packet 244660 at time 38403
+Uncorrectable 3
+Additional hops: 6083
+Adding flit 244942 as NACK at time 38423
+Reenqueueing errored packet 244942 at time 38448
+Additional hops: 6089
+Adding flit 245272 as NACK at time 38458
+Reenqueueing errored packet 245272 at time 38471
+Additional hops: 6097
+Adding flit 245343 as NACK at time 38476
+Reenqueueing errored packet 245343 at time 38493
+Additional hops: 6099
+Adding flit 245977 as NACK at time 38561
+Reenqueueing errored packet 245977 at time 38566
+Additional hops: 6107
+Adding flit 245909 as NACK at time 38568
+Reenqueueing errored packet 245909 at time 38585
+Additional hops: 6111
+Adding flit 246570 as NACK at time 38658
+Reenqueueing errored packet 246570 at time 38667
+Additional hops: 6122
+Adding flit 246693 as NACK at time 38702
+Reenqueueing errored packet 246693 at time 38725
+Additional hops: 6125
+Adding flit 247000 as NACK at time 38730
+Reenqueueing errored packet 247000 at time 38737
+Additional hops: 6133
+Adding flit 247517 as NACK at time 38820
+Additional hops: 6143
+Adding flit 247491 as NACK at time 38823
+Reenqueueing errored packet 247517 at time 38837
+Reenqueueing errored packet 247491 at time 38844
+Additional hops: 6149
+Adding flit 247868 as NACK at time 38874
+Reenqueueing errored packet 247868 at time 38887
+Additional hops: 6159
+Adding flit 247966 as NACK at time 38901
+Uncorrectable 3
+Additional hops: 6168
+Adding flit 248125 as NACK at time 38921
+Reenqueueing errored packet 247966 at time 38922
+Reenqueueing errored packet 248125 at time 38940
+Additional hops: 6172
+Adding flit 248616 as NACK at time 38988
+Reenqueueing errored packet 248616 at time 38997
+Additional hops: 6179
+Adding flit 249346 as NACK at time 39110
+Reenqueueing errored packet 249346 at time 39125
+Additional hops: 6185
+Adding flit 249541 as NACK at time 39139
+Reenqueueing errored packet 249541 at time 39152
+Additional hops: 6188
+Adding flit 250960 as NACK at time 39350
+Reenqueueing errored packet 250960 at time 39357
+Additional hops: 6194
+Adding flit 250962 as NACK at time 39359
+Additional hops: 6200
+Adding flit 250960 as NACK at time 39368
+Reenqueueing errored packet 250962 at time 39372
+Additional hops: 6212
+Adding flit 250943 as NACK at time 39373
+Reenqueueing errored packet 250960 at time 39381
+Reenqueueing errored packet 250943 at time 39398
+Additional hops: 6219
+Adding flit 251800 as NACK at time 39491
+Reenqueueing errored packet 251800 at time 39506
+Additional hops: 6231
+Adding flit 252025 as NACK at time 39537
+Reenqueueing errored packet 252025 at time 39562
+Additional hops: 6236
+Adding flit 252795 as NACK at time 39638
+Reenqueueing errored packet 252795 at time 39649
+Additional hops: 6244
+Adding flit 252950 as NACK at time 39672
+Reenqueueing errored packet 252950 at time 39689
+Additional hops: 6254
+Adding flit 253213 as NACK at time 39721
+Reenqueueing errored packet 253213 at time 39742
+Additional hops: 6258
+Adding flit 253495 as NACK at time 39744
+Reenqueueing errored packet 253495 at time 39753
+Additional hops: 6267
+Adding flit 253537 as NACK at time 39766
+Additional hops: 6275
+Adding flit 253596 as NACK at time 39772
+Reenqueueing errored packet 253537 at time 39785
+Reenqueueing errored packet 253596 at time 39789
+Additional hops: 6284
+Adding flit 254230 as NACK at time 39880
+Reenqueueing errored packet 254230 at time 39899
+Additional hops: 6290
+Adding flit 254615 as NACK at time 39935
+Reenqueueing errored packet 254615 at time 39948
+Class 0:
+Packet latency average = 21.1083
+	minimum = 5
+	maximum = 127
+Network latency average = 20.974
+	minimum = 5
+	maximum = 52
+Slowest packet = 191665
+Flit latency average = 20.9815
+	minimum = 5
+	maximum = 52
+Slowest flit = 204913
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.100038
+	minimum = 0.0938 (at node 28)
+	maximum = 0.1069 (at node 51)
+Accepted packet rate average = 0.100033
+	minimum = 0.0928 (at node 21)
+	maximum = 0.1057 (at node 28)
+Injected flit rate average = 0.100038
+	minimum = 0.0938 (at node 28)
+	maximum = 0.1069 (at node 51)
+Accepted flit rate average= 0.100033
+	minimum = 0.0928 (at node 21)
+	maximum = 0.1057 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 139 (139 measured)
+latency change    = 0.000850412
+throughput change = 0.0029053
+Additional hops: 6295
+Adding flit 255296 as NACK at time 40040
+Reenqueueing errored packet 255296 at time 40051
+Additional hops: 6299
+Adding flit 255439 as NACK at time 40059
+Reenqueueing errored packet 255439 at time 40068
+Additional hops: 6301
+Adding flit 256172 as NACK at time 40176
+Reenqueueing errored packet 256172 at time 40181
+Additional hops: 6308
+Adding flit 256287 as NACK at time 40208
+Additional hops: 6313
+Adding flit 256384 as NACK at time 40216
+Reenqueueing errored packet 256287 at time 40223
+Reenqueueing errored packet 256384 at time 40227
+Additional hops: 6326
+Adding flit 256738 as NACK at time 40298
+Additional hops: 6334
+Adding flit 256940 as NACK at time 40317
+Reenqueueing errored packet 256738 at time 40325
+Reenqueueing errored packet 256940 at time 40334
+Additional hops: 6338
+Adding flit 257588 as NACK at time 40409
+Reenqueueing errored packet 257588 at time 40418
+Additional hops: 6341
+Adding flit 257749 as NACK at time 40430
+Reenqueueing errored packet 257749 at time 40437
+Uncorrectable 3
+Additional hops: 6353
+Adding flit 257727 as NACK at time 40454
+Reenqueueing errored packet 257727 at time 40479
+Additional hops: 6362
+Adding flit 258208 as NACK at time 40520
+Reenqueueing errored packet 258208 at time 40539
+Additional hops: 6367
+Adding flit 258573 as NACK at time 40560
+Reenqueueing errored packet 258573 at time 40571
+Additional hops: 6379
+Adding flit 259093 as NACK at time 40659
+Additional hops: 6391
+Adding flit 259159 as NACK at time 40671
+Reenqueueing errored packet 259093 at time 40684
+Reenqueueing errored packet 259159 at time 40696
+Additional hops: 6399
+Adding flit 259882 as NACK at time 40769
+Reenqueueing errored packet 259882 at time 40786
+Additional hops: 6405
+Adding flit 260418 as NACK at time 40849
+Reenqueueing errored packet 260418 at time 40862
+Additional hops: 6413
+Adding flit 260685 as NACK at time 40893
+Reenqueueing errored packet 260685 at time 40910
+Additional hops: 6421
+Adding flit 261704 as NACK at time 41052
+Reenqueueing errored packet 261704 at time 41069
+Additional hops: 6425
+Adding flit 262116 as NACK at time 41101
+Reenqueueing errored packet 262116 at time 41110
+Additional hops: 6433
+Adding flit 262530 as NACK at time 41181
+Reenqueueing errored packet 262530 at time 41198
+Additional hops: 6440
+Adding flit 262759 as NACK at time 41213
+Additional hops: 6449
+Adding flit 262810 as NACK at time 41226
+Reenqueueing errored packet 262759 at time 41228
+Reenqueueing errored packet 262810 at time 41245
+Additional hops: 6462
+Adding flit 263961 as NACK at time 41410
+Additional hops: 6471
+Adding flit 264089 as NACK at time 41419
+Reenqueueing errored packet 263961 at time 41437
+Reenqueueing errored packet 264089 at time 41438
+Additional hops: 6473
+Adding flit 265467 as NACK at time 41603
+Reenqueueing errored packet 265467 at time 41608
+Additional hops: 6486
+Adding flit 265412 as NACK at time 41629
+Reenqueueing errored packet 265412 at time 41656
+Additional hops: 6496
+Adding flit 266064 as NACK at time 41720
+Reenqueueing errored packet 266064 at time 41741
+Uncorrectable 3
+Additional hops: 6506
+Adding flit 266638 as NACK at time 41809
+Reenqueueing errored packet 266638 at time 41830
+Additional hops: 6517
+Adding flit 266777 as NACK at time 41833
+Reenqueueing errored packet 266777 at time 41856
+Additional hops: 6523
+Adding flit 267596 as NACK at time 41944
+Reenqueueing errored packet 267596 at time 41957
+Additional hops: 6530
+Adding flit 268573 as NACK at time 42101
+Reenqueueing errored packet 268573 at time 42116
+Additional hops: 6539
+Adding flit 268911 as NACK at time 42163
+Reenqueueing errored packet 268911 at time 42182
+Additional hops: 6543
+Adding flit 269220 as NACK at time 42197
+Additional hops: 6550
+Adding flit 269221 as NACK at time 42205
+Reenqueueing errored packet 269220 at time 42206
+Reenqueueing errored packet 269221 at time 42220
+Additional hops: 6558
+Adding flit 269603 as NACK at time 42269
+Reenqueueing errored packet 269603 at time 42286
+Additional hops: 6572
+Adding flit 269716 as NACK at time 42304
+Additional hops: 6582
+Adding flit 269951 as NACK at time 42329
+Additional hops: 6592
+Adding flit 269954 as NACK at time 42331
+Reenqueueing errored packet 269716 at time 42333
+Reenqueueing errored packet 269951 at time 42350
+Reenqueueing errored packet 269954 at time 42352
+Additional hops: 6603
+Adding flit 270109 as NACK at time 42356
+Reenqueueing errored packet 270109 at time 42379
+Additional hops: 6608
+Adding flit 270822 as NACK at time 42446
+Reenqueueing errored packet 270822 at time 42457
+Additional hops: 6617
+Adding flit 271597 as NACK at time 42580
+Additional hops: 6628
+Adding flit 271647 as NACK at time 42592
+Reenqueueing errored packet 271597 at time 42599
+Reenqueueing errored packet 271647 at time 42615
+Additional hops: 6639
+Adding flit 271838 as NACK at time 42618
+Reenqueueing errored packet 271838 at time 42641
+Additional hops: 6646
+Adding flit 272641 as NACK at time 42733
+Reenqueueing errored packet 272641 at time 42748
+Additional hops: 6650
+Adding flit 272855 as NACK at time 42759
+Reenqueueing errored packet 272855 at time 42768
+Additional hops: 6663
+Adding flit 272795 as NACK at time 42774
+Additional hops: 6667
+Adding flit 273003 as NACK at time 42781
+Reenqueueing errored packet 273003 at time 42790
+Reenqueueing errored packet 272795 at time 42801
+Additional hops: 6678
+Adding flit 274003 as NACK at time 42952
+Additional hops: 6683
+Adding flit 274278 as NACK at time 42974
+Reenqueueing errored packet 274003 at time 42975
+Reenqueueing errored packet 274278 at time 42985
+Additional hops: 6697
+Adding flit 274289 as NACK at time 43003
+Additional hops: 6707
+Adding flit 274493 as NACK at time 43027
+Reenqueueing errored packet 274289 at time 43032
+Additional hops: 6712
+Adding flit 274700 as NACK at time 43044
+Reenqueueing errored packet 274493 at time 43048
+Reenqueueing errored packet 274700 at time 43055
+Additional hops: 6720
+Adding flit 275018 as NACK at time 43098
+Reenqueueing errored packet 275018 at time 43115
+Additional hops: 6726
+Adding flit 275157 as NACK at time 43115
+Additional hops: 6734
+Adding flit 275194 as NACK at time 43125
+Reenqueueing errored packet 275157 at time 43128
+Reenqueueing errored packet 275194 at time 43142
+Additional hops: 6740
+Adding flit 275682 as NACK at time 43198
+Reenqueueing errored packet 275682 at time 43211
+Additional hops: 6746
+Adding flit 276144 as NACK at time 43267
+Reenqueueing errored packet 276144 at time 43280
+Additional hops: 6754
+Adding flit 276243 as NACK at time 43289
+Additional hops: 6758
+Adding flit 276351 as NACK at time 43297
+Reenqueueing errored packet 276351 at time 43306
+Reenqueueing errored packet 276243 at time 43306
+Additional hops: 6761
+Adding flit 276606 as NACK at time 43332
+Reenqueueing errored packet 276606 at time 43339
+Additional hops: 6765
+Adding flit 276663 as NACK at time 43344
+Reenqueueing errored packet 276663 at time 43353
+Additional hops: 6774
+Adding flit 277157 as NACK at time 43438
+Reenqueueing errored packet 277157 at time 43457
+Additional hops: 6785
+Adding flit 277211 as NACK at time 43457
+Reenqueueing errored packet 277211 at time 43480
+Additional hops: 6796
+Adding flit 277441 as NACK at time 43495
+Reenqueueing errored packet 277441 at time 43518
+Additional hops: 6805
+Adding flit 278239 as NACK at time 43608
+Additional hops: 6810
+Adding flit 278361 as NACK at time 43612
+Reenqueueing errored packet 278361 at time 43623
+Reenqueueing errored packet 278239 at time 43627
+Additional hops: 6817
+Adding flit 279058 as NACK at time 43726
+Reenqueueing errored packet 279058 at time 43741
+Additional hops: 6831
+Adding flit 279111 as NACK at time 43756
+Reenqueueing errored packet 279111 at time 43785
+Additional hops: 6843
+Adding flit 281150 as NACK at time 44074
+Additional hops: 6852
+Adding flit 281329 as NACK at time 44092
+Reenqueueing errored packet 281150 at time 44099
+Reenqueueing errored packet 281329 at time 44111
+Additional hops: 6864
+Adding flit 281601 as NACK at time 44142
+Reenqueueing errored packet 281601 at time 44167
+Additional hops: 6869
+Adding flit 281982 as NACK at time 44181
+Reenqueueing errored packet 281982 at time 44192
+Additional hops: 6881
+Adding flit 281928 as NACK at time 44194
+Additional hops: 6892
+Adding flit 282055 as NACK at time 44211
+Reenqueueing errored packet 281928 at time 44219
+Additional hops: 6898
+Adding flit 282235 as NACK at time 44225
+Additional hops: 6911
+Adding flit 282135 as NACK at time 44231
+Reenqueueing errored packet 282055 at time 44234
+Reenqueueing errored packet 282235 at time 44238
+Reenqueueing errored packet 282135 at time 44258
+Additional hops: 6917
+Adding flit 282463 as NACK at time 44265
+Additional hops: 6925
+Adding flit 282488 as NACK at time 44276
+Reenqueueing errored packet 282463 at time 44278
+Reenqueueing errored packet 282488 at time 44293
+Additional hops: 6931
+Adding flit 282888 as NACK at time 44333
+Reenqueueing errored packet 282888 at time 44346
+Additional hops: 6940
+Adding flit 283153 as NACK at time 44382
+Reenqueueing errored packet 283153 at time 44401
+Uncorrectable 3
+Additional hops: 6947
+Adding flit 283623 as NACK at time 44450
+Additional hops: 6959
+Adding flit 283591 as NACK at time 44462
+Reenqueueing errored packet 283623 at time 44465
+Reenqueueing errored packet 283591 at time 44487
+Additional hops: 6968
+Adding flit 284224 as NACK at time 44553
+Reenqueueing errored packet 284224 at time 44572
+Additional hops: 6974
+Adding flit 284493 as NACK at time 44587
+Reenqueueing errored packet 284493 at time 44600
+Additional hops: 6983
+Adding flit 284594 as NACK at time 44610
+Reenqueueing errored packet 284594 at time 44629
+Additional hops: 6996
+Adding flit 284836 as NACK at time 44657
+Reenqueueing errored packet 284836 at time 44684
+Additional hops: 7005
+Adding flit 285493 as NACK at time 44743
+Reenqueueing errored packet 285493 at time 44762
+Additional hops: 7012
+Adding flit 285715 as NACK at time 44777
+Reenqueueing errored packet 285715 at time 44792
+Additional hops: 7015
+Adding flit 286295 as NACK at time 44858
+Reenqueueing errored packet 286295 at time 44865
+Additional hops: 7025
+Adding flit 286477 as NACK at time 44909
+Additional hops: 7036
+Adding flit 286575 as NACK at time 44925
+Reenqueueing errored packet 286477 at time 44930
+Reenqueueing errored packet 286575 at time 44948
+Additional hops: 7045
+Adding flit 287104 as NACK at time 45003
+Additional hops: 7054
+Adding flit 287173 as NACK at time 45013
+Reenqueueing errored packet 287104 at time 45022
+Reenqueueing errored packet 287173 at time 45032
+Additional hops: 7063
+Adding flit 287852 as NACK at time 45120
+Reenqueueing errored packet 287852 at time 45139
+Additional hops: 7069
+Adding flit 288405 as NACK at time 45200
+Reenqueueing errored packet 288405 at time 45213
+Additional hops: 7077
+Adding flit 288563 as NACK at time 45230
+Additional hops: 7087
+Adding flit 288573 as NACK at time 45238
+Reenqueueing errored packet 288563 at time 45247
+Reenqueueing errored packet 288573 at time 45259
+Additional hops: 7093
+Adding flit 289347 as NACK at time 45344
+Reenqueueing errored packet 289347 at time 45357
+Additional hops: 7101
+Adding flit 289533 as NACK at time 45382
+Additional hops: 7111
+Adding flit 289574 as NACK at time 45395
+Reenqueueing errored packet 289533 at time 45399
+Additional hops: 7116
+Adding flit 289733 as NACK at time 45404
+Reenqueueing errored packet 289733 at time 45415
+Reenqueueing errored packet 289574 at time 45416
+Additional hops: 7126
+Adding flit 289771 as NACK at time 45424
+Reenqueueing errored packet 289771 at time 45445
+Additional hops: 7134
+Adding flit 291480 as NACK at time 45686
+Reenqueueing errored packet 291480 at time 45703
+Additional hops: 7143
+Adding flit 291624 as NACK at time 45712
+Reenqueueing errored packet 291624 at time 45731
+Additional hops: 7155
+Adding flit 292855 as NACK at time 45914
+Reenqueueing errored packet 292855 at time 45939
+Additional hops: 7160
+Adding flit 293182 as NACK at time 45944
+Reenqueueing errored packet 293182 at time 45955
+Additional hops: 7170
+Adding flit 293380 as NACK at time 45989
+Reenqueueing errored packet 293380 at time 46010
+Additional hops: 7178
+Adding flit 293920 as NACK at time 46073
+Reenqueueing errored packet 293920 at time 46090
+Additional hops: 7189
+Adding flit 294149 as NACK at time 46119
+Reenqueueing errored packet 294149 at time 46142
+Additional hops: 7195
+Adding flit 295450 as NACK at time 46308
+Reenqueueing errored packet 295450 at time 46321
+Additional hops: 7205
+Adding flit 295812 as NACK at time 46368
+Reenqueueing errored packet 295812 at time 46389
+Additional hops: 7214
+Adding flit 296297 as NACK at time 46445
+Reenqueueing errored packet 296297 at time 46464
+Additional hops: 7220
+Adding flit 296721 as NACK at time 46500
+Reenqueueing errored packet 296721 at time 46513
+Additional hops: 7228
+Adding flit 296909 as NACK at time 46531
+Reenqueueing errored packet 296909 at time 46548
+Additional hops: 7235
+Adding flit 297206 as NACK at time 46575
+Reenqueueing errored packet 297206 at time 46590
+Additional hops: 7241
+Adding flit 297485 as NACK at time 46617
+Reenqueueing errored packet 297485 at time 46630
+Additional hops: 7251
+Adding flit 297748 as NACK at time 46671
+Reenqueueing errored packet 297748 at time 46692
+Additional hops: 7258
+Adding flit 297980 as NACK at time 46697
+Additional hops: 7271
+Adding flit 297857 as NACK at time 46699
+Reenqueueing errored packet 297980 at time 46712
+Reenqueueing errored packet 297857 at time 46726
+Uncorrectable 3
+Additional hops: 7280
+Adding flit 298275 as NACK at time 46746
+Reenqueueing errored packet 298275 at time 46765
+Additional hops: 7287
+Adding flit 298479 as NACK at time 46773
+Reenqueueing errored packet 298479 at time 46788
+Additional hops: 7294
+Adding flit 298702 as NACK at time 46809
+Additional hops: 7303
+Adding flit 298657 as NACK at time 46809
+Reenqueueing errored packet 298702 at time 46824
+Reenqueueing errored packet 298657 at time 46828
+Additional hops: 7310
+Adding flit 299490 as NACK at time 46931
+Reenqueueing errored packet 299490 at time 46946
+Additional hops: 7317
+Adding flit 300725 as NACK at time 47126
+Reenqueueing errored packet 300725 at time 47141
+Additional hops: 7323
+Adding flit 301265 as NACK at time 47208
+Reenqueueing errored packet 301265 at time 47221
+Additional hops: 7331
+Adding flit 301502 as NACK at time 47247
+Additional hops: 7337
+Adding flit 301638 as NACK at time 47262
+Reenqueueing errored packet 301502 at time 47264
+Reenqueueing errored packet 301638 at time 47275
+Additional hops: 7339
+Adding flit 301884 as NACK at time 47290
+Reenqueueing errored packet 301884 at time 47295
+Additional hops: 7345
+Adding flit 301923 as NACK at time 47310
+Reenqueueing errored packet 301923 at time 47323
+Additional hops: 7357
+Adding flit 302684 as NACK at time 47448
+Additional hops: 7366
+Adding flit 302884 as NACK at time 47469
+Reenqueueing errored packet 302684 at time 47473
+Reenqueueing errored packet 302884 at time 47488
+Additional hops: 7376
+Adding flit 303562 as NACK at time 47584
+Reenqueueing errored packet 303562 at time 47605
+Additional hops: 7384
+Adding flit 304030 as NACK at time 47649
+Additional hops: 7393
+Adding flit 304102 as NACK at time 47660
+Reenqueueing errored packet 304030 at time 47666
+Reenqueueing errored packet 304102 at time 47679
+Additional hops: 7403
+Adding flit 304960 as NACK at time 47794
+Reenqueueing errored packet 304960 at time 47815
+Additional hops: 7411
+Adding flit 306224 as NACK at time 47992
+Reenqueueing errored packet 306224 at time 48009
+Additional hops: 7422
+Adding flit 306362 as NACK at time 48025
+Additional hops: 7429
+Adding flit 306463 as NACK at time 48027
+Additional hops: 7440
+Adding flit 306406 as NACK at time 48030
+Reenqueueing errored packet 306463 at time 48042
+Reenqueueing errored packet 306362 at time 48048
+Reenqueueing errored packet 306406 at time 48053
+Additional hops: 7450
+Adding flit 306591 as NACK at time 48057
+Reenqueueing errored packet 306591 at time 48078
+Additional hops: 7456
+Adding flit 306912 as NACK at time 48091
+Reenqueueing errored packet 306912 at time 48104
+Additional hops: 7460
+Adding flit 308031 as NACK at time 48272
+Reenqueueing errored packet 308031 at time 48281
+Additional hops: 7462
+Adding flit 308311 as NACK at time 48312
+Reenqueueing errored packet 308311 at time 48317
+Additional hops: 7468
+Adding flit 308487 as NACK at time 48350
+Reenqueueing errored packet 308487 at time 48363
+Additional hops: 7474
+Adding flit 308681 as NACK at time 48380
+Reenqueueing errored packet 308681 at time 48393
+Additional hops: 7483
+Adding flit 308793 as NACK at time 48404
+Reenqueueing errored packet 308793 at time 48423
+Additional hops: 7489
+Adding flit 309050 as NACK at time 48433
+Additional hops: 7498
+Adding flit 309012 as NACK at time 48435
+Reenqueueing errored packet 309050 at time 48446
+Reenqueueing errored packet 309012 at time 48454
+Additional hops: 7508
+Adding flit 310484 as NACK at time 48667
+Reenqueueing errored packet 310484 at time 48688
+Additional hops: 7514
+Adding flit 310733 as NACK at time 48696
+Reenqueueing errored packet 310733 at time 48709
+Additional hops: 7523
+Adding flit 311191 as NACK at time 48783
+Additional hops: 7527
+Adding flit 311407 as NACK at time 48801
+Reenqueueing errored packet 311191 at time 48802
+Reenqueueing errored packet 311407 at time 48810
+Uncorrectable 3
+Additional hops: 7537
+Adding flit 311448 as NACK at time 48826
+Additional hops: 7545
+Adding flit 311645 as NACK at time 48846
+Reenqueueing errored packet 311448 at time 48847
+Additional hops: 7553
+Adding flit 311696 as NACK at time 48855
+Reenqueueing errored packet 311645 at time 48863
+Reenqueueing errored packet 311696 at time 48872
+Additional hops: 7562
+Adding flit 312746 as NACK at time 49028
+Additional hops: 7568
+Adding flit 312836 as NACK at time 49034
+Reenqueueing errored packet 312836 at time 49047
+Reenqueueing errored packet 312746 at time 49047
+Additional hops: 7575
+Adding flit 313076 as NACK at time 49073
+Additional hops: 7584
+Adding flit 313053 as NACK at time 49074
+Reenqueueing errored packet 313076 at time 49088
+Reenqueueing errored packet 313053 at time 49093
+Additional hops: 7594
+Adding flit 313553 as NACK at time 49154
+Reenqueueing errored packet 313553 at time 49175
+Additional hops: 7600
+Adding flit 313886 as NACK at time 49191
+Reenqueueing errored packet 313886 at time 49204
+Additional hops: 7607
+Adding flit 314121 as NACK at time 49234
+Additional hops: 7614
+Adding flit 314186 as NACK at time 49243
+Reenqueueing errored packet 314121 at time 49249
+Reenqueueing errored packet 314186 at time 49258
+Additional hops: 7628
+Adding flit 314247 as NACK at time 49275
+Reenqueueing errored packet 314247 at time 49304
+Additional hops: 7633
+Adding flit 314621 as NACK at time 49317
+Reenqueueing errored packet 314621 at time 49328
+Additional hops: 7639
+Adding flit 314900 as NACK at time 49362
+Reenqueueing errored packet 314900 at time 49375
+Additional hops: 7642
+Adding flit 315121 as NACK at time 49387
+Reenqueueing errored packet 315121 at time 49394
+Additional hops: 7650
+Adding flit 315081 as NACK at time 49395
+Reenqueueing errored packet 315081 at time 49412
+Uncorrectable 3
+Additional hops: 7658
+Adding flit 315405 as NACK at time 49449
+Reenqueueing errored packet 315405 at time 49466
+Additional hops: 7667
+Adding flit 316123 as NACK at time 49567
+Additional hops: 7674
+Adding flit 316193 as NACK at time 49573
+Reenqueueing errored packet 316123 at time 49586
+Reenqueueing errored packet 316193 at time 49588
+Additional hops: 7683
+Adding flit 316323 as NACK at time 49605
+Additional hops: 7693
+Adding flit 316337 as NACK at time 49607
+Reenqueueing errored packet 316323 at time 49624
+Additional hops: 7704
+Adding flit 316441 as NACK at time 49626
+Reenqueueing errored packet 316337 at time 49628
+Reenqueueing errored packet 316441 at time 49649
+Additional hops: 7709
+Adding flit 317023 as NACK at time 49698
+Reenqueueing errored packet 317023 at time 49709
+Additional hops: 7719
+Adding flit 317632 as NACK at time 49805
+Reenqueueing errored packet 317632 at time 49826
+Additional hops: 7728
+Adding flit 317955 as NACK at time 49851
+Reenqueueing errored packet 317955 at time 49870
+Additional hops: 7735
+Adding flit 318138 as NACK at time 49876
+Reenqueueing errored packet 318138 at time 49891
+Additional hops: 7747
+Adding flit 318417 as NACK at time 49936
+Reenqueueing errored packet 318417 at time 49961
+Class 0:
+Packet latency average = 21.1119
+	minimum = 5
+	maximum = 127
+Network latency average = 20.9831
+	minimum = 5
+	maximum = 52
+Slowest packet = 191665
+Flit latency average = 20.9868
+	minimum = 5
+	maximum = 52
+Slowest flit = 204913
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.100105
+	minimum = 0.0959 (at node 27)
+	maximum = 0.10605 (at node 51)
+Accepted packet rate average = 0.100114
+	minimum = 0.0932 (at node 21)
+	maximum = 0.1051 (at node 28)
+Injected flit rate average = 0.100105
+	minimum = 0.0959 (at node 27)
+	maximum = 0.10605 (at node 51)
+Accepted flit rate average= 0.100114
+	minimum = 0.0932 (at node 21)
+	maximum = 0.1051 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 125 (125 measured)
+latency change    = 0.000172102
+throughput change = 0.000811574
+Additional hops: 7753
+Adding flit 319062 as NACK at time 50014
+Reenqueueing errored packet 319062 at time 50027
+Additional hops: 7758
+Adding flit 319643 as NACK at time 50105
+Reenqueueing errored packet 319643 at time 50116
+Additional hops: 7769
+Adding flit 320109 as NACK at time 50196
+Additional hops: 7774
+Adding flit 320342 as NACK at time 50214
+Reenqueueing errored packet 320109 at time 50219
+Reenqueueing errored packet 320342 at time 50225
+Additional hops: 7781
+Adding flit 320492 as NACK at time 50243
+Additional hops: 7792
+Adding flit 320458 as NACK at time 50251
+Reenqueueing errored packet 320492 at time 50258
+Reenqueueing errored packet 320458 at time 50274
+Uncorrectable 3
+Additional hops: 7801
+Adding flit 321139 as NACK at time 50351
+Reenqueueing errored packet 321139 at time 50370
+Additional hops: 7808
+Adding flit 321749 as NACK at time 50435
+Additional hops: 7818
+Adding flit 321708 as NACK at time 50440
+Reenqueueing errored packet 321749 at time 50450
+Reenqueueing errored packet 321708 at time 50461
+Additional hops: 7829
+Adding flit 322019 as NACK at time 50490
+Reenqueueing errored packet 322019 at time 50513
+Additional hops: 7841
+Adding flit 322677 as NACK at time 50599
+Reenqueueing errored packet 322677 at time 50624
+Additional hops: 7852
+Adding flit 323479 as NACK at time 50723
+Reenqueueing errored packet 323479 at time 50746
+Additional hops: 7861
+Adding flit 323676 as NACK at time 50747
+Reenqueueing errored packet 323676 at time 50766
+Additional hops: 7871
+Adding flit 323905 as NACK at time 50785
+Additional hops: 7877
+Adding flit 324098 as NACK at time 50801
+Reenqueueing errored packet 323905 at time 50806
+Reenqueueing errored packet 324098 at time 50814
+Additional hops: 7884
+Adding flit 324172 as NACK at time 50816
+Reenqueueing errored packet 324172 at time 50831
+Additional hops: 7889
+Adding flit 325208 as NACK at time 50978
+Additional hops: 7898
+Adding flit 325151 as NACK at time 50981
+Reenqueueing errored packet 325208 at time 50989
+Reenqueueing errored packet 325151 at time 51000
+Additional hops: 7906
+Adding flit 326046 as NACK at time 51122
+Reenqueueing errored packet 326046 at time 51139
+Additional hops: 7914
+Adding flit 326236 as NACK at time 51155
+Reenqueueing errored packet 326236 at time 51172
+Additional hops: 7918
+Adding flit 327317 as NACK at time 51303
+Reenqueueing errored packet 327317 at time 51312
+Additional hops: 7925
+Adding flit 327533 as NACK at time 51344
+Reenqueueing errored packet 327533 at time 51359
+Additional hops: 7939
+Adding flit 327744 as NACK at time 51402
+Uncorrectable 3
+Additional hops: 7947
+Adding flit 327905 as NACK at time 51408
+Reenqueueing errored packet 327905 at time 51425
+Reenqueueing errored packet 327744 at time 51431
+Additional hops: 7951
+Adding flit 328189 as NACK at time 51438
+Reenqueueing errored packet 328189 at time 51447
+Additional hops: 7961
+Adding flit 328457 as NACK at time 51501
+Additional hops: 7967
+Adding flit 328538 as NACK at time 51502
+Reenqueueing errored packet 328538 at time 51515
+Reenqueueing errored packet 328457 at time 51522
+Additional hops: 7974
+Adding flit 328758 as NACK at time 51540
+Reenqueueing errored packet 328758 at time 51555
+Additional hops: 7981
+Adding flit 329534 as NACK at time 51657
+Reenqueueing errored packet 329534 at time 51672
+Additional hops: 7995
+Adding flit 330032 as NACK at time 51747
+Reenqueueing errored packet 330032 at time 51776
+Additional hops: 8003
+Adding flit 330944 as NACK at time 51873
+Reenqueueing errored packet 330944 at time 51890
+Additional hops: 8009
+Adding flit 331439 as NACK at time 51947
+Reenqueueing errored packet 331439 at time 51960
+Additional hops: 8016
+Adding flit 331852 as NACK at time 52019
+Reenqueueing errored packet 331852 at time 52034
+Additional hops: 8023
+Adding flit 332046 as NACK at time 52053
+Reenqueueing errored packet 332046 at time 52068
+Additional hops: 8031
+Adding flit 332219 as NACK at time 52084
+Reenqueueing errored packet 332219 at time 52101
+Additional hops: 8036
+Adding flit 332388 as NACK at time 52104
+Additional hops: 8041
+Adding flit 332391 as NACK at time 52105
+Reenqueueing errored packet 332388 at time 52115
+Reenqueueing errored packet 332391 at time 52116
+Additional hops: 8047
+Adding flit 333353 as NACK at time 52252
+Reenqueueing errored packet 333353 at time 52265
+Additional hops: 8053
+Adding flit 333629 as NACK at time 52295
+Reenqueueing errored packet 333629 at time 52308
+Additional hops: 8056
+Adding flit 333814 as NACK at time 52315
+Reenqueueing errored packet 333814 at time 52322
+Additional hops: 8064
+Adding flit 333999 as NACK at time 52363
+Reenqueueing errored packet 333999 at time 52380
+Additional hops: 8072
+Adding flit 334460 as NACK at time 52433
+Reenqueueing errored packet 334460 at time 52450
+Additional hops: 8077
+Adding flit 334653 as NACK at time 52454
+Reenqueueing errored packet 334653 at time 52465
+Additional hops: 8083
+Adding flit 334905 as NACK at time 52494
+Reenqueueing errored packet 334905 at time 52507
+Additional hops: 8092
+Adding flit 335021 as NACK at time 52522
+Reenqueueing errored packet 335021 at time 52541
+Additional hops: 8105
+Adding flit 335340 as NACK at time 52584
+Additional hops: 8112
+Adding flit 335503 as NACK at time 52593
+Reenqueueing errored packet 335503 at time 52608
+Reenqueueing errored packet 335340 at time 52611
+Additional hops: 8121
+Adding flit 335788 as NACK at time 52639
+Reenqueueing errored packet 335788 at time 52658
+Additional hops: 8127
+Adding flit 335997 as NACK at time 52660
+Additional hops: 8137
+Adding flit 335930 as NACK at time 52662
+Reenqueueing errored packet 335997 at time 52673
+Reenqueueing errored packet 335930 at time 52683
+Additional hops: 8144
+Adding flit 336155 as NACK at time 52689
+Reenqueueing errored packet 336155 at time 52704
+Uncorrectable 3
+Additional hops: 8151
+Adding flit 336374 as NACK at time 52720
+Additional hops: 8159
+Adding flit 336433 as NACK at time 52731
+Reenqueueing errored packet 336374 at time 52735
+Additional hops: 8169
+Adding flit 336458 as NACK at time 52740
+Reenqueueing errored packet 336433 at time 52748
+Reenqueueing errored packet 336458 at time 52761
+Additional hops: 8180
+Adding flit 336728 as NACK at time 52785
+Reenqueueing errored packet 336728 at time 52808
+Additional hops: 8186
+Adding flit 337148 as NACK at time 52835
+Additional hops: 8193
+Adding flit 337146 as NACK at time 52838
+Reenqueueing errored packet 337148 at time 52848
+Reenqueueing errored packet 337146 at time 52853
+Additional hops: 8198
+Adding flit 337811 as NACK at time 52941
+Additional hops: 8209
+Adding flit 337758 as NACK at time 52951
+Reenqueueing errored packet 337811 at time 52952
+Additional hops: 8222
+Adding flit 337738 as NACK at time 52954
+Reenqueueing errored packet 337758 at time 52974
+Reenqueueing errored packet 337738 at time 52981
+Additional hops: 8227
+Adding flit 338117 as NACK at time 52988
+Additional hops: 8235
+Adding flit 338066 as NACK at time 52991
+Reenqueueing errored packet 338117 at time 52999
+Reenqueueing errored packet 338066 at time 53008
+Additional hops: 8245
+Adding flit 338881 as NACK at time 53129
+Additional hops: 8258
+Adding flit 338948 as NACK at time 53147
+Reenqueueing errored packet 338881 at time 53150
+Reenqueueing errored packet 338948 at time 53174
+Additional hops: 8263
+Adding flit 339679 as NACK at time 53240
+Reenqueueing errored packet 339679 at time 53251
+Additional hops: 8271
+Adding flit 340147 as NACK at time 53322
+Reenqueueing errored packet 340147 at time 53339
+Additional hops: 8278
+Adding flit 340365 as NACK at time 53352
+Reenqueueing errored packet 340365 at time 53367
+Additional hops: 8288
+Adding flit 341090 as NACK at time 53482
+Reenqueueing errored packet 341090 at time 53503
+Additional hops: 8297
+Adding flit 341513 as NACK at time 53540
+Reenqueueing errored packet 341513 at time 53559
+Additional hops: 8303
+Adding flit 341753 as NACK at time 53569
+Reenqueueing errored packet 341753 at time 53582
+Additional hops: 8310
+Adding flit 342804 as NACK at time 53734
+Reenqueueing errored packet 342804 at time 53749
+Additional hops: 8322
+Adding flit 342869 as NACK at time 53760
+Reenqueueing errored packet 342869 at time 53785
+Additional hops: 8331
+Adding flit 343428 as NACK at time 53841
+Reenqueueing errored packet 343428 at time 53860
+Additional hops: 8340
+Adding flit 343747 as NACK at time 53892
+Reenqueueing errored packet 343747 at time 53911
+Additional hops: 8347
+Adding flit 344940 as NACK at time 54078
+Reenqueueing errored packet 344940 at time 54093
+Additional hops: 8353
+Adding flit 345484 as NACK at time 54159
+Reenqueueing errored packet 345484 at time 54172
+Additional hops: 8362
+Adding flit 346169 as NACK at time 54276
+Reenqueueing errored packet 346169 at time 54295
+Additional hops: 8372
+Adding flit 346431 as NACK at time 54322
+Reenqueueing errored packet 346431 at time 54343
+Additional hops: 8382
+Adding flit 346700 as NACK at time 54362
+Reenqueueing errored packet 346700 at time 54383
+Uncorrectable 3
+Additional hops: 8392
+Adding flit 346846 as NACK at time 54384
+Reenqueueing errored packet 346846 at time 54405
+Additional hops: 8397
+Adding flit 347699 as NACK at time 54500
+Reenqueueing errored packet 347699 at time 54511
+Additional hops: 8402
+Adding flit 348335 as NACK at time 54596
+Additional hops: 8417
+Adding flit 348201 as NACK at time 54606
+Reenqueueing errored packet 348335 at time 54607
+Reenqueueing errored packet 348201 at time 54637
+Additional hops: 8425
+Adding flit 348643 as NACK at time 54655
+Reenqueueing errored packet 348643 at time 54672
+Additional hops: 8433
+Adding flit 349287 as NACK at time 54754
+Reenqueueing errored packet 349287 at time 54771
+Additional hops: 8441
+Adding flit 349393 as NACK at time 54774
+Reenqueueing errored packet 349393 at time 54791
+Additional hops: 8450
+Adding flit 349701 as NACK at time 54823
+Additional hops: 8460
+Adding flit 349767 as NACK at time 54837
+Reenqueueing errored packet 349701 at time 54842
+Additional hops: 8472
+Adding flit 349849 as NACK at time 54855
+Reenqueueing errored packet 349767 at time 54858
+Reenqueueing errored packet 349849 at time 54880
+Additional hops: 8478
+Adding flit 350178 as NACK at time 54889
+Reenqueueing errored packet 350178 at time 54902
+Additional hops: 8487
+Adding flit 350239 as NACK at time 54906
+Reenqueueing errored packet 350239 at time 54925
+Additional hops: 8490
+Adding flit 350777 as NACK at time 54974
+Reenqueueing errored packet 350777 at time 54981
+Additional hops: 8494
+Adding flit 352160 as NACK at time 55189
+Reenqueueing errored packet 352160 at time 55198
+Additional hops: 8501
+Adding flit 352289 as NACK at time 55215
+Additional hops: 8506
+Adding flit 352407 as NACK at time 55229
+Reenqueueing errored packet 352289 at time 55230
+Reenqueueing errored packet 352407 at time 55240
+Additional hops: 8515
+Adding flit 352514 as NACK at time 55258
+Reenqueueing errored packet 352514 at time 55277
+Additional hops: 8521
+Adding flit 352898 as NACK at time 55308
+Uncorrectable 3
+Additional hops: 8531
+Adding flit 352876 as NACK at time 55317
+Reenqueueing errored packet 352898 at time 55321
+Reenqueueing errored packet 352876 at time 55338
+Additional hops: 8540
+Adding flit 353226 as NACK at time 55368
+Additional hops: 8549
+Adding flit 353331 as NACK at time 55385
+Reenqueueing errored packet 353226 at time 55387
+Reenqueueing errored packet 353331 at time 55404
+Additional hops: 8559
+Adding flit 353682 as NACK at time 55443
+Reenqueueing errored packet 353682 at time 55464
+Additional hops: 8563
+Adding flit 354363 as NACK at time 55530
+Reenqueueing errored packet 354363 at time 55539
+Additional hops: 8574
+Adding flit 354712 as NACK at time 55614
+Reenqueueing errored packet 354712 at time 55637
+Uncorrectable 3
+Additional hops: 8582
+Adding flit 355061 as NACK at time 55654
+Additional hops: 8587
+Adding flit 355140 as NACK at time 55656
+Reenqueueing errored packet 355140 at time 55667
+Reenqueueing errored packet 355061 at time 55671
+Additional hops: 8597
+Adding flit 355360 as NACK at time 55704
+Reenqueueing errored packet 355360 at time 55725
+Additional hops: 8608
+Adding flit 355507 as NACK at time 55727
+Additional hops: 8615
+Adding flit 355614 as NACK at time 55731
+Reenqueueing errored packet 355614 at time 55746
+Reenqueueing errored packet 355507 at time 55750
+Additional hops: 8622
+Adding flit 356208 as NACK at time 55829
+Reenqueueing errored packet 356208 at time 55844
+Additional hops: 8630
+Adding flit 356774 as NACK at time 55919
+Reenqueueing errored packet 356774 at time 55936
+Additional hops: 8640
+Adding flit 358157 as NACK at time 56142
+Reenqueueing errored packet 358157 at time 56163
+Additional hops: 8645
+Adding flit 358520 as NACK at time 56186
+Reenqueueing errored packet 358520 at time 56197
+Additional hops: 8647
+Adding flit 358858 as NACK at time 56225
+Reenqueueing errored packet 358858 at time 56230
+Additional hops: 8654
+Adding flit 358884 as NACK at time 56244
+Reenqueueing errored packet 358884 at time 56259
+Additional hops: 8657
+Adding flit 359061 as NACK at time 56261
+Reenqueueing errored packet 359061 at time 56268
+Uncorrectable 3
+Additional hops: 8662
+Adding flit 359184 as NACK at time 56284
+Reenqueueing errored packet 359184 at time 56295
+Additional hops: 8669
+Adding flit 359278 as NACK at time 56305
+Reenqueueing errored packet 359278 at time 56320
+Uncorrectable 3
+Additional hops: 8679
+Adding flit 359569 as NACK at time 56359
+Reenqueueing errored packet 359569 at time 56380
+Additional hops: 8686
+Adding flit 360929 as NACK at time 56567
+Reenqueueing errored packet 360929 at time 56582
+Additional hops: 8691
+Adding flit 361131 as NACK at time 56593
+Additional hops: 8702
+Adding flit 361054 as NACK at time 56600
+Reenqueueing errored packet 361131 at time 56604
+Reenqueueing errored packet 361054 at time 56623
+Additional hops: 8710
+Adding flit 362067 as NACK at time 56748
+Reenqueueing errored packet 362067 at time 56765
+Additional hops: 8718
+Adding flit 362420 as NACK at time 56803
+Additional hops: 8726
+Adding flit 362515 as NACK at time 56816
+Reenqueueing errored packet 362420 at time 56820
+Reenqueueing errored packet 362515 at time 56833
+Additional hops: 8735
+Adding flit 362807 as NACK at time 56868
+Reenqueueing errored packet 362807 at time 56887
+Additional hops: 8746
+Adding flit 362922 as NACK at time 56893
+Reenqueueing errored packet 362922 at time 56916
+Additional hops: 8753
+Adding flit 363401 as NACK at time 56957
+Reenqueueing errored packet 363401 at time 56972
+Additional hops: 8756
+Adding flit 364014 as NACK at time 57035
+Reenqueueing errored packet 364014 at time 57042
+Additional hops: 8764
+Adding flit 364252 as NACK at time 57087
+Reenqueueing errored packet 364252 at time 57104
+Additional hops: 8771
+Adding flit 365349 as NACK at time 57253
+Reenqueueing errored packet 365349 at time 57268
+Additional hops: 8779
+Adding flit 366202 as NACK at time 57390
+Reenqueueing errored packet 366202 at time 57407
+Additional hops: 8786
+Adding flit 366335 as NACK at time 57410
+Reenqueueing errored packet 366335 at time 57425
+Additional hops: 8792
+Adding flit 366453 as NACK at time 57425
+Reenqueueing errored packet 366453 at time 57438
+Additional hops: 8802
+Adding flit 366575 as NACK at time 57455
+Reenqueueing errored packet 366575 at time 57476
+Additional hops: 8807
+Adding flit 366922 as NACK at time 57496
+Reenqueueing errored packet 366922 at time 57507
+Additional hops: 8811
+Adding flit 367653 as NACK at time 57600
+Reenqueueing errored packet 367653 at time 57609
+Additional hops: 8815
+Adding flit 368230 as NACK at time 57689
+Reenqueueing errored packet 368230 at time 57698
+Additional hops: 8823
+Adding flit 368796 as NACK at time 57788
+Additional hops: 8829
+Adding flit 368860 as NACK at time 57791
+Additional hops: 8833
+Adding flit 368967 as NACK at time 57801
+Reenqueueing errored packet 368860 at time 57804
+Reenqueueing errored packet 368796 at time 57805
+Reenqueueing errored packet 368967 at time 57810
+Additional hops: 8835
+Adding flit 369290 as NACK at time 57850
+Reenqueueing errored packet 369290 at time 57855
+Additional hops: 8842
+Adding flit 369459 as NACK at time 57891
+Additional hops: 8853
+Adding flit 369424 as NACK at time 57896
+Reenqueueing errored packet 369459 at time 57906
+Additional hops: 8859
+Adding flit 369629 as NACK at time 57915
+Reenqueueing errored packet 369424 at time 57919
+Reenqueueing errored packet 369629 at time 57928
+Additional hops: 8867
+Adding flit 369733 as NACK at time 57938
+Reenqueueing errored packet 369733 at time 57955
+Additional hops: 8876
+Adding flit 369865 as NACK at time 57962
+Reenqueueing errored packet 369865 at time 57981
+Additional hops: 8884
+Adding flit 371097 as NACK at time 58154
+Reenqueueing errored packet 371097 at time 58171
+Additional hops: 8892
+Adding flit 371273 as NACK at time 58184
+Reenqueueing errored packet 371273 at time 58201
+Additional hops: 8904
+Adding flit 371312 as NACK at time 58204
+Reenqueueing errored packet 371312 at time 58229
+Additional hops: 8912
+Adding flit 371574 as NACK at time 58230
+Reenqueueing errored packet 371574 at time 58247
+Additional hops: 8918
+Adding flit 371775 as NACK at time 58256
+Additional hops: 8926
+Adding flit 371805 as NACK at time 58265
+Reenqueueing errored packet 371775 at time 58269
+Reenqueueing errored packet 371805 at time 58282
+Additional hops: 8931
+Adding flit 372056 as NACK at time 58296
+Reenqueueing errored packet 372056 at time 58307
+Additional hops: 8940
+Adding flit 372252 as NACK at time 58338
+Reenqueueing errored packet 372252 at time 58357
+Additional hops: 8944
+Adding flit 372670 as NACK at time 58386
+Reenqueueing errored packet 372670 at time 58395
+Additional hops: 8954
+Adding flit 373614 as NACK at time 58549
+Reenqueueing errored packet 373614 at time 58570
+Additional hops: 8964
+Adding flit 374700 as NACK at time 58716
+Additional hops: 8970
+Adding flit 374788 as NACK at time 58719
+Reenqueueing errored packet 374788 at time 58732
+Reenqueueing errored packet 374700 at time 58737
+Uncorrectable 3
+Additional hops: 8977
+Adding flit 375214 as NACK at time 58789
+Additional hops: 8989
+Adding flit 375206 as NACK at time 58802
+Reenqueueing errored packet 375214 at time 58804
+Reenqueueing errored packet 375206 at time 58827
+Additional hops: 9001
+Adding flit 375503 as NACK at time 58847
+Reenqueueing errored packet 375503 at time 58872
+Additional hops: 9006
+Adding flit 376196 as NACK at time 58933
+Reenqueueing errored packet 376196 at time 58944
+Additional hops: 9013
+Adding flit 376239 as NACK at time 58945
+Additional hops: 9024
+Adding flit 376187 as NACK at time 58949
+Additional hops: 9028
+Adding flit 376354 as NACK at time 58953
+Reenqueueing errored packet 376239 at time 58960
+Reenqueueing errored packet 376354 at time 58962
+Reenqueueing errored packet 376187 at time 58972
+Additional hops: 9040
+Adding flit 376380 as NACK at time 58981
+Reenqueueing errored packet 376380 at time 59006
+Additional hops: 9046
+Adding flit 376765 as NACK at time 59020
+Reenqueueing errored packet 376765 at time 59033
+Additional hops: 9057
+Adding flit 377302 as NACK at time 59120
+Reenqueueing errored packet 377302 at time 59143
+Additional hops: 9066
+Adding flit 377597 as NACK at time 59167
+Reenqueueing errored packet 377597 at time 59186
+Additional hops: 9071
+Adding flit 378154 as NACK at time 59250
+Reenqueueing errored packet 378154 at time 59261
+Additional hops: 9084
+Adding flit 378157 as NACK at time 59275
+Additional hops: 9090
+Adding flit 378388 as NACK at time 59290
+Reenqueueing errored packet 378157 at time 59302
+Reenqueueing errored packet 378388 at time 59303
+Additional hops: 9097
+Adding flit 378716 as NACK at time 59345
+Reenqueueing errored packet 378716 at time 59360
+Additional hops: 9103
+Adding flit 378981 as NACK at time 59386
+Reenqueueing errored packet 378981 at time 59399
+Additional hops: 9112
+Adding flit 379383 as NACK at time 59458
+Additional hops: 9120
+Adding flit 379512 as NACK at time 59475
+Reenqueueing errored packet 379383 at time 59477
+Reenqueueing errored packet 379512 at time 59492
+Additional hops: 9127
+Adding flit 380124 as NACK at time 59559
+Additional hops: 9134
+Adding flit 380208 as NACK at time 59573
+Reenqueueing errored packet 380124 at time 59574
+Reenqueueing errored packet 380208 at time 59588
+Additional hops: 9142
+Adding flit 380457 as NACK at time 59614
+Additional hops: 9147
+Adding flit 380551 as NACK at time 59618
+Reenqueueing errored packet 380551 at time 59629
+Reenqueueing errored packet 380457 at time 59631
+Additional hops: 9158
+Adding flit 380552 as NACK at time 59637
+Additional hops: 9163
+Adding flit 380778 as NACK at time 59655
+Reenqueueing errored packet 380552 at time 59660
+Reenqueueing errored packet 380778 at time 59666
+Additional hops: 9168
+Adding flit 381317 as NACK at time 59742
+Additional hops: 9176
+Adding flit 381315 as NACK at time 59750
+Reenqueueing errored packet 381317 at time 59753
+Additional hops: 9182
+Adding flit 381369 as NACK at time 59753
+Reenqueueing errored packet 381369 at time 59766
+Reenqueueing errored packet 381315 at time 59767
+Additional hops: 9191
+Adding flit 381628 as NACK at time 59802
+Reenqueueing errored packet 381628 at time 59821
+Additional hops: 9198
+Adding flit 381780 as NACK at time 59823
+Reenqueueing errored packet 381780 at time 59838
+Additional hops: 9209
+Adding flit 381900 as NACK at time 59852
+Additional hops: 9221
+Adding flit 381962 as NACK at time 59864
+Reenqueueing errored packet 381900 at time 59875
+Additional hops: 9230
+Adding flit 382143 as NACK at time 59885
+Reenqueueing errored packet 381962 at time 59889
+Reenqueueing errored packet 382143 at time 59904
+Additional hops: 9238
+Adding flit 382770 as NACK at time 59984
+Class 0:
+Packet latency average = 21.0868
+	minimum = 5
+	maximum = 127
+Network latency average = 20.9589
+	minimum = 5
+	maximum = 52
+Slowest packet = 191665
+Flit latency average = 20.9614
+	minimum = 5
+	maximum = 52
+Slowest flit = 204913
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.100134
+	minimum = 0.0957 (at node 1)
+	maximum = 0.105167 (at node 11)
+Accepted packet rate average = 0.10014
+	minimum = 0.0950333 (at node 21)
+	maximum = 0.105367 (at node 52)
+Injected flit rate average = 0.100134
+	minimum = 0.0957 (at node 1)
+	maximum = 0.105167 (at node 11)
+Accepted flit rate average= 0.10014
+	minimum = 0.0950333 (at node 21)
+	maximum = 0.105367 (at node 52)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 127 (127 measured)
+latency change    = 0.00119103
+throughput change = 0.000254853
+Draining all recorded packets ...
+Reenqueueing errored packet 382770 at time 60001
+Draining remaining packets ...
+Time taken is 60075 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 21.089 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 127 (1 samples)
+Network latency average = 20.9609 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 52 (1 samples)
+Flit latency average = 20.9635 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 52 (1 samples)
+Fragmentation average = 0 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 0 (1 samples)
+Injected packet rate average = 0.100134 (1 samples)
+	minimum = 0.0957 (1 samples)
+	maximum = 0.105167 (1 samples)
+Accepted packet rate average = 0.10014 (1 samples)
+	minimum = 0.0950333 (1 samples)
+	maximum = 0.105367 (1 samples)
+Injected flit rate average = 0.100134 (1 samples)
+	minimum = 0.0957 (1 samples)
+	maximum = 0.105167 (1 samples)
+Accepted flit rate average = 0.10014 (1 samples)
+	minimum = 0.0950333 (1 samples)
+	maximum = 0.105367 (1 samples)
+Injected packet size average = 1 (1 samples)
+Accepted packet size average = 1 (1 samples)
+Hops average = 6.26464 (1 samples)
+Total run time 100.813

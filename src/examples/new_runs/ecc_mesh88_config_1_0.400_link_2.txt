@@ -1,0 +1,4199 @@
+BEGIN Configuration File: examples/ecc_mesh88_config_1_0.400_link_2
+// $Id$
+
+// Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+// Dragonfly
+//
+
+
+
+
+vc_buf_size = 256;
+
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = separable_input_first; 
+sw_allocator = separable_input_first;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 2.0;
+
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 10000;  
+
+
+routing_function = dor;
+num_vcs     = 2;
+
+priority = none;
+traffic       = uniform; 
+
+injection_rate = 0.4;
+packet_size = 1;
+injection_rate_uses_flits=1;
+
+topology = mesh;
+
+k  = 8;
+n  = 2;
+
+fer = 2;
+ecc = link;
+correctable = 1;
+
+watch_out=-;
+watch_file = watch.txt;
+
+ecc = link;
+
+stats_out = examples/ecc_mesh88_config_1_0.400_link_2.m;
+
+END Configuration File: examples/ecc_mesh88_config_1_0.400_link_2
+Requeued flit 591
+Requeued flit 647
+Requeued flit 783
+Requeued flit 832
+Requeued flit 1031
+Requeued flit 2416
+Requeued flit 2440
+Requeued flit 2049
+Requeued flit 3369
+Requeued flit 3187
+Requeued flit 3829
+Requeued flit 4129
+Requeued flit 5773
+Requeued flit 6018
+Requeued flit 6169
+Requeued flit 6366
+Requeued flit 7643
+Requeued flit 7905
+Requeued flit 8410
+Requeued flit 8658
+Requeued flit 8689
+Requeued flit 9006
+Requeued flit 9381
+Requeued flit 10212
+Requeued flit 9635
+Requeued flit 10267
+Requeued flit 10207
+Requeued flit 10432
+Requeued flit 11230
+Requeued flit 11119
+Requeued flit 11718
+Requeued flit 12219
+Requeued flit 11872
+Requeued flit 12363
+Requeued flit 12557
+Requeued flit 12961
+Requeued flit 13190
+Requeued flit 12866
+Requeued flit 13746
+Requeued flit 14244
+Requeued flit 14404
+Requeued flit 14429
+Requeued flit 14278
+Requeued flit 14908
+Requeued flit 15134
+Requeued flit 15519
+Requeued flit 16087
+Requeued flit 15915
+Requeued flit 16486
+Requeued flit 17019
+Requeued flit 17116
+Requeued flit 17218
+Requeued flit 18032
+Requeued flit 18093
+Requeued flit 18408
+Requeued flit 19085
+Requeued flit 19290
+Requeued flit 19296
+Requeued flit 19288
+Requeued flit 19818
+Requeued flit 20831
+Requeued flit 21756
+Requeued flit 21604
+Requeued flit 22087
+Requeued flit 21632
+Requeued flit 22671
+Requeued flit 22238
+Requeued flit 22643
+Requeued flit 23170
+Requeued flit 23264
+Requeued flit 23161
+Requeued flit 22931
+Requeued flit 22916
+Requeued flit 24617
+Requeued flit 24877
+Requeued flit 25633
+Requeued flit 25649
+Requeued flit 25800
+Requeued flit 26561
+Requeued flit 26483
+Requeued flit 27137
+Requeued flit 27458
+Requeued flit 28004
+Requeued flit 28582
+Requeued flit 29788
+Requeued flit 30309
+Requeued flit 29812
+Requeued flit 30323
+Requeued flit 30304
+Requeued flit 31648
+Requeued flit 31891
+Requeued flit 32112
+Requeued flit 33413
+Requeued flit 33150
+Requeued flit 34232
+Requeued flit 34755
+Requeued flit 34975
+Requeued flit 35070
+Requeued flit 35181
+Requeued flit 35681
+Requeued flit 35672
+Requeued flit 35933
+Requeued flit 36695
+Requeued flit 36960
+Requeued flit 36940
+Requeued flit 37048
+Requeued flit 39271
+Requeued flit 40137
+Requeued flit 40870
+Requeued flit 40782
+Requeued flit 41441
+Requeued flit 42418
+Requeued flit 42184
+Requeued flit 42586
+Requeued flit 42368
+Requeued flit 43436
+Requeued flit 43599
+Requeued flit 43644
+Requeued flit 44579
+Requeued flit 45212
+Requeued flit 45115
+Requeued flit 45712
+Requeued flit 46144
+Requeued flit 45575
+Requeued flit 46703
+Requeued flit 46622
+Requeued flit 46958
+Requeued flit 47880
+Requeued flit 49058
+Requeued flit 48967
+Requeued flit 49693
+Requeued flit 49618
+Requeued flit 50470
+Requeued flit 50685
+Requeued flit 51341
+Requeued flit 50940
+Requeued flit 51567
+Requeued flit 52028
+Requeued flit 51469
+Requeued flit 53131
+Requeued flit 53600
+Requeued flit 53888
+Requeued flit 54681
+Requeued flit 55139
+Requeued flit 55356
+Requeued flit 54988
+Requeued flit 56631
+Requeued flit 57226
+Requeued flit 58099
+Requeued flit 58842
+Requeued flit 59459
+Requeued flit 61106
+Requeued flit 61790
+Requeued flit 61768
+Requeued flit 62596
+Requeued flit 62426
+Requeued flit 62328
+Requeued flit 62369
+Requeued flit 63297
+Requeued flit 63349
+Requeued flit 63161
+Requeued flit 63727
+Requeued flit 63852
+Requeued flit 63907
+Requeued flit 64371
+Requeued flit 64546
+Requeued flit 65092
+Requeued flit 65569
+Requeued flit 65637
+Requeued flit 65968
+Requeued flit 66471
+Requeued flit 67041
+Requeued flit 67779
+Requeued flit 67662
+Requeued flit 68490
+Requeued flit 69822
+Requeued flit 70118
+Requeued flit 69730
+Requeued flit 70440
+Requeued flit 70433
+Requeued flit 70789
+Requeued flit 70782
+Requeued flit 70763
+Requeued flit 70475
+Requeued flit 71401
+Requeued flit 71436
+Requeued flit 71827
+Requeued flit 71858
+Requeued flit 72358
+Requeued flit 71919
+Requeued flit 73204
+Requeued flit 73085
+Requeued flit 72692
+Requeued flit 73430
+Requeued flit 74008
+Requeued flit 74034
+Requeued flit 74322
+Requeued flit 75653
+Requeued flit 76157
+Requeued flit 76232
+Requeued flit 76914
+Requeued flit 76701
+Requeued flit 77626
+Requeued flit 78003
+Requeued flit 78169
+Requeued flit 78792
+Requeued flit 80341
+Requeued flit 80425
+Requeued flit 81076
+Requeued flit 80806
+Requeued flit 81651
+Requeued flit 81531
+Requeued flit 81964
+Requeued flit 81550
+Requeued flit 82095
+Requeued flit 81982
+Requeued flit 82814
+Requeued flit 83888
+Requeued flit 84642
+Requeued flit 85267
+Requeued flit 85778
+Requeued flit 85831
+Requeued flit 85847
+Requeued flit 86628
+Requeued flit 86730
+Requeued flit 86849
+Requeued flit 86969
+Requeued flit 86883
+Requeued flit 86931
+Requeued flit 87185
+Requeued flit 87276
+Requeued flit 87159
+Requeued flit 88150
+Requeued flit 89073
+Requeued flit 89738
+Requeued flit 90175
+Requeued flit 90635
+Requeued flit 90350
+Requeued flit 91909
+Requeued flit 91855
+Requeued flit 93090
+Requeued flit 93075
+Requeued flit 93527
+Requeued flit 93439
+Requeued flit 94282
+Requeued flit 94536
+Requeued flit 95091
+Requeued flit 95640
+Requeued flit 95878
+Requeued flit 95630
+Requeued flit 96309
+Requeued flit 97556
+Requeued flit 97668
+Requeued flit 98093
+Requeued flit 98372
+Requeued flit 98867
+Requeued flit 99409
+Requeued flit 99847
+Requeued flit 99812
+Requeued flit 100331
+Requeued flit 101084
+Requeued flit 101754
+Requeued flit 102610
+Requeued flit 102350
+Requeued flit 103354
+Requeued flit 103201
+Requeued flit 103466
+Requeued flit 103879
+Requeued flit 103202
+Requeued flit 105460
+Requeued flit 105287
+Requeued flit 106725
+Requeued flit 106925
+Requeued flit 106601
+Requeued flit 107180
+Requeued flit 107319
+Requeued flit 107670
+Requeued flit 108685
+Requeued flit 108902
+Requeued flit 109112
+Requeued flit 108670
+Requeued flit 108788
+Requeued flit 109236
+Requeued flit 109435
+Requeued flit 109664
+Requeued flit 110342
+Requeued flit 110943
+Requeued flit 111106
+Requeued flit 112062
+Requeued flit 112062
+Requeued flit 111983
+Requeued flit 112315
+Requeued flit 112092
+Requeued flit 112529
+Requeued flit 112751
+Requeued flit 113177
+Requeued flit 112905
+Requeued flit 113286
+Requeued flit 113834
+Requeued flit 113507
+Requeued flit 114030
+Requeued flit 114191
+Requeued flit 114235
+Requeued flit 115027
+Requeued flit 115031
+Requeued flit 115041
+Requeued flit 115713
+Requeued flit 115775
+Requeued flit 116022
+Requeued flit 116065
+Requeued flit 117292
+Requeued flit 117783
+Requeued flit 117657
+Requeued flit 118423
+Requeued flit 119929
+Requeued flit 120887
+Requeued flit 120872
+Requeued flit 121499
+Requeued flit 122313
+Requeued flit 122327
+Requeued flit 122460
+Requeued flit 122785
+Requeued flit 123713
+Requeued flit 123022
+Requeued flit 123939
+Requeued flit 123921
+Requeued flit 123701
+Requeued flit 123619
+Requeued flit 124290
+Requeued flit 125307
+Requeued flit 125582
+Requeued flit 126547
+Requeued flit 127619
+Requeued flit 127582
+Requeued flit 128015
+Requeued flit 127747
+Requeued flit 128222
+Requeued flit 128307
+Requeued flit 128502
+Requeued flit 129509
+Requeued flit 129478
+Requeued flit 130843
+Requeued flit 131442
+Requeued flit 131242
+Requeued flit 131147
+Requeued flit 132226
+Requeued flit 131847
+Requeued flit 132502
+Requeued flit 133330
+Requeued flit 133548
+Requeued flit 134501
+Requeued flit 134822
+Requeued flit 135249
+Requeued flit 135392
+Requeued flit 136719
+Requeued flit 137001
+Requeued flit 136916
+Requeued flit 137108
+Requeued flit 137926
+Requeued flit 137959
+Requeued flit 138313
+Requeued flit 137791
+Requeued flit 138492
+Requeued flit 138640
+Requeued flit 138865
+Requeued flit 139291
+Requeued flit 138559
+Requeued flit 139648
+Requeued flit 140444
+Requeued flit 141070
+Requeued flit 141981
+Requeued flit 141783
+Requeued flit 142035
+Requeued flit 143063
+Requeued flit 143673
+Requeued flit 144044
+Requeued flit 143970
+Requeued flit 145878
+Requeued flit 146314
+Requeued flit 146986
+Requeued flit 147478
+Requeued flit 147289
+Requeued flit 147524
+Requeued flit 147443
+Requeued flit 149254
+Requeued flit 149234
+Requeued flit 149494
+Requeued flit 149683
+Requeued flit 150227
+Requeued flit 150122
+Requeued flit 150301
+Requeued flit 150036
+Requeued flit 150475
+Requeued flit 152628
+Requeued flit 153236
+Requeued flit 153097
+Requeued flit 154149
+Requeued flit 154143
+Requeued flit 154541
+Requeued flit 155569
+Requeued flit 156339
+Requeued flit 158145
+Requeued flit 158075
+Requeued flit 158426
+Requeued flit 159072
+Requeued flit 158708
+Requeued flit 159242
+Requeued flit 161799
+Requeued flit 163277
+Requeued flit 163142
+Requeued flit 162553
+Requeued flit 163213
+Requeued flit 162751
+Requeued flit 163381
+Requeued flit 163480
+Requeued flit 163249
+Requeued flit 163906
+Requeued flit 164782
+Requeued flit 165265
+Requeued flit 165079
+Requeued flit 165240
+Requeued flit 165958
+Requeued flit 167168
+Requeued flit 167622
+Requeued flit 168298
+Requeued flit 168582
+Requeued flit 168138
+Requeued flit 169465
+Requeued flit 169832
+Requeued flit 168998
+Requeued flit 169903
+Requeued flit 170085
+Requeued flit 170542
+Requeued flit 170310
+Requeued flit 170204
+Requeued flit 170987
+Requeued flit 170466
+Requeued flit 170756
+Requeued flit 171128
+Requeued flit 171453
+Requeued flit 171206
+Requeued flit 171649
+Requeued flit 171244
+Requeued flit 171602
+Requeued flit 172261
+Requeued flit 172900
+Requeued flit 173696
+Requeued flit 173671
+Requeued flit 173694
+Requeued flit 173736
+Requeued flit 173896
+Requeued flit 174450
+Requeued flit 175534
+Requeued flit 175799
+Requeued flit 176062
+Requeued flit 176403
+Requeued flit 176948
+Requeued flit 176417
+Requeued flit 177687
+Requeued flit 179292
+Requeued flit 179609
+Requeued flit 179811
+Requeued flit 180570
+Requeued flit 180440
+Requeued flit 180429
+Requeued flit 181437
+Requeued flit 181884
+Requeued flit 182420
+Requeued flit 182385
+Requeued flit 182397
+Requeued flit 183169
+Requeued flit 184163
+Requeued flit 184389
+Requeued flit 184457
+Requeued flit 184664
+Requeued flit 184106
+Requeued flit 185613
+Requeued flit 186067
+Requeued flit 185888
+Requeued flit 186885
+Requeued flit 187266
+Requeued flit 187551
+Requeued flit 188645
+Requeued flit 188034
+Requeued flit 188615
+Requeued flit 188881
+Requeued flit 188425
+Requeued flit 189611
+Requeued flit 189753
+7518 | node35 | Enqueuing flit 192022 (packet 192022) at time 7518.
+7518 | traffic_manager | Finding output VC for flit 192022:
+7518 | traffic_manager |   Selected output VC 1.
+7518 | network_0/router_4_3 | Adding VC range [0,1] at output port 0 for flit 192022 (input port 4, destination 44).
+7518 | node35 | Generating lookahead routing info for flit 192022.
+7518 | node35 | Injecting flit 192022 into subnet 0 at time 7518 with priority 0.
+Requeued flit 191689
+7519 | network_0/network_0_fchan_ingress35 | Beginning channel traversal for flit 192022 with delay 1.
+7519 | network_0/network_0_fchan_ingress35 | Completed channel traversal for flit 192022.
+7520 | network_0/router_4_3 | Received flit 192022 from channel at input 4.
+7520 | network_0/router_4_3 | Adding flit 192022 to VC 1 at input 4 (state: idle, empty).
+7520 | network_0/router_4_3 | Using precomputed lookahead routing information for VC 1 at input 4 (front: 192022).
+7520 | network_0/router_4_3/buf_4/vc_1 | Changing state from idle to vc_alloc.
+7520 | network_0/router_4_3 | Beginning VC allocation for VC 1 at input 4 (front: 192022).
+7520 | network_0/router_4_3 |   Requesting VC 0 at output 0 (in_pri: 0, out_pri: 0).
+7520 | network_0/router_4_3 |   Requesting VC 1 at output 0 (in_pri: 0, out_pri: 0).
+7520 | network_0/router_4_3/vc_allocator | Input requests = [ 1 -> [ 3@0 ]  2 -> [ 8@0 9@0 ]  5 -> [ 6@0 7@0 ]  6 -> [ 4@0 5@0 ]  9 -> [ 0@0 1@0 ]  ], output requests = [ 0 -> [ 9@0 ]  1 -> [ 9@0 ]  3 -> [ 1@0 ]  4 -> [ 6@0 ]  5 -> [ 6@0 ]  6 -> [ 5@0 ]  7 -> [ 5@0 ]  8 -> [ 2@0 ]  9 -> [ 2@0 ]  ].
+7520 | network_0/router_4_3/vc_allocator | Input grants = [ 1 -> 3  2 -> 8  5 -> 7  6 -> 4  9 -> 0  ], output grants = [ 0 -> 9  3 -> 1  4 -> 6  7 -> 5  8 -> 2  ].
+7520 | network_0/router_4_3 | Assigning VC 0 at output 0 to VC 1 at input 4.
+7520 | network_0/router_4_3 | Completed VC allocation for VC 1 at input 4 (front: 192022).
+7520 | network_0/router_4_3 |   Acquiring assigned VC 0 at output 0.
+7520 | network_0/router_4_3/buf_4/vc_1 | Changing state from vc_alloc to active.
+7520 | network_0/router_4_3 | Beginning switch allocation for VC 1 at input 4 (front: 192022).
+7520 | network_0/router_4_3 |   Requesting output 0.0 (non-spec, pri: 0).
+7520 | network_0/router_4_3/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 4@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 0@0 ]  ], output requests = [ 0 -> [ 4@0 ]  1 -> [ 0@0 ]  2 -> [ 3@0 ]  3 -> [ 2@0 ]  4 -> [ 1@0 ]  ].
+7520 | network_0/router_4_3/sw_allocator | Input grants = [ 0 -> 1  1 -> 4  2 -> 3  3 -> 2  4 -> 0  ], output grants = [ 0 -> 4  1 -> 0  2 -> 3  3 -> 2  4 -> 1  ].
+7520 | network_0/router_4_3 | Assigning output 0.0 to VC 1 at input 4.0.
+7520 | network_0/router_4_3 | Completed switch allocation for VC 1 at input 4 (front: 192022).
+7520 | network_0/router_4_3 |   Scheduling switch connection from input 4.0 to output 0.0.
+7520 | network_0/router_4_3 | Updating lookahead routing information for flit 192022.
+7520 | network_0/router_4_4 | Adding VC range [0,1] at output port 2 for flit 192022 (input port 1, destination 44).
+7521 | network_0/router_4_3 | Beginning crossbar traversal for flit 192022 from input 4.0 to output 0.0.
+7521 | network_0/router_4_3 | Completed crossbar traversal for flit 192022 from input 4.0 to output 0.0.
+7521 | network_0/router_4_3 | Buffering flit 192022 at output 0.
+7522 | network_0/router_4_3 | Sending flit 192022 to channel at output 0.
+7523 | network_0/network_0_fchan_140 | Beginning channel traversal for flit 192022 with delay 1.
+7523 | network_0/network_0_fchan_140 | Completed channel traversal for flit 192022.
+7524 | network_0/router_4_4 | Received flit 192022 from channel at input 1.
+7524 | network_0/router_4_4 | Adding flit 192022 to VC 0 at input 1 (state: idle, empty).
+7524 | network_0/router_4_4 | Using precomputed lookahead routing information for VC 0 at input 1 (front: 192022).
+7524 | network_0/router_4_4/buf_1/vc_0 | Changing state from idle to vc_alloc.
+7524 | network_0/router_4_4 | Beginning VC allocation for VC 0 at input 1 (front: 192022).
+7524 | network_0/router_4_4 |   Requesting VC 0 at output 2 (in_pri: 0, out_pri: 0).
+7524 | network_0/router_4_4 |   Requesting VC 1 at output 2 (in_pri: 0, out_pri: 0).
+7524 | network_0/router_4_4/vc_allocator | Input requests = [ 1 -> [ 2@0 3@0 ]  2 -> [ 4@0 5@0 ]  8 -> [ 0@0 1@0 ]  ], output requests = [ 0 -> [ 8@0 ]  1 -> [ 8@0 ]  2 -> [ 1@0 ]  3 -> [ 1@0 ]  4 -> [ 2@0 ]  5 -> [ 2@0 ]  ].
+7524 | network_0/router_4_4/vc_allocator | Input grants = [ 1 -> 2  2 -> 4  8 -> 0  ], output grants = [ 0 -> 8  2 -> 1  4 -> 2  ].
+7524 | network_0/router_4_4 | Assigning VC 0 at output 2 to VC 0 at input 1.
+7524 | network_0/router_4_4 | Completed VC allocation for VC 0 at input 1 (front: 192022).
+7524 | network_0/router_4_4 |   Acquiring assigned VC 0 at output 2.
+7524 | network_0/router_4_4/buf_1/vc_0 | Changing state from vc_alloc to active.
+7524 | network_0/router_4_4 | Beginning switch allocation for VC 0 at input 1 (front: 192022).
+7524 | network_0/router_4_4 |   Requesting output 2.0 (non-spec, pri: 0).
+7524 | network_0/router_4_4/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  1 -> [ 2@0 ]  4 -> [ 0@0 ]  ], output requests = [ 0 -> [ 4@0 ]  1 -> [ 0@0 ]  2 -> [ 1@0 ]  ].
+7524 | network_0/router_4_4/sw_allocator | Input grants = [ 0 -> 1  1 -> 2  4 -> 0  ], output grants = [ 0 -> 4  1 -> 0  2 -> 1  ].
+7524 | network_0/router_4_4 | Assigning output 2.0 to VC 0 at input 1.0.
+7524 | network_0/router_4_4 | Completed switch allocation for VC 0 at input 1 (front: 192022).
+7524 | network_0/router_4_4 |   Scheduling switch connection from input 1.0 to output 2.0.
+7524 | network_0/router_4_4 | Updating lookahead routing information for flit 192022.
+7524 | network_0/router_5_4 | Adding VC range [0,1] at output port 4 for flit 192022 (input port 3, destination 44).
+7525 | network_0/router_4_4 | Beginning crossbar traversal for flit 192022 from input 1.0 to output 2.0.
+7525 | network_0/router_4_4 | Completed crossbar traversal for flit 192022 from input 1.0 to output 2.0.
+7525 | network_0/router_4_4 | Buffering flit 192022 at output 2.
+7525 | network_0/router_4_4 | Sending flit 192022 to channel at output 2.
+7526 | network_0/network_0_fchan_146 | Beginning channel traversal for flit 192022 with delay 1.
+7526 | network_0/network_0_fchan_146 | Completed channel traversal for flit 192022.
+7527 | network_0/router_5_4 | Received flit 192022 from channel at input 3.
+7527 | network_0/router_5_4 | Adding flit 192022 to VC 0 at input 3 (state: idle, empty).
+7527 | network_0/router_5_4 | Using precomputed lookahead routing information for VC 0 at input 3 (front: 192022).
+7527 | network_0/router_5_4/buf_3/vc_0 | Changing state from idle to vc_alloc.
+7527 | network_0/router_5_4 | Beginning VC allocation for VC 0 at input 3 (front: 192022).
+7527 | network_0/router_5_4 |   Requesting VC 0 at output 4 (in_pri: 0, out_pri: 0).
+7527 | network_0/router_5_4 |   Requesting VC 1 at output 4 (in_pri: 0, out_pri: 0).
+7527 | network_0/router_5_4/vc_allocator | Input requests = [ 0 -> [ 2@0 3@0 ]  6 -> [ 8@0 9@0 ]  8 -> [ 6@0 7@0 ]  ], output requests = [ 2 -> [ 0@0 ]  3 -> [ 0@0 ]  6 -> [ 8@0 ]  7 -> [ 8@0 ]  8 -> [ 6@0 ]  9 -> [ 6@0 ]  ].
+7527 | network_0/router_5_4/vc_allocator | Input grants = [ 0 -> 2  6 -> 8  8 -> 7  ], output grants = [ 2 -> 0  7 -> 8  8 -> 6  ].
+7527 | network_0/router_5_4 | Assigning VC 0 at output 4 to VC 0 at input 3.
+7527 | network_0/router_5_4 | Completed VC allocation for VC 0 at input 3 (front: 192022).
+7527 | network_0/router_5_4 |   Acquiring assigned VC 0 at output 4.
+7527 | network_0/router_5_4/buf_3/vc_0 | Changing state from vc_alloc to active.
+7527 | network_0/router_5_4 | Beginning switch allocation for VC 0 at input 3 (front: 192022).
+7527 | network_0/router_5_4 |   Requesting output 4.0 (non-spec, pri: 0).
+7527 | network_0/router_5_4/sw_allocator | Input requests = [ 0 -> [ 1@0 ]  3 -> [ 4@0 ]  4 -> [ 3@0 ]  ], output requests = [ 1 -> [ 0@0 ]  3 -> [ 4@0 ]  4 -> [ 3@0 ]  ].
+7527 | network_0/router_5_4/sw_allocator | Input grants = [ 0 -> 1  3 -> 4  4 -> 3  ], output grants = [ 1 -> 0  3 -> 4  4 -> 3  ].
+7527 | network_0/router_5_4 | Assigning output 4.0 to VC 0 at input 3.0.
+7527 | network_0/router_5_4 | Completed switch allocation for VC 0 at input 3 (front: 192022).
+7527 | network_0/router_5_4 |   Scheduling switch connection from input 3.0 to output 4.0.
+7528 | network_0/router_5_4 | Beginning crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+7528 | network_0/router_5_4 | Completed crossbar traversal for flit 192022 from input 3.0 to output 4.0.
+7528 | network_0/router_5_4 | Buffering flit 192022 at output 4.
+7528 | network_0/router_5_4 | Sending flit 192022 to channel at output 4.
+7529 | network_0/network_0_fchan_egress44 | Beginning channel traversal for flit 192022 with delay 1.
+7529 | network_0/network_0_fchan_egress44 | Completed channel traversal for flit 192022.
+7530 | node44 | Ejecting flit 192022 (packet 192022) from VC 0.
+7530 | node44 | Injecting credit for VC 0 into subnet 0.
+7530 | node44 | Retiring flit 192022 (packet 192022, src = 35, dest = 44, hops = 3, flat = 12).
+7530 | node44 | Retiring packet 192022 (plat = 12, nlat = 12, frag = 0, src = 35, dest = 44).
+Requeued flit 192260
+Requeued flit 192795
+Requeued flit 192429
+Requeued flit 193626
+Requeued flit 194843
+Requeued flit 195095
+Requeued flit 196118
+Requeued flit 196472
+Requeued flit 196850
+Requeued flit 196575
+Requeued flit 197195
+Requeued flit 196323
+Requeued flit 197185
+Requeued flit 197394
+Requeued flit 196994
+Requeued flit 197740
+Requeued flit 197532
+Requeued flit 197220
+Requeued flit 198395
+Requeued flit 199101
+Requeued flit 199508
+Requeued flit 199873
+Requeued flit 199850
+Requeued flit 199232
+Requeued flit 199520
+Requeued flit 200188
+Requeued flit 200439
+Requeued flit 200271
+Requeued flit 200291
+Requeued flit 200741
+Requeued flit 200749
+Requeued flit 201479
+Requeued flit 201832
+Requeued flit 202283
+Requeued flit 202999
+Requeued flit 203792
+Requeued flit 204828
+Requeued flit 204488
+Requeued flit 205992
+Requeued flit 206195
+Requeued flit 206061
+Requeued flit 207370
+Requeued flit 208217
+Requeued flit 208881
+Requeued flit 209016
+Requeued flit 209951
+Requeued flit 210492
+Requeued flit 210824
+Requeued flit 210780
+Requeued flit 211536
+Requeued flit 212527
+Requeued flit 212562
+Requeued flit 212329
+Requeued flit 212995
+Requeued flit 213295
+Requeued flit 213677
+Requeued flit 213977
+Requeued flit 214015
+Requeued flit 214566
+Requeued flit 214457
+Requeued flit 214648
+Requeued flit 215169
+Requeued flit 215571
+Requeued flit 215413
+Requeued flit 215815
+Requeued flit 217493
+Requeued flit 218427
+Requeued flit 218479
+Requeued flit 220507
+Requeued flit 220569
+Requeued flit 221144
+Requeued flit 222884
+Requeued flit 223628
+Requeued flit 225828
+Requeued flit 226763
+Requeued flit 226960
+Requeued flit 227315
+Requeued flit 227015
+Requeued flit 227433
+Requeued flit 227715
+Requeued flit 227948
+Requeued flit 227752
+Requeued flit 228244
+Requeued flit 228107
+Requeued flit 227975
+Requeued flit 228726
+Requeued flit 229299
+Requeued flit 229609
+Requeued flit 229374
+Requeued flit 229854
+Requeued flit 229449
+Requeued flit 230321
+Requeued flit 230426
+Requeued flit 230712
+Requeued flit 232366
+Requeued flit 232374
+Requeued flit 233019
+Requeued flit 232588
+Requeued flit 233237
+Requeued flit 233383
+Requeued flit 233629
+Requeued flit 234016
+Requeued flit 234578
+Requeued flit 234720
+Requeued flit 234151
+Requeued flit 235288
+Requeued flit 235988
+Requeued flit 235966
+Requeued flit 235623
+Requeued flit 236115
+Requeued flit 235941
+Requeued flit 236773
+Requeued flit 236554
+Requeued flit 237928
+Requeued flit 238607
+Requeued flit 238452
+Requeued flit 238516
+Requeued flit 239009
+Requeued flit 239722
+Requeued flit 239852
+Requeued flit 240638
+Requeued flit 240308
+Requeued flit 241035
+Requeued flit 241142
+Requeued flit 241390
+Requeued flit 241891
+Requeued flit 242479
+Requeued flit 242487
+Requeued flit 243782
+Requeued flit 243972
+Requeued flit 243777
+Requeued flit 244101
+Requeued flit 244318
+Requeued flit 244486
+Requeued flit 244507
+Requeued flit 244989
+Requeued flit 245016
+Requeued flit 245914
+Requeued flit 246086
+Requeued flit 246940
+Requeued flit 246872
+Requeued flit 246922
+Requeued flit 248234
+Requeued flit 248430
+Requeued flit 249010
+Requeued flit 249148
+Requeued flit 249348
+Requeued flit 249555
+Requeued flit 250000
+Requeued flit 250310
+Requeued flit 250518
+Requeued flit 251084
+Requeued flit 251047
+Requeued flit 250707
+Requeued flit 251495
+Requeued flit 251777
+Requeued flit 251788
+Requeued flit 251695
+Requeued flit 252334
+Requeued flit 252774
+Requeued flit 253016
+Requeued flit 253107
+Requeued flit 253409
+Requeued flit 254816
+Requeued flit 254840
+Class 0:
+Packet latency average = 24.0546
+	minimum = 5
+	maximum = 72
+Network latency average = 24.0546
+	minimum = 5
+	maximum = 72
+Slowest packet = 59913
+Flit latency average = 24.0546
+	minimum = 5
+	maximum = 72
+Slowest flit = 59913
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.399505
+	minimum = 0.391 (at node 60)
+	maximum = 0.4137 (at node 31)
+Accepted packet rate average = 0.39853
+	minimum = 0.386 (at node 52)
+	maximum = 0.4121 (at node 28)
+Injected flit rate average = 0.399505
+	minimum = 0.391 (at node 60)
+	maximum = 0.4137 (at node 31)
+Accepted flit rate average= 0.39853
+	minimum = 0.386 (at node 52)
+	maximum = 0.4121 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 624 (0 measured)
+latency change    = 1
+throughput change = 1
+Requeued flit 255359
+Requeued flit 256013
+Requeued flit 255634
+Requeued flit 257491
+Requeued flit 257512
+Requeued flit 256890
+Requeued flit 258080
+Requeued flit 259239
+Requeued flit 259346
+Requeued flit 258994
+Requeued flit 259588
+Requeued flit 259026
+Requeued flit 259784
+Requeued flit 260311
+Requeued flit 260660
+Requeued flit 261627
+Requeued flit 262013
+Requeued flit 262239
+Requeued flit 262280
+Requeued flit 262661
+Requeued flit 262637
+Requeued flit 262957
+Requeued flit 262559
+Requeued flit 262346
+Requeued flit 263336
+Requeued flit 263729
+Requeued flit 264359
+Requeued flit 264501
+Requeued flit 265204
+Requeued flit 265274
+Requeued flit 265903
+Requeued flit 266877
+Requeued flit 266646
+Requeued flit 267055
+Requeued flit 267223
+Requeued flit 267351
+Requeued flit 267679
+Requeued flit 266957
+Requeued flit 268016
+Requeued flit 268770
+Requeued flit 269312
+Requeued flit 269901
+Requeued flit 269929
+Requeued flit 270345
+Requeued flit 270880
+Requeued flit 270487
+Requeued flit 271320
+Requeued flit 271883
+Requeued flit 272056
+Requeued flit 272101
+Requeued flit 271979
+Requeued flit 273119
+Requeued flit 273446
+Requeued flit 273650
+Requeued flit 273482
+Requeued flit 274083
+Requeued flit 274309
+Requeued flit 275066
+Requeued flit 275867
+Requeued flit 276179
+Requeued flit 277393
+Requeued flit 277718
+Requeued flit 279200
+Requeued flit 279053
+Requeued flit 278988
+Requeued flit 279441
+Requeued flit 280493
+Requeued flit 281602
+Requeued flit 281562
+Requeued flit 281702
+Requeued flit 281981
+Requeued flit 282741
+Requeued flit 283023
+Requeued flit 282834
+Requeued flit 283384
+Requeued flit 283821
+Requeued flit 283352
+Requeued flit 284950
+Requeued flit 285678
+Requeued flit 286710
+Requeued flit 286614
+Requeued flit 286591
+Requeued flit 286920
+Requeued flit 287094
+Requeued flit 287915
+Requeued flit 287563
+Requeued flit 287783
+Requeued flit 288355
+Requeued flit 287960
+Requeued flit 290563
+Requeued flit 291190
+Requeued flit 290960
+Requeued flit 292498
+Requeued flit 292494
+Requeued flit 293490
+Requeued flit 293742
+Requeued flit 293796
+Requeued flit 294260
+Requeued flit 294628
+Requeued flit 294852
+Requeued flit 294526
+Requeued flit 295697
+Requeued flit 295140
+Requeued flit 295978
+Requeued flit 296577
+Requeued flit 296449
+Requeued flit 296812
+Requeued flit 296880
+Requeued flit 297819
+Requeued flit 298194
+Requeued flit 298505
+Requeued flit 298874
+Requeued flit 299905
+Requeued flit 300114
+Requeued flit 300559
+Requeued flit 299931
+Requeued flit 300655
+Requeued flit 300583
+Requeued flit 300948
+Requeued flit 300937
+Requeued flit 300890
+Requeued flit 300607
+Requeued flit 300907
+Requeued flit 301123
+Requeued flit 301818
+Requeued flit 302086
+Requeued flit 302343
+Requeued flit 302927
+Requeued flit 302150
+Requeued flit 303642
+Requeued flit 304325
+Requeued flit 303578
+Requeued flit 304456
+Requeued flit 304836
+Requeued flit 305731
+Requeued flit 306779
+Requeued flit 306702
+Requeued flit 307281
+Requeued flit 308117
+Requeued flit 309467
+Requeued flit 311047
+Requeued flit 311438
+Requeued flit 311737
+Requeued flit 312097
+Requeued flit 312282
+Requeued flit 312246
+Requeued flit 313071
+Requeued flit 313178
+Requeued flit 314825
+Requeued flit 315018
+Requeued flit 315711
+Requeued flit 315932
+Requeued flit 317088
+Requeued flit 317279
+Requeued flit 318206
+Requeued flit 318360
+Requeued flit 318691
+Requeued flit 319018
+Requeued flit 318793
+Requeued flit 319443
+Requeued flit 320114
+Requeued flit 319883
+Requeued flit 320021
+Requeued flit 320944
+Requeued flit 320993
+Requeued flit 321753
+Requeued flit 322041
+Requeued flit 322595
+Requeued flit 323028
+Requeued flit 323791
+Requeued flit 324347
+Requeued flit 325769
+Requeued flit 325342
+Requeued flit 325581
+Requeued flit 326380
+Requeued flit 327463
+Requeued flit 328079
+Requeued flit 328890
+Requeued flit 329746
+Requeued flit 329874
+Requeued flit 330054
+Requeued flit 329673
+Requeued flit 330757
+Requeued flit 332804
+Requeued flit 333539
+Requeued flit 335178
+Requeued flit 335422
+Requeued flit 335914
+Requeued flit 336178
+Requeued flit 336513
+Requeued flit 336281
+Requeued flit 337654
+Requeued flit 338096
+Requeued flit 338528
+Requeued flit 339365
+Requeued flit 339536
+Requeued flit 340179
+Requeued flit 340076
+Requeued flit 339268
+Requeued flit 341223
+Requeued flit 342341
+Requeued flit 342225
+Requeued flit 342590
+Requeued flit 343034
+Requeued flit 343282
+Requeued flit 343479
+Requeued flit 343490
+Requeued flit 344410
+Requeued flit 344710
+Requeued flit 345187
+Requeued flit 345145
+Requeued flit 345454
+Requeued flit 345438
+Requeued flit 345501
+Requeued flit 346049
+Requeued flit 346453
+Requeued flit 346472
+Requeued flit 347581
+Requeued flit 347460
+Requeued flit 347994
+Requeued flit 347618
+Requeued flit 348955
+Requeued flit 349518
+Requeued flit 349278
+Requeued flit 351077
+Requeued flit 351022
+Requeued flit 350929
+Requeued flit 351461
+Requeued flit 352951
+Requeued flit 353385
+Requeued flit 353286
+Requeued flit 353958
+Requeued flit 353659
+Requeued flit 354730
+Requeued flit 356130
+Requeued flit 356599
+Requeued flit 356242
+Requeued flit 357473
+Requeued flit 357368
+Requeued flit 357521
+Requeued flit 358321
+Requeued flit 357970
+Requeued flit 358316
+Requeued flit 359107
+Requeued flit 359775
+Requeued flit 360678
+Requeued flit 360522
+Requeued flit 361250
+Requeued flit 361828
+Requeued flit 362330
+Requeued flit 361828
+Requeued flit 362594
+Requeued flit 362855
+Requeued flit 362429
+Requeued flit 363253
+Requeued flit 363311
+Requeued flit 364115
+Requeued flit 364581
+Requeued flit 365130
+Requeued flit 365952
+Requeued flit 366262
+Requeued flit 366435
+Requeued flit 366330
+Requeued flit 367667
+Requeued flit 368231
+Requeued flit 369434
+Requeued flit 368661
+Requeued flit 369307
+Requeued flit 370585
+Requeued flit 370743
+Requeued flit 370522
+Requeued flit 371558
+Requeued flit 371533
+Requeued flit 371942
+Requeued flit 372220
+Requeued flit 372809
+Requeued flit 372676
+Requeued flit 373225
+Requeued flit 372889
+Requeued flit 373955
+Requeued flit 374102
+Requeued flit 374272
+Requeued flit 374109
+Requeued flit 375486
+Requeued flit 375485
+Requeued flit 376302
+Requeued flit 377285
+Requeued flit 377633
+Requeued flit 378232
+Requeued flit 378438
+Requeued flit 379765
+Requeued flit 379566
+Requeued flit 380079
+Requeued flit 380199
+Requeued flit 380642
+Requeued flit 380678
+Requeued flit 380565
+Requeued flit 381579
+Requeued flit 382025
+Requeued flit 382626
+Requeued flit 382501
+Requeued flit 383230
+Requeued flit 382971
+Requeued flit 383537
+Requeued flit 384223
+Requeued flit 384677
+Requeued flit 384485
+Requeued flit 384710
+Requeued flit 384515
+Requeued flit 385434
+Requeued flit 385589
+Requeued flit 386166
+Requeued flit 387325
+Requeued flit 387408
+Requeued flit 386986
+Requeued flit 387329
+Requeued flit 387601
+Requeued flit 388651
+Requeued flit 389495
+Requeued flit 389642
+Requeued flit 389852
+Requeued flit 390905
+Requeued flit 390984
+Requeued flit 391220
+Requeued flit 391379
+Requeued flit 391222
+Requeued flit 391553
+Requeued flit 391906
+Requeued flit 392426
+Requeued flit 393039
+Requeued flit 393210
+Requeued flit 393244
+Requeued flit 393203
+Requeued flit 393845
+Requeued flit 393617
+Requeued flit 393803
+Requeued flit 394242
+Requeued flit 394286
+Requeued flit 394739
+Requeued flit 394429
+Requeued flit 395222
+Requeued flit 395077
+Requeued flit 397743
+Requeued flit 397672
+Requeued flit 397464
+Requeued flit 398131
+Requeued flit 398153
+Requeued flit 397840
+Requeued flit 398649
+Requeued flit 399230
+Requeued flit 399822
+Requeued flit 399462
+Requeued flit 399714
+Requeued flit 400101
+Requeued flit 400228
+Requeued flit 400699
+Requeued flit 401445
+Requeued flit 401820
+Requeued flit 401995
+Requeued flit 402348
+Requeued flit 401992
+Requeued flit 402895
+Requeued flit 402695
+Requeued flit 402909
+Requeued flit 404179
+Requeued flit 404655
+Requeued flit 405071
+Requeued flit 404674
+Requeued flit 406625
+Requeued flit 406880
+Requeued flit 407658
+Requeued flit 407903
+Requeued flit 408365
+Requeued flit 408696
+Requeued flit 410375
+Requeued flit 411256
+Requeued flit 410819
+Requeued flit 411681
+Requeued flit 412009
+Requeued flit 412238
+Requeued flit 412065
+Requeued flit 411936
+Requeued flit 412837
+Requeued flit 412716
+Requeued flit 413055
+Requeued flit 413430
+Requeued flit 413511
+Requeued flit 413865
+Requeued flit 413800
+Requeued flit 414725
+Requeued flit 414735
+Requeued flit 415639
+Requeued flit 416203
+Requeued flit 416576
+Requeued flit 417018
+Requeued flit 417385
+Requeued flit 417229
+Requeued flit 417312
+Requeued flit 417678
+Requeued flit 418240
+Requeued flit 418364
+Requeued flit 419144
+Requeued flit 419856
+Requeued flit 420010
+Requeued flit 420125
+Requeued flit 422233
+Requeued flit 422109
+Requeued flit 423688
+Requeued flit 423890
+Requeued flit 424810
+Requeued flit 424141
+Requeued flit 424727
+Requeued flit 425168
+Requeued flit 425786
+Requeued flit 425766
+Requeued flit 426219
+Requeued flit 426029
+Requeued flit 426283
+Requeued flit 426377
+Requeued flit 426785
+Requeued flit 427723
+Requeued flit 427962
+Requeued flit 428913
+Requeued flit 428755
+Requeued flit 430052
+Requeued flit 431573
+Requeued flit 432859
+Requeued flit 432799
+Requeued flit 434044
+Requeued flit 435140
+Requeued flit 435511
+Requeued flit 435312
+Requeued flit 434930
+Requeued flit 436393
+Requeued flit 437154
+Requeued flit 436931
+Requeued flit 437944
+Requeued flit 437561
+Requeued flit 437679
+Requeued flit 437988
+Requeued flit 438424
+Requeued flit 439027
+Requeued flit 439200
+Requeued flit 439433
+Requeued flit 439332
+Requeued flit 439207
+Requeued flit 440610
+Requeued flit 440933
+Requeued flit 440764
+Requeued flit 442053
+Requeued flit 442052
+Requeued flit 442427
+Requeued flit 442993
+Requeued flit 443150
+Requeued flit 444963
+Requeued flit 446041
+Requeued flit 446183
+Requeued flit 446715
+Requeued flit 446230
+Requeued flit 446729
+Requeued flit 446937
+Requeued flit 448192
+Requeued flit 447789
+Requeued flit 448709
+Requeued flit 448098
+Requeued flit 448473
+Requeued flit 448665
+Requeued flit 449081
+Requeued flit 449378
+Requeued flit 451599
+Requeued flit 451866
+Requeued flit 452683
+Requeued flit 453140
+Requeued flit 453575
+Requeued flit 453601
+Requeued flit 454161
+Requeued flit 453981
+Requeued flit 454307
+Requeued flit 455047
+Requeued flit 455137
+Requeued flit 455486
+Requeued flit 456533
+Requeued flit 456738
+Requeued flit 456923
+Requeued flit 457123
+Requeued flit 457128
+Requeued flit 457303
+Requeued flit 457729
+Requeued flit 459167
+Requeued flit 459025
+Requeued flit 459093
+Requeued flit 459969
+Requeued flit 459550
+Requeued flit 461223
+Requeued flit 461339
+Requeued flit 462595
+Requeued flit 462755
+Requeued flit 462305
+Requeued flit 463092
+Requeued flit 464716
+Requeued flit 464735
+Requeued flit 465093
+Requeued flit 465621
+Requeued flit 465491
+Requeued flit 467920
+Requeued flit 468338
+Requeued flit 468568
+Requeued flit 469156
+Requeued flit 469435
+Requeued flit 469920
+Requeued flit 470843
+Requeued flit 472953
+Requeued flit 472015
+Requeued flit 472667
+Requeued flit 473400
+Requeued flit 473272
+Requeued flit 473466
+Requeued flit 474011
+Requeued flit 474112
+Requeued flit 474500
+Requeued flit 474441
+Requeued flit 474654
+Requeued flit 474686
+Requeued flit 476607
+Requeued flit 477160
+Requeued flit 478363
+Requeued flit 478136
+Requeued flit 478269
+Requeued flit 479076
+Requeued flit 479714
+Requeued flit 480889
+Requeued flit 480981
+Requeued flit 481271
+Requeued flit 482115
+Requeued flit 482498
+Requeued flit 483066
+Requeued flit 483624
+Requeued flit 484543
+Requeued flit 484266
+Requeued flit 485424
+Requeued flit 485412
+Requeued flit 485663
+Requeued flit 485559
+Requeued flit 486744
+Requeued flit 487027
+Requeued flit 486628
+Requeued flit 488054
+Requeued flit 487715
+Requeued flit 489171
+Requeued flit 490037
+Requeued flit 490789
+Requeued flit 490076
+Requeued flit 491151
+Requeued flit 490999
+Requeued flit 491837
+Requeued flit 491674
+Requeued flit 492272
+Requeued flit 492702
+Requeued flit 493393
+Requeued flit 493426
+Requeued flit 493092
+Requeued flit 494670
+Requeued flit 494847
+Requeued flit 495149
+Requeued flit 495358
+Requeued flit 496258
+Requeued flit 496387
+Requeued flit 496570
+Requeued flit 496666
+Requeued flit 497680
+Requeued flit 497090
+Requeued flit 498813
+Requeued flit 498713
+Requeued flit 498965
+Requeued flit 499469
+Requeued flit 499940
+Requeued flit 500085
+Requeued flit 499555
+Requeued flit 500219
+Requeued flit 500484
+Requeued flit 500676
+Requeued flit 501035
+Requeued flit 501785
+Requeued flit 502336
+Requeued flit 502409
+Requeued flit 502316
+Requeued flit 502904
+Requeued flit 502744
+Requeued flit 502942
+Requeued flit 503103
+Requeued flit 503850
+Requeued flit 504021
+Requeued flit 504113
+Requeued flit 504467
+Requeued flit 504622
+Requeued flit 504307
+Requeued flit 504797
+Requeued flit 505550
+Requeued flit 506226
+Requeued flit 506856
+Requeued flit 507428
+Requeued flit 507923
+Requeued flit 509567
+Requeued flit 510272
+Requeued flit 510388
+Class 0:
+Packet latency average = 24.0492
+	minimum = 5
+	maximum = 72
+Network latency average = 24.0492
+	minimum = 5
+	maximum = 72
+Slowest packet = 59913
+Flit latency average = 24.0492
+	minimum = 5
+	maximum = 72
+Slowest flit = 59913
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.39952
+	minimum = 0.39095 (at node 60)
+	maximum = 0.40785 (at node 31)
+Accepted packet rate average = 0.399022
+	minimum = 0.3918 (at node 25)
+	maximum = 0.4098 (at node 28)
+Injected flit rate average = 0.39952
+	minimum = 0.39095 (at node 60)
+	maximum = 0.40785 (at node 31)
+Accepted flit rate average= 0.399022
+	minimum = 0.3918 (at node 25)
+	maximum = 0.4098 (at node 28)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 637 (0 measured)
+latency change    = 0.000223836
+throughput change = 0.00123349
+Requeued flit 511454
+Requeued flit 511473
+Requeued flit 511177
+Requeued flit 511362
+Requeued flit 511820
+Requeued flit 511875
+Requeued flit 512059
+Requeued flit 512368
+Requeued flit 512407
+Requeued flit 512250
+Requeued flit 513404
+Requeued flit 512911
+Requeued flit 513947
+Requeued flit 514093
+Requeued flit 514503
+Requeued flit 515483
+Requeued flit 515210
+Requeued flit 515326
+Requeued flit 515806
+Requeued flit 516254
+Requeued flit 517143
+Requeued flit 516704
+Requeued flit 518079
+Requeued flit 517242
+Requeued flit 518847
+Requeued flit 519180
+Requeued flit 520099
+Requeued flit 520074
+Requeued flit 520654
+Requeued flit 520642
+Requeued flit 521672
+Requeued flit 522110
+Requeued flit 522263
+Requeued flit 522001
+Requeued flit 522906
+Requeued flit 523383
+Requeued flit 523531
+Requeued flit 524183
+Requeued flit 523754
+Requeued flit 525577
+Requeued flit 525976
+Requeued flit 527001
+Requeued flit 526760
+Requeued flit 527034
+Requeued flit 527478
+Requeued flit 527684
+Requeued flit 528554
+Requeued flit 528476
+Requeued flit 529679
+Requeued flit 530330
+Requeued flit 530026
+Requeued flit 530743
+Requeued flit 530949
+Requeued flit 531546
+Requeued flit 531880
+Requeued flit 532169
+Requeued flit 532340
+Requeued flit 533048
+Requeued flit 534233
+Requeued flit 534375
+Requeued flit 535442
+Requeued flit 535618
+Requeued flit 536087
+Requeued flit 537210
+Requeued flit 538122
+Requeued flit 538316
+Requeued flit 538704
+Requeued flit 538565
+Requeued flit 539345
+Requeued flit 539868
+Requeued flit 540480
+Requeued flit 540836
+Requeued flit 541883
+Requeued flit 542266
+Requeued flit 542848
+Requeued flit 542444
+Requeued flit 543135
+Requeued flit 542896
+Requeued flit 543628
+Requeued flit 544302
+Requeued flit 544452
+Requeued flit 545038
+Requeued flit 545841
+Requeued flit 546221
+Requeued flit 546868
+Requeued flit 547604
+Requeued flit 548279
+Requeued flit 549281
+Requeued flit 549602
+Requeued flit 550147
+Requeued flit 550924
+Requeued flit 550684
+Requeued flit 551413
+Requeued flit 552185
+Requeued flit 552701
+Requeued flit 553421
+Requeued flit 554353
+Requeued flit 555114
+Requeued flit 555226
+Requeued flit 555563
+Requeued flit 555072
+Requeued flit 555938
+Requeued flit 556195
+Requeued flit 556492
+Requeued flit 556690
+Requeued flit 556301
+Requeued flit 558024
+Requeued flit 559153
+Requeued flit 558623
+Requeued flit 558931
+Requeued flit 560116
+Requeued flit 559612
+Requeued flit 561273
+Requeued flit 561185
+Requeued flit 561674
+Requeued flit 561169
+Requeued flit 561799
+Requeued flit 562498
+Requeued flit 562665
+Requeued flit 563098
+Requeued flit 563087
+Requeued flit 564174
+Requeued flit 565086
+Requeued flit 565778
+Requeued flit 566517
+Requeued flit 567016
+Requeued flit 567484
+Requeued flit 568263
+Requeued flit 567701
+Requeued flit 567799
+Requeued flit 568769
+Requeued flit 568567
+Requeued flit 568754
+Requeued flit 569503
+Requeued flit 569490
+Requeued flit 571165
+Requeued flit 571186
+Requeued flit 571613
+Requeued flit 571858
+Requeued flit 572790
+Requeued flit 574722
+Requeued flit 575799
+Requeued flit 577058
+Requeued flit 577316
+Requeued flit 577237
+Requeued flit 577677
+Requeued flit 578177
+Requeued flit 578280
+Requeued flit 579029
+Requeued flit 579034
+Requeued flit 580238
+Requeued flit 580369
+Requeued flit 581021
+Requeued flit 580499
+Requeued flit 580827
+Requeued flit 581239
+Requeued flit 581154
+Requeued flit 581563
+Requeued flit 581987
+Requeued flit 581985
+Requeued flit 582223
+Requeued flit 581956
+Requeued flit 582627
+Requeued flit 582909
+Requeued flit 582966
+Requeued flit 583299
+Requeued flit 583494
+Requeued flit 583727
+Requeued flit 583922
+Requeued flit 583623
+Requeued flit 584427
+Requeued flit 585350
+Requeued flit 585187
+Requeued flit 585731
+Requeued flit 586948
+Requeued flit 587027
+Requeued flit 588329
+Requeued flit 588584
+Requeued flit 588839
+Requeued flit 588935
+Requeued flit 589249
+Requeued flit 591049
+Requeued flit 590939
+Requeued flit 591843
+Requeued flit 592230
+Requeued flit 592163
+Requeued flit 592908
+Requeued flit 593838
+Requeued flit 593554
+Requeued flit 594956
+Requeued flit 595753
+Requeued flit 596031
+Requeued flit 596131
+Requeued flit 596631
+Requeued flit 596381
+Requeued flit 597321
+Requeued flit 598002
+Requeued flit 598834
+Requeued flit 598720
+Requeued flit 598707
+Requeued flit 599064
+Requeued flit 599131
+Requeued flit 599528
+Requeued flit 599851
+Requeued flit 599473
+Requeued flit 600436
+Requeued flit 602413
+Requeued flit 602092
+Requeued flit 602240
+Requeued flit 602732
+Requeued flit 602982
+Requeued flit 602994
+Requeued flit 603128
+Requeued flit 603566
+Requeued flit 604147
+Requeued flit 604742
+Requeued flit 604389
+Requeued flit 605237
+Requeued flit 604689
+Requeued flit 605102
+Requeued flit 606007
+Requeued flit 606201
+Requeued flit 607356
+Requeued flit 607347
+Requeued flit 608246
+Requeued flit 608666
+Requeued flit 609056
+Requeued flit 609285
+Requeued flit 609627
+Requeued flit 609822
+Requeued flit 609355
+Requeued flit 609897
+Requeued flit 609508
+Requeued flit 610612
+Requeued flit 611001
+Requeued flit 610930
+Requeued flit 610665
+Requeued flit 612088
+Requeued flit 612335
+Requeued flit 612818
+Requeued flit 613419
+Requeued flit 613245
+Requeued flit 613808
+Requeued flit 613393
+Requeued flit 614211
+Requeued flit 614515
+Requeued flit 614985
+Requeued flit 616090
+Requeued flit 616928
+Requeued flit 616621
+Requeued flit 617467
+Requeued flit 617470
+Requeued flit 618625
+Requeued flit 618493
+Requeued flit 618851
+Requeued flit 618369
+Requeued flit 618719
+Requeued flit 618801
+Requeued flit 619483
+Requeued flit 619798
+Requeued flit 620536
+Requeued flit 621196
+Requeued flit 621048
+Requeued flit 620874
+Requeued flit 621894
+Requeued flit 622427
+Requeued flit 622538
+Requeued flit 622880
+Requeued flit 624519
+Requeued flit 624623
+Requeued flit 624490
+Requeued flit 625793
+Requeued flit 626115
+Requeued flit 626104
+Requeued flit 626858
+Requeued flit 628343
+Requeued flit 628752
+Requeued flit 629702
+Requeued flit 630150
+Requeued flit 630162
+Requeued flit 630052
+Requeued flit 631225
+Requeued flit 632364
+Requeued flit 632562
+Requeued flit 633111
+Requeued flit 635023
+Requeued flit 635454
+Requeued flit 634798
+Requeued flit 636298
+Requeued flit 636480
+Requeued flit 636943
+Requeued flit 636808
+Requeued flit 637178
+Requeued flit 637602
+Requeued flit 637840
+Requeued flit 637921
+Requeued flit 638150
+Requeued flit 639711
+Requeued flit 640182
+Requeued flit 640341
+Requeued flit 640491
+Requeued flit 640781
+Requeued flit 641119
+Requeued flit 641266
+Requeued flit 642053
+Requeued flit 642306
+Requeued flit 642021
+Requeued flit 642555
+Requeued flit 643724
+Requeued flit 644464
+Requeued flit 643840
+Requeued flit 644025
+Requeued flit 644570
+Requeued flit 644891
+Requeued flit 645781
+Requeued flit 645564
+Requeued flit 646898
+Requeued flit 646445
+Requeued flit 647211
+Requeued flit 647229
+Requeued flit 648315
+Requeued flit 648477
+Requeued flit 649161
+Requeued flit 649241
+Requeued flit 649033
+Requeued flit 649896
+Requeued flit 649632
+Requeued flit 649558
+Requeued flit 650103
+Requeued flit 650617
+Requeued flit 651625
+Requeued flit 651959
+Requeued flit 651638
+Requeued flit 651585
+Requeued flit 651628
+Requeued flit 652282
+Requeued flit 651993
+Requeued flit 651856
+Requeued flit 652248
+Requeued flit 652484
+Requeued flit 652502
+Requeued flit 653891
+Requeued flit 654446
+Requeued flit 654107
+Requeued flit 655042
+Requeued flit 655678
+Requeued flit 655722
+Requeued flit 656583
+Requeued flit 656997
+Requeued flit 657614
+Requeued flit 658184
+Requeued flit 658357
+Requeued flit 658400
+Requeued flit 659233
+Requeued flit 659100
+Requeued flit 660114
+Requeued flit 661722
+Requeued flit 661853
+Requeued flit 661640
+Requeued flit 662054
+Requeued flit 662370
+Requeued flit 662594
+Requeued flit 662547
+Requeued flit 663006
+Requeued flit 663427
+Requeued flit 663365
+Requeued flit 664129
+Requeued flit 664269
+Requeued flit 663907
+Requeued flit 664057
+Requeued flit 664669
+Requeued flit 664954
+Requeued flit 664885
+Requeued flit 665856
+Requeued flit 667193
+Requeued flit 667628
+Requeued flit 668012
+Requeued flit 667714
+Requeued flit 669714
+Requeued flit 670844
+Requeued flit 670925
+Requeued flit 670631
+Requeued flit 671414
+Requeued flit 672104
+Requeued flit 671810
+Requeued flit 672415
+Requeued flit 672608
+Requeued flit 672959
+Requeued flit 672526
+Requeued flit 672553
+Requeued flit 673906
+Requeued flit 673907
+Requeued flit 674151
+Requeued flit 674047
+Requeued flit 674407
+Requeued flit 674711
+Requeued flit 675160
+Requeued flit 675605
+Requeued flit 676677
+Requeued flit 676352
+Requeued flit 676786
+Requeued flit 677074
+Requeued flit 677476
+Requeued flit 676927
+Requeued flit 677551
+Requeued flit 677680
+Requeued flit 678875
+Requeued flit 680575
+Requeued flit 680799
+Requeued flit 681753
+Requeued flit 682435
+Requeued flit 683388
+Requeued flit 683633
+Requeued flit 683436
+Requeued flit 683449
+Requeued flit 683260
+Requeued flit 683633
+Requeued flit 684018
+Requeued flit 683935
+Requeued flit 685014
+Requeued flit 684505
+Requeued flit 684959
+Requeued flit 685184
+Requeued flit 685195
+Requeued flit 685541
+Requeued flit 686077
+Requeued flit 686231
+Requeued flit 686416
+Requeued flit 687219
+Requeued flit 687906
+Requeued flit 688031
+Requeued flit 688535
+Requeued flit 689241
+Requeued flit 688963
+Requeued flit 688760
+Requeued flit 689454
+Requeued flit 690973
+Requeued flit 692063
+Requeued flit 692493
+Requeued flit 692367
+Requeued flit 693164
+Requeued flit 693343
+Requeued flit 693913
+Requeued flit 694307
+Requeued flit 694320
+Requeued flit 693787
+Requeued flit 694660
+Requeued flit 694627
+Requeued flit 694869
+Requeued flit 695578
+Requeued flit 695845
+Requeued flit 696492
+Requeued flit 696861
+Requeued flit 697879
+Requeued flit 698447
+Requeued flit 697954
+Requeued flit 698613
+Requeued flit 698242
+Requeued flit 698533
+Requeued flit 699372
+Requeued flit 700662
+Requeued flit 700811
+Requeued flit 701565
+Requeued flit 701705
+Requeued flit 702334
+Requeued flit 702457
+Requeued flit 702096
+Requeued flit 702439
+Requeued flit 702472
+Requeued flit 703427
+Requeued flit 703431
+Requeued flit 704435
+Requeued flit 705453
+Requeued flit 705735
+Requeued flit 705415
+Requeued flit 706030
+Requeued flit 705725
+Requeued flit 706530
+Requeued flit 707069
+Requeued flit 707367
+Requeued flit 708453
+Requeued flit 709369
+Requeued flit 709557
+Requeued flit 709579
+Requeued flit 709322
+Requeued flit 709848
+Requeued flit 710323
+Requeued flit 710509
+Requeued flit 710628
+Requeued flit 710851
+Requeued flit 712809
+Requeued flit 713236
+Requeued flit 713840
+Requeued flit 714811
+Requeued flit 715355
+Requeued flit 715306
+Requeued flit 715479
+Requeued flit 715481
+Requeued flit 715496
+Requeued flit 715728
+Requeued flit 716455
+Requeued flit 716608
+Requeued flit 717221
+Requeued flit 717745
+Requeued flit 718997
+Requeued flit 718774
+Requeued flit 719664
+Requeued flit 720004
+Requeued flit 720195
+Requeued flit 720940
+Requeued flit 721553
+Requeued flit 722392
+Requeued flit 722121
+Requeued flit 722303
+Requeued flit 722715
+Requeued flit 723175
+Requeued flit 723393
+Requeued flit 723338
+Requeued flit 723690
+Requeued flit 724057
+Requeued flit 725640
+Requeued flit 725759
+Requeued flit 725996
+Requeued flit 725640
+Requeued flit 726604
+Requeued flit 726810
+Requeued flit 727129
+Requeued flit 727374
+Requeued flit 727750
+Requeued flit 727709
+Requeued flit 727832
+Requeued flit 729691
+Requeued flit 730048
+Requeued flit 730378
+Requeued flit 730570
+Requeued flit 730647
+Requeued flit 731946
+Requeued flit 731952
+Requeued flit 732724
+Requeued flit 733433
+Requeued flit 733647
+Requeued flit 733471
+Requeued flit 733636
+Requeued flit 734287
+Requeued flit 734049
+Requeued flit 734348
+Requeued flit 733712
+Requeued flit 734798
+Requeued flit 735378
+Requeued flit 735686
+Requeued flit 735325
+Requeued flit 735637
+Requeued flit 735549
+Requeued flit 735972
+Requeued flit 736266
+Requeued flit 737046
+Requeued flit 737179
+Requeued flit 738349
+Requeued flit 739111
+Requeued flit 739495
+Requeued flit 739315
+Requeued flit 739747
+Requeued flit 740427
+Requeued flit 740989
+Requeued flit 740231
+Requeued flit 743283
+Requeued flit 743324
+Requeued flit 744804
+Requeued flit 745915
+Requeued flit 746250
+Requeued flit 746723
+Requeued flit 746907
+Requeued flit 746817
+Requeued flit 747540
+Requeued flit 747911
+Requeued flit 748677
+Requeued flit 749299
+Requeued flit 749889
+Requeued flit 749697
+Requeued flit 750838
+Requeued flit 750774
+Requeued flit 751482
+Requeued flit 751262
+Requeued flit 751800
+Requeued flit 752862
+Requeued flit 752324
+Requeued flit 753664
+Requeued flit 753838
+Requeued flit 753468
+Requeued flit 754185
+Requeued flit 754372
+Requeued flit 754903
+Requeued flit 755021
+Requeued flit 755959
+Requeued flit 755909
+Requeued flit 756170
+Requeued flit 756531
+Requeued flit 757739
+Requeued flit 758479
+Requeued flit 758803
+Requeued flit 758853
+Requeued flit 759517
+Requeued flit 759968
+Requeued flit 759854
+Requeued flit 760016
+Requeued flit 759771
+Requeued flit 760497
+Requeued flit 761340
+Requeued flit 761338
+Requeued flit 761894
+Requeued flit 762480
+Requeued flit 763955
+Requeued flit 763974
+Requeued flit 764226
+Requeued flit 764505
+Requeued flit 764579
+Requeued flit 764743
+Requeued flit 764779
+Requeued flit 766047
+Class 0:
+Packet latency average = 24.0922
+	minimum = 5
+	maximum = 82
+Network latency average = 24.0922
+	minimum = 5
+	maximum = 82
+Slowest packet = 540628
+Flit latency average = 24.0922
+	minimum = 5
+	maximum = 82
+Slowest flit = 540628
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.399794
+	minimum = 0.3807 (at node 28)
+	maximum = 0.4169 (at node 36)
+Accepted packet rate average = 0.399792
+	minimum = 0.3885 (at node 62)
+	maximum = 0.4114 (at node 37)
+Injected flit rate average = 0.399794
+	minimum = 0.3807 (at node 28)
+	maximum = 0.4169 (at node 36)
+Accepted flit rate average= 0.399792
+	minimum = 0.3885 (at node 62)
+	maximum = 0.4114 (at node 37)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 638 (0 measured)
+latency change    = 0.00178237
+throughput change = 0.00192678
+Warmed up ...Time used is 30000 cycles
+Requeued flit 766722
+Requeued flit 766906
+Requeued flit 767161
+Requeued flit 766563
+Requeued flit 766959
+Requeued flit 767076
+Requeued flit 767572
+Requeued flit 767832
+Requeued flit 768155
+Requeued flit 768576
+Requeued flit 767896
+Requeued flit 768574
+Requeued flit 768564
+Requeued flit 769169
+Requeued flit 769352
+Requeued flit 769082
+Requeued flit 769699
+Requeued flit 769827
+Requeued flit 770666
+Requeued flit 771301
+Requeued flit 770913
+Requeued flit 771469
+Requeued flit 772270
+Requeued flit 772802
+Requeued flit 772928
+Requeued flit 773327
+Requeued flit 773265
+Requeued flit 773564
+Requeued flit 773856
+Requeued flit 774304
+Requeued flit 774642
+Requeued flit 774247
+Requeued flit 774899
+Requeued flit 775324
+Requeued flit 775145
+Requeued flit 776270
+Requeued flit 776464
+Requeued flit 776228
+Requeued flit 777527
+Requeued flit 777824
+Requeued flit 779072
+Requeued flit 779322
+Requeued flit 779995
+Requeued flit 780300
+Requeued flit 780941
+Requeued flit 781007
+Requeued flit 781777
+Requeued flit 781444
+Requeued flit 781539
+Requeued flit 783779
+Requeued flit 784778
+Requeued flit 784810
+Requeued flit 785200
+Requeued flit 785295
+Requeued flit 786708
+Requeued flit 788156
+Requeued flit 787867
+Requeued flit 788098
+Requeued flit 789340
+Requeued flit 789085
+Requeued flit 789264
+Requeued flit 790509
+Requeued flit 790378
+Requeued flit 790505
+Requeued flit 791188
+Requeued flit 791548
+Requeued flit 791570
+Requeued flit 791726
+Requeued flit 792760
+Requeued flit 792754
+Requeued flit 793104
+Requeued flit 793094
+Requeued flit 794172
+Requeued flit 793997
+Requeued flit 794544
+Requeued flit 794763
+Requeued flit 795193
+Requeued flit 795279
+Requeued flit 795937
+Requeued flit 796172
+Requeued flit 796376
+Requeued flit 797422
+Requeued flit 797966
+Requeued flit 797594
+Requeued flit 798250
+Requeued flit 798322
+Requeued flit 797963
+Requeued flit 798978
+Requeued flit 799227
+Requeued flit 799317
+Requeued flit 799370
+Requeued flit 799376
+Requeued flit 801213
+Requeued flit 801602
+Requeued flit 801310
+Requeued flit 801467
+Requeued flit 801956
+Requeued flit 803007
+Requeued flit 803051
+Requeued flit 802796
+Requeued flit 803434
+Requeued flit 802891
+Requeued flit 803437
+Requeued flit 803863
+Requeued flit 805823
+Requeued flit 805423
+Requeued flit 806294
+Requeued flit 806081
+Requeued flit 806679
+Requeued flit 807145
+Requeued flit 807827
+Requeued flit 808300
+Requeued flit 808709
+Requeued flit 809728
+Requeued flit 809932
+Requeued flit 810877
+Requeued flit 810878
+Requeued flit 811549
+Requeued flit 811877
+Requeued flit 811038
+Requeued flit 812335
+Requeued flit 813287
+Requeued flit 813135
+Requeued flit 813358
+Requeued flit 813973
+Requeued flit 813996
+Requeued flit 815096
+Requeued flit 815433
+Requeued flit 816598
+Requeued flit 816711
+Requeued flit 817173
+Requeued flit 816798
+Requeued flit 816904
+Requeued flit 817369
+Requeued flit 817489
+Requeued flit 817958
+Requeued flit 818149
+Requeued flit 817946
+Requeued flit 818300
+Requeued flit 818740
+Requeued flit 819132
+Requeued flit 819088
+Requeued flit 819198
+Requeued flit 820082
+Requeued flit 819743
+Requeued flit 819719
+Requeued flit 820572
+Requeued flit 820771
+Requeued flit 820909
+Requeued flit 821122
+Requeued flit 822059
+Requeued flit 822336
+Requeued flit 822530
+Requeued flit 822770
+Requeued flit 822704
+Requeued flit 822699
+Requeued flit 823179
+Requeued flit 823642
+Requeued flit 824944
+Requeued flit 825597
+Requeued flit 826669
+Requeued flit 827694
+Requeued flit 827527
+Requeued flit 827471
+Requeued flit 828217
+Requeued flit 828463
+Requeued flit 828656
+Requeued flit 828259
+Requeued flit 829175
+Requeued flit 830541
+Requeued flit 830121
+Requeued flit 830502
+Requeued flit 830178
+Requeued flit 830381
+Requeued flit 832267
+Requeued flit 832370
+Requeued flit 833144
+Requeued flit 833540
+Requeued flit 834412
+Requeued flit 834862
+Requeued flit 835439
+Requeued flit 835102
+Requeued flit 836026
+Requeued flit 837791
+Requeued flit 837668
+Requeued flit 838322
+Requeued flit 838266
+Requeued flit 839665
+Requeued flit 839668
+Requeued flit 839965
+Requeued flit 839747
+Requeued flit 840616
+Requeued flit 840340
+Requeued flit 840945
+Requeued flit 840533
+Requeued flit 841321
+Requeued flit 840945
+Requeued flit 841421
+Requeued flit 841580
+Requeued flit 842745
+Requeued flit 842363
+Requeued flit 842929
+Requeued flit 843025
+Requeued flit 843667
+Requeued flit 843874
+Requeued flit 845852
+Requeued flit 845761
+Requeued flit 846714
+Requeued flit 846727
+Requeued flit 846472
+Requeued flit 847235
+Requeued flit 848249
+Requeued flit 848237
+Requeued flit 849073
+Requeued flit 848560
+Requeued flit 849097
+Requeued flit 849012
+Requeued flit 848849
+Requeued flit 849983
+Requeued flit 850104
+Requeued flit 850155
+Requeued flit 850628
+Requeued flit 850476
+Requeued flit 850763
+Requeued flit 850771
+Requeued flit 851338
+Requeued flit 850807
+Requeued flit 851613
+Requeued flit 852336
+Requeued flit 852847
+Requeued flit 853058
+Requeued flit 852828
+Requeued flit 853185
+Requeued flit 853453
+Requeued flit 853452
+Requeued flit 854047
+Requeued flit 854747
+Requeued flit 854743
+Requeued flit 854268
+Requeued flit 856136
+Requeued flit 856257
+Requeued flit 855837
+Requeued flit 856336
+Requeued flit 857377
+Requeued flit 856832
+Requeued flit 857798
+Requeued flit 857630
+Requeued flit 857972
+Requeued flit 858338
+Requeued flit 858140
+Requeued flit 858327
+Requeued flit 858002
+Requeued flit 858378
+Requeued flit 858502
+Requeued flit 859474
+Requeued flit 860402
+Requeued flit 860166
+Requeued flit 860550
+Requeued flit 860607
+Requeued flit 860846
+Requeued flit 860565
+Requeued flit 861284
+Requeued flit 861536
+Requeued flit 861796
+Requeued flit 862151
+Requeued flit 862071
+Requeued flit 862299
+Requeued flit 862608
+Requeued flit 862561
+Requeued flit 863003
+Requeued flit 862717
+Requeued flit 863032
+Requeued flit 863209
+Requeued flit 863978
+Requeued flit 864012
+Requeued flit 863998
+Requeued flit 864514
+Requeued flit 864336
+Requeued flit 865698
+Requeued flit 865431
+Requeued flit 865974
+Requeued flit 866558
+Requeued flit 867754
+Requeued flit 870262
+Requeued flit 870330
+Requeued flit 869877
+Requeued flit 871447
+Requeued flit 871364
+Requeued flit 871969
+Requeued flit 872072
+Requeued flit 872663
+Requeued flit 872387
+Requeued flit 872136
+Requeued flit 872646
+Requeued flit 872933
+Requeued flit 873383
+Requeued flit 874283
+Requeued flit 875175
+Requeued flit 875443
+Requeued flit 875978
+Requeued flit 876154
+Requeued flit 876264
+Requeued flit 876300
+Requeued flit 876174
+Requeued flit 877327
+Requeued flit 877023
+Requeued flit 877185
+Requeued flit 876970
+Requeued flit 877551
+Requeued flit 877956
+Requeued flit 878067
+Requeued flit 878639
+Requeued flit 879288
+Requeued flit 879345
+Requeued flit 879583
+Requeued flit 879899
+Requeued flit 880134
+Requeued flit 880406
+Requeued flit 880515
+Requeued flit 880487
+Requeued flit 880134
+Requeued flit 882021
+Requeued flit 881915
+Requeued flit 882458
+Requeued flit 883718
+Requeued flit 883835
+Requeued flit 884482
+Requeued flit 884841
+Requeued flit 884701
+Requeued flit 884719
+Requeued flit 886235
+Requeued flit 885637
+Requeued flit 886125
+Requeued flit 886187
+Requeued flit 886494
+Requeued flit 886344
+Requeued flit 886657
+Requeued flit 886932
+Requeued flit 887520
+Requeued flit 888609
+Requeued flit 888045
+Requeued flit 889444
+Requeued flit 889663
+Requeued flit 889684
+Requeued flit 890290
+Requeued flit 890178
+Requeued flit 890514
+Requeued flit 889982
+Requeued flit 890066
+Requeued flit 891298
+Requeued flit 892135
+Requeued flit 892999
+Requeued flit 892780
+Requeued flit 894168
+Requeued flit 894772
+Requeued flit 895786
+Requeued flit 895640
+Requeued flit 896366
+Requeued flit 896329
+Requeued flit 896469
+Requeued flit 896718
+Requeued flit 898049
+Requeued flit 898435
+Requeued flit 898590
+Requeued flit 899283
+Requeued flit 899156
+Requeued flit 898869
+Requeued flit 898770
+Requeued flit 899177
+Requeued flit 899313
+Requeued flit 900182
+Requeued flit 900135
+Requeued flit 899940
+Requeued flit 900320
+Requeued flit 900886
+Requeued flit 901168
+Requeued flit 900473
+Requeued flit 901673
+Requeued flit 902941
+Requeued flit 902924
+Requeued flit 904455
+Requeued flit 904852
+Requeued flit 904803
+Requeued flit 905935
+Requeued flit 905686
+Requeued flit 905598
+Requeued flit 906060
+Requeued flit 906936
+Requeued flit 907985
+Requeued flit 908320
+Requeued flit 908962
+Requeued flit 908809
+Requeued flit 908603
+Requeued flit 909876
+Requeued flit 909273
+Requeued flit 909608
+Requeued flit 910818
+Requeued flit 911117
+Requeued flit 911250
+Requeued flit 911902
+Requeued flit 912041
+Requeued flit 912718
+Requeued flit 913276
+Requeued flit 913444
+Requeued flit 913457
+Requeued flit 913021
+Requeued flit 914366
+Requeued flit 915765
+Requeued flit 916183
+Requeued flit 915962
+Requeued flit 916481
+Requeued flit 917088
+Requeued flit 917680
+Requeued flit 917975
+Requeued flit 918786
+Requeued flit 919100
+Requeued flit 919037
+Requeued flit 919895
+Requeued flit 920811
+Requeued flit 921264
+Requeued flit 921080
+Requeued flit 921657
+Requeued flit 921282
+Requeued flit 921650
+Requeued flit 922098
+Requeued flit 922354
+Requeued flit 922599
+Requeued flit 923888
+Requeued flit 923952
+Requeued flit 924336
+Requeued flit 924669
+Requeued flit 924787
+Requeued flit 926135
+Requeued flit 926033
+Requeued flit 926102
+Requeued flit 925941
+Requeued flit 926513
+Requeued flit 926665
+Requeued flit 927170
+Requeued flit 927388
+Requeued flit 927907
+Requeued flit 927851
+Requeued flit 928267
+Requeued flit 928915
+Requeued flit 929057
+Requeued flit 929147
+Requeued flit 929411
+Requeued flit 931504
+Requeued flit 931631
+Requeued flit 932781
+Requeued flit 933457
+Requeued flit 934773
+Requeued flit 935318
+Requeued flit 935683
+Requeued flit 936504
+Requeued flit 936494
+Requeued flit 936814
+Requeued flit 937562
+Requeued flit 937748
+Requeued flit 938007
+Requeued flit 938330
+Requeued flit 938437
+Requeued flit 938712
+Requeued flit 938761
+Requeued flit 939720
+Requeued flit 939339
+Requeued flit 940113
+Requeued flit 939314
+Requeued flit 940452
+Requeued flit 941433
+Requeued flit 942425
+Requeued flit 942033
+Requeued flit 942538
+Requeued flit 942968
+Requeued flit 942879
+Requeued flit 943528
+Requeued flit 943906
+Requeued flit 945228
+Requeued flit 946094
+Requeued flit 946958
+Requeued flit 947187
+Requeued flit 947607
+Requeued flit 948102
+Requeued flit 948605
+Requeued flit 949094
+Requeued flit 949263
+Requeued flit 949355
+Requeued flit 950441
+Requeued flit 951189
+Requeued flit 951057
+Requeued flit 950855
+Requeued flit 951961
+Requeued flit 951964
+Requeued flit 952510
+Requeued flit 952672
+Requeued flit 952797
+Requeued flit 952591
+Requeued flit 953462
+Requeued flit 953528
+Requeued flit 953742
+Requeued flit 954324
+Requeued flit 955058
+Requeued flit 955028
+Requeued flit 955313
+Requeued flit 955283
+Requeued flit 955823
+Requeued flit 956162
+Requeued flit 956455
+Requeued flit 956572
+Requeued flit 956179
+Requeued flit 956998
+Requeued flit 957143
+Requeued flit 958040
+Requeued flit 957350
+Requeued flit 957792
+Requeued flit 958501
+Requeued flit 958901
+Requeued flit 960423
+Requeued flit 961490
+Requeued flit 961480
+Requeued flit 961453
+Requeued flit 962004
+Requeued flit 962683
+Requeued flit 963517
+Requeued flit 963567
+Requeued flit 964965
+Requeued flit 965505
+Requeued flit 965666
+Requeued flit 965548
+Requeued flit 966222
+Requeued flit 966766
+Requeued flit 966296
+Requeued flit 966981
+Requeued flit 966903
+Requeued flit 967357
+Requeued flit 967360
+Requeued flit 967605
+Requeued flit 968945
+Requeued flit 969849
+Requeued flit 970554
+Requeued flit 970918
+Requeued flit 971281
+Requeued flit 971635
+Requeued flit 972106
+Requeued flit 971806
+Requeued flit 972273
+Requeued flit 971915
+Requeued flit 972077
+Requeued flit 972534
+Requeued flit 973002
+Requeued flit 973030
+Requeued flit 973694
+Requeued flit 973830
+Requeued flit 974133
+Requeued flit 974281
+Requeued flit 975716
+Requeued flit 976084
+Requeued flit 975713
+Requeued flit 976063
+Requeued flit 976164
+Requeued flit 976472
+Requeued flit 976665
+Requeued flit 977376
+Requeued flit 977345
+Requeued flit 977831
+Requeued flit 977635
+Requeued flit 977662
+Requeued flit 977887
+Requeued flit 977835
+Requeued flit 978703
+Requeued flit 978576
+Requeued flit 978750
+Requeued flit 979349
+Requeued flit 980800
+Requeued flit 981081
+Requeued flit 981024
+Requeued flit 982235
+Requeued flit 982699
+Requeued flit 983271
+Requeued flit 983792
+Requeued flit 984211
+Requeued flit 985333
+Requeued flit 985672
+Requeued flit 985803
+Requeued flit 986305
+Requeued flit 986283
+Requeued flit 986637
+Requeued flit 989258
+Requeued flit 989593
+Requeued flit 989834
+Requeued flit 990282
+Requeued flit 990519
+Requeued flit 991451
+Requeued flit 991960
+Requeued flit 992400
+Requeued flit 992536
+Requeued flit 992495
+Requeued flit 992491
+Requeued flit 994387
+Requeued flit 994294
+Requeued flit 994568
+Requeued flit 995437
+Requeued flit 996132
+Requeued flit 995875
+Requeued flit 996371
+Requeued flit 997031
+Requeued flit 997114
+Requeued flit 997973
+Requeued flit 997848
+Requeued flit 998424
+Requeued flit 998770
+Requeued flit 998473
+Requeued flit 998994
+Requeued flit 999051
+Requeued flit 999763
+Requeued flit 999897
+Requeued flit 1000233
+Requeued flit 1000545
+Requeued flit 1001179
+Requeued flit 1001327
+Requeued flit 1001957
+Requeued flit 1002462
+Requeued flit 1002745
+Requeued flit 1003355
+Requeued flit 1003309
+Requeued flit 1003575
+Requeued flit 1004551
+Requeued flit 1004629
+Requeued flit 1004558
+Requeued flit 1004213
+Requeued flit 1004889
+Requeued flit 1005526
+Requeued flit 1005714
+Requeued flit 1006187
+Requeued flit 1006653
+Requeued flit 1007414
+Requeued flit 1007755
+Requeued flit 1008140
+Requeued flit 1009145
+Requeued flit 1009551
+Requeued flit 1010049
+Requeued flit 1010795
+Requeued flit 1011256
+Requeued flit 1012258
+Requeued flit 1012459
+Requeued flit 1012642
+Requeued flit 1012843
+Requeued flit 1012946
+Requeued flit 1013623
+Requeued flit 1013490
+Requeued flit 1013909
+Requeued flit 1014018
+Requeued flit 1013739
+Requeued flit 1014235
+Requeued flit 1016016
+Requeued flit 1018031
+Requeued flit 1017998
+Requeued flit 1018058
+Requeued flit 1018440
+Requeued flit 1018037
+Requeued flit 1019054
+Requeued flit 1018660
+Requeued flit 1019432
+Requeued flit 1018956
+Requeued flit 1019634
+Requeued flit 1020564
+Requeued flit 1021045
+Requeued flit 1021282
+Requeued flit 1021194
+Requeued flit 1021199
+Requeued flit 1021535
+Requeued flit 1021762
+Requeued flit 1021708
+Requeued flit 1022097
+Class 0:
+Packet latency average = 24.0878
+	minimum = 5
+	maximum = 72
+Network latency average = 24.0878
+	minimum = 5
+	maximum = 72
+Slowest packet = 937530
+Flit latency average = 24.0995
+	minimum = 5
+	maximum = 72
+Slowest flit = 937530
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.399656
+	minimum = 0.3881 (at node 0)
+	maximum = 0.4099 (at node 60)
+Accepted packet rate average = 0.399731
+	minimum = 0.3803 (at node 6)
+	maximum = 0.4137 (at node 63)
+Injected flit rate average = 0.399656
+	minimum = 0.3881 (at node 0)
+	maximum = 0.4099 (at node 60)
+Accepted flit rate average= 0.399731
+	minimum = 0.3803 (at node 6)
+	maximum = 0.4137 (at node 63)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 590 (590 measured)
+latency change    = 0.000181002
+throughput change = 0.000152446
+Requeued flit 1022743
+Requeued flit 1023312
+Requeued flit 1023806
+Requeued flit 1023501
+Requeued flit 1025325
+Requeued flit 1025067
+Requeued flit 1025937
+Requeued flit 1026902
+Requeued flit 1027162
+Requeued flit 1028084
+Requeued flit 1027801
+Requeued flit 1028393
+Requeued flit 1028402
+Requeued flit 1029310
+Requeued flit 1029245
+Requeued flit 1030358
+Requeued flit 1030634
+Requeued flit 1030828
+Requeued flit 1030888
+Requeued flit 1031379
+Requeued flit 1031065
+Requeued flit 1031402
+Requeued flit 1031394
+Requeued flit 1032549
+Requeued flit 1031999
+Requeued flit 1035517
+Requeued flit 1035501
+Requeued flit 1036680
+Requeued flit 1036827
+Requeued flit 1037015
+Requeued flit 1037046
+Requeued flit 1037104
+Requeued flit 1036794
+Requeued flit 1037558
+Requeued flit 1037364
+Requeued flit 1039986
+Requeued flit 1040288
+Requeued flit 1039990
+Requeued flit 1040558
+Requeued flit 1040550
+Requeued flit 1040853
+Requeued flit 1041329
+Requeued flit 1041844
+Requeued flit 1042840
+Requeued flit 1044382
+Requeued flit 1044124
+Requeued flit 1044690
+Requeued flit 1045638
+Requeued flit 1044975
+Requeued flit 1045687
+Requeued flit 1045263
+Requeued flit 1045793
+Requeued flit 1046213
+Requeued flit 1046269
+Requeued flit 1046094
+Requeued flit 1046457
+Requeued flit 1046568
+Requeued flit 1047014
+Requeued flit 1047568
+Requeued flit 1047541
+Requeued flit 1047687
+Requeued flit 1049061
+Requeued flit 1048757
+Requeued flit 1048860
+Requeued flit 1050322
+Requeued flit 1051191
+Requeued flit 1050999
+Requeued flit 1051647
+Requeued flit 1051621
+Requeued flit 1051778
+Requeued flit 1051060
+Requeued flit 1053562
+Requeued flit 1053439
+Requeued flit 1053659
+Requeued flit 1054942
+Requeued flit 1055145
+Requeued flit 1054414
+Requeued flit 1055083
+Requeued flit 1055496
+Requeued flit 1055821
+Requeued flit 1056093
+Requeued flit 1056271
+Requeued flit 1056874
+Requeued flit 1057360
+Requeued flit 1057021
+Requeued flit 1057661
+Requeued flit 1058453
+Requeued flit 1058655
+Requeued flit 1059602
+Requeued flit 1059365
+Requeued flit 1060319
+Requeued flit 1061120
+Requeued flit 1062044
+Requeued flit 1061799
+Requeued flit 1062484
+Requeued flit 1062692
+Requeued flit 1063875
+Requeued flit 1063845
+Requeued flit 1064065
+Requeued flit 1065887
+Requeued flit 1066668
+Requeued flit 1066776
+Requeued flit 1067177
+Requeued flit 1067652
+Requeued flit 1068339
+Requeued flit 1068353
+Requeued flit 1068952
+Requeued flit 1069106
+Requeued flit 1070022
+Requeued flit 1070058
+Requeued flit 1070332
+Requeued flit 1070235
+Requeued flit 1071247
+Requeued flit 1071490
+Requeued flit 1072450
+Requeued flit 1071707
+Requeued flit 1072428
+Requeued flit 1073197
+Requeued flit 1073335
+Requeued flit 1073040
+Requeued flit 1073900
+Requeued flit 1073377
+Requeued flit 1074291
+Requeued flit 1074263
+Requeued flit 1073843
+Requeued flit 1073997
+Requeued flit 1074374
+Requeued flit 1074747
+Requeued flit 1074432
+Requeued flit 1075374
+Requeued flit 1074730
+Requeued flit 1077226
+Requeued flit 1076689
+Requeued flit 1077501
+Requeued flit 1077630
+Requeued flit 1078041
+Requeued flit 1077897
+Requeued flit 1078212
+Requeued flit 1078183
+Requeued flit 1078500
+Requeued flit 1078870
+Requeued flit 1078991
+Requeued flit 1079438
+Requeued flit 1079388
+Requeued flit 1079315
+Requeued flit 1079876
+Requeued flit 1080039
+Requeued flit 1081346
+Requeued flit 1081632
+Requeued flit 1082998
+Requeued flit 1082555
+Requeued flit 1082750
+Requeued flit 1083456
+Requeued flit 1083066
+Requeued flit 1083388
+Requeued flit 1084887
+Requeued flit 1084146
+Requeued flit 1085248
+Requeued flit 1084752
+Requeued flit 1085638
+Requeued flit 1086488
+Requeued flit 1086881
+Requeued flit 1086883
+Requeued flit 1088371
+Requeued flit 1088654
+Requeued flit 1088582
+Requeued flit 1088319
+Requeued flit 1089042
+Requeued flit 1089019
+Requeued flit 1089100
+Requeued flit 1088796
+Requeued flit 1089571
+Requeued flit 1091661
+Requeued flit 1091487
+Requeued flit 1092247
+Requeued flit 1092225
+Requeued flit 1092585
+Requeued flit 1093838
+Requeued flit 1094574
+Requeued flit 1094750
+Requeued flit 1095112
+Requeued flit 1095418
+Requeued flit 1096359
+Requeued flit 1095970
+Requeued flit 1096615
+Requeued flit 1096654
+Requeued flit 1097330
+Requeued flit 1097447
+Requeued flit 1098257
+Requeued flit 1098355
+Requeued flit 1098457
+Requeued flit 1098600
+Requeued flit 1098881
+Requeued flit 1098611
+Requeued flit 1099313
+Requeued flit 1099295
+Requeued flit 1098836
+Requeued flit 1099576
+Requeued flit 1099220
+Requeued flit 1099890
+Requeued flit 1099888
+Requeued flit 1100341
+Requeued flit 1100449
+Requeued flit 1100997
+Requeued flit 1100917
+Requeued flit 1101710
+Requeued flit 1101374
+Requeued flit 1101595
+Requeued flit 1102684
+Requeued flit 1102495
+Requeued flit 1103994
+Requeued flit 1104526
+Requeued flit 1104442
+Requeued flit 1104917
+Requeued flit 1105340
+Requeued flit 1105779
+Requeued flit 1106414
+Requeued flit 1108323
+Requeued flit 1109202
+Requeued flit 1109353
+Requeued flit 1110906
+Requeued flit 1112095
+Requeued flit 1112621
+Requeued flit 1112702
+Requeued flit 1113230
+Requeued flit 1113006
+Requeued flit 1114013
+Requeued flit 1114790
+Requeued flit 1115205
+Requeued flit 1115272
+Requeued flit 1116836
+Requeued flit 1117008
+Requeued flit 1117949
+Requeued flit 1118642
+Requeued flit 1118656
+Requeued flit 1119636
+Requeued flit 1119609
+Requeued flit 1119860
+Requeued flit 1120005
+Requeued flit 1120686
+Requeued flit 1121175
+Requeued flit 1123116
+Requeued flit 1123628
+Requeued flit 1124952
+Requeued flit 1125217
+Requeued flit 1125286
+Requeued flit 1125598
+Requeued flit 1126165
+Requeued flit 1126783
+Requeued flit 1127743
+Requeued flit 1128048
+Requeued flit 1128380
+Requeued flit 1128331
+Requeued flit 1129225
+Requeued flit 1129511
+Requeued flit 1129382
+Requeued flit 1129628
+Requeued flit 1130064
+Requeued flit 1130060
+Requeued flit 1130407
+Requeued flit 1130812
+Requeued flit 1131262
+Requeued flit 1132378
+Requeued flit 1133251
+Requeued flit 1133655
+Requeued flit 1133072
+Requeued flit 1133318
+Requeued flit 1133993
+Requeued flit 1136159
+Requeued flit 1136282
+Requeued flit 1136783
+Requeued flit 1137254
+Requeued flit 1138286
+Requeued flit 1138759
+Requeued flit 1139200
+Requeued flit 1140325
+Requeued flit 1140333
+Requeued flit 1140881
+Requeued flit 1141952
+Requeued flit 1142619
+Requeued flit 1142646
+Requeued flit 1144022
+Requeued flit 1144076
+Requeued flit 1144688
+Requeued flit 1144587
+Requeued flit 1145156
+Requeued flit 1145954
+Requeued flit 1146329
+Requeued flit 1146885
+Requeued flit 1147292
+Requeued flit 1146897
+Requeued flit 1147363
+Requeued flit 1147729
+Requeued flit 1148149
+Requeued flit 1147909
+Requeued flit 1148184
+Requeued flit 1148332
+Requeued flit 1148257
+Requeued flit 1149067
+Requeued flit 1148675
+Requeued flit 1148933
+Requeued flit 1148843
+Requeued flit 1149610
+Requeued flit 1149100
+Requeued flit 1150134
+Requeued flit 1150839
+Requeued flit 1151731
+Requeued flit 1151356
+Requeued flit 1152339
+Requeued flit 1153318
+Requeued flit 1153253
+Requeued flit 1153290
+Requeued flit 1154614
+Requeued flit 1154977
+Requeued flit 1154496
+Requeued flit 1155087
+Requeued flit 1155889
+Requeued flit 1155786
+Requeued flit 1157823
+Requeued flit 1157856
+Requeued flit 1160305
+Requeued flit 1160762
+Requeued flit 1159942
+Requeued flit 1160722
+Requeued flit 1161099
+Requeued flit 1162957
+Requeued flit 1163373
+Requeued flit 1163271
+Requeued flit 1163729
+Requeued flit 1164100
+Requeued flit 1164171
+Requeued flit 1163742
+Requeued flit 1164412
+Requeued flit 1164300
+Requeued flit 1165440
+Requeued flit 1166554
+Requeued flit 1166254
+Requeued flit 1166658
+Requeued flit 1167577
+Requeued flit 1168478
+Requeued flit 1170259
+Requeued flit 1170874
+Requeued flit 1171158
+Requeued flit 1172249
+Requeued flit 1172683
+Requeued flit 1172565
+Requeued flit 1172803
+Requeued flit 1174576
+Requeued flit 1174756
+Requeued flit 1175501
+Requeued flit 1176290
+Requeued flit 1176473
+Requeued flit 1176945
+Requeued flit 1176846
+Requeued flit 1176803
+Requeued flit 1176922
+Requeued flit 1177879
+Requeued flit 1178212
+Requeued flit 1179047
+Requeued flit 1178749
+Requeued flit 1179211
+Requeued flit 1181270
+Requeued flit 1182065
+Requeued flit 1182333
+Requeued flit 1182455
+Requeued flit 1183464
+Requeued flit 1184397
+Requeued flit 1184434
+Requeued flit 1185064
+Requeued flit 1185138
+Requeued flit 1185254
+Requeued flit 1185716
+Requeued flit 1185894
+Requeued flit 1185708
+Requeued flit 1186131
+Requeued flit 1186346
+Requeued flit 1188275
+Requeued flit 1188144
+Requeued flit 1188358
+Requeued flit 1188668
+Requeued flit 1188921
+Requeued flit 1188710
+Requeued flit 1189425
+Requeued flit 1190362
+Requeued flit 1190404
+Requeued flit 1190309
+Requeued flit 1191380
+Requeued flit 1191175
+Requeued flit 1191646
+Requeued flit 1192091
+Requeued flit 1192645
+Requeued flit 1192695
+Requeued flit 1194008
+Requeued flit 1194030
+Requeued flit 1194589
+Requeued flit 1194119
+Requeued flit 1194839
+Requeued flit 1194779
+Requeued flit 1195106
+Requeued flit 1195711
+Requeued flit 1195973
+Requeued flit 1195764
+Requeued flit 1196447
+Requeued flit 1196103
+Requeued flit 1197438
+Requeued flit 1197309
+Requeued flit 1197749
+Requeued flit 1199592
+Requeued flit 1199255
+Requeued flit 1199320
+Requeued flit 1200134
+Requeued flit 1199858
+Requeued flit 1199654
+Requeued flit 1200762
+Requeued flit 1201216
+Requeued flit 1201119
+Requeued flit 1201384
+Requeued flit 1201439
+Requeued flit 1201301
+Requeued flit 1202147
+Requeued flit 1202924
+Requeued flit 1203025
+Requeued flit 1203062
+Requeued flit 1203733
+Requeued flit 1203822
+Requeued flit 1203919
+Requeued flit 1204761
+Requeued flit 1205031
+Requeued flit 1204717
+Requeued flit 1204483
+Requeued flit 1205228
+Requeued flit 1205034
+Requeued flit 1205369
+Requeued flit 1205074
+Requeued flit 1206487
+Requeued flit 1206673
+Requeued flit 1206598
+Requeued flit 1207609
+Requeued flit 1207848
+Requeued flit 1208458
+Requeued flit 1209094
+Requeued flit 1209219
+Requeued flit 1209548
+Requeued flit 1209318
+Requeued flit 1209734
+Requeued flit 1209833
+Requeued flit 1209940
+Requeued flit 1210151
+Requeued flit 1211151
+Requeued flit 1211100
+Requeued flit 1211439
+Requeued flit 1211899
+Requeued flit 1211816
+Requeued flit 1211925
+Requeued flit 1211915
+Requeued flit 1211909
+Requeued flit 1212439
+Requeued flit 1212303
+Requeued flit 1213617
+Requeued flit 1214515
+Requeued flit 1214016
+Requeued flit 1214626
+Requeued flit 1214727
+Requeued flit 1216159
+Requeued flit 1215901
+Requeued flit 1216738
+Requeued flit 1217449
+Requeued flit 1217493
+Requeued flit 1218568
+Requeued flit 1218479
+Requeued flit 1218630
+Requeued flit 1219865
+Requeued flit 1219317
+Requeued flit 1220110
+Requeued flit 1221493
+Requeued flit 1222320
+Requeued flit 1221628
+Requeued flit 1222617
+Requeued flit 1223412
+Requeued flit 1223614
+Requeued flit 1224351
+Requeued flit 1224400
+Requeued flit 1223669
+Requeued flit 1224962
+Requeued flit 1225253
+Requeued flit 1225633
+Requeued flit 1226392
+Requeued flit 1227276
+Requeued flit 1227197
+Requeued flit 1228277
+Requeued flit 1228054
+Requeued flit 1227896
+Requeued flit 1228128
+Requeued flit 1228882
+Requeued flit 1228571
+Requeued flit 1229217
+Requeued flit 1230352
+Requeued flit 1230940
+Requeued flit 1230921
+Requeued flit 1230749
+Requeued flit 1231111
+Requeued flit 1230713
+Requeued flit 1231314
+Requeued flit 1231241
+Requeued flit 1231628
+Requeued flit 1231863
+Requeued flit 1232405
+Requeued flit 1233593
+Requeued flit 1233695
+Requeued flit 1234026
+Requeued flit 1233938
+Requeued flit 1234511
+Requeued flit 1234220
+Requeued flit 1234765
+Requeued flit 1234835
+Requeued flit 1235056
+Requeued flit 1234824
+Requeued flit 1235104
+Requeued flit 1235851
+Requeued flit 1235920
+Requeued flit 1236651
+Requeued flit 1237200
+Requeued flit 1237134
+Requeued flit 1237339
+Requeued flit 1237494
+Requeued flit 1238493
+Requeued flit 1238624
+Requeued flit 1238918
+Requeued flit 1239479
+Requeued flit 1239697
+Requeued flit 1239405
+Requeued flit 1239862
+Requeued flit 1240836
+Requeued flit 1241370
+Requeued flit 1241546
+Requeued flit 1242240
+Requeued flit 1242548
+Requeued flit 1243828
+Requeued flit 1243831
+Requeued flit 1244731
+Requeued flit 1245367
+Requeued flit 1245637
+Requeued flit 1244861
+Requeued flit 1245635
+Requeued flit 1245529
+Requeued flit 1245556
+Requeued flit 1246567
+Requeued flit 1246479
+Requeued flit 1247316
+Requeued flit 1247526
+Requeued flit 1247794
+Requeued flit 1248251
+Requeued flit 1248471
+Requeued flit 1248871
+Requeued flit 1249845
+Requeued flit 1250344
+Requeued flit 1251012
+Requeued flit 1251099
+Requeued flit 1250707
+Requeued flit 1250963
+Requeued flit 1251057
+Requeued flit 1251313
+Requeued flit 1251473
+Requeued flit 1252513
+Requeued flit 1253304
+Requeued flit 1253758
+Requeued flit 1253915
+Requeued flit 1253995
+Requeued flit 1254466
+Requeued flit 1255766
+Requeued flit 1256752
+Requeued flit 1257421
+Requeued flit 1257315
+Requeued flit 1257802
+Requeued flit 1258152
+Requeued flit 1258031
+Requeued flit 1258499
+Requeued flit 1258617
+Requeued flit 1259003
+Requeued flit 1259466
+Requeued flit 1259676
+Requeued flit 1259218
+Requeued flit 1260100
+Requeued flit 1260796
+Requeued flit 1260904
+Requeued flit 1261176
+Requeued flit 1261359
+Requeued flit 1260910
+Requeued flit 1261630
+Requeued flit 1262347
+Requeued flit 1262201
+Requeued flit 1264096
+Requeued flit 1265771
+Requeued flit 1265866
+Requeued flit 1266731
+Requeued flit 1266683
+Requeued flit 1268803
+Requeued flit 1269656
+Requeued flit 1270402
+Requeued flit 1271131
+Requeued flit 1270911
+Requeued flit 1271413
+Requeued flit 1272310
+Requeued flit 1273173
+Requeued flit 1274224
+Requeued flit 1274605
+Requeued flit 1274256
+Requeued flit 1274795
+Requeued flit 1275440
+Requeued flit 1275561
+Requeued flit 1276485
+Requeued flit 1276704
+Requeued flit 1276934
+Requeued flit 1276508
+Requeued flit 1277560
+Requeued flit 1277400
+Requeued flit 1278308
+Requeued flit 1278310
+Requeued flit 1278696
+Class 0:
+Packet latency average = 24.1053
+	minimum = 5
+	maximum = 75
+Network latency average = 24.1053
+	minimum = 5
+	maximum = 75
+Slowest packet = 1044975
+Flit latency average = 24.1112
+	minimum = 5
+	maximum = 75
+Slowest flit = 1044975
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.400221
+	minimum = 0.3918 (at node 14)
+	maximum = 0.4084 (at node 19)
+Accepted packet rate average = 0.400205
+	minimum = 0.39165 (at node 18)
+	maximum = 0.40855 (at node 31)
+Injected flit rate average = 0.400221
+	minimum = 0.3918 (at node 14)
+	maximum = 0.4084 (at node 19)
+Accepted flit rate average= 0.400205
+	minimum = 0.39165 (at node 18)
+	maximum = 0.40855 (at node 31)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 659 (659 measured)
+latency change    = 0.000726821
+throughput change = 0.00118299
+Requeued flit 1280635
+Requeued flit 1280654
+Requeued flit 1280332
+Requeued flit 1280409
+Requeued flit 1280520
+Requeued flit 1280265
+Requeued flit 1281620
+Requeued flit 1281768
+Requeued flit 1282229
+Requeued flit 1282041
+Requeued flit 1282574
+Requeued flit 1282809
+Requeued flit 1282700
+Requeued flit 1283168
+Requeued flit 1283508
+Requeued flit 1282846
+Requeued flit 1283618
+Requeued flit 1284209
+Requeued flit 1284797
+Requeued flit 1284626
+Requeued flit 1286086
+Requeued flit 1287082
+Requeued flit 1286781
+Requeued flit 1287578
+Requeued flit 1287979
+Requeued flit 1289869
+Requeued flit 1289946
+Requeued flit 1290045
+Requeued flit 1290847
+Requeued flit 1291340
+Requeued flit 1291260
+Requeued flit 1291496
+Requeued flit 1291943
+Requeued flit 1291494
+Requeued flit 1291647
+Requeued flit 1292104
+Requeued flit 1292136
+Requeued flit 1291831
+Requeued flit 1293106
+Requeued flit 1293107
+Requeued flit 1293807
+Requeued flit 1295446
+Requeued flit 1295299
+Requeued flit 1295799
+Requeued flit 1297646
+Requeued flit 1297992
+Requeued flit 1297649
+Requeued flit 1298020
+Requeued flit 1298555
+Requeued flit 1298040
+Requeued flit 1298430
+Requeued flit 1298366
+Requeued flit 1298737
+Requeued flit 1298539
+Requeued flit 1299226
+Requeued flit 1299404
+Requeued flit 1299681
+Requeued flit 1300003
+Requeued flit 1300906
+Requeued flit 1302496
+Requeued flit 1302394
+Requeued flit 1303784
+Requeued flit 1304313
+Requeued flit 1304734
+Requeued flit 1305094
+Requeued flit 1305159
+Requeued flit 1305952
+Requeued flit 1306103
+Requeued flit 1306815
+Requeued flit 1307345
+Requeued flit 1306968
+Requeued flit 1307524
+Requeued flit 1308149
+Requeued flit 1308995
+Requeued flit 1309889
+Requeued flit 1310046
+Requeued flit 1311413
+Requeued flit 1311977
+Requeued flit 1311790
+Requeued flit 1312748
+Requeued flit 1312595
+Requeued flit 1313028
+Requeued flit 1314024
+Requeued flit 1314820
+Requeued flit 1315263
+Requeued flit 1316083
+Requeued flit 1315654
+Requeued flit 1315207
+Requeued flit 1315687
+Requeued flit 1317100
+Requeued flit 1317039
+Requeued flit 1317607
+Requeued flit 1318068
+Requeued flit 1318023
+Requeued flit 1319931
+Requeued flit 1319978
+Requeued flit 1320644
+Requeued flit 1320764
+Requeued flit 1321348
+Requeued flit 1322025
+Requeued flit 1321496
+Requeued flit 1321775
+Requeued flit 1322751
+Requeued flit 1324612
+Requeued flit 1324158
+Requeued flit 1325158
+Requeued flit 1325182
+Requeued flit 1325976
+Requeued flit 1326015
+Requeued flit 1326265
+Requeued flit 1326450
+Requeued flit 1326975
+Requeued flit 1327426
+Requeued flit 1330295
+Requeued flit 1331434
+Requeued flit 1332177
+Requeued flit 1331571
+Requeued flit 1332237
+Requeued flit 1332422
+Requeued flit 1332998
+Requeued flit 1333249
+Requeued flit 1334451
+Requeued flit 1334878
+Requeued flit 1335601
+Requeued flit 1335976
+Requeued flit 1336214
+Requeued flit 1336428
+Requeued flit 1336608
+Requeued flit 1336685
+Requeued flit 1337051
+Requeued flit 1337163
+Requeued flit 1337388
+Requeued flit 1337787
+Requeued flit 1338886
+Requeued flit 1339425
+Requeued flit 1340086
+Requeued flit 1339954
+Requeued flit 1340533
+Requeued flit 1340488
+Requeued flit 1341408
+Requeued flit 1341487
+Requeued flit 1342961
+Requeued flit 1343213
+Requeued flit 1343201
+Requeued flit 1345217
+Requeued flit 1345967
+Requeued flit 1345848
+Requeued flit 1346384
+Requeued flit 1346890
+Requeued flit 1346863
+Requeued flit 1347146
+Requeued flit 1347143
+Requeued flit 1347614
+Requeued flit 1348393
+Requeued flit 1348157
+Requeued flit 1348885
+Requeued flit 1348431
+Requeued flit 1348587
+Requeued flit 1349966
+Requeued flit 1350290
+Requeued flit 1351178
+Requeued flit 1351156
+Requeued flit 1352253
+Requeued flit 1351812
+Requeued flit 1352161
+Requeued flit 1353783
+Requeued flit 1353620
+Requeued flit 1354064
+Requeued flit 1354294
+Requeued flit 1354126
+Requeued flit 1354860
+Requeued flit 1355200
+Requeued flit 1355311
+Requeued flit 1357740
+Requeued flit 1357325
+Requeued flit 1360367
+Requeued flit 1360621
+Requeued flit 1361012
+Requeued flit 1361094
+Requeued flit 1360680
+Requeued flit 1362710
+Requeued flit 1362567
+Requeued flit 1363271
+Requeued flit 1365470
+Requeued flit 1365685
+Requeued flit 1365441
+Requeued flit 1365571
+Requeued flit 1365777
+Requeued flit 1365614
+Requeued flit 1368430
+Requeued flit 1368645
+Requeued flit 1369529
+Requeued flit 1370268
+Requeued flit 1370478
+Requeued flit 1371621
+Requeued flit 1371467
+Requeued flit 1372335
+Requeued flit 1372272
+Requeued flit 1372501
+Requeued flit 1373153
+Requeued flit 1373467
+Requeued flit 1373550
+Requeued flit 1373036
+Requeued flit 1373561
+Requeued flit 1374537
+Requeued flit 1375773
+Requeued flit 1376300
+Requeued flit 1376758
+Requeued flit 1377065
+Requeued flit 1377087
+Requeued flit 1377346
+Requeued flit 1377474
+Requeued flit 1377954
+Requeued flit 1379363
+Requeued flit 1379755
+Requeued flit 1379457
+Requeued flit 1379949
+Requeued flit 1379691
+Requeued flit 1380723
+Requeued flit 1381070
+Requeued flit 1381175
+Requeued flit 1381472
+Requeued flit 1382181
+Requeued flit 1384624
+Requeued flit 1384408
+Requeued flit 1384513
+Requeued flit 1385142
+Requeued flit 1385411
+Requeued flit 1386921
+Requeued flit 1387839
+Requeued flit 1387384
+Requeued flit 1387989
+Requeued flit 1388630
+Requeued flit 1390423
+Requeued flit 1389920
+Requeued flit 1390274
+Requeued flit 1390655
+Requeued flit 1390672
+Requeued flit 1390790
+Requeued flit 1391215
+Requeued flit 1391904
+Requeued flit 1391714
+Requeued flit 1391713
+Requeued flit 1392448
+Requeued flit 1393218
+Requeued flit 1393102
+Requeued flit 1392660
+Requeued flit 1393411
+Requeued flit 1393796
+Requeued flit 1393161
+Requeued flit 1394361
+Requeued flit 1395177
+Requeued flit 1395386
+Requeued flit 1396084
+Requeued flit 1396355
+Requeued flit 1396293
+Requeued flit 1396422
+Requeued flit 1397063
+Requeued flit 1397177
+Requeued flit 1397498
+Requeued flit 1397985
+Requeued flit 1398453
+Requeued flit 1399094
+Requeued flit 1399112
+Requeued flit 1401357
+Requeued flit 1402288
+Requeued flit 1402315
+Requeued flit 1402663
+Requeued flit 1402958
+Requeued flit 1403208
+Requeued flit 1404573
+Requeued flit 1404909
+Requeued flit 1406356
+Requeued flit 1406225
+Requeued flit 1406493
+Requeued flit 1406383
+Requeued flit 1407152
+Requeued flit 1407522
+Requeued flit 1409192
+Requeued flit 1409063
+Requeued flit 1410351
+Requeued flit 1409950
+Requeued flit 1411173
+Requeued flit 1411983
+Requeued flit 1411710
+Requeued flit 1412444
+Requeued flit 1412226
+Requeued flit 1412501
+Requeued flit 1412730
+Requeued flit 1412707
+Requeued flit 1412887
+Requeued flit 1413096
+Requeued flit 1413451
+Requeued flit 1414244
+Requeued flit 1415376
+Requeued flit 1416236
+Requeued flit 1416224
+Requeued flit 1416661
+Requeued flit 1417435
+Requeued flit 1418210
+Requeued flit 1418798
+Requeued flit 1420244
+Requeued flit 1420262
+Requeued flit 1420489
+Requeued flit 1421090
+Requeued flit 1421535
+Requeued flit 1421185
+Requeued flit 1422294
+Requeued flit 1422944
+Requeued flit 1422875
+Requeued flit 1422993
+Requeued flit 1423661
+Requeued flit 1424689
+Requeued flit 1424385
+Requeued flit 1424875
+Requeued flit 1425408
+Requeued flit 1425948
+Requeued flit 1426298
+Requeued flit 1426082
+Requeued flit 1427069
+Requeued flit 1427331
+Requeued flit 1427677
+Requeued flit 1428162
+Requeued flit 1428327
+Requeued flit 1428650
+Requeued flit 1428686
+Requeued flit 1429947
+Requeued flit 1429727
+Requeued flit 1430180
+Requeued flit 1430762
+Requeued flit 1431459
+Requeued flit 1432013
+Requeued flit 1432823
+Requeued flit 1433387
+Requeued flit 1433439
+Requeued flit 1433352
+Requeued flit 1433912
+Requeued flit 1433584
+Requeued flit 1435856
+Requeued flit 1435592
+Requeued flit 1435615
+Requeued flit 1437863
+Requeued flit 1438458
+Requeued flit 1439707
+Requeued flit 1440274
+Requeued flit 1440506
+Requeued flit 1440869
+Requeued flit 1442265
+Requeued flit 1443277
+Requeued flit 1443301
+Requeued flit 1443547
+Requeued flit 1444748
+Requeued flit 1445481
+Requeued flit 1446178
+Requeued flit 1448200
+Requeued flit 1448197
+Requeued flit 1447919
+Requeued flit 1448708
+Requeued flit 1448164
+Requeued flit 1449066
+Requeued flit 1449142
+Requeued flit 1449685
+Requeued flit 1450871
+Requeued flit 1451695
+Requeued flit 1452148
+Requeued flit 1452795
+Requeued flit 1453303
+Requeued flit 1453721
+Requeued flit 1453673
+Requeued flit 1453862
+Requeued flit 1454122
+Requeued flit 1454381
+Requeued flit 1455508
+Requeued flit 1455906
+Requeued flit 1455546
+Requeued flit 1456637
+Requeued flit 1457089
+Requeued flit 1457079
+Requeued flit 1458411
+Requeued flit 1458264
+Requeued flit 1458502
+Requeued flit 1459472
+Requeued flit 1458846
+Requeued flit 1459251
+Requeued flit 1459531
+Requeued flit 1460745
+Requeued flit 1461419
+Requeued flit 1462761
+Requeued flit 1462720
+Requeued flit 1462911
+Requeued flit 1463343
+Requeued flit 1463964
+Requeued flit 1464487
+Requeued flit 1465352
+Requeued flit 1465734
+Requeued flit 1466263
+Requeued flit 1466387
+Requeued flit 1467585
+Requeued flit 1467443
+Requeued flit 1467715
+Requeued flit 1468128
+Requeued flit 1468179
+Requeued flit 1468715
+Requeued flit 1468960
+Requeued flit 1469032
+Requeued flit 1469754
+Requeued flit 1469660
+Requeued flit 1470347
+Requeued flit 1470641
+Requeued flit 1470652
+Requeued flit 1470581
+Requeued flit 1470934
+Requeued flit 1472087
+Requeued flit 1471652
+Requeued flit 1471546
+Requeued flit 1472662
+Requeued flit 1472450
+Requeued flit 1472975
+Requeued flit 1472439
+Requeued flit 1472739
+Requeued flit 1473709
+Requeued flit 1473865
+Requeued flit 1475345
+Requeued flit 1475329
+Requeued flit 1475421
+Requeued flit 1476619
+Requeued flit 1476109
+Requeued flit 1476718
+Requeued flit 1477023
+Requeued flit 1476825
+Requeued flit 1477494
+Requeued flit 1477866
+Requeued flit 1478077
+Requeued flit 1478433
+Requeued flit 1477983
+Requeued flit 1478272
+Requeued flit 1478601
+Requeued flit 1478492
+Requeued flit 1479397
+Requeued flit 1479143
+Requeued flit 1479743
+Requeued flit 1481763
+Requeued flit 1482293
+Requeued flit 1482844
+Requeued flit 1482501
+Requeued flit 1484145
+Requeued flit 1483864
+Requeued flit 1484208
+Requeued flit 1484682
+Requeued flit 1485685
+Requeued flit 1486363
+Requeued flit 1486031
+Requeued flit 1486871
+Requeued flit 1487075
+Requeued flit 1488482
+Requeued flit 1488104
+Requeued flit 1488006
+Requeued flit 1490354
+Requeued flit 1490458
+Requeued flit 1490862
+Requeued flit 1490567
+Requeued flit 1491434
+Requeued flit 1491374
+Requeued flit 1491385
+Requeued flit 1491156
+Requeued flit 1492476
+Requeued flit 1492625
+Requeued flit 1492739
+Requeued flit 1492941
+Requeued flit 1493246
+Requeued flit 1493615
+Requeued flit 1494053
+Requeued flit 1494077
+Requeued flit 1494848
+Requeued flit 1495886
+Requeued flit 1496649
+Requeued flit 1496801
+Requeued flit 1496564
+Requeued flit 1496832
+Requeued flit 1497571
+Requeued flit 1497805
+Requeued flit 1498342
+Requeued flit 1498250
+Requeued flit 1498142
+Requeued flit 1498814
+Requeued flit 1499424
+Requeued flit 1500115
+Requeued flit 1500508
+Requeued flit 1500719
+Requeued flit 1501143
+Requeued flit 1501029
+Requeued flit 1501336
+Requeued flit 1502454
+Requeued flit 1502596
+Requeued flit 1503135
+Requeued flit 1504327
+Requeued flit 1504083
+Requeued flit 1504619
+Requeued flit 1505897
+Requeued flit 1505870
+Requeued flit 1506236
+Requeued flit 1506363
+Requeued flit 1506641
+Requeued flit 1507225
+Requeued flit 1508166
+Requeued flit 1508553
+Requeued flit 1508654
+Requeued flit 1508455
+Requeued flit 1508801
+Requeued flit 1509030
+Requeued flit 1509720
+Requeued flit 1510209
+Requeued flit 1510539
+Requeued flit 1510544
+Requeued flit 1511095
+Requeued flit 1511527
+Requeued flit 1511235
+Requeued flit 1511636
+Requeued flit 1512024
+Requeued flit 1512489
+Requeued flit 1511567
+Requeued flit 1513531
+Requeued flit 1512904
+Requeued flit 1514148
+Requeued flit 1513678
+Requeued flit 1514430
+Requeued flit 1514497
+Requeued flit 1514504
+Requeued flit 1514424
+Requeued flit 1516054
+Requeued flit 1516125
+Requeued flit 1516422
+Requeued flit 1516733
+Requeued flit 1516986
+Requeued flit 1517555
+Requeued flit 1518377
+Requeued flit 1518323
+Requeued flit 1518562
+Requeued flit 1518963
+Requeued flit 1519593
+Requeued flit 1519432
+Requeued flit 1519890
+Requeued flit 1520311
+Requeued flit 1520971
+Requeued flit 1521525
+Requeued flit 1521755
+Requeued flit 1523129
+Requeued flit 1524376
+Requeued flit 1523886
+Requeued flit 1524814
+Requeued flit 1525781
+Requeued flit 1525980
+Requeued flit 1526788
+Requeued flit 1526529
+Requeued flit 1527223
+Requeued flit 1527133
+Requeued flit 1528296
+Requeued flit 1528655
+Requeued flit 1529411
+Requeued flit 1529384
+Requeued flit 1529819
+Requeued flit 1530142
+Requeued flit 1530237
+Requeued flit 1530763
+Requeued flit 1531233
+Requeued flit 1532459
+Requeued flit 1533358
+Requeued flit 1534000
+Class 0:
+Packet latency average = 24.0835
+	minimum = 5
+	maximum = 77
+Network latency average = 24.0835
+	minimum = 5
+	maximum = 77
+Slowest packet = 1355817
+Flit latency average = 24.0874
+	minimum = 5
+	maximum = 77
+Slowest flit = 1355817
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.399752
+	minimum = 0.393667 (at node 15)
+	maximum = 0.4066 (at node 9)
+Accepted packet rate average = 0.399764
+	minimum = 0.392267 (at node 18)
+	maximum = 0.4066 (at node 31)
+Injected flit rate average = 0.399752
+	minimum = 0.393667 (at node 15)
+	maximum = 0.4066 (at node 9)
+Accepted flit rate average= 0.399764
+	minimum = 0.392267 (at node 18)
+	maximum = 0.4066 (at node 31)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 614 (614 measured)
+latency change    = 0.0009058
+throughput change = 0.00110221
+Draining all recorded packets ...
+in flight = 614
+in flight = 588
+in flight = 561
+in flight = 535
+in flight = 513
+in flight = 490
+in flight = 464
+in flight = 438
+in flight = 411
+in flight = 391
+in flight = 370
+in flight = 346
+in flight = 325
+in flight = 301
+in flight = 273
+in flight = 256
+in flight = 235
+in flight = 221
+in flight = 201
+in flight = 184
+in flight = 168
+in flight = 151
+Requeued flit 1534280
+in flight = 135
+in flight = 118
+in flight = 103
+in flight = 87
+in flight = 78
+in flight = 72
+in flight = 62
+in flight = 59
+in flight = 50
+in flight = 47
+in flight = 42
+in flight = 36
+in flight = 29
+in flight = 23
+in flight = 22
+in flight = 18
+in flight = 17
+in flight = 12
+in flight = 10
+in flight = 7
+in flight = 5
+in flight = 5
+in flight = 2
+in flight = 1
+in flight = 1
+Draining remaining packets ...
+Requeued flit 1535790
+Requeued flit 1535383
+Time taken is 60094 cycles
+====== Overall Traffic Statistics ======
+====== Traffic class 0 ======
+Packet latency average = 24.0869 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 77 (1 samples)
+Network latency average = 24.0869 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 77 (1 samples)
+Flit latency average = 24.0906 (1 samples)
+	minimum = 5 (1 samples)
+	maximum = 77 (1 samples)
+Fragmentation average = 0 (1 samples)
+	minimum = 0 (1 samples)
+	maximum = 0 (1 samples)
+Injected packet rate average = 0.399752 (1 samples)
+	minimum = 0.393667 (1 samples)
+	maximum = 0.4066 (1 samples)
+Accepted packet rate average = 0.399764 (1 samples)
+	minimum = 0.392267 (1 samples)
+	maximum = 0.4066 (1 samples)
+Injected flit rate average = 0.399752 (1 samples)
+	minimum = 0.393667 (1 samples)
+	maximum = 0.4066 (1 samples)
+Accepted flit rate average = 0.399764 (1 samples)
+	minimum = 0.392267 (1 samples)
+	maximum = 0.4066 (1 samples)
+Injected packet size average = 1 (1 samples)
+Accepted packet size average = 1 (1 samples)
+Hops average = 6.25167 (1 samples)
+Total run time 176.483

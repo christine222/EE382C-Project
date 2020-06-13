@@ -58,6 +58,7 @@ public:
     int  stall_time;
   };
 
+  
   int additionalHops;
 
   struct ackNack {
@@ -68,6 +69,7 @@ public:
 
 private:
 
+  int _correctable;
   vector<vector<int> > _packet_size;
   vector<vector<int> > _packet_size_rate;
   vector<int> _packet_size_max_val;

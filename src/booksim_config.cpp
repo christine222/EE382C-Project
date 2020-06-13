@@ -224,6 +224,7 @@ BookSimConfig::BookSimConfig( )
 
   _int_map["fer"] = 0; // FZ: FER
   AddStrField("ecc", "none");
+  _int_map["correctable"] = 0;
 
 
   //==== Simulation parameters ==========================
